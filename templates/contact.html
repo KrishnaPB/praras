@@ -1,0 +1,112 @@
+<?php include "header.php"; ?>
+
+<main id="pg-contact" class="page" role="main">
+  <section class="section deep" style="padding-top:8rem; padding-bottom:6rem;">
+    <div class="wrap">
+      <div class="hero-pill pr-only"><span class="hero-pill-dot"></span>Get in Touch</div>
+      <div class="hero-pill ab-only" style="display:none;"><span class="hero-pill-dot" style="background:var(--c-primary)"></span>Get in Touch</div>
+      
+      <h1 class="h2 light" style="font-size:4rem; margin-bottom:1.5rem;">Contact Us</h1>
+      <p class="sec-body" style="font-size:1.1rem; max-width:600px; color:rgba(255,255,255,0.7);">
+        We’d love to hear from you. Whether you have a question about our products, services, or anything else, our team is ready to answer all your questions.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" style="display:grid; grid-template-columns: 1fr 1fr; gap:4rem; align-items:start; margin-top:3rem; margin-bottom:5rem;">
+      
+      <div>
+        <h2 class="h2" style="margin-bottom:1rem;">Our Office</h2>
+        <p class="sec-body" style="margin-bottom:2rem;">
+          <strong>Corporate Office</strong><br>
+          Ph: +91-80-48904262<br>
+          Email: <a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a>
+        </p>
+        <p class="sec-body">
+          <strong>Factory Address</strong><br>
+          Plot no. 132, Harohalli 1st Phase,<br>
+          KIADB Industrial Area, Harohalli Hobli,<br>
+          Kanakapura Taluk, Bangalore Rural,<br>
+          Ramanagar District - 562 112, India
+        </p>
+      </div>
+
+      <div style="background:var(--c-surface-alt); padding:3rem; border-radius:1rem;">
+        <h3 class="h3" style="margin-bottom:2rem;">Send a Message</h3>
+        <form id="contact-form" action="mailer.php" method="POST">
+          <div style="margin-bottom:1.5rem;">
+            <label style="display:block; margin-bottom:0.5rem; font-weight:500;">Name</label>
+            <input type="text" name="name" required style="width:100%; padding:0.8rem; border:1px solid var(--c-border); border-radius:0.5rem; background:#fff;">
+          </div>
+          <div style="margin-bottom:1.5rem;">
+            <label style="display:block; margin-bottom:0.5rem; font-weight:500;">Email</label>
+            <input type="email" name="email" required style="width:100%; padding:0.8rem; border:1px solid var(--c-border); border-radius:0.5rem; background:#fff;">
+          </div>
+          <div style="margin-bottom:1.5rem;">
+            <label style="display:block; margin-bottom:0.5rem; font-weight:500;">Brand Interest</label>
+            <select name="brand_interest" id="brand-select" style="width:100%; padding:0.8rem; border:1px solid var(--c-border); border-radius:0.5rem; background:#fff;">
+              <option value="Praras Biosciences">Praras Biosciences</option>
+              <option value="Airbliss">Airbliss</option>
+            </select>
+          </div>
+          <div style="margin-bottom:2rem;">
+            <label style="display:block; margin-bottom:0.5rem; font-weight:500;">Message</label>
+            <textarea name="message" rows="5" required style="width:100%; padding:0.8rem; border:1px solid var(--c-border); border-radius:0.5rem; background:#fff; font-family:inherit; resize:vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline" style="width:100%; justify-content:center;">Submit</button>
+          <div id="form-feedback" style="margin-top:1rem; font-weight:500; display:none;"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script>
+// Pre-select brand based on current mode
+document.addEventListener('DOMContentLoaded', () => {
+  const isAb = document.body.classList.contains('ab');
+  const select = document.getElementById('brand-select');
+  if (isAb) {
+    select.value = 'Airbliss';
+  }
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const feedback = document.getElementById('form-feedback');
+  const btn = this.querySelector('button[type="submit"]');
+  
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  
+  fetch('mailer.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    feedback.style.display = 'block';
+    feedback.textContent = data.message;
+    if (data.status === 'success') {
+      feedback.style.color = 'green';
+      this.reset();
+    } else {
+      feedback.style.color = 'red';
+    }
+  })
+  .catch(err => {
+    feedback.style.display = 'block';
+    feedback.textContent = 'An error occurred. Please try again.';
+    feedback.style.color = 'red';
+  })
+  .finally(() => {
+    btn.textContent = 'Submit';
+    btn.disabled = false;
+  });
+});
+</script>
+
+<?php include "footer.php"; ?>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praras Biosciences & Airbliss</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Mulish',sans-serif;background:#fff;color:#1A1512;line-height: 1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+img,svg{display:block}
+
+/* ─── DESIGN TOKENS (Praras default) ─── */
+:root{
+  --c-primary:    #8A1D1E;
+  --c-primary-d:  #711818;
+  --c-primary-dd: #5E1515;
+  --c-primary-bg: #FBF0EF;
+  --c-accent:     #E87925;
+  --c-accent-d:   #CC6A1C;
+  --c-accent-bg:  #FDF1E7;
+  --c-page:       #FAF6EE;
+  --c-surface:    #FFFFFF;
+  --c-surface-alt:#F2ECE0;
+  --c-border:     #E4DACA;
+  --c-border-s:   #D8CCB8;
+  --c-ink:        #1A1512;
+  --c-body:       #3A332D;
+  --c-muted:      #6E6358;
+  --c-rail:       #8A1D1E;     /* the brand rail accent */
+  --c-tag-bg:     #F2ECE0;
+  --c-tag-text:   #6E6358;
+  --sh-card: 0 2px 12px rgba(26,21,18,.07);
+  --sh-hover: 0 8px 32px rgba(26,21,18,.12);
+  --r: 10px;
+  --r-pill: 999px;
+  --font-d: 'Cormorant Garamond', Georgia, serif;
+  --font-s: 'Mulish', sans-serif;
+  --transition: .22s cubic-bezier(.22,.61,.36,1);
+}
+
+/* ─── AIRBLISS THEME ─── */
+body.ab{
+  --c-primary:    #234A32;
+  --c-primary-d:  #1a3825;
+  --c-primary-dd: #122518;
+  --c-primary-bg: #DCE9CF;
+  --c-accent:     #C18A5B;
+  --c-accent-d:   #a87648;
+  --c-accent-bg:  #F3E8DA;
+  --c-page:       #FBF8F0;
+  --c-surface:    #FFFFFF;
+  --c-surface-alt:#F5F0E4;
+  --c-border:     #D4E2C4;
+  --c-border-s:   #B8D1A8;
+  --c-ink:        #1C2419;
+  --c-body:       #2E3D2B;
+  --c-muted:      #6B7D5E;
+  --c-rail:       #234A32;
+  --c-tag-bg:     #DCE9CF;
+  --c-tag-text:   #234A32;
+}
+
+/* ─── BRAND SWITCHER ─── */
+.switcher{
+  position:sticky;top:0;z-index:300;
+  display:flex;height:48px;
+  background:#111;
+}
+.sw-btn{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);transition:color var(--transition),background var(--transition);
+  position:relative;
+}
+.sw-btn::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:transparent;transition:background var(--transition);
+}
+.sw-btn.pr{border-right:1px solid rgba(255,255,255,.08)}
+.sw-btn.pr.on{color:#fff;background:rgba(138,29,30,.25)}
+.sw-btn.pr.on::after{background:#E87925}
+.sw-btn.ab{border-left:1px solid rgba(255,255,255,.08)}
+.sw-btn.ab.on{color:#fff;background:rgba(35,74,50,.3)}
+.sw-btn.ab.on::after{background:#9DBF82}
+.sw-btn:hover{color:rgba(255,255,255,.75)}
+.sw-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sw-btn.pr .sw-dot{background:#8A1D1E}
+.sw-btn.ab .sw-dot{background:#5C7A4A}
+.sw-sub{font-weight:400;opacity:.55;margin-left:4px;font-size:.65rem;letter-spacing:.06em}
+
+/* ─── SHARED NAV ─── */
+.site-nav{
+  background:var(--c-surface);
+  border-bottom:1px solid var(--c-border);
+  position:sticky;top:48px;z-index:200;
+}
+.nav-inner{
+  max-width:1160px;margin:0 auto;padding:0 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;height:62px;
+}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo-mark{display:none}
+.nav-logo-name{display:none}
+.nav-logo-sub{display:none}
+/* Praras image logo — transparent PNG */
+.nav-logo-pr-img{display:block;height:46px;width:auto;}
+/* AB logo override */
+body.ab .nav-logo-pr-img{display:none}
+body.ab .nav-logo-ab{display:flex!important}
+.nav-logo-ab{display:none;align-items:center}
+.nav-logo-ab svg{height:36px;width:auto}
+
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{
+  font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--c-muted);transition:color var(--transition);
+}
+.nav-links a:hover{color:var(--c-primary)}
+.nav-cta{
+  background:var(--c-primary);color:#fff;
+  padding:.45rem 1.2rem;border-radius:var(--r-pill);
+  font-size:.75rem;font-weight:700;letter-spacing:.04em;
+  transition:background var(--transition);
+}
+.nav-cta:hover{background:var(--c-primary-d);color:#fff}
+
+/* ─── PAGES ─── */
+.page{display:none;background:var(--c-page)}
+.page.on{display:block}
+
+/* ─── SHARED SECTION ANATOMY ─── */
+.section{padding:5rem 2.5rem}
+.section.alt{background:var(--c-surface)}
+.section.tinted{background:var(--c-surface-alt)}
+.section.deep{background:var(--c-ink);padding:5rem 2.5rem}
+.wrap{max-width:1160px;margin:0 auto}
+
+/* Section header with brand rail */
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;gap:2rem;flex-wrap:wrap}
+.sec-hd-left{display:flex;gap:1.5rem;align-items:flex-start}
+.sec-rail{width:3px;background:var(--c-primary);border-radius:2px;flex-shrink:0;align-self:stretch;min-height:4rem;transition:background var(--transition)}
+.sec-hd-text{}
+.eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--c-accent);margin-bottom:.6rem;transition:color var(--transition)}
+.h2{font-family:var(--font-d);font-size:3.5rem;font-weight:700;color:var(--c-ink);line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem;position:relative;padding-bottom:1rem;}
+.h2 em{font-style:italic;color:var(--c-primary);transition:color var(--transition)}
+.h2.light{color:#fff}.h2.light em{color:var(--c-accent)}
+.h2::after{content:'';position:absolute;bottom:0;left:0;width:48px;height:3px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));border-radius:3px;transition:width .3s ease;}
+.h2:hover::after{width:72px;}
+.h2.center{text-align:center;}.h2.center::after{left:50%;transform:translateX(-50%);}
+/* product-detail page h2s — smaller, document-style */
+.prod-page-grid .h2{font-size:1.8rem;font-weight:700;padding-bottom:.75rem;border-bottom:2px solid var(--c-border);letter-spacing:-.01em;font-family:var(--font-ui,'Inter',sans-serif);color:var(--c-ink);}
+.prod-page-grid .h2::after{display:none;}
+.sec-body{font-size:.9375rem;color:var(--c-muted);max-width:480px;line-height: 1.6}
+.arr-link{
+  font-size:.73rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--c-primary);display:inline-flex;align-items:center;gap:.4rem;
+  white-space:nowrap;transition:color var(--transition);flex-shrink:0;
+}
+.arr-link svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;transition:transform var(--transition)}
+.arr-link:hover svg{transform:translateX(4px)}
+
+/* ─── HERO ─── */
+.hero{
+  background:var(--c-primary);
+  padding:0;overflow:hidden;
+  transition:background var(--transition);
+}
+.hero-inner{
+  max-width:1160px;margin:0 auto;padding:5.5rem 2.5rem 5.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--r-pill);padding:.28rem .875rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.75);margin-bottom:1.5rem;
+}
+.hero-pill-dot{width:5px;height:5px;border-radius:50%;background:var(--c-accent);flex-shrink:0;transition:background var(--transition)}
+.hero-h1{
+  font-family:var(--font-d);font-size:3.75rem;font-weight:600;
+  line-height: 1.6;color:#fff;letter-spacing:-.025em;margin-bottom:1.25rem;
+}
+.hero-h1 em{font-style:italic;color:var(--c-accent);transition:color var(--transition)}
+.hero-p{font-size:.9375rem;color:rgba(255,255,255,.62);line-height: 1.6;max-width:400px;margin-bottom:2.25rem}
+.hero-actions{display:flex;align-items:center;gap:.875rem;flex-wrap:wrap}
+.btn-hero-p{
+  background:var(--c-accent);color:#1A1512;
+  padding:.7rem 1.6rem;border-radius:var(--r-pill);
+  font-size:.825rem;font-weight:800;letter-spacing:.02em;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:background var(--transition),transform .15s;
+}
+.btn-hero-p svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+.btn-hero-p:hover{background:var(--c-accent-d);transform:translateY(-1px);color:#fff}
+.btn-hero-g{
+  border:1.5px solid rgba(255,255,255,.22);color:rgba(255,255,255,.8);
+  padding:.7rem 1.4rem;border-radius:var(--r-pill);
+  font-size:.825rem;font-weight:600;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:border-color var(--transition),color var(--transition);
+}
+.btn-hero-g:hover{border-color:rgba(255,255,255,.55);color:#fff}
+/* Hero visual side */
+.hero-visual{display:flex;flex-direction:column;gap:1rem}
+.hero-glass{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:1.75rem 2rem;
+}
+.hg-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.625rem}
+.hg-title{font-family:var(--font-d);font-size:1.25rem;font-weight:600;color:#fff;margin-bottom:.375rem}
+.hg-body{font-size:.8rem;color:rgba(255,255,255,.5);line-height: 1.6}
+.hero-stats{
+  background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:1.25rem 1.75rem;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  divide-x: 1px solid rgba(255,255,255,.1);
+}
+.hero-stat{text-align:center;padding:.25rem .75rem;position:relative}
+.hero-stat+.hero-stat::before{
+  content:'';position:absolute;left:0;top:15%;height:70%;
+  width:1px;background:rgba(255,255,255,.1);
+}
+.hs-num{font-family:var(--font-d);font-size:1.875rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.2rem}
+.hs-lbl{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* ─── CERT STRIP ─── */
+.cert-strip{
+  background:var(--c-surface);
+  border-bottom:1px solid var(--c-border);
+  padding:.875rem 2.5rem;
+}
+.cert-inner{
+  max-width:1160px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;
+}
+.cert-item{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted);
+}
+.cert-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--c-primary);flex-shrink:0;transition:background var(--transition)}
+.cert-div{width:1px;height:16px;background:var(--c-border)}
+
+/* ─── INDUSTRY GRID (Praras) ─── */
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--c-border);border-radius:var(--r);overflow:hidden}
+.ind-card{
+  background:var(--c-surface);padding:2rem 1.625rem;
+  transition:background var(--transition);position:relative;
+}
+.ind-card:hover{background:var(--c-primary-bg)}
+.ind-card.ab-card{background:var(--c-primary);cursor:pointer}
+.ind-card.ab-card:hover{background:var(--c-primary-d)}
+.ind-card.ab-card .ind-label,.ind-card.ab-card .ind-h,.ind-card.ab-card .ind-p{color:#fff}
+.ind-card.ab-card .ind-p{color:rgba(255,255,255,.6)}
+.ind-card.ab-card .tag{background:rgba(255,255,255,.12);color:rgba(255,255,255,.75)}
+.ind-card.ab-card .ab-sub-badge{display:inline-flex}
+.ab-sub-badge{
+  display:none;align-items:center;gap:5px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  border-radius:var(--r-pill);padding:.2rem .6rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);
+  margin-bottom:.75rem;
+}
+.ind-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted);margin-bottom:.875rem}
+.ind-h{font-family:var(--font-d);font-size:1.35rem;font-weight:600;color:var(--c-ink);margin-bottom:.5rem;transition:color var(--transition)}
+.ind-p{font-size:.8rem;color:var(--c-muted);line-height: 1.6;margin-bottom:1.125rem}
+.tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.tag{font-size:.67rem;font-weight:600;background:var(--c-tag-bg);color:var(--c-tag-text);padding:.18rem .55rem;border-radius:var(--r-pill);letter-spacing:.03em;transition:background var(--transition),color var(--transition)}
+
+/* ─── WHY GRID ─── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{padding:1.875rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r)}
+.why-n{font-family:var(--font-d);font-size:2.75rem;font-weight:700;line-height:1;color:rgba(255,255,255,.08);margin-bottom:.875rem}
+.why-h{font-family:var(--font-d);font-size:1.175rem;font-weight:600;color:#fff;margin-bottom:.4rem}
+.why-p{font-size:.8rem;color:rgba(255,255,255,.42);line-height: 1.6}
+
+/* ─── SERVICES GRID ─── */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--c-border);border-radius:var(--r);overflow:hidden} .svc-grid > div:last-child:nth-child(odd) { grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; }
+.svc-card{background:var(--c-surface);padding:2.25rem;display:grid;grid-template-columns:48px 1fr;gap:1.25rem;align-items:start;transition:background var(--transition)}
+.svc-card:hover{background:var(--c-primary-bg)}
+.svc-icon{width:44px;height:44px;border-radius:8px;background:var(--c-primary-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background var(--transition)}
+.svc-icon svg{width:20px;height:20px;stroke:var(--c-primary);fill:none;stroke-width:1.75;transition:stroke var(--transition)}
+.svc-h{font-family:var(--font-d);font-size:1.2rem;font-weight:600;color:var(--c-ink);margin-bottom:.375rem;transition:color var(--transition)}
+.svc-p{font-size:.8rem;color:var(--c-muted);line-height: 1.6}
+
+/* ─── CTA BAND ─── */
+.cta-band{background:var(--c-accent);padding:4.25rem 2.5rem;transition:background var(--transition)}
+.cta-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta-h{font-family:var(--font-d);font-size:2.25rem;font-weight:600;color:#fff;line-height: 1.6;margin-bottom:.375rem}
+body.ab .cta-h{color:var(--c-ink)}
+.cta-p{font-size:.9rem;color:rgba(255,255,255,.75)}
+body.ab .cta-p{color:rgba(28,36,25,.65)}
+.cta-btns{display:flex;gap:.875rem;flex-wrap:wrap;align-items:center}
+.btn-cta-w{
+  background:#fff;color:var(--c-ink);
+  padding:.7rem 1.75rem;border-radius:var(--r-pill);
+  font-size:.825rem;font-weight:700;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:background var(--transition),transform .15s;white-space:nowrap;
+}
+.btn-cta-w svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5}
+.btn-cta-w:hover{background:var(--c-surface-alt);transform:translateY(-1px)}
+.btn-cta-o{
+  border:1.5px solid rgba(255,255,255,.4);color:rgba(255,255,255,.9);
+  padding:.7rem 1.4rem;border-radius:var(--r-pill);
+  font-size:.825rem;font-weight:600;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:border-color var(--transition),color var(--transition);
+}
+body.ab .btn-cta-o{border-color:rgba(28,36,25,.2);color:rgba(28,36,25,.75)}
+.btn-cta-o:hover{border-color:rgba(255,255,255,.75);color:#fff}
+
+/* ─── TESTI (Praras only) ─── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--c-border);border-radius:var(--r);overflow:hidden}
+.testi-card{background:var(--c-surface);padding:2rem}
+.stars{font-size:.75rem;letter-spacing:.1em;color:var(--c-accent);margin-bottom:.875rem;transition:color var(--transition)}
+.testi-q{font-family:var(--font-d);font-size:1.0625rem;font-style:italic;color:var(--c-body);line-height: 1.6;margin-bottom:1.25rem}
+.testi-auth{display:flex;align-items:center;gap:.75rem;padding-top:1rem;border-top:1px solid var(--c-border)}
+.testi-av{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:var(--c-primary);display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;font-weight:800;color:#fff;transition:background var(--transition);
+}
+.testi-name{font-size:.78rem;font-weight:700;color:var(--c-ink)}
+.testi-role{font-size:.72rem;color:var(--c-muted)}
+
+/* ─── AIRBLISS: HOW IT WORKS ─── */
+.how-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--c-border);border-radius:var(--r);overflow:hidden}
+.how-step{background:var(--c-surface);padding:2rem 1.625rem;position:relative}
+.how-step:last-child::after{display:none}
+.how-step::after{content:'→';position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-size:1rem;color:var(--c-border-s);z-index:1}
+.how-n{font-family:var(--font-d);font-size:3rem;font-weight:700;color:var(--c-primary-bg);line-height:1;margin-bottom:.75rem;transition:color var(--transition)}
+.how-h{font-family:var(--font-d);font-size:1.2rem;font-weight:600;color:var(--c-ink);margin-bottom:.4rem}
+.how-p{font-size:.8rem;color:var(--c-muted);line-height: 1.6}
+
+/* ─── AIRBLISS: PRODUCT CARDS ─── */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--c-border);border-radius:var(--r);overflow:hidden}
+.prod-card{background:var(--c-surface);display:flex;flex-direction:column}
+.prod-head{background:var(--c-primary);padding:1.875rem 1.75rem;transition:background var(--transition)}
+.prod-cat{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.5rem}
+.prod-h{font-family:var(--font-d);font-size:1.35rem;font-weight:600;color:#fff;margin-bottom:.25rem}
+.prod-body{padding:1.75rem;flex:1;display:flex;flex-direction:column;gap:1rem}
+.prod-p{font-size:.8rem;color:var(--c-muted);line-height: 1.6}
+.feat-list{list-style:none;margin-top:auto}
+.feat-list li{
+  font-size:.78rem;color:var(--c-body);padding:.35rem 0;
+  display:flex;align-items:flex-start;gap:.5rem;
+  border-bottom:1px solid var(--c-border);
+}
+.feat-list li:last-child{border:none}
+.feat-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--c-primary);flex-shrink:0;margin-top:.45rem;transition:background var(--transition)}
+
+/* ─── AIRBLISS: SEGMENTS ─── */
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border-radius:var(--r);overflow:hidden}
+.seg-card{background:var(--c-ink);padding:2rem 1.75rem;transition:background var(--transition)}
+.seg-card:hover{background:rgba(255,255,255,.04)}
+.seg-icon{width:38px;height:38px;border-radius:7px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.seg-icon svg{width:18px;height:18px;stroke:var(--c-accent);fill:none;stroke-width:1.75;transition:stroke var(--transition)}
+.seg-h{font-family:var(--font-d);font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:.375rem}
+.seg-p{font-size:.78rem;color:rgba(255,255,255,.38);line-height: 1.6}
+
+/* ─── SCIENCE SPLIT (Airbliss) ─── */
+.sci-split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.sci-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--c-border-s);border-radius:var(--r);overflow:hidden}
+.sci-card{background:var(--c-surface);padding:1.5rem}
+.sci-n{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--c-primary);line-height:1;margin-bottom:.3rem;transition:color var(--transition)}
+.sci-l{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted)}
+
+/* ─── SHARED FOOTER ─── */
+.site-footer{background:var(--c-ink);padding:4rem 2.5rem 2rem;transition:background var(--transition)}
+.foot-grid{max-width:1160px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2.25fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-brand-name{font-family:var(--font-d);font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:.75rem}
+.foot-brand-p{font-size:.8rem;color:rgba(255,255,255,.35);line-height: 1.6;max-width:220px;margin-bottom:1.25rem}
+.foot-switch-link{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--c-accent);cursor:pointer;transition:opacity var(--transition);border:none;background:none;
+  font-family:var(--font-s);
+}
+.foot-switch-link:hover{opacity:.7}
+.foot-switch-link svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5}
+.foot-col h4{font-size:.63rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:.875rem}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:.55rem}
+.foot-col a,.foot-col button{font-size:.8rem;color:rgba(255,255,255,.38);transition:color var(--transition);display:block;background:none;border:none;font-family:var(--font-s);text-align:left;cursor:pointer;padding:0}
+.foot-col a:hover,.foot-col button:hover{color:rgba(255,255,255,.8)}
+.foot-bottom{max-width:1160px;margin:1.5rem auto 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.foot-copy{font-size:.7rem;color:rgba(255,255,255,.2)}
+.foot-tag{font-family:var(--font-d);font-style:italic;font-size:.8rem;color:rgba(255,255,255,.15)}
+
+/* ─── AB logo in nav (inline svg shorthand) ─── */
+.ab-nav-svg{height:36px;width:auto}
+
+/* ─── UTILS ─── */
+.visually-hidden{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}
+
+/* ── WORLD-CLASS UPGRADES ── */
+:root {
+  --c-muted: #4a4a4a; 
+}
+.product-grid > div:first-child {
+  position: sticky !important;
+  top: 100px !important;
+  align-self: flex-start; 
+}
+.bento-grid > div {
+  background: var(--c-primary-bg) !important;
+  border: 1px solid rgba(154, 29, 30, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease !important;
+}
+.bento-grid > div:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 24px rgba(154, 29, 30, 0.08) !important;
+}
+.feat-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+.feat-list li {
+  position: relative !important;
+  padding-left: 1.75rem !important;
+  margin-bottom: 1.25rem !important;
+  color: #333 !important;
+  line-height: 1.7 !important;
+  list-style: none !important;
+}
+.feat-list li::before {
+  content: '✓' !important; background: transparent !important; width: auto !important; height: auto !important; border-radius: 0 !important; margin-top: 0 !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.15rem !important;
+  color: var(--c-primary) !important;
+  font-weight: 800 !important;
+  font-size: 1.1rem !important;
+}
+.product-grid p {
+  color: #333 !important;
+  line-height: 1.7 !important;
+}
+/* ────────────────────────── */
+
+
+
+
+
+
+/* ─── MEGA MENU HOVER BRIDGE & POSITIONS ─── */
+header .nav-dropdown, .site-nav .nav-dropdown, .nav-dropdown { position: relative !important; display: flex !important; align-items: center !important; height: 100% !important; }
+header .nav-dropdown::after, .site-nav .nav-dropdown::after, .nav-dropdown::after { content: "" !important; position: absolute !important; top: 100% !important; left: -20% !important; right: -20% !important; height: 50px !important; display: block !important; z-index: 90 !important; }
+header .mega-menu, .site-nav .mega-menu, .mega-menu {
+  position: absolute !important; top: calc(100% + 10px) !important; left: 50% !important; transform: translateX(-50%) translateY(15px) scale(0.98) !important;
+  background: rgba(255, 255, 255, 0.97) !important; -webkit-backdrop-filter: blur(40px) !important; backdrop-filter: blur(40px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important; border-radius: 24px !important;
+  padding: 0 !important; display: flex !important; min-width: 980px !important;
+  opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 1000 !important;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1) !important;
+  overflow-y: auto !important; overflow-x: hidden !important; max-height: calc(100vh - 100px) !important;
+}
+header .nav-dropdown:hover .mega-menu, .site-nav .nav-dropdown:hover .mega-menu, .nav-dropdown.is-active .mega-menu, header .nav-dropdown.is-active .mega-menu {
+  opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) scale(1) !important;
+}
+.mega-menu-inner { display: flex !important; width: 100% !important; min-height: min-content !important; }
+.mega-content { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 3rem !important; padding: 3rem !important; flex: 1 !important; background: var(--c-surface, #fff) !important; }
+.mega-featured { width: 320px !important; background: linear-gradient(135deg, var(--c-primary-bg, #FDF4F4) 0%, rgba(240, 131, 50, 0.05) 100%) !important; padding: 3rem !important; display: flex !important; flex-direction: column !important; justify-content: center !important; border-left: 1px solid var(--c-border, #EBE5E0) !important; }
+.mega-column-header { display: flex !important; align-items: center !important; gap: 0.75rem !important; margin-bottom: 1.5rem !important; padding-bottom: 0.75rem !important; border-bottom: 1px solid var(--c-border-s, #DED6CD) !important; }
+.mega-column-icon { width: 32px !important; height: 32px !important; border-radius: 8px !important; background: var(--c-primary-bg, #FDF4F4) !important; color: var(--c-primary, #9A1D1E) !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+.mega-column-header h3 { font-family: var(--font-d, serif) !important; font-size: 1.35rem !important; color: var(--c-ink, #181412) !important; font-weight: 700 !important; margin: 0 !important; }
+.mega-sub-header { font-size: 0.75rem !important; font-weight: 800 !important; color: var(--c-muted, #78695E) !important; text-transform: uppercase !important; letter-spacing: 0.15em !important; margin-top: 1.5rem !important; margin-bottom: 0.5rem !important; }
+.mega-column a { color: var(--c-body, #423933) !important; font-size: 0.9rem !important; font-weight: 700 !important; padding: 0.5rem 0.85rem !important; display: block !important; border-radius: 8px !important; margin-left: -0.85rem !important; text-decoration: none !important; }
+.mega-column a:hover { color: var(--c-primary, #9A1D1E) !important; transform: translateX(4px) !important; background: var(--c-primary-bg, #FDF4F4) !important; }
+.mega-menu-services { min-width: 320px !important; }
+.mega-menu-services .mega-content { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; padding: 2rem !important; }
+
+</style>
+</head>
+<body>
+
+<!-- INLINE AIRBLISS LOGO DEF (reuse via clone) -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ab-logo" viewBox="0 0 471 250">
+    <g transform="translate(235.71 78) scale(1.05)">
+      <circle r="56" fill="none" stroke="#234A32" stroke-width="3.2" stroke-dasharray="155 30" stroke-linecap="round" transform="rotate(-20)"/>
+      <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#234A32"/>
+      <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#5C7A4A" transform="rotate(120)"/>
+      <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#9DBF82" transform="rotate(240)"/>
+      <circle r="7" fill="#FBF8F0"/><circle r="3.4" fill="#C18A5B"/>
+    </g>
+    <g fill="#234A32" transform="translate(40 196) scale(0.08286 -0.08286)">
+      <g><path d="M147 210H517L487 290H177ZM330 542 450 260 458 240 560 0H655L330 735L5 0H100L204 246L212 264Z"/></g>
+      <g transform="translate(790 0)"><path d="M80 700V0H165V700Z"/></g>
+      <g transform="translate(1165 0)"><path d="M205 345 445 0H550L300 345ZM80 700V0H165V700ZM127 625H270Q315 625 349.5 609Q384 593 403.5 563Q423 533 423 490Q423 447 403.5 417Q384 387 349.5 371Q315 355 270 355H127V280H270Q338 280 391.5 305.5Q445 331 476.5 378.5Q508 426 508 490Q508 555 476.5 602Q445 649 391.5 674.5Q338 700 270 700H127Z"/></g>
+      <g transform="translate(1855 0)"><path d="M147 370H260Q323 370 369.5 388Q416 406 442 441Q468 476 468 525Q468 585 442 623.5Q416 662 369.5 681Q323 700 260 700H80V0H270Q338 0 391.5 22.5Q445 45 476.5 90.5Q508 136 508 205Q508 253 490 288Q472 323 439.5 345.5Q407 368 364 379Q321 390 270 390H147V343H270Q304 343 332 334.5Q360 326 380.5 309Q401 292 412 267Q423 242 423 210Q423 167 403.5 137Q384 107 349.5 91Q315 75 270 75H165V625H260Q313 625 348 597.5Q383 570 383 520Q383 487 367 464Q351 441 323 429Q295 417 260 417H147Z"/></g>
+      <g transform="translate(2543 0)"><path d="M80 700V0H440V80H165V700Z"/></g>
+      <g transform="translate(3123 0)"><path d="M80 700V0H165V700Z"/></g>
+      <g transform="translate(3498 0)"><path d="M106 212 38 166Q61 120 97.5 79.5Q134 39 182.5 14.5Q231 -10 288 -10Q330 -10 368.5 4Q407 18 437.5 44Q468 70 485.5 107Q503 144 503 190Q503 238 486 272.5Q469 307 442.5 331.5Q416 356 385 372Q354 388 326 398Q265 419 229.5 440.5Q194 462 179 486.5Q164 511 164 540Q164 574 190 601.5Q216 629 273 629Q314 629 342.5 613Q371 597 391 572Q411 547 424 521L497 563Q480 600 450 633.5Q420 667 377.5 688.5Q335 710 278 710Q219 710 173 686.5Q127 663 101 622Q75 581 75 529Q75 481 93.5 448Q112 415 141 392.5Q170 370 202 355.5Q234 341 260 332Q300 318 335.5 300.5Q371 283 393 255Q415 227 415 180Q415 132 381 101Q347 70 291 70Q249 70 216 88Q183 106 156.5 138Q130 170 106 212Z"/></g>
+      <g transform="translate(4176 0)"><path d="M106 212 38 166Q61 120 97.5 79.5Q134 39 182.5 14.5Q231 -10 288 -10Q330 -10 368.5 4Q407 18 437.5 44Q468 70 485.5 107Q503 144 503 190Q503 238 486 272.5Q469 307 442.5 331.5Q416 356 385 372Q354 388 326 398Q265 419 229.5 440.5Q194 462 179 486.5Q164 511 164 540Q164 574 190 601.5Q216 629 273 629Q314 629 342.5 613Q371 597 391 572Q411 547 424 521L497 563Q480 600 450 633.5Q420 667 377.5 688.5Q335 710 278 710Q219 710 173 686.5Q127 663 101 622Q75 581 75 529Q75 481 93.5 448Q112 415 141 392.5Q170 370 202 355.5Q234 341 260 332Q300 318 335.5 300.5Q371 283 393 255Q415 227 415 180Q415 132 381 101Q347 70 291 70Q249 70 216 88Q183 106 156.5 138Q130 170 106 212Z"/></g>
+    </g>
+    <g fill="#5C7A4A" transform="translate(76.3 224) scale(0.02 -0.02)">
+      <g><path d="M140 235H499L481 287H158ZM318 600 456 266 461 253 565 0H627L318 727L9 0H71L176 257L182 269Z"/></g>
+      <g transform="translate(1776 0)"><path d="M127 376H240Q299 376 344 393.5Q389 411 414.5 445.5Q440 480 440 531Q440 587 415 624.5Q390 662 344.5 681Q299 700 236 700H84V0H246Q314 0 366.5 22Q419 44 449 89Q479 134 479 203Q479 251 459.5 286.5Q440 322 407.5 345Q375 368 334 379.5Q293 391 250 391H127V359H246Q282 359 313.5 349Q345 339 370 319.5Q395 300 409 271.5Q423 243 423 206Q423 154 401 119.5Q379 85 339 67Q299 49 246 49H139V651H236Q304 651 344.5 618.5Q385 586 385 528Q385 487 365 460.5Q345 434 311 421Q277 408 236 408H127Z"/></g>
+      <g transform="translate(2729 0)"><path d="M203 334 435 0H503L264 334ZM84 700V0H139V700ZM113 651H244Q297 651 338 633Q379 615 402.5 581Q426 547 426 497Q426 447 403 412.5Q380 378 338.5 360.5Q297 343 244 343H113V294H244Q312 294 365.5 317.5Q419 341 450 387Q481 433 481 497Q481 562 450 607Q419 652 365.5 676Q312 700 244 700H113Z"/></g>
+      <g transform="translate(3672 0)"><path d="M113 0H460V52H113ZM113 648H460V700H113ZM113 358H440V410H113ZM84 700V0H139V700Z"/></g>
+      <g transform="translate(4626 0)"><path d="M140 235H499L481 287H158ZM318 600 456 266 461 253 565 0H627L318 727L9 0H71L176 257L182 269Z"/></g>
+      <g transform="translate(5682 0)"><path d="M14 648H198V0H253V648H437V700H14Z"/></g>
+      <g transform="translate(6553 0)"><path d="M113 355H585V407H113ZM548 700V0H604V700ZM84 700V0H139V700Z"/></g>
+      <g transform="translate(8381 0)"><path d="M102 350Q102 438 139.5 506.5Q177 575 242.5 614.5Q308 654 392 654Q476 654 541.5 614.5Q607 575 644 506.5Q681 438 681 350Q681 263 644 194Q607 125 541.5 85.5Q476 46 392 46Q308 46 242.5 85.5Q177 125 139.5 194Q102 263 102 350ZM44 350Q44 273 70 207.5Q96 142 143 93.5Q190 45 253.5 18Q317 -9 392 -9Q467 -9 530.5 18Q594 45 641 93.5Q688 142 714 207.5Q740 273 740 350Q740 427 714 492.5Q688 558 641 606.5Q594 655 530.5 682Q467 709 392 709Q317 709 253.5 682Q190 655 143 606.5Q96 558 70 492.5Q44 427 44 350Z"/></g>
+      <g transform="translate(9585 0)"><path d="M113 648H420V700H113ZM113 353H410V405H113ZM84 700V0H139V700Z"/></g>
+      <g transform="translate(11205 0)"><path d="M103 350Q103 440 141 508Q179 576 243 614.5Q307 653 386 653Q435 653 476 642Q517 631 551 609.5Q585 588 611 558V631Q567 670 515 689.5Q463 709 386 709Q313 709 250.5 682.5Q188 656 142 608Q96 560 70 494Q44 428 44 350Q44 272 70 206Q96 140 142 92Q188 44 250.5 17.5Q313 -9 386 -9Q463 -9 515 10.5Q567 30 611 69V143Q585 113 551.5 91Q518 69 477 58Q436 47 386 47Q307 47 243 86Q179 125 141 193Q103 261 103 350Z"/></g>
+      <g transform="translate(12310 0)"><path d="M84 700V0H428V52H139V700Z"/></g>
+      <g transform="translate(13172 0)"><path d="M113 0H460V52H113ZM113 648H460V700H113ZM113 358H440V410H113ZM84 700V0H139V700Z"/></g>
+      <g transform="translate(14126 0)"><path d="M140 235H499L481 287H158ZM318 600 456 266 461 253 565 0H627L318 727L9 0H71L176 257L182 269Z"/></g>
+      <g transform="translate(15182 0)"><path d="M616 700V114L84 727V0H139V584L671 -27V700Z"/></g>
+    </g>
+  </symbol>
+</svg>
+
+
+
+<!-- ════ SHARED NAV ════ -->
+<header class="site-nav" role="banner">
+  <div class="nav-inner">
+    <!-- Praras logo -->
+    <a href="#" class="nav-logo" aria-label="Praras Biosciences home">
+      <!-- Praras real logo (hidden when AB brand active) -->
+      <img
+        src="assets/images/cropped-Praras_Biosciences_Logo_New2.png"
+        alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+        class="nav-logo-pr-img"
+        style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 14px;"
+      />
+      <!-- Airbliss logo (shown via CSS when .ab brand active) -->
+      <div class="nav-logo-ab" aria-hidden="true">
+        <svg class="ab-nav-svg" xmlns="http://www.w3.org/2000/svg"><use href="#ab-logo"/></svg>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <span class="pr-only"><a href="#">About</a></span>
+      <span class="pr-only"><a href="#">Industries</a></span>
+      <span class="ab-only" style="display:none"><a href="#">Products</a></span>
+      <span class="ab-only" style="display:none"><a href="#">Who It's For</a></span>
+      <a href="#">Services</a>
+      <a href="#">Careers</a>
+      <a href="#" class="nav-cta">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════
+     PRARAS PAGE
+════════════════════════════════════════ -->
+<main id="pg-pr" class="page on" role="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div style="margin-bottom:1.75rem">
+          <img
+            src="assets/images/cropped-Praras_Biosciences_Logo_New2.png"
+            alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+            style="height:62px;width:auto;background:#fff;border-radius:8px;padding:8px 16px;"
+          />
+        </div>
+        <div class="hero-pill"><span class="hero-pill-dot"></span>FSSAI · FSSC · DSIR · Halal Certified</div>
+        <h1 class="hero-h1">Science that<br><em>improves</em><br>what you make.</h1>
+        <p class="hero-p">We specialize in providing solutions for product and / or process improvement, cost savings, import substitution and greater sustainability to our customers.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-hero-p">Explore industries <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#" class="btn-hero-g">Our services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glass">
+          <div class="hg-label">Food additives</div>
+          <div class="hg-title">Baking · Meat · Pasta · Snacks</div>
+          <div class="hg-body">Baking improvers, emulsifiers, anti-staling agents, and texturisers that directly reduce your per-unit cost.</div>
+        </div>
+        <div class="hero-glass">
+          <div class="hg-label">Beverage science</div>
+          <div class="hg-title">Brewery · Distillery · Wine · Juice</div>
+          <div class="hg-body">Fermentation boosters and clarifying agents for alcoholic and non-alcoholic beverage producers.</div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hs-num">25+</div><div class="hs-lbl">Years R&amp;D</div></div>
+          <div class="hero-stat"><div class="hs-num">300+</div><div class="hs-lbl">Products</div></div>
+          <div class="hero-stat"><div class="hs-num">500+</div><div class="hs-lbl">Clients</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT STRIP -->
+  <div class="cert-strip">
+    <div class="cert-inner">
+      <div class="cert-item">FSSAI Licensed</div><div class="cert-div"></div>
+      <div class="cert-item">FSSC 22000</div><div class="cert-div"></div>
+      <div class="cert-item">DSIR Certified</div><div class="cert-div"></div>
+      <div class="cert-item">Halal Certified</div><div class="cert-div"></div>
+      <div class="cert-item">ISO Compliant</div>
+    </div>
+  </div>
+
+  <!-- INDUSTRIES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div class="sec-hd-text">
+            <div class="eyebrow">Industries we serve</div>
+            <h2 class="h2">From fermentation<br>to <em>formulation</em></h2>
+            <p class="sec-body">Specialising in product and process improvement, cost savings, and import substitution across food, beverages, and beyond.</p>
+          </div>
+        </div>
+        <a href="#" class="arr-link">All solutions <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card">
+          <div class="ind-label">01 — Segment</div>
+          <h3 class="ind-h">Food</h3>
+          <p class="ind-p">Our food additives enables direct cost savings while ensuring global food safety standards.</p>
+          <div class="tags"><span class="tag">Baking</span><span class="tag">Meat</span><span class="tag">Pasta</span><span class="tag">Snacks</span></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-label">02 — Segment</div>
+          <h3 class="ind-h">Beverages</h3>
+          <p class="ind-p">Evolve your process by applying our knowledge to alcoholic and non-alcoholic beverages.</p>
+          <div class="tags"><span class="tag">Breweries</span><span class="tag">Distilleries</span><span class="tag">Wine</span><span class="tag">Juice</span></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-label">03 — Segment</div>
+          <h3 class="ind-h">Others</h3>
+          <p class="ind-p">Improve quality and process efficiencies by using our fermentation boosters in other process products.</p>
+          <div class="tags"><span class="tag">Plantation</span></div>
+        </div>
+        <div class="ind-card ab-card" onclick="brand('ab')" role="button" tabindex="0" aria-label="Go to Airbliss sub-brand">
+          <div class="ab-sub-badge">↗ Sub-brand</div>
+          <div class="ind-label" style="color:rgba(255,255,255,.35)">04 — Sub-brand</div>
+          <h3 class="ind-h">Airbliss</h3>
+          <p class="ind-p">Get next generation environment friendly and sustainable solutions for mal-odour, facility management, bio-composting, and more.</p>
+          <div class="tags"><span class="tag">Malodour</span><span class="tag">Hygiene</span><span class="tag">Biocompost</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PRARAS (dark) -->
+  <section class="section deep">
+    <div class="wrap">
+      <div class="sec-hd" style="margin-bottom:2.5rem">
+        <div class="sec-hd-left">
+          <div class="sec-rail" style="background:var(--c-accent)"></div>
+          <div>
+            <div class="eyebrow">Why Praras</div>
+            <h2 class="h2 light">Built on science.<br><em>Proven</em> in production.</h2>
+          </div>
+        </div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card"><div class="why-n">01</div><div class="why-h">In-house R&amp;D</div><p class="why-p">Our DSIR-certified facility develops and validates every formulation before it reaches your production line.</p></div>
+        <div class="why-card"><div class="why-n">02</div><div class="why-h">Regulatory certainty</div><p class="why-p">FSSAI, FSSC 22000, and Halal certifications maintained across our entire catalogue for domestic and export use.</p></div>
+        <div class="why-card"><div class="why-n">03</div><div class="why-h">Troubleshooting support</div><p class="why-p">When yields drop or batches fail, our technical team diagnoses root causes — not just upsells a new product.</p></div>
+        <div class="why-card"><div class="why-n">04</div><div class="why-h">Import substitution</div><p class="why-p">Domestically manufactured alternatives to costly imports at equal or better efficacy across our range.</p></div>
+        <div class="why-card"><div class="why-n">05</div><div class="why-h">Cost engineering</div><p class="why-p">Every additive is designed with your process economics in mind — dosage optimisation that directly reduces input cost.</p></div>
+        <div class="why-card"><div class="why-n">06</div><div class="why-h">Sustainability focus</div><p class="why-p">Enzyme-assisted and fermentation-based formulations reduce chemical load and waste across your production chain.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">Our services</div>
+            <h2 class="h2">Beyond the <em>product</em></h2>
+            <p class="sec-body">We work as a technical partner throughout your production cycle — from pilot batches to full-scale troubleshooting.</p>
+          </div>
+        </div>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+          <div><div class="svc-h">Contract Manufacturing</div><p class="svc-p">Custom blending and white-label production in our FSSC-certified facility. Scale-up, QC, and regulatory documentation handled end to end.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div>
+          <div><div class="svc-h">Process Troubleshooting</div><p class="svc-p">On-site or remote diagnosis of yield losses, texture defects, fermentation failures, and stability issues with actionable fixes.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+          <div><div class="svc-h">R&D &amp; Contract Research</div><p class="svc-p">New product development, reformulation, shelf-life extension, and regulatory support co-developed with your team.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+          <div><div class="svc-h">Technical Consulting</div><p class="svc-p">Expert guidance on ingredient selection, import substitution strategy, and process optimisation to improve margins.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-inner">
+      <div>
+        <div class="cta-h">Ready to upgrade your formulation?</div>
+        <p class="cta-p">Our technical team will recommend the right additive stack for your process and volume.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="#" class="btn-cta-w">Request a sample <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="tel:+918048904262" class="btn-cta-o">+91-80-48904262</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="section tinted">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">Client perspectives</div>
+            <h2 class="h2">Trusted across<br>India's food industry</h2>
+          </div>
+        </div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-q">"Switching to Praras's flour improver cut our bread returns by 40%. Their team was on-site within a week — that kind of technical response is rare."</p><div class="testi-auth"><div class="testi-av">RK</div><div><div class="testi-name">Rajesh Kumar</div><div class="testi-role">Production Head, Large Bakery Chain</div></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-q">"Their brewery additives replaced three separate imports with one locally sourced SKU. We saved 18% on input costs in the first quarter alone."</p><div class="testi-auth"><div class="testi-av">SP</div><div><div class="testi-name">Shreya Pillai</div><div class="testi-role">Operations Director, Microbrewery Group</div></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-q">"The DSIR certification and in-house R&D gave our QA team the documentation confidence we needed for export compliance. No other supplier offered that."</p><div class="testi-auth"><div class="testi-av">AM</div><div><div class="testi-name">Anand Mehta</div><div class="testi-role">Quality Manager, Food Export Company</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════════════════════════════
+     AIRBLISS PAGE
+════════════════════════════════════════ -->
+<main id="pg-ab" class="page" role="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-pill"><span class="hero-pill-dot"></span>Probiotic · Microbial · B2B Cleaning</div>
+        <h1 class="hero-h1">Clean spaces.<br><em>Living</em><br>solutions.</h1>
+        <p class="hero-p">Better Microbial Solutions through Microbiology and Nanotechnology to aid towards environment and healthy human lifestyle. Environmentally friendly, effective, safe, and cost-effective way to keep your home clean and sanitary.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-hero-p">Explore products <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#" class="btn-hero-g">Request a demo</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glass">
+          <div class="hg-label">Surface care</div>
+          <div class="hg-title">Probiotic surface cleaners</div>
+          <div class="hg-body">Multi-strain formulations that colonise treated surfaces, preventing biofilm regrowth — not just cleaning it once.</div>
+        </div>
+        <div class="hero-glass">
+          <div class="hg-label">Odour control</div>
+          <div class="hg-title">Bio-enzymatic odour eliminators</div>
+          <div class="hg-body">Enzymatic formulas that digest the organic source of odour rather than masking it with fragrance.</div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hs-num">100%</div><div class="hs-lbl">Bio-based</div></div>
+          <div class="hero-stat"><div class="hs-num">12+</div><div class="hs-lbl">Formulations</div></div>
+          <div class="hero-stat"><div class="hs-num">Zero</div><div class="hs-lbl">Harsh chemicals</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT STRIP -->
+  <div class="cert-strip">
+    <div class="cert-inner">
+      <div class="cert-item">DSIR Certified R&D</div><div class="cert-div"></div>
+      <div class="cert-item">Halal Certified</div><div class="cert-div"></div>
+      <div class="cert-item">Eco-safe Formulations</div><div class="cert-div"></div>
+      <div class="cert-item">B2B Supply Ready</div><div class="cert-div"></div>
+      <div class="cert-item">Backed by Praras Biosciences</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">How Airbliss works</div>
+            <h2 class="h2">Probiotics clean differently.<br>Here's <em>why that matters.</em></h2>
+            <p class="sec-body">Conventional cleaners kill everything on contact. Airbliss uses live probiotic cultures that establish themselves on surfaces, crowding out pathogens naturally and working long after application.</p>
+          </div>
+        </div>
+      </div>
+      <div class="how-row">
+        <div class="how-step"><div class="how-n">01</div><div class="how-h">Apply</div><p class="how-p">Spray or mop the Airbliss solution onto the surface. Probiotic cultures are delivered in their active state, ready to work immediately.</p></div>
+        <div class="how-step"><div class="how-n">02</div><div class="how-h">Colonise</div><p class="how-p">Beneficial bacteria establish a living colony on the surface, bio-competitively excluding harmful pathogens and odour-causing organisms.</p></div>
+        <div class="how-step"><div class="how-n">03</div><div class="how-h">Digest</div><p class="how-p">Enzymes secreted by probiotic strains break down organic matter — the root cause of persistent odour and biofilm — rather than masking it.</p></div>
+        <div class="how-step"><div class="how-n">04</div><div class="how-h">Protect</div><p class="how-p">The probiotic colony continues working for days after application, providing residual protection that no chemical cleaner can match.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">Product range</div>
+            <h2 class="h2">Formulated for every<br><em>surface and application</em></h2>
+            <p class="sec-body">Each Airbliss product is developed in Praras Biosciences' DSIR-certified R&D facility and validated for B2B commercial use at scale.</p>
+          </div>
+        </div>
+        <a href="#" class="arr-link">Full catalogue <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-head"><div class="prod-cat">Surface Care</div><div class="prod-h">Microbial Floor Cleaner</div></div>
+          <div class="prod-body"><p class="prod-p">Naturally occurring bacteria specially selected for their ability to break down a wide range of organic materials on surfaces.</p>
+          <ul class="feat-list"><li>Water based</li><li>Alcohol free</li><li>Water saving</li><li>Eco-friendly</li></ul></div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-head"><div class="prod-cat">Surface Care</div><div class="prod-h">Concentrate Floor Cleaner</div></div>
+          <div class="prod-body"><p class="prod-p">High-performance concentrate for heavy-duty surface cleaning, breaking down tough organic stains and preventing biofilm build-up.</p>
+          <ul class="feat-list"><li>Water based</li><li>Alcohol free</li><li>Water saving</li><li>Eco-friendly</li></ul></div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-head"><div class="prod-cat">Deep Cleaning</div><div class="prod-h">Liquid Enzymatic Cleaner</div></div>
+          <div class="prod-body"><p class="prod-p">Advanced enzymatic formulation designed to digest stubborn organic matter, grease, and grime without harsh chemicals.</p>
+          <ul class="feat-list"><li>Water based</li><li>Alcohol free</li><li>Water saving</li><li>Eco-friendly</li></ul></div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-head"><div class="prod-cat">Odour Control</div><div class="prod-h">Concentrate Air Freshener</div></div>
+          <div class="prod-body"><p class="prod-p">Environmentally friendly, effective, safe, and cost-effective way to keep your environment fresh and sanitary.</p>
+          <ul class="feat-list"><li>Water based</li><li>Alcohol free</li><li>Water saving</li><li>Eco-friendly</li></ul></div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-head"><div class="prod-cat">Waste Management</div><div class="prod-h">Biological Waste Mgmt</div></div>
+          <div class="prod-body"><p class="prod-p">Bacteria-based sanitation products that are ideal for a variety of applications, including waste management and composting.</p>
+          <ul class="feat-list"><li>Water based</li><li>Alcohol free</li><li>Water saving</li><li>Eco-friendly</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGMENTS (dark) -->
+  <section class="section deep">
+    <div class="wrap">
+      <div class="sec-hd" style="margin-bottom:2.5rem">
+        <div class="sec-hd-left">
+          <div class="sec-rail" style="background:var(--c-accent)"></div>
+          <div>
+            <div class="eyebrow">Who it's for</div>
+            <h2 class="h2 light">Built for industries where<br><em>hygiene is non-negotiable.</em></h2>
+          </div>
+        </div>
+      </div>
+      <div class="seg-grid">
+        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="seg-h">Hospitality &amp; Hotels</div><p class="seg-p">Odour-free rooms, lobbies, and washrooms without the chemical residue that guests notice.</p></div>
+        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg></div><div class="seg-h">Food Processing Units</div><p class="seg-p">Facility hygiene, drain management, and waste zone treatment meeting FSSAI floor-level standards.</p></div>
+        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3"/></svg></div><div class="seg-h">Corporate Facilities</div><p class="seg-p">Office blocks, IT parks, and commercial campuses requiring low-chemical, safe-for-occupants cleaning.</p></div>
+        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="seg-h">Healthcare &amp; Clinics</div><p class="seg-p">Probiotic protocols for non-critical areas where chemical overload creates antimicrobial resistance risk.</p></div>
+        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="seg-h">Warehousing &amp; Logistics</div><p class="seg-p">Loading docks, cold-chain facilities, and packing zones with persistent odour from organic cargo.</p></div>
+        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 22V12"/></svg></div><div class="seg-h">Municipal &amp; Public Spaces</div><p class="seg-p">Public restrooms, waste transfer stations, and civic composting facilities across India.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE SPLIT -->
+  <section class="section tinted">
+    <div class="wrap">
+      <div class="sci-split">
+        <div>
+          <div class="sec-hd-left" style="margin-bottom:1.5rem">
+            <div class="sec-rail"></div>
+            <div>
+              <div class="eyebrow">Backed by science</div>
+              <h2 class="h2">R&D from Praras.<br><em>Delivered as Airbliss.</em></h2>
+            </div>
+          </div>
+          <p style="font-size:.9rem;color:var(--c-muted);line-height: 1.6;margin-bottom: 1.5rem;">PrARAS ® has developed a range of products for sanitation and cleaning by harvesting the bacteria. Our products are made with naturally occurring bacteria that have been specially selected for their ability to break down a wide range of organic materials.</p>
+          <p style="font-size:.9rem;color:var(--c-muted);line-height: 1.6;margin-bottom: 1.5rem;">This makes them ideal for a variety of applications, including surface cleaning, stain removal, odor control, and waste management.</p>
+          <button class="arr-link" onclick="brand('pr')" style="font-family:'Mulish',sans-serif;background:none;padding:0;cursor:pointer">About Praras Biosciences <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="sci-cards">
+          <div class="sci-card"><div class="sci-n">25+</div><div class="sci-l">Years of fermentation R&D</div></div>
+          <div class="sci-card"><div class="sci-n">12+</div><div class="sci-l">Probiotic strains in use</div></div>
+          <div class="sci-card"><div class="sci-n">DSIR</div><div class="sci-l">Certified research facility</div></div>
+          <div class="sci-card"><div class="sci-n">Zero</div><div class="sci-l">Harsh chemical inputs</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-inner">
+      <div>
+        <div class="cta-h">Ready to switch your facility to living clean?</div>
+        <p class="cta-p">Talk to our team for a product recommendation and free sample for your space.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="mailto:info@prarasbiosciences.com" class="btn-cta-w">Request a sample <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="tel:+918048904262" class="btn-cta-o">+91-80-48904262</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ════ SHARED FOOTER ════ -->
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div class="foot-top">
+      <div>
+        <!-- Praras footer logo (swapped by JS on brand switch) -->
+        <div id="foot-logo-pr" style="margin-bottom:.875rem">
+          <img
+            src="assets/images/cropped-Praras_Biosciences_Logo_New2.png"
+            alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+            style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
+          />
+        </div>
+        <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:38px;width:auto"><use href="#ab-logo"/></svg>
+        </div>
+        <div class="foot-brand-name" id="foot-brand-name" style="display:none">Praras Biosciences</div>
+        <p class="foot-brand-p" id="foot-brand-p">Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.</p>
+        <button class="foot-switch-link" id="foot-switch" onclick="brand('ab')">
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <span id="foot-switch-label">Visit Airbliss</span>
+        </button>
+      </div>
+      <div class="foot-col">
+        <h4 id="foot-col1-h">Products</h4>
+        <ul id="foot-col1">
+          <li class="pr-f"><a href="#">Food Additives</a></li>
+          <li class="pr-f"><a href="#">Beverage Solutions</a></li>
+          <li class="pr-f"><a href="#">Contract Mfg</a></li>
+          <li class="ab-f" style="display:none"><a href="#">ProClean Surface</a></li>
+          <li class="ab-f" style="display:none"><a href="#">OdourZero Bio</a></li>
+          <li class="ab-f" style="display:none"><a href="#">BioCompost Activator</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li class="pr-f"><a href="#">Shop</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><button onclick="brand('ab')" id="foot-ab-btn">Airbliss ↗</button></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918048904262">+91-80-48904262</a></li>
+          <li><a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a></li>
+          <li><a href="#">Mon–Fri, 9AM–5:30PM</a></li>
+          <li><a href="#">Bengaluru, India</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy" id="foot-copy">© 2026 Praras Biosciences Pvt Ltd. All rights reserved.</p>
+      <span class="foot-tag" id="foot-tag">Biosciences for Better Value</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const savedBrand = localStorage.getItem('praras_brand');
+  if (savedBrand === 'ab') {
+    brand('ab', false);
+  }
+  
+  const abCard = document.querySelector('.ind-card.ab-card');
+  if (abCard) abCard.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') brand('ab'); });
+});
+
+function brand(b, scroll = true) {
+  const isAb = b === 'ab';
+  // Save preference
+  localStorage.setItem('praras_brand', b);
+  // body class
+  document.body.classList.toggle('ab', isAb);
+  // pages
+  document.getElementById('pg-pr').classList.toggle('on', !isAb);
+  document.getElementById('pg-ab').classList.toggle('on', isAb);
+  // nav links
+  document.querySelectorAll('.pr-only').forEach(el => el.style.display = isAb ? 'none' : '');
+  document.querySelectorAll('.ab-only').forEach(el => el.style.display = isAb ? '' : 'none');
+  // footer
+  // footer logos
+  document.getElementById('foot-logo-pr').style.display = isAb ? 'none' : 'block';
+  document.getElementById('foot-logo-ab').style.display = isAb ? 'block' : 'none';
+  document.getElementById('foot-brand-name').textContent = isAb ? 'Airbliss' : 'Praras Biosciences';
+  document.getElementById('foot-brand-p').textContent = isAb
+    ? 'Probiotic cleaning solutions for B2B facility management — developed by Praras Biosciences.'
+    : 'Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.';
+  document.getElementById('foot-switch-label').textContent = isAb ? 'Back to Praras Biosciences' : 'Visit Airbliss';
+  document.getElementById('foot-switch').onclick = () => brand(isAb ? 'pr' : 'ab');
+  document.getElementById('foot-ab-btn').textContent = isAb ? 'Praras Biosciences ↗' : 'Airbliss ↗';
+  document.getElementById('foot-ab-btn').onclick = () => brand(isAb ? 'pr' : 'ab');
+  document.querySelectorAll('.pr-f').forEach(el => el.style.display = isAb ? 'none' : '');
+  document.querySelectorAll('.ab-f').forEach(el => el.style.display = isAb ? '' : 'none');
+  document.getElementById('foot-copy').textContent = isAb
+    ? '© 2026 Airbliss — A Praras Biosciences Pvt Ltd brand. All rights reserved.'
+    : '© 2026 Praras Biosciences Pvt Ltd. All rights reserved.';
+  document.getElementById('foot-tag').textContent = isAb ? 'Clean spaces. Living solutions.' : 'Biosciences for Better Value';
+  if (scroll) {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+}
+</script>
+
+
+
+
+<script>
+// Mega Menu Dropdown Toggle Handler
+(function initMegaMenu() {
+  function setupMegaMenu() {
+    if (window.__megaMenuInitialized) return;
+    window.__megaMenuInitialized = true;
+
+    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+      const trigger = dropdown.querySelector('.dropdown-trigger, a');
+      if (trigger && dropdown.querySelector('.mega-menu')) {
+        trigger.addEventListener('click', function(e) {
+          if (trigger.tagName === 'BUTTON' || trigger.getAttribute('href') === '#') {
+            e.preventDefault();
+          }
+          e.stopPropagation();
+          const isActive = dropdown.classList.contains('is-active');
+          document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-active'));
+          if (!isActive) {
+            dropdown.classList.add('is-active');
+            trigger.setAttribute('aria-expanded', 'true');
+          } else {
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-active'));
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-active'));
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMegaMenu);
+  } else {
+    setupMegaMenu();
+  }
+})();
+</script>
+
+</body>
+</html>

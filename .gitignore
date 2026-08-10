@@ -1,0 +1,30 @@
+# Python & Node environments
+venv/
+env/
+myenv/
+img_env/
+node_modules/
+__pycache__/
+
+# Environment variables
+.env
+
+# Backups & Archives
+*.tar.gz
+*.zip
+
+# Logs and temporary files
+*.log
+out.txt
+out2.txt
+output.txt
+git-out.txt
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
