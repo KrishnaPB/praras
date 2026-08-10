@@ -325,6 +325,21 @@ body.ab .nav-cta{background:linear-gradient(135deg,var(--c-accent),var(--c-accen
 .quote-btn-submit{width:100%;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:1.1rem;border-radius:var(--r-pill);font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;box-shadow:var(--sh-btn);border:none;cursor:pointer;transition:all var(--transition)}
 .quote-btn-submit:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover)}
 </style>
+<style>
+/* Fix button default outline & background on dropdown triggers */
+button.dropdown-trigger, .dropdown-trigger {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+</style>
 </head>
 <body>
 

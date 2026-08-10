@@ -686,6 +686,21 @@ body.ab .cta-band{background:linear-gradient(135deg, var(--c-accent), var(--c-ac
 
 .prod-spec-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 </style>
+<style>
+/* Fix button default outline & background on dropdown triggers */
+button.dropdown-trigger, .dropdown-trigger {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+</style>
 </head>
 <body>
 

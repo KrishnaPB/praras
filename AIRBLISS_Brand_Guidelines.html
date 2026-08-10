@@ -249,7 +249,22 @@ header .nav-dropdown:hover .mega-menu, .site-nav .nav-dropdown:hover .mega-menu,
 .mega-menu-services { min-width: 320px !important; }
 .mega-menu-services .mega-content { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; padding: 2rem !important; }
 
-</style></head>
+</style><style>
+/* Fix button default outline & background on dropdown triggers */
+button.dropdown-trigger, .dropdown-trigger {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+</style>
+</head>
 <body class="no-js">
 
 <nav class="nav"><div class="wrap">
