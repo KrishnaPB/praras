@@ -939,22 +939,57 @@ body.ab .cta-band {
 
 
 
-/* ─── MEGA MENU HOVER BRIDGE & POSITIONS ─── */
-header .nav-dropdown, .site-nav .nav-dropdown, .nav-dropdown { position: relative !important; display: flex !important; align-items: center !important; height: 100% !important; }
-header .nav-dropdown::after, .site-nav .nav-dropdown::after, .nav-dropdown::after { content: "" !important; position: absolute !important; top: 100% !important; left: -20% !important; right: -20% !important; height: 50px !important; display: block !important; z-index: 90 !important; }
-header .mega-menu, .site-nav .mega-menu, .mega-menu {
-  position: absolute !important; top: calc(100% + 10px) !important; left: 50% !important; transform: translateX(-50%) translateY(15px) scale(0.98) !important;
-  background: rgba(255, 255, 255, 0.97) !important; -webkit-backdrop-filter: blur(40px) !important; backdrop-filter: blur(40px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important; border-radius: 24px !important;
-  padding: 0 !important; display: flex !important; min-width: 980px !important;
-  opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+
+/* ─── MEGA MENU HOVER & CLICK ACTIVE STYLES ─── */
+.site-nav .nav-dropdown, header .nav-dropdown, .nav-dropdown {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+.site-nav .nav-dropdown::after, header .nav-dropdown::after, .nav-dropdown::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: -20% !important;
+  right: -20% !important;
+  height: 50px !important;
+  display: block !important;
+  z-index: 90 !important;
+}
+.site-nav .mega-menu, header .mega-menu, .mega-menu {
+  position: absolute !important;
+  top: calc(100% + 10px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(15px) scale(0.98) !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  backdrop-filter: blur(40px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 24px !important;
+  padding: 0 !important;
+  display: flex !important;
+  min-width: 980px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   z-index: 1000 !important;
   box-shadow: 0 40px 100px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1) !important;
-  overflow-y: auto !important; overflow-x: hidden !important; max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: calc(100vh - 100px) !important;
 }
-header .nav-dropdown:hover .mega-menu, .site-nav .nav-dropdown:hover .mega-menu, .nav-dropdown.is-active .mega-menu, header .nav-dropdown.is-active .mega-menu {
-  opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; transform: translateX(-50%) translateY(0) scale(1) !important;
+.site-nav .nav-dropdown:hover .mega-menu,
+.site-nav .nav-dropdown.is-active .mega-menu,
+header .nav-dropdown:hover .mega-menu,
+header .nav-dropdown.is-active .mega-menu,
+.nav-dropdown:hover .mega-menu,
+.nav-dropdown.is-active .mega-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateX(-50%) translateY(0) scale(1) !important;
 }
 .mega-menu-inner { display: flex !important; width: 100% !important; min-height: min-content !important; }
 .mega-content { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 3rem !important; padding: 3rem !important; flex: 1 !important; background: var(--c-surface, #fff) !important; }
@@ -967,7 +1002,6 @@ header .nav-dropdown:hover .mega-menu, .site-nav .nav-dropdown:hover .mega-menu,
 .mega-column a:hover { color: var(--c-primary, #9A1D1E) !important; transform: translateX(4px) !important; background: var(--c-primary-bg, #FDF4F4) !important; }
 .mega-menu-services { min-width: 320px !important; }
 .mega-menu-services .mega-content { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; padding: 2rem !important; }
-
 </style>
 <style>
 /* Fix button default outline & background on dropdown triggers */
