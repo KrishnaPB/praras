@@ -237,9 +237,9 @@ body.ab .nav-cta{background:linear-gradient(135deg,var(--c-accent),var(--c-accen
 .h2-center em{font-style:italic;color:var(--c-primary);font-weight:400}
 .sec-sub-center{font-size:1.05rem;color:var(--c-muted);max-width:600px;margin:0 auto}
 
-.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-@media(max-width:900px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:580px){.benefits-grid{grid-template-columns:1fr}}
+.benefits-grid, .benefits-grid-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media(max-width:900px){.benefits-grid, .benefits-grid-3col{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.benefits-grid, .benefits-grid-3col{grid-template-columns:1fr}}
 
 .benefit-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:24px;padding:2.5rem;box-shadow:var(--sh-card);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all var(--transition)}
 .benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));opacity:0;transition:opacity var(--transition)}
@@ -688,7 +688,7 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
         <p class="sec-sub-center">Transform your manufacturing process with TEXTUREAID® CLF.</p>
       </div>
 
-      <div class="benefits-grid-3col">
+      <div class="benefits-grid">
         <!-- Benefit 1 -->
         <div class="benefit-card">
           <div class="benefit-num">01</div>
