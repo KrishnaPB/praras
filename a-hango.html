@@ -341,27 +341,133 @@ button.dropdown-trigger, .dropdown-trigger {
 }
 </style>
 <style>
+/* ===== CTA BAND ===== */
+.cta-band {
+  background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #751516)) !important;
+  padding: 6rem 2.5rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+  color: #ffffff !important;
+}
+.cta-band::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; right: 0 !important;
+  width: 50% !important; height: 100% !important;
+  background: radial-gradient(circle at 100% 50%, rgba(255,255,255,0.12), transparent 70%) !important;
+  pointer-events: none !important;
+}
+.cta-inner {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 3rem !important;
+  flex-wrap: wrap !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.cta-h {
+  font-family: var(--font-d) !important;
+  font-size: 2.8rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.2 !important;
+  margin-bottom: 0.75rem !important;
+}
+.cta-p {
+  font-size: 1.05rem !important;
+  color: rgba(255,255,255,0.9) !important;
+  max-width: 540px !important;
+  line-height: 1.65 !important;
+}
+.cta-btns {
+  display: flex !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
 /* Fix CTA Band Button Contrast & Transparent Background */
 button.btn-cta-o, .btn-cta-o {
   background: transparent !important;
-  border: 1.5px solid rgba(255,255,255,0.7) !important;
+  border: 1.5px solid rgba(255,255,255,0.8) !important;
   color: #FFFFFF !important;
+  padding: 0.95rem 2rem !important;
+  border-radius: var(--r-pill, 999px) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
   cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
 }
 button.btn-cta-o:hover, .btn-cta-o:hover {
-  background: rgba(255,255,255,0.18) !important;
+  background: rgba(255,255,255,0.2) !important;
   border-color: #FFFFFF !important;
   color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
 }
 button.btn-cta-w, .btn-cta-w {
   background: #FFFFFF !important;
   color: var(--c-primary, #9A1D1E) !important;
   border: 1.5px solid #FFFFFF !important;
+  padding: 0.95rem 2.2rem !important;
+  border-radius: var(--r-pill, 999px) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
   cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 button.btn-cta-w:hover, .btn-cta-w:hover {
-  background: rgba(255,255,255,0.92) !important;
+  background: rgba(255,255,255,0.95) !important;
   color: var(--c-primary-d, #751516) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Card Footer & View More Button Alignment */
+.prod-card-footer {
+  margin-top: auto !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid var(--c-border-s) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+.btn-card-view {
+  background: transparent !important;
+  border: 1.5px solid var(--c-primary, #9A1D1E) !important;
+  color: var(--c-primary, #9A1D1E) !important;
+  padding: 0.95rem 1.8rem !important;
+  border-radius: var(--r-pill, 999px) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  margin: 0 !important;
+}
+.btn-card-view:hover {
+  background: rgba(154, 29, 30, 0.08) !important;
+  border-color: var(--c-primary-d, #751516) !important;
+  color: var(--c-primary-d, #751516) !important;
+  transform: translateY(-2px) !important;
 }
 </style>
 </head>
