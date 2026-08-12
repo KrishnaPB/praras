@@ -1042,6 +1042,38 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
   color: var(--c-primary-d, #751516) !important;
 }
 </style>
+
+<style>
+/* View More Button Styling for Product Cards */
+.btn-card-view {
+  flex: 1;
+  background: transparent !important;
+  border: 1.5px solid var(--c-primary, #9A1D1E) !important;
+  color: var(--c-primary, #9A1D1E) !important;
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--r-pill, 999px);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: none;
+  cursor: pointer;
+  min-width: 130px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+.btn-card-view:hover {
+  background: rgba(154, 29, 30, 0.08) !important;
+  border-color: var(--c-primary-d, #751516) !important;
+  color: var(--c-primary-d, #751516) !important;
+  transform: translateY(-2px);
+}
+</style>
+
 </head>
 <body>
 
@@ -1294,7 +1326,7 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
 
       <div class="prod-grid-v2">
         <!-- Product Card 1: TEXTUREAID M -->
-        <div class="prod-card-v2" id="textureaid-m" onclick="if(!event.target.closest('button')){ window.location.href='product-textureaid-m.html'; }">
+        <div class="prod-card-v2" id="textureaid-m" onclick="if(!event.target.closest('button') && !event.target.closest('a')){ window.location.href='product-textureaid-m.html'; }">
           <div class="prod-card-inner">
             <div class="prod-card-header">
               <div>
@@ -1328,6 +1360,7 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
             </ul>
 
             <div class="prod-card-btns">
+              <a href="product-textureaid-m.html" class="btn-card-view">View More →</a>
               <button class="btn-card-quote btn-quote" data-product="TEXTUREAID® M">
                 Get Quote
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -1337,7 +1370,7 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
         </div>
 
         <!-- Product Card 2: TEXTUREAID MSK -->
-        <div class="prod-card-v2" id="textureaid-msk" onclick="if(!event.target.closest('button')){ window.location.href='product-textureaid-msk.html'; }">
+        <div class="prod-card-v2" id="textureaid-msk" onclick="if(!event.target.closest('button') && !event.target.closest('a')){ window.location.href='product-textureaid-msk.html'; }">
           <div class="prod-card-inner">
             <div class="prod-card-header">
               <div>
@@ -1371,6 +1404,7 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
             </ul>
 
             <div class="prod-card-btns">
+              <a href="product-textureaid-msk.html" class="btn-card-view">View More →</a>
               <button class="btn-card-quote btn-quote" data-product="TEXTUREAID® MSK">
                 Get Quote
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
