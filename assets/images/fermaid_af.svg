@@ -13,7 +13,7 @@
     <rect x="90" y="320" width="220" height="40" rx="0" ry="0" fill="#8a1d1e" />
     <circle cx="200" cy="110" r="45" fill="#8a1d1e" />
     <text x="200" y="117" font-family="sans-serif" font-weight="bold" font-size="34" fill="#ffffff" text-anchor="middle">P</text>
-    <text x="200" y="210" font-family="sans-serif" font-weight="bold" font-size="21" fill="#333333" text-anchor="middle">SACCARAID B</text>
+    <text x="200" y="210" font-family="sans-serif" font-weight="bold" font-size="24" fill="#333333" text-anchor="middle">FERMAID AF</text>
 
     <line x1="130" y1="238" x2="270" y2="238" stroke="#8a1d1e" stroke-width="3"/>
     <text x="200" y="263" font-family="sans-serif" font-weight="bold" font-size="12" fill="#777777" text-anchor="middle" letter-spacing="1.5">BIOCHEMICAL SOLUTION</text>
