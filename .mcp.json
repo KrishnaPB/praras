@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "Perplexity": {
+      "command": "/home/prarasbiosciences-test/.antigravity-ide-server/bin/2.5.5-ecfbad74d93962fc8ca485d93ab9b4f3d4cb6cf8/node",
+      "args": [
+        "/home/prarasbiosciences-test/.perplexity-mcp/start.mjs"
+      ],
+      "env": {},
+      "type": "stdio"
+    }
+  }
+}

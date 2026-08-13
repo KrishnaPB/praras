@@ -29,3 +29,7 @@ git-out.txt
 ehthumbs.db
 Thumbs.db
 data/*.json
+
+# Internal Scratch & Backups
+scratch/
+backups/

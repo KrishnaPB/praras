@@ -3,7 +3,7 @@ name: Auto Deploy via FTP
 on:
   push:
     branches:
-      - main # Triggers the deploy when you push to the main branch
+      - main # Triggers deploy when pushed to main branch
 
 jobs:
   web-deploy:
@@ -12,23 +12,13 @@ jobs:
     steps:
       - name: 🚚 Get latest code from GitHub
         uses: actions/checkout@v4
-      
-      - name: 🐍 Setup Python (Optional, if you want to run build script on server)
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
 
-      - name: 🔨 Run Build Script (Optional)
-        run: python3 build_static.py
-        
       - name: 📂 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # The directory on your server where the website files should go
-          # Common paths: ./public_html/ or ./htdocs/ or /
           server-dir: ./public_html/
           
           # Files to ignore during upload
@@ -36,7 +26,13 @@ jobs:
             **/.git*
             **/.git*/**
             **/venv/**
+            **/myenv/**
+            **/img_env/**
+            **/node_modules/**
             **/__pycache__/**
             **/*.md
             **/.github/**
+            **/scratch/**
+            **/backups/**
             *.py
+            *.js

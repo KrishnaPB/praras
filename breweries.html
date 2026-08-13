@@ -302,6 +302,92 @@ ul{list-style:none}
 .quote-btn-submit:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover)}
 
 button.dropdown-trigger,.dropdown-trigger{background:transparent!important;border:none!important;outline:none!important;padding:0!important;margin:0!important;font-family:inherit!important;cursor:pointer!important;box-shadow:none!important;-webkit-appearance:none!important;appearance:none!important}
+
+/* Executive Product Card Details Grid */
+.prod-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: var(--sh-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.prod-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3.5px;
+  background: linear-gradient(90deg, var(--c-primary), var(--c-accent));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.prod-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-hover);
+  border-color: rgba(154, 29, 30, 0.2);
+}
+.prod-card:hover::before { opacity: 1; }
+
+.prod-card-name {
+  font-family: var(--font-d);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.2;
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.prod-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.prod-detail-item {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.prod-detail-lbl {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-primary);
+  white-space: nowrap;
+}
+
+.prod-detail-val {
+  color: var(--c-body);
+  font-weight: 600;
+}
+
+.prod-dosage-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--c-surface-alt);
+  border: 1px solid var(--c-border-s);
+  border-radius: var(--r-pill);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--c-muted);
+  width: fit-content;
+  margin-top: 0.2rem;
+}
+
 </style>
 </head>
 <body>
@@ -563,7 +649,8 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
     </div>
   </section>
 
-  <!-- STAGE 1: MASHING ENZYMES -->
+  
+  <!-- STAGE 01: MASHING ENZYMES / BREWHOUSE ENZYMES -->
   <section class="section-stage" id="stage-mashing">
     <div class="wrap">
       <div class="stage-header">
@@ -575,42 +662,106 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
       </div>
       <div class="products-grid">
         <div class="prod-card">
-          <div class="prod-card-name">GRISTSOLUBAID</div>
-          <div class="prod-card-nature">High temperature tolerant Alpha Amylase · NLT 100,000 IU/g</div>
-          <p class="prod-function">To solubilise the grist and maximize starch conversion at high temperatures in the mash tun.</p>
-          <span class="prod-dosage-pill">📏 0.25–0.5 kg/ton dry starch</span>
+          <div class="prod-card-name">GRISTSOLUBAID<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Mash Tun / Brewhouse</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">NLT 100,000 IU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">High Temperature Tolerant Alpha Amylase</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Solubilises grist & maximizes starch conversion at high mashing temperatures</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 0.25–0.5 kg/ton dry starch</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="GRISTSOLUBAID">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="GRISTSOLUBAID">Get Quote</button>
             <a href="product-gristsolubaid.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">MASHAID GXL</div>
-          <div class="prod-card-nature">Beta Glucanase · NLT 100 U/ml</div>
-          <p class="prod-function">Minimize mash bed choking and shorten lautering time by breaking down beta-glucans from barley and adjuncts.</p>
-          <span class="prod-dosage-pill">📏 0.15–0.35 kg/ton grist</span>
+          <div class="prod-card-name">MASHAID GXL<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Mash Tun / Lauter Tun</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">NLT 100 U/ml</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Beta Glucanase</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Minimize mash bed choking & shorten lautering time</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 0.15–0.35 kg/ton grist</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="MASHAID GXL">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="MASHAID GXL">Get Quote</button>
             <a href="product-mashaid-gxl.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">MASHAID PAG</div>
-          <div class="prod-card-nature">Multi Enzyme (Fungal Amylase + Protease + Betaglucanase)</div>
-          <p class="prod-function">To improve mashing efficiency with a combined enzyme action targeting starch, protein, and glucan fractions simultaneously.</p>
-          <span class="prod-dosage-pill">📏 0.15–0.35 kg/ton grist</span>
+          <div class="prod-card-name">MASHAID PAG<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Mash Tun / Saccharification</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">FA NLT 75,000 IU/g · Protease NLT 5,000 TU/g · BG NLT 2,000 IU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Multi Enzyme (Fungal Amylase + Protease + Beta-Glucanase)</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Improves mashing efficiency by targeting starch, protein & glucan fractions simultaneously</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 0.15–0.35 kg/ton grist</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="MASHAID PAG">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="MASHAID PAG">Get Quote</button>
             <a href="product-mashaid-pag.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">MASHAID NP</div>
-          <div class="prod-card-nature">Neutral Endo-Protease · NLT 20,000 TU/g</div>
-          <p class="prod-function">To raise the Free Amino Nitrogen (FAN) levels in wort, ensuring adequate yeast nutrition for healthy and complete fermentation.</p>
-          <span class="prod-dosage-pill">📏 0.3–0.6 kg/ton grist</span>
+          <div class="prod-card-name">MASHAID NP<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Mash Tun / Protein Rest</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">NLT 20,000 TU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Neutral Endo-Protease</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Raises Free Amino Nitrogen (FAN) levels for healthy, complete yeast fermentation</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 0.3–0.6 kg/ton grist</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="MASHAID NP">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="MASHAID NP">Get Quote</button>
             <a href="product-mashaid-np.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
@@ -618,7 +769,7 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
     </div>
   </section>
 
-  <!-- STAGE 2: KETTLE FININGS -->
+  <!-- STAGE 02: KETTLE FININGS -->
   <section class="section-stage" id="stage-kettle">
     <div class="wrap">
       <div class="stage-header">
@@ -630,22 +781,54 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
       </div>
       <div class="products-grid">
         <div class="prod-card">
-          <div class="prod-card-name">CARRAFLOCAID</div>
-          <div class="prod-card-nature">Kappa Carrageenan · Gel strength NLT 300 g/cm²</div>
-          <p class="prod-function">Protein flocculation and trub settlement in the whirlpool. Promotes a compact trub cone and excellent wort clarity before fermentation.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL</span>
+          <div class="prod-card-name">CARRAFLOCAID<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Brew Kettle / Whirlpool</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Gel Strength NLT 300 g/cm² (1.5% solution)</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Kappa Carrageenan</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Protein flocculation & compact trub cone for brilliant wort clarity</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="CARRAFLOCAID">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="CARRAFLOCAID">Get Quote</button>
             <a href="product-carraflocaid.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">TAN SHINEAID 02</div>
-          <div class="prod-card-nature">Tannic Acid · Tannin content 98%</div>
-          <p class="prod-function">To improve flavour stability by reacting with haze-active proteins during boiling, enhancing beer colloidal stability before fermentation.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL (as 5–10% solution)</span>
+          <div class="prod-card-name">TAN SHINEAID 02<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Brew Kettle / Whirlpool</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Tannin Content NLT 98%</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Tannic Acid</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Improves flavour stability by binding haze-active proteins during boiling</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL (as 5–10% solution)</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="TAN SHINEAID 02">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="TAN SHINEAID 02">Get Quote</button>
             <a href="product-tan-shineaid-2.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
@@ -653,7 +836,7 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
     </div>
   </section>
 
-  <!-- STAGE 3: FERMENTATION AIDS -->
+  <!-- STAGE 03: FERMENTATION AIDS -->
   <section class="section-stage" id="stage-fermentation">
     <div class="wrap">
       <div class="stage-header">
@@ -665,62 +848,158 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
       </div>
       <div class="products-grid">
         <div class="prod-card">
-          <div class="prod-card-name">AIDFERM BREW AF</div>
-          <div class="prod-card-nature">Polydimethylsiloxane (solid antifoam)</div>
-          <p class="prod-function">Antifoam agent that increases fermentation capacity by up to 10% through optimized headspace reduction during active fermentation.</p>
-          <span class="prod-dosage-pill">📏 3–5 g/HL wort</span>
+          <div class="prod-card-name">AIDFERM BREW AF<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Fermentation Vessel</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Food Grade PDMS Compound</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Polydimethylsiloxane (Solid Antifoam)</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Antifoam — increases fermentation capacity by up to 10% through optimized headspace reduction</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 3–5 g/HL wort</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="AIDFERM BREW AF">+ Get Quote</button>
-            <a href="product-aidferm-brew-af-f.html" class="btn-prod-learn">Details →</a>
+            <button class="btn-prod-quote btn-quote" data-product="AIDFERM BREW AF">Get Quote</button>
+            <a href="product-aidferm-af-f.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">AIDFERM BREW AF-L</div>
-          <div class="prod-card-nature">Polydimethylsiloxane (liquid antifoam)</div>
-          <p class="prod-function">Liquid antifoam for precise dosing during fermentation. Efficiently collapses foam and prevents krausen overflow while maintaining yeast viability.</p>
-          <span class="prod-dosage-pill">📏 2–10 ml/HL</span>
+          <div class="prod-card-name">AIDFERM BREW AF-L<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Fermentation Vessel</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Defoaming @ 25–50 ppm ≤ 20 sec</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Polydimethylsiloxane (Liquid Antifoam)</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Liquid antifoam for precise dosing — collapses krausen foam overflow while preserving yeast viability</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–10 ml/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="AIDFERM BREW AF-L">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="AIDFERM BREW AF-L">Get Quote</button>
             <a href="product-aidferm-brew-af-l.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">AIDFERM YB</div>
-          <div class="prod-card-nature">Brewer's yeast food (DAP-free) · FAN NLT 900 ppm</div>
-          <p class="prod-function">Improve wort fermentation efficiency, particularly in beers brewed with high levels of adjuncts where natural FAN levels are insufficient.</p>
-          <span class="prod-dosage-pill">📏 5–20 g/HL</span>
+          <div class="prod-card-name">AIDFERM YB<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Fermentation Vessel</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">FAN NLT 900 ppm</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Brewer's Yeast Food (DAP-free)</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Improves wort fermentation efficiency, particularly in beers brewed with high adjunct levels</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 5–20 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="AIDFERM YB">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="AIDFERM YB">Get Quote</button>
             <a href="product-aidferm-yw-032.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">AIDFERM YB 065</div>
-          <div class="prod-card-nature">Essential amino acids &amp; nutrients · Total Nitrogen NLT 14%</div>
-          <p class="prod-function">Complete yeast food formulation supplying essential amino acids and micronutrients for strong, healthy fermentation in high-gravity worts.</p>
-          <span class="prod-dosage-pill">📏 5–20 g/HL</span>
+          <div class="prod-card-name">AIDFERM YB 065<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Fermentation Vessel</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Total Nitrogen NLT 14%</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Essential Amino Acids & Nutrients</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Complete yeast food — sustains vigorous yeast growth & complete attenuation in high-gravity worts</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 5–20 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="AIDFERM YB 065">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="AIDFERM YB 065">Get Quote</button>
             <a href="product-aidferm-yw-063.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">FERMAID B</div>
-          <div class="prod-card-nature">Peptides &amp; Amino Acids · Total N NLT 14%, FAN NLT 900 ppm</div>
-          <p class="prod-function">Yeast food that increases FAN availability and reduces fermentation time. Ideal for high-gravity and adjunct-heavy beer styles.</p>
-          <span class="prod-dosage-pill">📏 5–20 g/HL</span>
+          <div class="prod-card-name">FERMAID B<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Fermentation Vessel</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Total N NLT 14%, FAN NLT 900 ppm</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Peptides & Amino Acids</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Yeast food — increases FAN availability & reduces fermentation time</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 5–20 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="FERMAID B">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="FERMAID B">Get Quote</button>
             <a href="product-fermaid-b.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">ATTENAID L</div>
-          <div class="prod-card-nature">Glucoamylase · 100,000 IU/g</div>
-          <p class="prod-function">Attenuation agent that breaks down dextrins to fermentable sugars, enabling production of low-carbohydrate and dry-style beers.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL</span>
+          <div class="prod-card-name">ATTENAID L<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Fermentation Vessel</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">NLT 100,000 IU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Glucoamylase</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Attenuation agent — breaks down dextrins to fermentable sugars for low-carb & dry beers</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="ATTENAID L">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="ATTENAID L">Get Quote</button>
             <a href="product-attenaid-l.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
@@ -728,11 +1007,52 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
     </div>
   </section>
 
-  <!-- STAGE 4: PROCESSING AIDS -->
-  <section class="section-stage" id="stage-processing">
+  <!-- STAGE 04: FLOCULATING AGENT -->
+  <section class="section-stage" id="stage-floculation">
     <div class="wrap">
       <div class="stage-header">
         <div class="stage-num">04</div>
+        <div>
+          <h2 class="stage-title">Floculating <em>Agent</em></h2>
+          <p class="stage-desc">Accelerate yeast sedimentation for cleaner beer</p>
+        </div>
+      </div>
+      <div class="products-grid">
+        <div class="prod-card">
+          <div class="prod-card-name">FLOCAID<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Maturation Tank</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Collagen Content NLT 20%</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Isinglass Finings</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Yeast floculating agent — drops suspended yeast for brilliant, clear beer</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
+          <div class="prod-card-actions">
+            <button class="btn-prod-quote btn-quote" data-product="FLOCAID">Get Quote</button>
+            <a href="product-flocaid-w.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE 05: PROCESSING AIDS -->
+  <section class="section-stage" id="stage-processing">
+    <div class="wrap">
+      <div class="stage-header">
+        <div class="stage-num">05</div>
         <div>
           <h2 class="stage-title">Processing <em>Aids</em></h2>
           <p class="stage-desc">Stabilize, clarify, and protect beer quality during conditioning and filtration</p>
@@ -740,97 +1060,225 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
       </div>
       <div class="products-grid">
         <div class="prod-card">
-          <div class="prod-card-name">ATTENAID FA-L</div>
-          <div class="prod-card-nature">Fungal Amylase · 100,000 IU/g</div>
-          <p class="prod-function">Aids in attenuation of the wort by breaking down residual dextrins, producing lighter-bodied, highly fermented beer styles.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL</span>
+          <div class="prod-card-name">ANTIOX<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Bright Beer Tank / Packaging</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Synergistic Anti-Oxidant Blend</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">KMS & Sodium Erythorbate</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Enhances flavour stability by eliminating dissolved oxygen & preserving the beer's unique characteristics</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 3–6 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="ATTENAID FA-L">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="ANTIOX">Get Quote</button>
+            <a href="product-antiox.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-card-name">ATTENAID FA-L<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Mash Tun / Fermentation</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">NLT 100,000 IU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Fungal Amylase</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Aids in attenuation of the wort — produces lighter-bodied, highly fermented beer styles</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
+          <div class="prod-card-actions">
+            <button class="btn-prod-quote btn-quote" data-product="ATTENAID FA-L">Get Quote</button>
             <a href="product-attenaid-fa.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">BREWSTABAID PSEP</div>
-          <div class="prod-card-nature">Proline specific endoprotease · NLT 5,000 PU/g</div>
-          <p class="prod-function">Aids in beer stabilisation by specifically cleaving proline-rich haze-active proteins, reducing chill haze without affecting foam quality.</p>
-          <span class="prod-dosage-pill">📏 1–2 g/HL beer</span>
+          <div class="prod-card-name">BREWSTABAID PSEP<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Maturation Tank / Cold Cellar</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">NLT 5,000 PU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Proline-Specific Endoprotease</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Aids in beer stabilisation — breaks down haze-forming proline-rich proteins</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 1–2 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="BREWSTABAID PSEP">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="BREWSTABAID PSEP">Get Quote</button>
             <a href="product-brewstabaid-psep.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">QUICKSTABAID L</div>
-          <div class="prod-card-nature">Silica Hydrogel</div>
-          <p class="prod-function">Removes haze-forming proteins for improved beer clarity, chill haze stability, and efficient filtration without affecting beer colour or flavour.</p>
-          <span class="prod-dosage-pill">📏 1–2 g/HL</span>
+          <div class="prod-card-name">QUICKSTABAID L<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Conditioning Tank / Pre-Filter</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">High Adsorption Capacity</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Silica Hydrogel</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Removes haze-forming proteins for improved beer clarity, chill haze stability & efficient filtration</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 1–2 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="QUICKSTABAID L">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="QUICKSTABAID L">Get Quote</button>
             <a href="product-quickstabaid-l.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">OXYNILAID</div>
-          <div class="prod-card-nature">Sodium Erythorbate</div>
-          <p class="prod-function">Enhances flavour stability by eliminating dissolved oxygen, preserving the beer's unique characteristics and extending shelf life.</p>
-          <span class="prod-dosage-pill">📏 3–5 g/HL beer</span>
+          <div class="prod-card-name">OXYNILAID<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Maturation Tank / Packaging</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">High Anti-Oxidant Activity</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Sodium Erythorbate</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Enhances flavour stability by eliminating dissolved oxygen & preserving beer's unique characteristics</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 3–5 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="OXYNILAID">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="OXYNILAID">Get Quote</button>
             <a href="product-oxynilaid.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">AUXIFINASE AID L</div>
-          <div class="prod-card-nature">Specialized Glucanase · NLT 100 U/ml</div>
-          <p class="prod-function">Reduces haze significantly by enzymatically breaking down residual beta-glucan fragments that contribute to turbidity in finished beer.</p>
-          <span class="prod-dosage-pill">📏 0.75–1.5 g/HL</span>
+          <div class="prod-card-name">AUXIFINASE AID L<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Cold Cellar / Maturation</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">NLT 100 U/ml</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Specialised Glucanase</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Reduces haze significantly — breaks down residual beta-glucans for improved filtration</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 0.75–1.5 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="AUXIFINASE AID L">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="AUXIFINASE AID L">Get Quote</button>
             <a href="product-auxifinase-aid-l.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">TAN SHINEAID</div>
-          <div class="prod-card-nature">Tannic Acid · Tannin content 98%</div>
-          <p class="prod-function">Improves colloidal stability and shelf life of mature beer by selectively binding haze-active proteins and reducing oxidation susceptibility.</p>
-          <span class="prod-dosage-pill">📏 1–2 g/HL matured beer</span>
-          <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="TAN SHINEAID">+ Get Quote</button>
-            <a href="product-tan-shineaid.html" class="btn-prod-learn">Details →</a>
+          <div class="prod-card-name">TAN SHINEAID<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Maturation Tank</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Tannin Content NLT 98%</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Tannic Acid</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Improves colloidal stability & shelf life of matured beer</span>
+            </div>
           </div>
-        </div>
-        <div class="prod-card">
-          <div class="prod-card-name">ANTIOX</div>
-          <div class="prod-card-nature">KMS &amp; Sodium Erythorbate</div>
-          <p class="prod-function">Enhances flavour stability by eliminating dissolved oxygen and preserving the beer's unique characteristics throughout conditioning and packaging.</p>
-          <span class="prod-dosage-pill">📏 3–6 g/HL</span>
+          <span class="prod-dosage-pill">📏 Dosage: 1–2 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="ANTIOX">+ Get Quote</button>
-            <a href="product-antiox.html" class="btn-prod-learn">Details →</a>
+            <button class="btn-prod-quote btn-quote" data-product="TAN SHINEAID">Get Quote</button>
+            <a href="product-tan-shineaid.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STAGE 5: FOAMING AGENT -->
-  <section class="section-stage" id="stage-foam">
+  <!-- STAGE 06: FOAMING AGENT -->
+  <section class="section-stage" id="stage-foaming">
     <div class="wrap">
       <div class="stage-header">
-        <div class="stage-num">05</div>
+        <div class="stage-num">06</div>
         <div>
           <h2 class="stage-title">Foaming <em>Agent</em></h2>
-          <p class="stage-desc">Elevate beer foam quality, density, and persistence in the glass</p>
+          <p class="stage-desc">Elevate beer foam quality, density, and persistence</p>
         </div>
       </div>
       <div class="products-grid">
         <div class="prod-card">
-          <div class="prod-card-name">FOAMAID</div>
-          <div class="prod-card-nature">PGA — Propylene Glycol Alginate</div>
-          <p class="prod-function">Elevate beer foam quality and stability by forming a complex with hops and proteins, creating persistent, creamy foam heads that cling to the glass.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL beer</span>
+          <div class="prod-card-name">FOAMAID<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Bright Beer Tank / Finishing</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">High Purity E-405 Complex</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">PGA (Propylene Glycol Alginate)</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Elevates beer foam quality & stability — enhances head retention & glass lacing</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="FOAMAID">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="FOAMAID">Get Quote</button>
             <a href="product-foamaid.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
@@ -838,50 +1286,74 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
     </div>
   </section>
 
-  <!-- STAGE 6: CHILL PROOFING & FINING -->
-  <section class="section-stage" id="stage-clarity">
+  <!-- STAGE 07: CHILL PROOFING & FLOCCULATING AGENTS -->
+  <section class="section-stage" id="stage-chillproof">
     <div class="wrap">
       <div class="stage-header">
-        <div class="stage-num">06</div>
+        <div class="stage-num">07</div>
         <div>
-          <h2 class="stage-title">Chill Proofing &amp; <em>Floculating Agents</em></h2>
-          <p class="stage-desc">Final clarity, yeast removal, and chill-proof protection before packaging</p>
+          <h2 class="stage-title">Chill Proofing & <em>Flocculating Agents</em></h2>
+          <p class="stage-desc">Ensure crystal-clear, chill-stable beer with complete yeast removal</p>
         </div>
       </div>
       <div class="products-grid">
         <div class="prod-card">
-          <div class="prod-card-name">SHINEAID</div>
-          <div class="prod-card-nature">Papain (Proteolytic enzyme) · NLT 100,000 TU/g</div>
-          <p class="prod-function">Chillproofing enzyme that breaks down chill-sensitive proteins, preventing haze formation at low temperatures in packaged beer.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL beer</span>
+          <div class="prod-card-name">SHINEAID<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Cold Cellar / Maturation</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Protease NLT 100,000 TU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Papain</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Chillproofing — hydrolyses chill-haze proteins for permanent haze-free clarity</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="SHINEAID">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="SHINEAID">Get Quote</button>
             <a href="product-tan-shineaid-01.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
         <div class="prod-card">
-          <div class="prod-card-name">FLOCAID</div>
-          <div class="prod-card-nature">Isinglass Finings · Collagen NLT 20%</div>
-          <p class="prod-function">Yeast flocculating agent that forms electrostatic complexes with yeast cells, rapidly clearing beer by settling yeast to the vessel bottom.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL</span>
-          <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="FLOCAID">+ Get Quote</button>
-            <a href="product-flocaid-w.html" class="btn-prod-learn">Details →</a>
+          <div class="prod-card-name">FLOCAID S<sup>®</sup></div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Cold Storage / Maturation</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Collagen Content NLT 20%</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Isinglass</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Yeast flocculation in matured beer — selectively drops suspended yeast without stripping foam proteins</span>
+            </div>
           </div>
-        </div>
-        <div class="prod-card">
-          <div class="prod-card-name">FLOCAID S</div>
-          <div class="prod-card-nature">Isinglass Finings · Collagen NLT 20%</div>
-          <p class="prod-function">Yeast flocculation in matured beer, delivering brilliant clarity before filtration and packaging. Suitable for lager and ale conditioning tanks.</p>
-          <span class="prod-dosage-pill">📏 2–4 g/HL matured beer</span>
+          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
           <div class="prod-card-actions">
-            <button class="btn-prod-quote btn-quote" data-product="FLOCAID S">+ Get Quote</button>
+            <button class="btn-prod-quote btn-quote" data-product="FLOCAID S">Get Quote</button>
             <a href="product-flocaid-s.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+
 
   <!-- CTA BAND -->
   <section class="cta-band">
@@ -890,7 +1362,7 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
       <h2 class="cta-band-h2">Start with a Free Sample Pack</h2>
       <p class="cta-band-p">Speak with our brewing specialists to identify the right product combination for your brewery, beer style, and production scale.</p>
       <div class="cta-band-actions">
-        <button class="btn-cta-w btn-quote" data-product="Brewery Sample Pack">Request Sample Pack</button>
+        <button class="btn-cta-w btn-quote" data-product="Brewery Sample Pack">Get Quote</button>
         <a href="contact.html" class="btn-cta-o">Contact Specialist</a>
       </div>
     </div>
