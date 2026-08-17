@@ -191,31 +191,24 @@ ul{list-style:none}
 .pipeline-step-title{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--c-ink);line-height:1.2;margin-bottom:.4rem}
 .pipeline-step-desc{font-size:.82rem;color:var(--c-muted);line-height:1.45}
 
-/* Sticky Filter & Search Control Toolbar */
+/* Sticky Category Filter Toolbar */
 .section-filter-bar{position:sticky;top:72px;z-index:180;background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid var(--c-border);padding:.75rem 2rem .65rem;box-shadow:0 10px 30px rgba(0,0,0,0.03)}
-.filter-toolbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:1.25rem;flex-wrap:nowrap}
-.filter-pills-wrap{display:flex;align-items:center;gap:.45rem;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;flex:1 1 auto;min-width:0;padding:0 0 6px 0;scrollbar-width:thin;scrollbar-color:var(--c-primary) #EBE5E0}
+.filter-toolbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:1.25rem}
+.filter-pills-wrap{display:flex;align-items:center;gap:.45rem;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;padding:0 0 4px 0;scrollbar-width:thin;scrollbar-color:var(--c-primary) #EBE5E0}
 .filter-pills-wrap::-webkit-scrollbar{height:5px}
 .filter-pills-wrap::-webkit-scrollbar-track{background:#EBE5E0;border-radius:999px;margin:0 4px}
 .filter-pills-wrap::-webkit-scrollbar-thumb{background:var(--c-primary);border-radius:999px}
 .filter-pills-wrap::-webkit-scrollbar-thumb:hover{background:var(--c-primary-d)}
 
-.filter-pill-btn{height:40px;box-sizing:border-box;white-space:nowrap;flex-shrink:0;padding:0 1.05rem;border-radius:var(--r-pill);font-size:.75rem;font-weight:800;letter-spacing:.03em;background:var(--c-surface-alt);color:var(--c-muted);border:1px solid var(--c-border);cursor:pointer;transition:all var(--transition);display:inline-flex;align-items:center;justify-content:center;gap:.35rem}
+.filter-pill-btn{height:40px;box-sizing:border-box;white-space:nowrap;flex-shrink:0;padding:0 1.15rem;border-radius:var(--r-pill);font-size:.75rem;font-weight:800;letter-spacing:.03em;background:var(--c-surface-alt);color:var(--c-muted);border:1px solid var(--c-border);cursor:pointer;transition:all var(--transition);display:inline-flex;align-items:center;justify-content:center;gap:.35rem}
 .filter-pill-btn:hover{color:var(--c-ink);border-color:var(--c-primary-d);background:#fff}
 .filter-pill-btn.active{background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;border-color:transparent;box-shadow:var(--sh-btn)}
 .filter-pill-count{font-size:.65rem;background:rgba(0,0,0,0.08);padding:.12rem .45rem;border-radius:var(--r-pill);font-weight:800}
 .filter-pill-btn.active .filter-pill-count{background:rgba(255,255,255,0.25);color:#fff}
 
-.filter-search-wrap{position:relative;width:270px;min-width:220px;flex:0 0 auto;display:flex;align-items:center;height:40px}
-.filter-search-input{width:100%;height:40px;box-sizing:border-box;padding:0 1rem 0 2.35rem;border-radius:var(--r-pill);border:1px solid var(--c-border);font-size:.82rem;background:var(--c-surface-alt);color:var(--c-ink);transition:all var(--transition);display:flex;align-items:center}
-.filter-search-input:focus{outline:none;border-color:var(--c-primary);background:#fff;box-shadow:0 0 0 3px rgba(154,29,30,0.1)}
-.filter-search-icon{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--c-muted);pointer-events:none}
-
 @media(max-width:960px){
   .section-filter-bar{padding:.75rem 1.25rem}
-  .filter-toolbar-inner{flex-direction:column;align-items:stretch;gap:.75rem}
-  .filter-search-wrap{width:100%;min-width:0;order:-1}
-  .filter-pills-wrap{width:100%;flex:none}
+  .filter-pills-wrap{width:100%}
 }
 
 /* Benefits Section */
@@ -357,6 +350,12 @@ ul{list-style:none}
 .foot-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;font-size:.8rem;flex-wrap:wrap;gap:1rem}
 .foot-tag{color:var(--c-accent);font-weight:700;letter-spacing:.05em}
 </style>
+
+
+
+
+
+
 
 <style id="universal-mega-menu-css">
 /* ════ UNIVERSAL MEGA MENU & NAVIGATION DROPDOWN CSS ════ */
@@ -1100,7 +1099,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </section>
 
-  <!-- STICKY FILTER & SEARCH TOOLBAR -->
+  <!-- STICKY CATEGORY FILTER TOOLBAR -->
   <section class="section-filter-bar" id="products-catalog">
     <div class="filter-toolbar-inner">
       <div class="filter-pills-wrap" id="stage-filter-pills">
@@ -1108,21 +1107,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         <button class="filter-pill-btn" data-filter="stage-stabilization-mb">01 Stabilization <span class="filter-pill-count">1</span></button>
         <button class="filter-pill-btn" data-filter="stage-defoaming-mb">02 Defoaming <span class="filter-pill-count">1</span></button>
       </div>
-      <div class="filter-search-wrap">
-        <svg class="filter-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="prod-search-input" class="filter-search-input" placeholder="Search milk stabilizers, defoamers...">
-      </div>
     </div>
   </section>
-
-  <!-- ZERO RESULTS NOTIFICATION -->
-  <div class="wrap">
-    <div class="no-results-box" id="no-results-box">
-      <h3 class="no-results-h3">No matching dairy beverage products found</h3>
-      <p class="no-results-p">Try searching with a different term (e.g. "stabaid", "antifoam", "dairy") or reset your filter.</p>
-      <button class="btn-prod-quote" style="display:inline-flex;width:auto;padding:.6rem 1.6rem;" onclick="resetProductSearch()">View All 2 Products</button>
-    </div>
-  </div>
 
   <!-- STAGE 01: STABILIZATION (SPOTLIGHT WRAP) -->
   <section class="section-stage stage-group" id="stage-stabilization-mb">
@@ -1471,36 +1457,23 @@ document.querySelectorAll('.btn-quote').forEach(btn => {
   });
 });
 
-// Real-Time Live Search and Category Filter Toolbar
-const searchInput = document.getElementById('prod-search-input');
+// Category Filter Toolbar
 const filterBtns = document.querySelectorAll('.filter-pill-btn');
 const stageGroups = document.querySelectorAll('.stage-group');
-const noResultsBox = document.getElementById('no-results-box');
 
 let currentFilter = 'all';
 
 function filterProducts() {
-  const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
-  let visibleCount = 0;
-
   stageGroups.forEach(group => {
     const stageId = group.id;
     const cards = group.querySelectorAll('.prod-card');
     let groupMatchCount = 0;
 
     cards.forEach(card => {
-      const name = (card.getAttribute('data-name') || '').toLowerCase();
-      const stage = (card.getAttribute('data-stage') || '').toLowerCase();
-      const nature = (card.getAttribute('data-nature') || '').toLowerCase();
-      const text = card.textContent.toLowerCase();
-
       const matchesFilter = (currentFilter === 'all' || stageId === currentFilter);
-      const matchesQuery = !q || name.includes(q) || stage.includes(q) || nature.includes(q) || text.includes(q);
-
-      if (matchesFilter && matchesQuery) {
+      if (matchesFilter) {
         card.style.display = 'flex';
         groupMatchCount++;
-        visibleCount++;
       } else {
         card.style.display = 'none';
       }
@@ -1517,18 +1490,6 @@ function filterProducts() {
       group.style.display = 'none';
     }
   });
-
-  if (noResultsBox) {
-    if (visibleCount === 0) {
-      noResultsBox.classList.add('visible');
-    } else {
-      noResultsBox.classList.remove('visible');
-    }
-  }
-}
-
-if (searchInput) {
-  searchInput.addEventListener('input', filterProducts);
 }
 
 filterBtns.forEach(btn => {
@@ -1540,12 +1501,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-function resetProductSearch() {
-  if (searchInput) searchInput.value = '';
-  const allBtn = document.querySelector('.filter-pill-btn[data-filter="all"]');
-  if (allBtn) allBtn.click();
-}
-
 function brand(brandId) {
   if (brandId === 'ab') {
     window.location.href = 'index.html?brand=ab';
@@ -1554,6 +1509,9 @@ function brand(brandId) {
   }
 }
 </script>
+
+
+
 
 <script id="universal-mega-menu-js">
 // ════ UNIVERSAL MEGA MENU & NAVIGATION CONTROLLER ════
