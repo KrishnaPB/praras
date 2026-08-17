@@ -616,6 +616,157 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 }
 </style>
 
+
+<style id="universal-card-fix-css">
+/* ════ UNIVERSAL PRODUCT CARD TEXT & BADGE OVERFLOW FIX ════ */
+.prod-card {
+  background: var(--c-surface, #FFFFFF) !important;
+  border: 1px solid var(--c-border, #EBE5E0) !important;
+  border-radius: 20px !important;
+  padding: 1.6rem !important;
+  box-shadow: var(--sh-card, 0 10px 30px rgba(0,0,0,0.04)) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.85rem !important;
+  transition: all var(--transition, 0.4s ease) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.prod-card-header {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+  align-items: flex-start !important;
+  gap: 0.4rem !important;
+  border-bottom: 1px solid var(--c-border, #EBE5E0) !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 0.35rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.prod-stage-tag {
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--c-primary, #9A1D1E) !important;
+  background: var(--c-primary-bg, #FDF4F4) !important;
+  padding: 0.22rem 0.65rem !important;
+  border-radius: var(--r-pill, 999px) !important;
+  display: inline-block !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  line-height: 1.25 !important;
+}
+
+.prod-card-name {
+  font-family: var(--font-d, serif) !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--c-ink, #181412) !important;
+  line-height: 1.2 !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  width: 100% !important;
+  transition: color var(--transition, 0.4s ease) !important;
+}
+
+.prod-card-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.55rem !important;
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.prod-detail-item {
+  display: grid !important;
+  grid-template-columns: 80px 1fr !important;
+  gap: 0.5rem !important;
+  align-items: baseline !important;
+  font-size: 0.84rem !important;
+  line-height: 1.45 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.prod-detail-lbl {
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--c-primary, #9A1D1E) !important;
+  white-space: nowrap !important;
+}
+
+.prod-detail-val {
+  color: var(--c-body, #423933) !important;
+  font-weight: 600 !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.prod-dosage-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  background: var(--c-surface-alt, #F7F4F2) !important;
+  border: 1px solid var(--c-border-s, #DED6CD) !important;
+  border-radius: var(--r-pill, 999px) !important;
+  padding: 0.35rem 0.85rem !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+  color: var(--c-muted, #78695E) !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  line-height: 1.35 !important;
+  margin-top: 0.35rem !important;
+  box-sizing: border-box !important;
+}
+
+.prod-card-actions {
+  display: flex !important;
+  gap: 0.65rem !important;
+  margin-top: auto !important;
+  padding-top: 0.85rem !important;
+  border-top: 1px solid var(--c-border-s, #DED6CD) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  align-items: center !important;
+}
+
+/* Grid Breakpoints with Minimum Card Width */
+.products-grid-4 {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+@media (max-width: 1280px) and (min-width: 851px) {
+  .products-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .products-grid-4, .products-grid-3, .products-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .prod-detail-item {
+    grid-template-columns: 75px 1fr !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
