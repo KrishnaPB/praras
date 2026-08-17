@@ -61,6 +61,9 @@ ul{list-style:none}
   --c-ink:        #181412;
   --c-body:       #423933;
   --c-muted:      #78695E;
+  --c-rail:       #9A1D1E;
+  --c-tag-bg:     #F3ECE5;
+  --c-tag-text:   #544A42;
   --sh-card:      0 10px 30px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
   --sh-hover:     0 20px 50px rgba(154,29,30,0.08), 0 10px 20px rgba(154,29,30,0.04);
   --sh-btn:       0 8px 20px rgba(154,29,30,0.25);
@@ -69,17 +72,20 @@ ul{list-style:none}
   --r-lg: 24px;
   --r-pill: 999px;
   --font-d: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --font-s: 'Mulish', sans-serif;
   --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --glass-bg: rgba(255,255,255,0.85);
-  --glass-border: rgba(255,255,255,0.5);
+  --glass-bg: rgba(255,255,255,0.88);
+  --glass-border: rgba(255,255,255,0.6);
 }
 
 /* Brand Switcher */
 .switcher{position:relative;z-index:300;display:flex;height:42px;background:#0B0908}
 .sw-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);position:relative;overflow:hidden;transition:all var(--transition)}
 .sw-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:transparent;transition:background var(--transition)}
+.sw-btn.pr{border-right:1px solid rgba(255,255,255,.05)}
 .sw-btn.pr.on{color:#fff;background:linear-gradient(to top,rgba(154,29,30,.25),transparent)}
 .sw-btn.pr.on::after{background:var(--c-accent)}
+.sw-btn.ab{border-left:1px solid rgba(255,255,255,.05)}
 .sw-btn.ab.on{color:#fff;background:linear-gradient(to top,rgba(31,79,51,.35),transparent)}
 .sw-btn.ab.on::after{background:#A6C98F}
 .sw-btn:hover{color:rgba(255,255,255,.9)}
@@ -103,27 +109,6 @@ ul{list-style:none}
 .nav-cta::after{display:none!important}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover);color:#fff}
 
-/* Mega Menu */
-.nav-dropdown{position:relative;display:flex;align-items:center;height:100%}
-.nav-dropdown::after{content:'';position:absolute;top:100%;left:-20%;right:-20%;height:40px}
-.mega-menu{position:absolute;top:calc(100% + 15px);left:50%;transform:translateX(-50%) translateY(20px) scale(0.98);background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(40px);backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,0.8);border-radius:24px;padding:0;display:flex;min-width:980px;opacity:0;visibility:hidden;pointer-events:none;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);z-index:100;box-shadow:0 40px 100px rgba(0,0,0,0.1);overflow:hidden;max-height:calc(100vh - 100px)}
-.mega-menu-inner{display:flex;width:100%}
-.mega-content{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;padding:3rem;flex:1;background:var(--c-surface)}
-.nav-dropdown:hover .mega-menu,.nav-dropdown.is-active .mega-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0) scale(1)}
-.mega-featured{width:320px;background:linear-gradient(135deg,var(--c-primary-bg) 0%,rgba(240,131,50,0.05) 100%);padding:3rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--c-border)}
-.mega-featured h3{font-family:var(--font-d);font-size:1.6rem;color:var(--c-primary);margin-bottom:1rem;font-weight:700;line-height:1.4}
-.mega-featured p{font-size:.9rem;color:var(--c-muted);line-height:1.6;margin-bottom:2rem}
-.btn-mega-featured{align-self:flex-start;background:var(--c-primary);color:#fff!important;padding:.7rem 1.6rem;border-radius:var(--r-pill);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;box-shadow:var(--sh-btn)}
-.btn-mega-featured:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover);color:#fff}
-.mega-column-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--c-border-s)}
-.mega-column-icon{width:32px;height:32px;border-radius:8px;background:var(--c-primary-bg);color:var(--c-primary);display:flex;align-items:center;justify-content:center}
-.mega-column-header h3{font-family:var(--font-d);font-size:1.35rem;color:var(--c-ink);font-weight:700;margin:0}
-.mega-sub-header{font-size:.75rem;font-weight:800;color:var(--c-muted);text-transform:uppercase;letter-spacing:.15em;margin-top:1.5rem;margin-bottom:.5rem}
-.mega-column a{color:var(--c-body)!important;font-size:.9rem!important;font-weight:700!important;padding:.5rem .85rem;display:block;border-radius:8px;margin-left:-.85rem}
-.mega-column a:hover{color:var(--c-primary)!important;transform:translateX(4px);background:var(--c-primary-bg)}
-.mega-menu-services{min-width:320px}
-.mega-menu-services .mega-content{display:flex;flex-direction:column;gap:.5rem;padding:2rem}
-
 /* Hamburger */
 .hamburger-menu{display:none;background:transparent;border:none;padding:.5rem;gap:5px;flex-direction:column;cursor:pointer}
 .hamburger-line{display:block;width:26px;height:2px;background:var(--c-ink);transition:transform .3s,opacity .3s;border-radius:2px}
@@ -134,10 +119,10 @@ ul{list-style:none}
 }
 
 /* Hero */
-.hero{background:linear-gradient(135deg,rgba(15,10,7,0.93) 0%,rgba(15,10,7,0.48) 100%),url('assets/images/microbrewery_hero.png') center/cover no-repeat;padding:6rem 2.5rem 5.5rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 60%,rgba(240,131,50,0.07) 0%,transparent 60%);pointer-events:none}
+.hero{background:linear-gradient(135deg,rgba(18,12,9,0.92) 0%,rgba(18,12,9,0.60) 100%),url('assets/images/microbrewery_hero.png') center/cover no-repeat;padding:6rem 2.5rem 5.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(240,131,50,0.14) 0%,transparent 60%);pointer-events:none}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:4.5rem;align-items:center;position:relative;z-index:2}
-@media(max-width:980px){.hero-inner{grid-template-columns:1fr}.hero-visual-col{display:none}}
+@media(max-width:980px){.hero-inner{grid-template-columns:1fr}.hero-visual-col{margin-top:2rem}}
 
 .v2-crumbs{display:flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
 .v2-crumbs a{color:rgba(255,255,255,.6)}
@@ -148,8 +133,9 @@ ul{list-style:none}
 .hero-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--c-accent);box-shadow:0 0 10px var(--c-accent);animation:pulseDot 2s ease-in-out infinite}
 @keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
 
-.hero-h1{font-family:var(--font-d);font-size:clamp(3.2rem,6vw,5.2rem);font-weight:900;line-height:1.02;color:#fff;letter-spacing:-.02em;margin-bottom:.5rem;text-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.hero-h1{font-family:var(--font-d);font-size:clamp(3.2rem,6vw,4.8rem);font-weight:900;line-height:1.04;color:#fff;letter-spacing:-.02em;margin-bottom:.85rem;text-shadow:0 10px 30px rgba(0,0,0,0.3)}
 .hero-p{font-size:1.15rem;color:rgba(255,255,255,.88);line-height:1.7;max-width:560px;margin-bottom:2.5rem}
+
 .hero-actions{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
 .btn-hero-p{background:linear-gradient(135deg,var(--c-accent),var(--c-accent-d));color:#fff;padding:1rem 2.2rem;border-radius:var(--r-pill);font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem;box-shadow:0 10px 25px rgba(240,131,50,0.4);border:1px solid rgba(255,255,255,0.2);cursor:pointer}
 .btn-hero-p svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5}
@@ -161,34 +147,15 @@ ul{list-style:none}
 .hero-visual-col{display:flex;flex-direction:column;gap:1.1rem;position:relative}
 .hero-metric-card{background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:1.4rem 1.8rem;display:flex;align-items:center;gap:1.4rem;transition:all var(--transition);box-shadow:0 20px 40px rgba(0,0,0,0.2)}
 .hero-metric-card:hover{background:rgba(255,255,255,.18);transform:translateX(-6px);border-color:rgba(240,131,50,0.5)}
-.hmc-num{font-family:var(--font-d);font-size:2.8rem;font-weight:900;line-height:1;color:#fff;flex-shrink:0;min-width:80px;text-align:center;text-shadow:0 4px 12px rgba(0,0,0,0.3)}
+.hmc-num{font-family:var(--font-d);font-size:2.8rem;font-weight:900;line-height:1;color:#fff;flex-shrink:0;min-width:90px;text-align:center;text-shadow:0 4px 12px rgba(0,0,0,0.3)}
 .hmc-num .unit{font-size:1.3rem;color:var(--c-accent)}
 .hmc-content{flex:1}
 .hmc-label{font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--c-accent);margin-bottom:.25rem}
 .hmc-desc{font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.45}
 
-/* Brewing Process Flow */
-.section-process{padding:4.5rem 2.5rem;background:var(--c-ink);position:relative;overflow:hidden}
-.section-process::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(240,131,50,0.08) 0%,transparent 70%);pointer-events:none}
-.wrap{max-width:1200px;margin:0 auto}
-.process-eyebrow{text-align:center;font-size:.75rem;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:rgba(240,131,50,.8);margin-bottom:.8rem}
-.process-h2{text-align:center;font-family:var(--font-d);font-size:2.2rem;font-weight:700;color:#fff;margin-bottom:.6rem}
-.process-sub{text-align:center;font-size:.95rem;color:rgba(255,255,255,.5);margin-bottom:3rem}
-.process-flow{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding-bottom:1rem}
-@media(max-width:768px){.process-flow{flex-direction:column;gap:1rem}}
-.process-step{flex:1;min-width:140px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem 1.25rem;text-align:center;position:relative;transition:all var(--transition)}
-.process-step:hover{background:rgba(255,255,255,.1);border-color:rgba(240,131,50,.4);transform:translateY(-4px)}
-.process-step::after{content:'→';position:absolute;right:-18px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.25);font-size:1.2rem;font-weight:300;z-index:1}
-@media(max-width:768px){.process-step::after{content:'↓';right:50%;bottom:-18px;top:auto;transform:translateX(50%)}}
-.process-step:last-child::after{display:none}
-.process-step-num{font-family:var(--font-d);font-size:.75rem;font-weight:800;color:var(--c-accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem}
-.process-step-icon{font-size:2rem;margin-bottom:.75rem;display:block}
-.process-step-name{font-family:var(--font-d);font-size:1rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:.35rem}
-.process-step-sub{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.4}
-.process-gap{width:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-
 /* Overview */
-.section-overview{padding:5.5rem 2.5rem;background:var(--c-page);position:relative}
+.section-overview{padding:5rem 2.5rem;background:var(--c-page);position:relative}
+.wrap{max-width:1200px;margin:0 auto}
 .ov-card{background:linear-gradient(145deg,#ffffff,#f9fafb);border-radius:24px;padding:clamp(2.5rem,5vw,4.5rem);box-shadow:0 20px 40px rgba(0,0,0,0.04),0 1px 3px rgba(0,0,0,0.05);position:relative;overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
 .ov-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(154,29,30,0.05) 0%,rgba(255,255,255,0) 70%);border-radius:50%;pointer-events:none}
 .ov-grid{display:flex;flex-wrap:wrap;gap:4rem;align-items:center;position:relative;z-index:1}
@@ -196,7 +163,7 @@ ul{list-style:none}
 .ov-badge{display:inline-block;padding:.45rem 1.1rem;background:rgba(154,29,30,0.08);color:var(--c-primary);border-radius:999px;font-weight:800;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.5rem}
 .ov-h2{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;color:var(--c-ink);line-height:1.12;margin-bottom:1.5rem;letter-spacing:-.01em}
 .ov-h2 em{font-style:italic;color:var(--c-primary);font-weight:400}
-.ov-p{color:var(--c-body);line-height:1.75;margin-bottom:1.75rem;font-size:1.06rem}
+.ov-p{color:var(--c-body);line-height:1.75;margin-bottom:1.5rem;font-size:1.05rem}
 .ov-p strong{color:var(--c-ink);font-weight:700}
 .ov-apps{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
 .ov-app-pill{padding:.4rem 1rem;background:var(--c-primary-bg);color:var(--c-primary);border-radius:var(--r-pill);font-size:.75rem;font-weight:700;letter-spacing:.05em;border:1px solid rgba(154,29,30,0.12)}
@@ -208,114 +175,197 @@ ul{list-style:none}
 .ov-tag-num{font-family:var(--font-d);font-size:1.8rem;font-weight:900;line-height:1}
 .ov-tag-text{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2}
 
-/* Benefits */
-.section-benefits{padding:5.5rem 2.5rem;background:var(--c-surface-alt);position:relative}
-.sec-hd-center{text-align:center;margin-bottom:4rem}
-.eyebrow-center{font-size:.75rem;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:var(--c-primary);margin-bottom:.8rem;display:block}
-.h2-center{font-family:var(--font-d);font-size:3.2rem;font-weight:700;color:var(--c-ink);line-height:1.1;letter-spacing:-.02em;margin-bottom:.75rem}
-.h2-center em{font-style:italic;color:var(--c-primary);font-weight:400}
-.sec-sub-center{font-size:1.05rem;color:var(--c-muted);max-width:600px;margin:0 auto}
-.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-@media(max-width:900px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:580px){.benefits-grid{grid-template-columns:1fr}}
-.benefit-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:24px;padding:2.5rem;box-shadow:var(--sh-card);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all var(--transition)}
-.benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));opacity:0;transition:opacity var(--transition)}
-.benefit-card:hover{transform:translateY(-8px);box-shadow:var(--sh-hover);border-color:rgba(154,29,30,0.15)}
-.benefit-card:hover::before{opacity:1}
-.benefit-num{font-family:var(--font-d);font-size:3.5rem;font-weight:900;color:transparent;-webkit-text-stroke:1.5px var(--c-border-s);line-height:1;margin-bottom:1rem;transition:all var(--transition)}
-.benefit-card:hover .benefit-num{-webkit-text-stroke:1.5px var(--c-primary);color:rgba(154,29,30,0.05)}
-.benefit-icon{width:52px;height:52px;border-radius:16px;background:var(--c-primary-bg);color:var(--c-primary);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:inset 0 0 0 1px rgba(154,29,30,0.1)}
-.benefit-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.benefit-title{font-family:var(--font-d);font-size:1.35rem;font-weight:700;color:var(--c-ink);margin-bottom:.6rem;line-height:1.3}
-.benefit-text{font-size:.95rem;color:var(--c-muted);line-height:1.65;flex:1}
+/* Stats Bar */
+.section-stats-bar{padding:3.5rem 2.5rem;background:linear-gradient(135deg,var(--c-ink) 0%,#261710 100%)}
+.stats-bar-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+@media(max-width:900px){.stats-bar-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.stats-bar-grid{grid-template-columns:1fr}}
+.stat-item-num{font-family:var(--font-d);font-size:3.2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.4rem}
+.stat-item-num span{color:var(--c-accent)}
+.stat-item-label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)}
 
-/* Product Stage Sections */
-.section-stage{padding:4rem 2.5rem;border-bottom:1px solid var(--c-border)}
+/* Process Pipeline Stepper */
+.section-pipeline{padding:3.5rem 2.5rem 2.5rem;background:var(--c-surface);border-bottom:1px solid var(--c-border)}
+.pipeline-header{text-align:center;max-width:700px;margin:0 auto 2.5rem}
+.pipeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;position:relative}
+@media(max-width:960px){.pipeline-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pipeline-grid{grid-template-columns:1fr}}
+.pipeline-step{background:var(--c-surface-alt);border:1px solid var(--c-border);border-radius:16px;padding:1.4rem 1.1rem;text-align:center;transition:all var(--transition);cursor:pointer;display:flex;flex-direction:column;align-items:center;position:relative}
+.pipeline-step:hover{background:#fff;border-color:var(--c-primary);transform:translateY(-4px);box-shadow:var(--sh-card)}
+.pipeline-step-num{font-size:.7rem;font-weight:800;letter-spacing:.1em;color:var(--c-primary);background:var(--c-primary-bg);border-radius:var(--r-pill);padding:.2rem .6rem;margin-bottom:.6rem}
+.pipeline-step-title{font-family:var(--font-d);font-size:1.1rem;font-weight:700;color:var(--c-ink);line-height:1.2;margin-bottom:.4rem}
+.pipeline-step-desc{font-size:.74rem;color:var(--c-muted);line-height:1.4}
+
+/* Sticky Filter & Search Control Toolbar */
+.section-filter-bar{position:sticky;top:72px;z-index:180;background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid var(--c-border);padding:.75rem 2rem .65rem;box-shadow:0 10px 30px rgba(0,0,0,0.03)}
+.filter-toolbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:1.25rem;flex-wrap:nowrap}
+.filter-pills-wrap{display:flex;align-items:center;gap:.45rem;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;flex:1 1 auto;min-width:0;padding:0 0 6px 0;scrollbar-width:thin;scrollbar-color:var(--c-primary) #EBE5E0}
+.filter-pills-wrap::-webkit-scrollbar{height:5px}
+.filter-pills-wrap::-webkit-scrollbar-track{background:#EBE5E0;border-radius:999px;margin:0 4px}
+.filter-pills-wrap::-webkit-scrollbar-thumb{background:var(--c-primary);border-radius:999px}
+.filter-pills-wrap::-webkit-scrollbar-thumb:hover{background:var(--c-primary-d)}
+
+.filter-pill-btn{height:40px;box-sizing:border-box;white-space:nowrap;flex-shrink:0;padding:0 1.05rem;border-radius:var(--r-pill);font-size:.75rem;font-weight:800;letter-spacing:.03em;background:var(--c-surface-alt);color:var(--c-muted);border:1px solid var(--c-border);cursor:pointer;transition:all var(--transition);display:inline-flex;align-items:center;justify-content:center;gap:.35rem}
+.filter-pill-btn:hover{color:var(--c-ink);border-color:var(--c-primary-d);background:#fff}
+.filter-pill-btn.active{background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;border-color:transparent;box-shadow:var(--sh-btn)}
+.filter-pill-count{font-size:.65rem;background:rgba(0,0,0,0.08);padding:.12rem .45rem;border-radius:var(--r-pill);font-weight:800}
+.filter-pill-btn.active .filter-pill-count{background:rgba(255,255,255,0.25);color:#fff}
+
+.filter-search-wrap{position:relative;width:270px;min-width:220px;flex:0 0 auto;display:flex;align-items:center;height:40px}
+.filter-search-input{width:100%;height:40px;box-sizing:border-box;padding:0 1rem 0 2.35rem;border-radius:var(--r-pill);border:1px solid var(--c-border);font-size:.82rem;background:var(--c-surface-alt);color:var(--c-ink);transition:all var(--transition);display:flex;align-items:center}
+.filter-search-input:focus{outline:none;border-color:var(--c-primary);background:#fff;box-shadow:0 0 0 3px rgba(154,29,30,0.1)}
+.filter-search-icon{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--c-muted);pointer-events:none}
+
+@media(max-width:960px){
+  .section-filter-bar{padding:.75rem 1.25rem}
+  .filter-toolbar-inner{flex-direction:column;align-items:stretch;gap:.75rem}
+  .filter-search-wrap{width:100%;min-width:0;order:-1}
+  .filter-pills-wrap{width:100%;flex:none}
+}
+
+/* Benefits Section */
+.section-benefits{padding:5.5rem 2.5rem;background:var(--c-surface-alt);position:relative}
+.sec-hd-center{text-align:center;margin-bottom:3.5rem}
+.sec-badge{display:inline-block;padding:.4rem 1.1rem;background:rgba(154,29,30,0.08);color:var(--c-primary);border-radius:var(--r-pill);font-weight:800;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem}
+.sec-h2{font-family:var(--font-d);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--c-ink);line-height:1.15;margin-bottom:.85rem}
+.sec-h2 em{font-style:italic;color:var(--c-primary);font-weight:400}
+.sec-p{color:var(--c-muted);font-size:1.05rem;max-width:620px;margin:0 auto}
+
+.benefits-bento{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:960px){.benefits-bento{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.benefits-bento{grid-template-columns:1fr}}
+
+.benefit-bento-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:20px;padding:2.2rem;box-shadow:var(--sh-card);transition:all var(--transition);position:relative;overflow:hidden}
+.benefit-bento-card:hover{transform:translateY(-6px);box-shadow:var(--sh-hover);border-color:rgba(154,29,30,0.3)}
+.benefit-card-num{position:absolute;top:1.5rem;right:1.5rem;font-family:var(--font-d);font-size:2.4rem;font-weight:900;color:rgba(154,29,30,0.08);line-height:1}
+.benefit-icon{width:48px;height:48px;border-radius:14px;background:var(--c-primary-bg);color:var(--c-primary);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.benefit-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2}
+.benefit-title{font-family:var(--font-d);font-size:1.35rem;font-weight:700;color:var(--c-ink);margin-bottom:.75rem;line-height:1.25}
+.benefit-text{font-size:.9rem;color:var(--c-body);line-height:1.6}
+
+/* Stage Sections */
+.section-stage{padding:3.5rem 2.5rem;border-bottom:1px solid var(--c-border);transition:all var(--transition)}
 .section-stage:nth-child(even){background:var(--c-surface)}
 .section-stage:nth-child(odd){background:var(--c-page)}
-.stage-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:2.5rem}
+.stage-header{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.stage-header-left{display:flex;align-items:center;gap:1.2rem}
 .stage-num{font-family:var(--font-d);font-size:1rem;font-weight:900;color:var(--c-primary);background:var(--c-primary-bg);border:1px solid rgba(154,29,30,0.15);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.stage-title{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--c-ink);line-height:1.1}
+.stage-title{font-family:var(--font-d);font-size:1.85rem;font-weight:700;color:var(--c-ink);line-height:1.15}
 .stage-title em{font-style:italic;color:var(--c-primary);font-weight:400}
-.stage-desc{font-size:.95rem;color:var(--c-muted);margin-top:.3rem}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
-@media(max-width:640px){.products-grid{grid-template-columns:1fr}}
-.prod-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:20px;padding:1.75rem;box-shadow:var(--sh-card);display:flex;flex-direction:column;gap:1rem;transition:all var(--transition);position:relative;overflow:hidden}
-.prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));opacity:0;transition:opacity var(--transition)}
-.prod-card:hover{transform:translateY(-6px);box-shadow:var(--sh-hover);border-color:rgba(154,29,30,0.15)}
+.stage-desc{font-size:.92rem;color:var(--c-muted);margin-top:.25rem}
+.stage-pill-tag{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .9rem;border-radius:var(--r-pill);background:var(--c-surface-alt);color:var(--c-muted);border:1px solid var(--c-border)}
+
+/* Balanced Grid Structures */
+.products-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+@media(max-width:850px){.products-grid-2{grid-template-columns:1fr}}
+
+/* Spotlight 2-Column Balanced Stage for 1-Product Stages */
+.stage-spotlight-wrap{display:grid;grid-template-columns:1fr 1.35fr;gap:2rem;align-items:stretch}
+@media(max-width:850px){.stage-spotlight-wrap{grid-template-columns:1fr}}
+
+.stage-spotlight-info{background:linear-gradient(145deg,var(--c-primary-bg) 0%,rgba(240,131,50,0.06) 100%);border:1px solid rgba(154,29,30,0.15);border-radius:20px;padding:2.2rem;display:flex;flex-direction:column;justify-content:center}
+.spotlight-badge{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c-primary);margin-bottom:1rem}
+.spotlight-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--c-primary)}
+.spotlight-title{font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--c-ink);margin-bottom:.75rem;line-height:1.25}
+.spotlight-p{font-size:.92rem;color:var(--c-body);line-height:1.65;margin-bottom:1.5rem}
+.spotlight-features{display:flex;flex-direction:column;gap:.6rem}
+.spotlight-feat-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:700;color:var(--c-ink)}
+.spotlight-feat-item svg{width:16px;height:16px;color:var(--c-primary);flex-shrink:0}
+
+/* Executive Product Cards */
+.prod-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:20px;padding:1.6rem;box-shadow:var(--sh-card);display:flex;flex-direction:column;gap:.85rem;transition:all var(--transition);position:relative;overflow:hidden;height:100%;cursor:pointer}
+.prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3.5px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));opacity:0;transition:opacity var(--transition)}
+.prod-card:hover{transform:translateY(-6px);box-shadow:var(--sh-hover);border-color:rgba(154,29,30,0.3)}
 .prod-card:hover::before{opacity:1}
-.prod-card-name{font-family:var(--font-d);font-size:1.35rem;font-weight:700;color:var(--c-ink);line-height:1.2}
-.prod-card-nature{font-size:.82rem;color:var(--c-muted);line-height:1.5;margin:-.25rem 0 .25rem}
-.prod-function{font-size:.9rem;color:var(--c-body);line-height:1.55}
-.prod-dosage-pill{display:inline-flex;align-items:center;gap:.4rem;background:var(--c-surface-alt);border:1px solid var(--c-border-s);border-radius:var(--r-pill);padding:.3rem .8rem;font-size:.73rem;font-weight:700;color:var(--c-muted);margin-top:.25rem;width:fit-content}
-.prod-card-actions{display:flex;gap:.75rem;margin-top:auto;padding-top:1rem;border-top:1px solid var(--c-border-s)}
-.btn-prod-quote{flex:1;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:.7rem 1rem;border-radius:var(--r-pill);font-size:.75rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;box-shadow:var(--sh-btn);border:none;cursor:pointer;transition:all var(--transition)}
+.prod-card:hover .prod-card-name{color:var(--c-primary)}
+.prod-card:hover .btn-prod-learn{border-color:var(--c-primary);color:var(--c-primary);background:var(--c-primary-bg)}
+
+.prod-card-header{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:.4rem;border-bottom:1px solid var(--c-border);padding-bottom:.75rem;margin-bottom:.35rem}
+.prod-card-name{font-family:var(--font-d);font-size:1.35rem;font-weight:700;color:var(--c-ink);line-height:1.2;word-break:break-word;transition:color var(--transition)}
+.prod-stage-tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c-primary);background:var(--c-primary-bg);padding:.22rem .65rem;border-radius:var(--r-pill);white-space:normal;word-break:break-word;line-height:1.25}
+
+.prod-card-details{display:flex;flex-direction:column;gap:.55rem;flex:1 1 auto}
+.prod-detail-item{display:grid;grid-template-columns:80px 1fr;gap:.5rem;align-items:baseline;font-size:.84rem;line-height:1.45}
+.prod-detail-lbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--c-primary);white-space:nowrap}
+.prod-detail-val{color:var(--c-body);font-weight:600;word-break:break-word;overflow-wrap:break-word}
+
+.prod-dosage-pill{display:inline-flex;align-items:center;gap:.4rem;background:var(--c-surface-alt);border:1px solid var(--c-border-s);border-radius:var(--r-pill);padding:.35rem .85rem;font-size:.74rem;font-weight:800;color:var(--c-muted);width:fit-content;max-width:100%;white-space:normal;word-break:break-word;line-height:1.35;margin-top:.35rem}
+
+.prod-card-actions{display:flex;gap:.65rem;margin-top:auto;padding-top:.85rem;border-top:1px solid var(--c-border-s)}
+.btn-prod-quote{flex:1;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:.65rem 1rem;border-radius:var(--r-pill);font-size:.75rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;box-shadow:var(--sh-btn);border:none;cursor:pointer;transition:all var(--transition)}
 .btn-prod-quote:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover);color:#fff}
-.btn-prod-learn{flex:0 0 auto;background:transparent;border:1px solid var(--c-border-s);color:var(--c-muted);padding:.7rem 1.1rem;border-radius:var(--r-pill);font-size:.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;cursor:pointer;transition:all var(--transition)}
+.btn-prod-learn{flex:0 0 auto;background:transparent;border:1px solid var(--c-border-s);color:var(--c-muted);padding:.65rem 1rem;border-radius:var(--r-pill);font-size:.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:.3rem;cursor:pointer;transition:all var(--transition)}
 .btn-prod-learn:hover{border-color:var(--c-primary);color:var(--c-primary);background:var(--c-primary-bg)}
 
-/* CTA Band */
-.cta-band{padding:5rem 2.5rem;background:linear-gradient(135deg,#9A1D1E 0%,#751516 60%,#500E0E 100%);position:relative;overflow:hidden}
-.cta-band::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
-.cta-band-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.cta-band-eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.2rem;display:block}
-.cta-band-h2{font-family:var(--font-d);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.2rem;text-shadow:0 4px 20px rgba(0,0,0,0.2)}
-.cta-band-p{font-size:1.1rem;color:rgba(255,255,255,.75);max-width:560px;margin:0 auto 2.5rem;line-height:1.65}
-.cta-band-actions{display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap}
-.btn-cta-w{background:#fff;color:var(--c-primary)!important;padding:1rem 2.4rem;border-radius:var(--r-pill);font-size:.85rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem;box-shadow:0 10px 30px rgba(0,0,0,0.2);border:1.5px solid #fff;cursor:pointer;transition:all var(--transition)}
-.btn-cta-w:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.25);color:var(--c-primary-d)!important}
-.btn-cta-o{background:transparent;color:#fff!important;padding:1rem 2.4rem;border-radius:var(--r-pill);font-size:.85rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid rgba(255,255,255,.7);cursor:pointer;transition:all var(--transition)}
-.btn-cta-o:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-3px);color:#fff!important}
+/* Craft Beer Styles Section */
+.section-beer-styles{padding:4.5rem 2.5rem;background:var(--c-surface);border-bottom:1px solid var(--c-border)}
+.beer-styles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:900px){.beer-styles-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.beer-styles-grid{grid-template-columns:1fr}}
 
-/* Footer */
-.site-footer{background:#0F0B08;color:rgba(255,255,255,.7);padding:5rem 2.5rem 3rem;border-top:1px solid var(--c-border)}
-.foot-grid{max-width:1200px;margin:0 auto}
-.foot-top{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:4rem;margin-bottom:4rem}
-@media(max-width:900px){.foot-top{grid-template-columns:1fr 1fr}}
-@media(max-width:550px){.foot-top{grid-template-columns:1fr}}
-.foot-brand-p{font-size:.9rem;line-height:1.65;color:rgba(255,255,255,.6);margin-bottom:1.5rem;max-width:320px}
-.foot-switch-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c-accent);border:1px solid rgba(240,131,50,.3);padding:.4rem 1rem;border-radius:var(--r-pill);background:rgba(240,131,50,.05)}
-.foot-switch-link:hover{background:rgba(240,131,50,.15);color:#fff}
-.foot-col h4{font-family:var(--font-d);font-size:1.1rem;color:#fff;margin-bottom:1.5rem;font-weight:700}
-.foot-col ul{display:flex;flex-direction:column;gap:.8rem}
-.foot-col a,.foot-col button{font-size:.85rem;color:rgba(255,255,255,.6);transition:color var(--transition);display:block;font-weight:600}
-.foot-col a:hover,.foot-col button:hover{color:#fff;transform:translateX(4px)}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.foot-copy{font-size:.8rem;color:rgba(255,255,255,.4)}
-.foot-tag{font-family:var(--font-d);font-style:italic;font-size:.95rem;color:rgba(255,255,255,.4)}
+.style-card{background:var(--c-page);border:1px solid var(--c-border);border-radius:18px;padding:2rem;transition:all var(--transition)}
+.style-card:hover{border-color:var(--c-primary);background:#fff;transform:translateY(-4px);box-shadow:var(--sh-card)}
+.style-badge{display:inline-block;padding:.25rem .75rem;border-radius:var(--r-pill);background:var(--c-primary-bg);color:var(--c-primary);font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+.style-title{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--c-ink);margin-bottom:.6rem}
+.style-desc{font-size:.86rem;color:var(--c-muted);line-height:1.55;margin-bottom:1.2rem}
+.style-rec-title{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c-ink);margin-bottom:.5rem}
+.style-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.style-pill{font-size:.72rem;font-weight:700;background:#fff;border:1px solid var(--c-border-s);padding:.25rem .65rem;border-radius:var(--r-pill);color:var(--c-body)}
+
+/* CTA Band */
+.section-cta{padding:5.5rem 2.5rem;background:linear-gradient(135deg,var(--c-primary-dd) 0%,var(--c-primary) 50%,#7A1213 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+.section-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(240,131,50,0.2) 0%,transparent 60%);pointer-events:none}
+.cta-inner{max-width:760px;margin:0 auto;position:relative;z-index:2}
+.cta-h2{font-family:var(--font-d);font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:900;line-height:1.1;margin-bottom:1.2rem;text-shadow:0 10px 30px rgba(0,0,0,0.2)}
+.cta-p{font-size:1.15rem;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:2.5rem}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap}
+.btn-cta-white{background:#fff;color:var(--c-primary)!important;padding:1rem 2.2rem;border-radius:var(--r-pill);font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+.btn-cta-white:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,0.35);background:var(--c-surface-alt)}
+.btn-cta-outline{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff!important;padding:1rem 2.2rem;border-radius:var(--r-pill);font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem}
+.btn-cta-outline:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-3px)}
+
+/* Zero Results Notification */
+.no-results-box{display:none;padding:3rem 2rem;background:var(--c-surface);border:1px solid var(--c-border);border-radius:20px;text-align:center;margin:2rem 0;box-shadow:var(--sh-card)}
+.no-results-box.visible{display:block}
+.no-results-h3{font-family:var(--font-d);font-size:1.4rem;font-weight:700;color:var(--c-ink);margin-bottom:.5rem}
+.no-results-p{font-size:.9rem;color:var(--c-muted);margin-bottom:1.25rem}
 
 /* Quote Drawer */
-.quote-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:1000;opacity:0;visibility:hidden;transition:all var(--transition)}
+.quote-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);z-index:998;opacity:0;visibility:hidden;transition:all var(--transition)}
 .quote-overlay.is-active{opacity:1;visibility:visible}
-.quote-drawer{position:fixed;top:0;right:0;bottom:0;width:100%;max-width:500px;background:var(--c-surface);z-index:1001;transform:translateX(100%);transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);box-shadow:-30px 0 60px rgba(0,0,0,0.15);display:flex;flex-direction:column;overflow-y:auto}
+.quote-drawer{position:fixed;top:0;right:0;bottom:0;width:min(500px,100vw);background:var(--c-surface);z-index:999;box-shadow:-10px 0 40px rgba(0,0,0,.2);transform:translateX(100%);transition:transform var(--transition);display:flex;flex-direction:column;overflow-y:auto}
 .quote-drawer.is-active{transform:translateX(0)}
-.quote-drawer-header{padding:2.5rem 2.5rem 1.5rem;border-bottom:1px solid var(--c-border);display:flex;align-items:center;justify-content:space-between}
-.quote-drawer-title{font-family:var(--font-d);font-size:1.8rem;font-weight:700;color:var(--c-ink)}
-.quote-drawer-subtitle{font-size:.85rem;color:var(--c-primary);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem}
-.quote-close-btn{width:36px;height:36px;border-radius:50%;background:var(--c-surface-alt);color:var(--c-ink);display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
-.quote-close-btn:hover{background:var(--c-primary-bg);color:var(--c-primary);transform:rotate(90deg)}
-.quote-drawer-body{padding:2.5rem;flex:1}
-.quote-form-group{margin-bottom:1.5rem}
-.q-input-wrap{margin-bottom:1.25rem}
-.q-input-wrap label{display:block;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted);margin-bottom:.4rem}
-.q-input-wrap input,.q-input-wrap select,.q-input-wrap textarea{width:100%;padding:.9rem 1.1rem;border:1px solid var(--c-border);border-radius:12px;background:var(--c-surface-alt);color:var(--c-ink);font-size:.95rem;transition:all var(--transition)}
-.q-input-wrap input:focus,.q-input-wrap select:focus,.q-input-wrap textarea:focus{border-color:var(--c-primary);background:#fff;outline:none;box-shadow:0 0 0 4px rgba(154,29,30,0.1)}
-.quote-btn-submit{width:100%;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:1.1rem;border-radius:var(--r-pill);font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;box-shadow:var(--sh-btn);border:none;cursor:pointer;transition:all var(--transition)}
-.quote-btn-submit:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover)}
+.quote-drawer-header{padding:2rem;background:var(--c-surface-alt);border-bottom:1px solid var(--c-border);display:flex;align-items:center;justify-content:space-between}
+.quote-drawer-title{font-family:var(--font-d);font-size:1.5rem;font-weight:700;color:var(--c-ink)}
+.quote-drawer-close{width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--c-border);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--transition)}
+.quote-drawer-close:hover{background:var(--c-primary);color:#fff}
+.quote-drawer-body{padding:2rem;flex:1}
+.quote-form{display:flex;flex-direction:column;gap:1.2rem}
+.quote-form-group{display:flex;flex-direction:column;gap:.4rem}
+.quote-form-label{font-size:.78rem;font-weight:700;color:var(--c-ink);text-transform:uppercase;letter-spacing:.05em}
+.quote-form-input,.quote-form-textarea{padding:.8rem 1rem;border-radius:var(--r);border:1px solid var(--c-border);font-family:inherit;font-size:.9rem;background:var(--c-page);transition:all var(--transition)}
+.quote-form-input:focus,.quote-form-textarea:focus{outline:none;border-color:var(--c-primary);background:#fff;box-shadow:0 0 0 3px rgba(154,29,30,0.1)}
+.quote-form-textarea{resize:vertical;min-height:100px}
+.btn-quote-submit{background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:1rem;border-radius:var(--r-pill);font-weight:800;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;box-shadow:var(--sh-btn);cursor:pointer;border:none;transition:all var(--transition);margin-top:.5rem}
+.btn-quote-submit:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover)}
 
-button.dropdown-trigger,.dropdown-trigger{background:transparent!important;border:none!important;outline:none!important;padding:0!important;margin:0!important;font-family:inherit!important;cursor:pointer!important;box-shadow:none!important;-webkit-appearance:none!important;appearance:none!important}
-
-.prod-card-details{display:flex;flex-direction:column;gap:.5rem;flex:1}
-.prod-detail-item{display:grid;grid-template-columns:88px 1fr;gap:.5rem;align-items:baseline;font-size:.86rem;line-height:1.4}
-.prod-detail-lbl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--c-primary);white-space:nowrap}
-.prod-detail-val{color:var(--c-body);font-weight:600}
+/* Footer */
+.site-footer{background:#0D0B0A;color:rgba(255,255,255,.7);padding:5rem 2.5rem 2.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.foot-grid{max-width:1200px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:4rem;margin-bottom:4rem}
+@media(max-width:960px){.foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media(max-width:540px){.foot-top{grid-template-columns:1fr}}
+.foot-brand-p{font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.6);margin-bottom:1.5rem;max-width:320px}
+.foot-switch-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#A6C98F;border:1px solid rgba(166,201,143,0.3);padding:.45rem 1rem;border-radius:var(--r-pill);transition:all var(--transition)}
+.foot-switch-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.foot-switch-link:hover{background:rgba(166,201,143,0.1);border-color:#A6C98F}
+.foot-col h4{font-family:var(--font-d);font-size:1.15rem;color:#fff;margin-bottom:1.5rem;font-weight:700}
+.foot-col ul{display:flex;flex-direction:column;gap:.75rem}
+.foot-col a{font-size:.85rem;color:rgba(255,255,255,.6);transition:all var(--transition)}
+.foot-col a:hover{color:#fff;padding-left:4px}
+.foot-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;font-size:.8rem;flex-wrap:wrap;gap:1rem}
+.foot-tag{color:var(--c-accent);font-weight:700;letter-spacing:.05em}
 </style>
-
-
-
-
-
-
 
 <style id="universal-mega-menu-css">
 /* ════ UNIVERSAL MEGA MENU & NAVIGATION DROPDOWN CSS ════ */
@@ -752,21 +802,39 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 </head>
 <body>
 
-<!-- BRAND SWITCHER -->
-<div class="switcher">
-  <button type="button" class="sw-btn pr on" id="sw-btn-pr" onclick="brand('pr')">
-    <span class="sw-dot"></span>Praras Biosciences <span class="sw-sub">Food &amp; Biotech</span>
+<!-- INLINE AIRBLISS LOGO DEF -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ab-logo" viewBox="0 0 471 250">
+    <g transform="translate(235.71 78) scale(1.05)">
+      <circle r="56" fill="none" stroke="#234A32" stroke-width="3.2" stroke-dasharray="155 30" stroke-linecap="round" transform="rotate(-20)"/>
+      <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#234A32"/>
+      <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#5C7A4A" transform="rotate(120)"/>
+      <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#9DBF82" transform="rotate(240)"/>
+      <circle r="7" fill="#FBF8F0"/><circle r="3.4" fill="#C18A5B"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ════ TOP BRAND SWITCHER ════ -->
+<div class="switcher" role="region" aria-label="Brand selector">
+  <button class="sw-btn pr on" id="sw-pr" onclick="brand('pr')" aria-label="Switch to Praras Biosciences brand view">
+    <span class="sw-dot"></span>
+    <span>Praras Biosciences <span class="sw-sub">Food &amp; Beverage</span></span>
   </button>
-  <button type="button" class="sw-btn ab" id="sw-btn-ab" onclick="brand('ab')">
-    <span class="sw-dot"></span>Airbliss <span class="sw-sub">Probiotic Solutions</span>
+  <button class="sw-btn ab" id="sw-ab" onclick="brand('ab')" aria-label="Switch to Airbliss brand view">
+    <span class="sw-dot"></span>
+    <span>Airbliss <span class="sw-sub">Microbial Solutions</span></span>
   </button>
 </div>
 
-<!-- NAVIGATION -->
+<!-- ════ SHARED STICKY HEADER ════ -->
 <header class="site-nav" role="banner">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Praras Biosciences home">
       <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp" alt="PrĀRAS Bio-Sciences Pvt. Ltd." class="nav-logo-pr-img" width="156" height="48" style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 14px;">
+      <div class="nav-logo-ab" aria-hidden="true" style="display:none">
+        <svg class="ab-nav-svg" xmlns="http://www.w3.org/2000/svg"><use href="#ab-logo"/></svg>
+      </div>
     </a>
     <nav class="nav-links" aria-label="Primary" id="main-nav-links">
       <span class="pr-only"><a href="about.html">About</a></span>
@@ -823,7 +891,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
             </div>
             <div class="mega-featured">
               <h3>Microbrewery Solutions</h3>
-              <p>Purpose-built craft brewing aids for small-batch artisan beer production — from grain to glass.</p>
+              <p>Specialized craft brewing aids and processing enzymes purpose-built for artisan brewpubs and microbreweries.</p>
               <a href="microbrewery.html" class="btn-mega-featured">Explore Range</a>
             </div>
           </div>
@@ -862,14 +930,14 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         <nav class="v2-crumbs" aria-label="Breadcrumb">
           <a href="index.html">Home</a><span>/</span>
           <a href="industry.html#beverages">Beverages</a><span>/</span>
-          <strong style="color:rgba(255,255,255,.9)">Microbrewery</strong>
+          <strong style="color:rgba(255,255,255,.9)">Microbrewery Solutions</strong>
         </nav>
         <div class="hero-pill">
           <span class="hero-pill-dot"></span>
-          Craft Brewing
+          Artisan &amp; Craft Brewing
         </div>
-        <h1 class="hero-h1">Microbrewery<br>Solutions</h1>
-        <p class="hero-p">From Grain to Glass — Every Stage. Precision enzymes, finings, and processing aids purpose-built for craft and artisan microbreweries.</p>
+        <h1 class="hero-h1">Craft Brewing<br>Solutions</h1>
+        <p class="hero-p">Purpose-built enzymes, finings, and fermentation aids tailored for small-batch craft breweries and brewpubs — from raw grain bill to the perfect pour.</p>
         <div class="hero-actions">
           <button class="btn-hero-p btn-quote" data-product="Microbrewery Solutions">
             Get a Quote
@@ -878,99 +946,55 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
           <a href="#stage-mashing-mb" class="btn-hero-g">Explore Products</a>
         </div>
       </div>
+      <!-- Hero Metric Cards -->
       <div class="hero-visual-col">
         <div class="hero-metric-card">
           <div class="hmc-num">6<span class="unit">+</span></div>
           <div class="hmc-content">
             <div class="hmc-label">Craft Products</div>
-            <div class="hmc-desc">Curated for small-batch artisan brewing</div>
+            <div class="hmc-desc">Curated enzymes, finings & nutrients across all 4 brewing stages</div>
           </div>
         </div>
         <div class="hero-metric-card">
-          <div class="hmc-num">4</div>
+          <div class="hmc-num">0<span class="unit">MOQ</span></div>
           <div class="hmc-content">
-            <div class="hmc-label">Brewing Stages</div>
-            <div class="hmc-desc">Complete coverage from mash to glass</div>
+            <div class="hmc-label">No Minimum Order Qty</div>
+            <div class="hmc-desc">Flexible pack sizes and dosage scaling for artisan craft brewers</div>
           </div>
         </div>
         <div class="hero-metric-card">
-          <div class="hmc-num">0</div>
+          <div class="hmc-num">100<span class="unit">%</span></div>
           <div class="hmc-content">
-            <div class="hmc-label">No MOQ</div>
-            <div class="hmc-desc">Flexible quantities for small-batch brewers</div>
+            <div class="hmc-label">Small-Batch Calibrated</div>
+            <div class="hmc-desc">Pre-measured dosage rates for 500L to 5,000L craft brew lengths</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BREWING PROCESS FLOW -->
-  <section class="section-process">
-    <div class="wrap">
-      <p class="process-eyebrow">From Grain to Glass</p>
-      <h2 class="process-h2">The Microbrewing Journey</h2>
-      <p class="process-sub">Praras solutions support every critical stage of your craft brewing process</p>
-      <div class="process-flow">
-        <div class="process-step">
-          <div class="process-step-num">Stage 01</div>
-          <span class="process-step-icon">🌾</span>
-          <div class="process-step-name">Mashing</div>
-          <div class="process-step-sub">Enzyme-assisted grain conversion</div>
-        </div>
-        <div class="process-gap"></div>
-        <div class="process-step">
-          <div class="process-step-num">Stage 02</div>
-          <span class="process-step-icon">🫙</span>
-          <div class="process-step-name">Kettle</div>
-          <div class="process-step-sub">Protein flocculation & wort clarity</div>
-        </div>
-        <div class="process-gap"></div>
-        <div class="process-step">
-          <div class="process-step-num">Stage 03</div>
-          <span class="process-step-icon">🧫</span>
-          <div class="process-step-name">Fermentation</div>
-          <div class="process-step-sub">Yeast nutrition & antifoam</div>
-        </div>
-        <div class="process-gap"></div>
-        <div class="process-step">
-          <div class="process-step-num">Stage 04</div>
-          <span class="process-step-icon">✨</span>
-          <div class="process-step-name">Processing</div>
-          <div class="process-step-sub">Haze removal & stability</div>
-        </div>
-        <div class="process-gap"></div>
-        <div class="process-step">
-          <div class="process-step-num">Ready</div>
-          <span class="process-step-icon">🍺</span>
-          <div class="process-step-name">Glass</div>
-          <div class="process-step-sub">Brilliant craft beer served</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OVERVIEW -->
+  <!-- OVERVIEW SECTION -->
   <section class="section-overview">
     <div class="wrap">
       <div class="ov-card">
         <div class="ov-grid">
           <div class="ov-content">
-            <span class="ov-badge">Craft Brewing Additives</span>
-            <h2 class="ov-h2">Precision Solutions for <em>Craft Brewers</em></h2>
-            <p class="ov-p">Praras® is a trusted supplier of brewing additives, offering a comprehensive range of natural products tailored for microbreweries. We offer a wide variety of <strong>enzymes, biochemicals, and cultures</strong> that improve yields and extraction efficiency at small-batch scale.</p>
-            <p class="ov-p">Our kettle and isinglass finings give excellent clarification, while our stabilizing agents extend foam life and beer colloidal stability — all formulated for the precise dosage requirements of craft brewing.</p>
+            <span class="ov-badge">Small-Batch Brewing &amp; Craft Solutions</span>
+            <h2 class="ov-h2">Artisan Mastery Meets <em>Biochemical Precision</em></h2>
+            <p class="ov-p">Craft brewing thrives on flavor diversity, complex grain bills, and bold hop profiles. Praras® offers natural enzymes, kettle finings, and yeast nutrients specifically tailored for the agile batch sizes and recipe variations of modern microbreweries and brewpubs.</p>
+            <p class="ov-p">Our specialized formulations eliminate lautering bottlenecks, accelerate cold trub settlement, and guarantee vibrant clarity — while preserving 100% of delicate dry-hop aromas, malt complexity, and rich foam head retention.</p>
             <div class="ov-apps">
-              <span class="ov-app-pill">Craft IPA</span>
-              <span class="ov-app-pill">Wheat Beer</span>
-              <span class="ov-app-pill">Stout &amp; Porter</span>
-              <span class="ov-app-pill">Pale Ale</span>
-              <span class="ov-app-pill">Saison</span>
-              <span class="ov-app-pill">Lager</span>
+              <span class="ov-app-pill">Hazy &amp; West Coast IPA</span>
+              <span class="ov-app-pill">Belgian Wit &amp; Hefeweizen</span>
+              <span class="ov-app-pill">Imperial Stout &amp; Porter</span>
+              <span class="ov-app-pill">American Pale Ale</span>
+              <span class="ov-app-pill">Farmhouse Saison</span>
+              <span class="ov-app-pill">Crisp Craft Lager</span>
             </div>
           </div>
           <div class="ov-visual">
             <div class="ov-img-frame">
-              <img src="assets/images/microbrewery.webp" alt="Craft microbrewery" loading="lazy">
+              <img src="assets/images/microbrewery_overview_facility.jpg" alt="Artisan craft microbrewery and brewpub interior with beer tasting flight" loading="lazy" width="600" height="450">
             </div>
             <div class="ov-img-tag">
               <div class="ov-tag-num">No</div>
@@ -982,95 +1006,197 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </section>
 
-  <!-- BENEFITS -->
-  <section class="section-benefits" id="benefits">
-    <div class="wrap">
-      <div class="sec-hd-center">
-        <span class="eyebrow-center">Why Craft Brewers Choose Praras</span>
-        <h2 class="h2-center">Key <em>Benefits</em></h2>
-        <p class="sec-sub-center">Solutions designed for the unique demands of artisan, small-batch craft beer production.</p>
+  <!-- STATS BAR -->
+  <section class="section-stats-bar">
+    <div class="stats-bar-grid">
+      <div>
+        <div class="stat-item-num">6<span>+</span></div>
+        <div class="stat-item-label">Craft Formulations</div>
       </div>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-num">01</div>
-          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
-          <h3 class="benefit-title">Small-Batch Optimized</h3>
-          <p class="benefit-text">Dosage rates and formulations precision-calibrated for microbrewery scale, with no minimum order quantities for artisan brewers.</p>
+      <div>
+        <div class="stat-item-num">+12<span>%</span></div>
+        <div class="stat-item-label">Brewhouse Extract Yield</div>
+      </div>
+      <div>
+        <div class="stat-item-num">100<span>%</span></div>
+        <div class="stat-item-label">Flexible Batch Sizing</div>
+      </div>
+      <div>
+        <div class="stat-item-num">0<span>dB</span></div>
+        <div class="stat-item-label">Aroma or Hop Stripping</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS PIPELINE STEPPER -->
+  <section class="section-pipeline">
+    <div class="wrap">
+      <div class="pipeline-header">
+        <span class="sec-badge">Craft Brewing Stepper</span>
+        <h2 class="sec-h2">The 4-Stage <em>Craft Brewing Journey</em></h2>
+        <p class="sec-p">Explore specialized craft brewing solutions purpose-built for each step of your artisan brew cycle</p>
+      </div>
+      <div class="pipeline-grid">
+        <div class="pipeline-step" onclick="jumpToStage('stage-mashing-mb')">
+          <span class="pipeline-step-num">Stage 01</span>
+          <h3 class="pipeline-step-title">Mashing &amp; Lautering</h3>
+          <p class="pipeline-step-desc">Starch conversion, beta-glucan breakdown &amp; bed run-off</p>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-num">02</div>
-          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-          <h3 class="benefit-title">Crystal Clarity</h3>
-          <p class="benefit-text">Advanced clarifying agents remove haze-forming proteins efficiently at microbrewery volumes, delivering brilliant, professional-quality beer.</p>
+        <div class="pipeline-step" onclick="jumpToStage('stage-kettle-mb')">
+          <span class="pipeline-step-num">Stage 02</span>
+          <h3 class="pipeline-step-title">Kettle &amp; Whirlpool</h3>
+          <p class="pipeline-step-desc">Protein coagulation, compact trub &amp; brilliant wort clarity</p>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-num">03</div>
-          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          <h3 class="benefit-title">Fermentation Efficiency</h3>
-          <p class="benefit-text">Yeast nutrients and antifoam agents ensure healthy, complete fermentation even in adjunct-heavy or high-gravity craft recipes.</p>
+        <div class="pipeline-step" onclick="jumpToStage('stage-fermentation-mb')">
+          <span class="pipeline-step-num">Stage 03</span>
+          <h3 class="pipeline-step-title">Fermentation &amp; Yeast</h3>
+          <p class="pipeline-step-desc">Krausen management, FAN yeast nutrition &amp; clean kinetics</p>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-num">04</div>
-          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-          <h3 class="benefit-title">Expert Technical Support</h3>
-          <p class="benefit-text">Our brewing specialists provide hands-on technical guidance and troubleshooting support tailored to your specific beer styles and recipes.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-num">05</div>
-          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3 class="benefit-title">FSSAI Compliant</h3>
-          <p class="benefit-text">All products meet Indian food safety regulations with full documentation support for excise compliance and license requirements.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-num">06</div>
-          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <h3 class="benefit-title">Cost-Efficient</h3>
-          <p class="benefit-text">Maximized extract yield and reduced process losses mean lower raw material costs per hectolitre of finished craft beer produced.</p>
+        <div class="pipeline-step" onclick="jumpToStage('stage-processing-mb')">
+          <span class="pipeline-step-num">Stage 04</span>
+          <h3 class="pipeline-step-title">Conditioning &amp; Finish</h3>
+          <p class="pipeline-step-desc">Chill-haze adsorption, colloidal stability &amp; foam life</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STAGE 1: MASHING ENZYMES -->
-  
-  <section class="section-stage" id="stage-mashing-mb">
+  <!-- KEY BENEFITS (6-CARD BENTO GRID) -->
+  <section class="section-benefits">
     <div class="wrap">
-      <div class="stage-header">
-        <div class="stage-num">01</div>
-        <div>
-          <h2 class="stage-title">Mashing Enzymes / <em>Brewhouse Enzymes</em></h2>
-          <p class="stage-desc">Maximize extract yield from your grain bill with enzymatic precision</p>
+      <div class="sec-hd-center">
+        <span class="sec-badge">Craft Advantage</span>
+        <h2 class="sec-h2">Engineered for <em>Artisan Brewmasters</em></h2>
+        <p class="sec-p">Tailored brewing solutions that address the unique operational and sensory demands of microbreweries</p>
+      </div>
+      <div class="benefits-bento">
+        <div class="benefit-bento-card">
+          <div class="benefit-card-num">01</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3 class="benefit-title">Small-Batch Optimized</h3>
+          <p class="benefit-text">Dosage rates and package sizes calibrated specifically for 5 HL to 50 HL batch sizes, with zero minimum order quantities (MOQ) for independent brewpubs.</p>
+        </div>
+        <div class="benefit-bento-card">
+          <div class="benefit-card-num">02</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+          </div>
+          <h3 class="benefit-title">Unlocks Complex Grain Bills</h3>
+          <p class="benefit-text">Powerful beta-glucanases and proteases degrade viscous beta-glucans in wheat, rye, and unmalted oats, preventing stuck mashes and shortening lautering run-off times.</p>
+        </div>
+        <div class="benefit-bento-card">
+          <div class="benefit-card-num">03</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </div>
+          <h3 class="benefit-title">Crystal Clarity Without Stripping Hops</h3>
+          <p class="benefit-text">Targeted clarifying hydrogels and kettle finings remove haze-active polyphenols and proteins cleanly, ensuring crystal brilliance while leaving hop terpenes untouched.</p>
+        </div>
+        <div class="benefit-bento-card">
+          <div class="benefit-card-num">04</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3 class="benefit-title">High-Gravity Fermentation Power</h3>
+          <p class="benefit-text">Specialized yeast foods provide vital Free Amino Nitrogen (FAN), zinc, and sterols to power high-gravity stouts, IPAs, and Belgian ales to complete, clean attenuation.</p>
+        </div>
+        <div class="benefit-bento-card">
+          <div class="benefit-card-num">05</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3 class="benefit-title">Active Krausen Control</h3>
+          <p class="benefit-text">Food-grade liquid antifoam prevents violent krausen overflows in unitanks and open fermenters, maximizing usable tank capacity by up to 15% without affecting head foam.</p>
+        </div>
+        <div class="benefit-bento-card">
+          <div class="benefit-card-num">06</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 class="benefit-title">FSSAI Compliant &amp; Expert Support</h3>
+          <p class="benefit-text">All products meet Indian food safety and excise compliance standards with Certificate of Analysis (COA) documentation and direct brewmaster technical consultation.</p>
         </div>
       </div>
-      <div class="products-grid">
-        <div class="prod-card">
-          <div class="prod-card-name">MASHAID PAG<sup>®</sup></div>
+    </div>
+  </section>
+
+  <!-- STICKY FILTER & SEARCH TOOLBAR -->
+  <section class="section-filter-bar" id="products-catalog">
+    <div class="filter-toolbar-inner">
+      <div class="filter-pills-wrap" id="stage-filter-pills">
+        <button class="filter-pill-btn active" data-filter="all">All Products <span class="filter-pill-count">6</span></button>
+        <button class="filter-pill-btn" data-filter="stage-mashing-mb">01 Mashing <span class="filter-pill-count">2</span></button>
+        <button class="filter-pill-btn" data-filter="stage-kettle-mb">02 Kettle <span class="filter-pill-count">1</span></button>
+        <button class="filter-pill-btn" data-filter="stage-fermentation-mb">03 Fermentation <span class="filter-pill-count">2</span></button>
+        <button class="filter-pill-btn" data-filter="stage-processing-mb">04 Processing <span class="filter-pill-count">1</span></button>
+      </div>
+      <div class="filter-search-wrap">
+        <svg class="filter-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="prod-search-input" class="filter-search-input" placeholder="Search craft products, enzymes, dosage...">
+      </div>
+    </div>
+  </section>
+
+  <!-- ZERO RESULTS NOTIFICATION -->
+  <div class="wrap">
+    <div class="no-results-box" id="no-results-box">
+      <h3 class="no-results-h3">No matching microbrewery products found</h3>
+      <p class="no-results-p">Try searching with a different enzyme name, application term (e.g. "antifoam", "beta glucanase", "carrageenan"), or reset your filter.</p>
+      <button class="btn-prod-quote" style="display:inline-flex;width:auto;padding:.6rem 1.6rem;" onclick="resetProductSearch()">View All 6 Products</button>
+    </div>
+  </div>
+
+  <!-- STAGE 01: MASHING ENZYMES (2 PRODUCTS) -->
+  <section class="section-stage stage-group" id="stage-mashing-mb">
+    <div class="wrap">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-num">01</div>
+          <div>
+            <h2 class="stage-title">Mashing &amp; <em>Lautering Enzymes</em></h2>
+            <p class="stage-desc">Maximize extract conversion and ensure smooth wort lautering across high-adjunct craft grain bills</p>
+          </div>
+        </div>
+        <span class="stage-pill-tag">2 Formulations</span>
+      </div>
+      <div class="products-grid-2">
+        <div class="prod-card" data-url="product-mashaid-pag.html" onclick="navigateProduct(this, event)" data-name="MASHAID PAG" data-stage="01 Mashing" data-nature="Multi Enzyme (Amylase + Protease + Glucanase)">
+          <div class="prod-card-header">
+            <div class="prod-card-name">MASHAID PAG<sup>®</sup></div>
+            <span class="prod-stage-tag">Saccharification</span>
+          </div>
           <div class="prod-card-details">
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Where Used:</span>
-              <span class="prod-detail-val">Mash Tun / Saccharification</span>
+              <span class="prod-detail-val">Mash Tun / Saccharification Rest</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Activity:</span>
-              <span class="prod-detail-val">FA NLT 75,000 IU/g · Protease NLT 5,000 TU/g · BG NLT 2,000 IU/g</span>
+              <span class="prod-detail-val">FA NLT 75k • Prot 5k • BG 2k IU</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Nature:</span>
-              <span class="prod-detail-val">Multi Enzyme (Fungal Amylase + Protease + Beta-Glucanase)</span>
+              <span class="prod-detail-val">Multi-Enzyme (Amylase + Protease + Glucanase)</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Benefits:</span>
-              <span class="prod-detail-val">Improves mashing efficiency with combined enzyme action targeting starch, protein & glucan fractions — ideal for complex craft grain bills</span>
+              <span class="prod-detail-val">Simultaneously hydrolyzes starch, proteins, and beta-glucans in craft mashes</span>
             </div>
           </div>
-          <span class="prod-dosage-pill">📏 Dosage: 0.15–0.35 kg/ton grist</span>
+          <span class="prod-dosage-pill">📏 0.15–0.35 kg/ton grist</span>
           <div class="prod-card-actions">
             <button class="btn-prod-quote btn-quote" data-product="MASHAID PAG">Get Quote</button>
             <a href="product-mashaid-pag.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
-        <div class="prod-card">
-          <div class="prod-card-name">MASHAID GXL<sup>®</sup></div>
+
+        <div class="prod-card" data-url="product-mashaid-gxl.html" onclick="navigateProduct(this, event)" data-name="MASHAID GXL" data-stage="01 Mashing" data-nature="Beta Glucanase">
+          <div class="prod-card-header">
+            <div class="prod-card-name">MASHAID GXL<sup>®</sup></div>
+            <span class="prod-stage-tag">Lauter Tun</span>
+          </div>
           <div class="prod-card-details">
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Where Used:</span>
@@ -1078,18 +1204,18 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Activity:</span>
-              <span class="prod-detail-val">NLT 100 U/ml</span>
+              <span class="prod-detail-val">NLT 100 U/ml Beta Glucanase</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Nature:</span>
-              <span class="prod-detail-val">Beta Glucanase</span>
+              <span class="prod-detail-val">Concentrated Beta Glucanase</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Benefits:</span>
-              <span class="prod-detail-val">Minimizes mash bed choking & shortens lautering time — especially useful in wheat-heavy or oat-heavy craft recipes</span>
+              <span class="prod-detail-val">Eliminates mash bed choking and accelerates lautering run-off in wheat &amp; oat recipes</span>
             </div>
           </div>
-          <span class="prod-dosage-pill">📏 Dosage: 0.15–0.35 kg/ton grist</span>
+          <span class="prod-dosage-pill">📏 0.15–0.35 kg/ton grist</span>
           <div class="prod-card-actions">
             <button class="btn-prod-quote btn-quote" data-product="MASHAID GXL">Get Quote</button>
             <a href="product-mashaid-gxl.html" class="btn-prod-learn">Details →</a>
@@ -1099,37 +1225,64 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </section>
 
-  <section class="section-stage" id="stage-kettle-mb">
+  <!-- STAGE 02: KETTLE FININGS (1 PRODUCT IN SPOTLIGHT WRAP) -->
+  <section class="section-stage stage-group" id="stage-kettle-mb">
     <div class="wrap">
       <div class="stage-header">
-        <div class="stage-num">02</div>
-        <div>
-          <h2 class="stage-title">Kettle <em>Finings</em></h2>
-          <p class="stage-desc">Achieve excellent wort clarity and protein flocculation in the brew kettle</p>
+        <div class="stage-header-left">
+          <div class="stage-num">02</div>
+          <div>
+            <h2 class="stage-title">Kettle &amp; <em>Whirlpool Finings</em></h2>
+            <p class="stage-desc">High-grade kappa carrageenan for tight trub compaction and brilliant hot wort clarity</p>
+          </div>
         </div>
+        <span class="stage-pill-tag">1 Formulation</span>
       </div>
-      <div class="products-grid">
-        <div class="prod-card">
-          <div class="prod-card-name">CARRAFLOCAID<sup>®</sup></div>
+      <div class="stage-spotlight-wrap">
+        <div class="stage-spotlight-info">
+          <span class="spotlight-badge">Hot Side Clarification</span>
+          <h3 class="spotlight-title">Brilliant Wort &amp; Compact Trub Cone</h3>
+          <p class="spotlight-p">Kettle boiling releases large volumes of coagulable haze proteins. Our purified carrageenan finings bind electrostatically with positive protein charges during the boil, creating heavy flocs that settle into a dense, tight trub cone in the whirlpool.</p>
+          <div class="spotlight-features">
+            <div class="spotlight-feat-item">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              High gel strength (NLT 300 g/cm²) for rapid flocculation
+            </div>
+            <div class="spotlight-feat-item">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Maximizes cast-out wort volume by reducing trub sediment losses
+            </div>
+            <div class="spotlight-feat-item">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Improves subsequent yeast health and downstream filtration
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-url="product-carraflocaid.html" onclick="navigateProduct(this, event)" data-name="CARRAFLOCAID" data-stage="02 Kettle" data-nature="Kappa Carrageenan">
+          <div class="prod-card-header">
+            <div class="prod-card-name">CARRAFLOCAID<sup>®</sup></div>
+            <span class="prod-stage-tag">Brew Kettle / Whirlpool</span>
+          </div>
           <div class="prod-card-details">
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Where Used:</span>
-              <span class="prod-detail-val">Brew Kettle / Whirlpool</span>
+              <span class="prod-detail-val">Brew Kettle / Whirlpool Vessel</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Activity:</span>
-              <span class="prod-detail-val">Gel Strength NLT 300 g/cm² (1.5% solution)</span>
+              <span class="prod-detail-val">Gel Strength NLT 300 g/cm²</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Nature:</span>
-              <span class="prod-detail-val">Kappa Carrageenan</span>
+              <span class="prod-detail-val">Food-Grade Kappa Carrageenan</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Benefits:</span>
-              <span class="prod-detail-val">Protein flocculation & compact trub settlement — promotes brilliant wort clarity in small-batch systems</span>
+              <span class="prod-detail-val">Rapid hot-break protein precipitation and tight trub cone formation</span>
             </div>
           </div>
-          <span class="prod-dosage-pill">📏 Dosage: 2–4 g/HL</span>
+          <span class="prod-dosage-pill">📏 2–4 g/HL Wort</span>
           <div class="prod-card-actions">
             <button class="btn-prod-quote btn-quote" data-product="CARRAFLOCAID">Get Quote</button>
             <a href="product-carraflocaid.html" class="btn-prod-learn">Details →</a>
@@ -1139,48 +1292,59 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </section>
 
-  <section class="section-stage" id="stage-fermentation-mb">
+  <!-- STAGE 03: FERMENTATION AIDS (2 PRODUCTS) -->
+  <section class="section-stage stage-group" id="stage-fermentation-mb">
     <div class="wrap">
       <div class="stage-header">
-        <div class="stage-num">03</div>
-        <div>
-          <h2 class="stage-title">Fermentation <em>Aids</em></h2>
-          <p class="stage-desc">Support healthy yeast and efficient fermentation in small-batch brewing</p>
+        <div class="stage-header-left">
+          <div class="stage-num">03</div>
+          <div>
+            <h2 class="stage-title">Fermentation &amp; <em>Yeast Aids</em></h2>
+            <p class="stage-desc">Essential amino nitrogen nutrition and precise food-grade liquid krausen antifoam control</p>
+          </div>
         </div>
+        <span class="stage-pill-tag">2 Formulations</span>
       </div>
-      <div class="products-grid">
-        <div class="prod-card">
-          <div class="prod-card-name">FERMAID B<sup>®</sup></div>
+      <div class="products-grid-2">
+        <div class="prod-card" data-url="product-fermaid-b.html" onclick="navigateProduct(this, event)" data-name="FERMAID B" data-stage="03 Fermentation" data-nature="Yeast Food (Peptides & Amino Acids)">
+          <div class="prod-card-header">
+            <div class="prod-card-name">FERMAID B<sup>®</sup></div>
+            <span class="prod-stage-tag">Yeast Food</span>
+          </div>
           <div class="prod-card-details">
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Where Used:</span>
-              <span class="prod-detail-val">Fermentation Vessel</span>
+              <span class="prod-detail-val">Wort Pitching / Fermentation Tank</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Activity:</span>
-              <span class="prod-detail-val">Total N NLT 14%, FAN NLT 900 ppm</span>
+              <span class="prod-detail-val">Total N NLT 14% • FAN NLT 900 ppm</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Nature:</span>
-              <span class="prod-detail-val">Peptides & Amino Acids</span>
+              <span class="prod-detail-val">Hydrolysed Peptides &amp; Free Amino Acids</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Benefits:</span>
-              <span class="prod-detail-val">Complete yeast food — increases FAN availability & reduces fermentation time in adjunct-heavy craft recipes</span>
+              <span class="prod-detail-val">Complete yeast nutrition — ensures full attenuation and shortens fermentation time</span>
             </div>
           </div>
-          <span class="prod-dosage-pill">📏 Dosage: 5–20 g/HL</span>
+          <span class="prod-dosage-pill">📏 5–20 g/HL Wort</span>
           <div class="prod-card-actions">
             <button class="btn-prod-quote btn-quote" data-product="FERMAID B">Get Quote</button>
             <a href="product-fermaid-b.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
-        <div class="prod-card">
-          <div class="prod-card-name">AIDFERM BREW AF-L<sup>®</sup></div>
+
+        <div class="prod-card" data-url="product-aidferm-brew-af-l.html" onclick="navigateProduct(this, event)" data-name="AIDFERM BREW AF-L" data-stage="03 Fermentation" data-nature="Liquid Food-Grade Antifoam">
+          <div class="prod-card-header">
+            <div class="prod-card-name">AIDFERM BREW AF-L<sup>®</sup></div>
+            <span class="prod-stage-tag">Krausen Control</span>
+          </div>
           <div class="prod-card-details">
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Where Used:</span>
-              <span class="prod-detail-val">Fermentation Vessel</span>
+              <span class="prod-detail-val">Fermentation Vessel / Unitank</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Activity:</span>
@@ -1192,10 +1356,10 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Benefits:</span>
-              <span class="prod-detail-val">Liquid antifoam for precise dosing — prevents krausen overflow in open fermenters common in craft breweries</span>
+              <span class="prod-detail-val">Liquid dosing prevents krausen overflow in open &amp; conical fermenters</span>
             </div>
           </div>
-          <span class="prod-dosage-pill">📏 Dosage: 2–10 ml/HL</span>
+          <span class="prod-dosage-pill">📏 2–10 ml/HL Wort</span>
           <div class="prod-card-actions">
             <button class="btn-prod-quote btn-quote" data-product="AIDFERM BREW AF-L">Get Quote</button>
             <a href="product-aidferm-brew-af-l.html" class="btn-prod-learn">Details →</a>
@@ -1205,37 +1369,64 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </section>
 
-  <section class="section-stage" id="stage-processing-mb">
+  <!-- STAGE 04: PROCESSING & STABILITY (1 PRODUCT IN SPOTLIGHT WRAP) -->
+  <section class="section-stage stage-group" id="stage-processing-mb">
     <div class="wrap">
       <div class="stage-header">
-        <div class="stage-num">04</div>
-        <div>
-          <h2 class="stage-title">Processing <em>Aids</em></h2>
-          <p class="stage-desc">Achieve professional clarity and stability in your finished craft beer</p>
+        <div class="stage-header-left">
+          <div class="stage-num">04</div>
+          <div>
+            <h2 class="stage-title">Conditioning &amp; <em>Finishing Aids</em></h2>
+            <p class="stage-desc">High-adsorption silica hydrogels for chill-haze protein elimination and extended shelf brilliance</p>
+          </div>
         </div>
+        <span class="stage-pill-tag">1 Formulation</span>
       </div>
-      <div class="products-grid">
-        <div class="prod-card">
-          <div class="prod-card-name">QUICKSTABAID L<sup>®</sup></div>
+      <div class="stage-spotlight-wrap">
+        <div class="stage-spotlight-info">
+          <span class="spotlight-badge">Colloidal Stabilization</span>
+          <h3 class="spotlight-title">Selective Haze Adsorption &amp; Foam Preservation</h3>
+          <p class="spotlight-p">Craft beers served fresh from the brite tank or keg often develop unappealing chill haze when cold. Our specialized silica hydrogel selectively adsorbs only the sensitive haze-forming hordein proteins without affecting head retention proteins or hop bitterness.</p>
+          <div class="spotlight-features">
+            <div class="spotlight-feat-item">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Selectively adsorbs haze-active proteins with zero color stripping
+            </div>
+            <div class="spotlight-feat-item">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Guarantees zero negative impact on beer foam stability or lacing
+            </div>
+            <div class="spotlight-feat-item">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Completely insoluble and removed 100% during cold settling or filtration
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-url="product-quickstabaid-l.html" onclick="navigateProduct(this, event)" data-name="QUICKSTABAID L" data-stage="04 Processing" data-nature="Silica Hydrogel (Chill Haze Stabilizer)">
+          <div class="prod-card-header">
+            <div class="prod-card-name">QUICKSTABAID L<sup>®</sup></div>
+            <span class="prod-stage-tag">Conditioning &amp; Cold Settling</span>
+          </div>
           <div class="prod-card-details">
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Where Used:</span>
-              <span class="prod-detail-val">Conditioning Tank / Pre-Filter</span>
+              <span class="prod-detail-val">Conditioning Tank / Brite Tank</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Activity:</span>
-              <span class="prod-detail-val">High Adsorption Capacity</span>
+              <span class="prod-detail-val">High Selective Protein Adsorption</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Nature:</span>
-              <span class="prod-detail-val">Silica Hydrogel</span>
+              <span class="prod-detail-val">Food-Grade Insoluble Silica Hydrogel</span>
             </div>
             <div class="prod-detail-item">
               <span class="prod-detail-lbl">Benefits:</span>
-              <span class="prod-detail-val">Removes haze-forming proteins for improved clarity, chill haze stability & efficient filtration — without affecting colour, foam, or flavour</span>
+              <span class="prod-detail-val">Removes chill haze proteins while preserving foam head, color &amp; hop flavor</span>
             </div>
           </div>
-          <span class="prod-dosage-pill">📏 Dosage: 1–2 g/HL</span>
+          <span class="prod-dosage-pill">📏 1–2 g/HL Beer</span>
           <div class="prod-card-actions">
             <button class="btn-prod-quote btn-quote" data-product="QUICKSTABAID L">Get Quote</button>
             <a href="product-quickstabaid-l.html" class="btn-prod-learn">Details →</a>
@@ -1245,52 +1436,102 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </section>
 
-    
-  <!-- CROSS-LINK TO FULL RANGE -->
-  <section style="padding:2.5rem;background:var(--c-primary-bg);text-align:center;border-bottom:1px solid var(--c-border)">
+  <!-- CRAFT BEER STYLES COMPATIBILITY MATRIX -->
+  <section class="section-beer-styles">
     <div class="wrap">
-      <p style="font-size:1rem;color:var(--c-body);margin-bottom:1rem">Need more advanced brewing solutions? Our full industrial range includes <strong>23 specialized products</strong> covering every stage from grain to glass.</p>
-      <a href="breweries.html" style="display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:.8rem 1.8rem;border-radius:999px;font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 8px 20px rgba(154,29,30,0.25)">Explore Full Brewery Range →</a>
+      <div class="sec-hd-center">
+        <span class="sec-badge">Style Protocols</span>
+        <h2 class="sec-h2">Optimized for <em>Every Craft Beer Style</em></h2>
+        <p class="sec-p">Discover specialized enzyme and fining programs configured for popular craft brewing recipes</p>
+      </div>
+      <div class="beer-styles-grid">
+        <div class="style-card">
+          <span class="style-badge">Hoppy Beers</span>
+          <h3 class="style-title">Hazy &amp; West Coast IPAs</h3>
+          <p class="style-desc">Optimized for intensive dry-hopping schedules, high oat/wheat grist lautering, and maximum preservation of volatile hop terpenes and thiols.</p>
+          <div class="style-rec-title">Recommended Protocol:</div>
+          <div class="style-pills">
+            <span class="style-pill">MASHAID GXL</span>
+            <span class="style-pill">CARRAFLOCAID</span>
+            <span class="style-pill">FERMAID B</span>
+          </div>
+        </div>
+
+        <div class="style-card">
+          <span class="style-badge">Wheat &amp; Belgian</span>
+          <h3 class="style-title">Belgian Wit &amp; Hefeweizen</h3>
+          <p class="style-desc">Designed to handle high proportions of unmalted wheat and oats, accelerating lauter run-off while maintaining stable, natural yeast turbidity.</p>
+          <div class="style-rec-title">Recommended Protocol:</div>
+          <div class="style-pills">
+            <span class="style-pill">MASHAID PAG</span>
+            <span class="style-pill">MASHAID GXL</span>
+            <span class="style-pill">AIDFERM BREW AF-L</span>
+          </div>
+        </div>
+
+        <div class="style-card">
+          <span class="style-badge">Stouts &amp; Strong Ales</span>
+          <h3 class="style-title">Imperial Stout &amp; Porter</h3>
+          <p class="style-desc">Powers high-gravity fermentations to complete attenuation without stalled yeast kinetics, while managing aggressive krausen in fermenters.</p>
+          <div class="style-rec-title">Recommended Protocol:</div>
+          <div class="style-pills">
+            <span class="style-pill">FERMAID B</span>
+            <span class="style-pill">AIDFERM BREW AF-L</span>
+            <span class="style-pill">QUICKSTABAID L</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINK TO COMMERCIAL BREWERIES -->
+  <section style="padding:3.5rem 2.5rem;background:var(--c-primary-bg);text-align:center;border-bottom:1px solid var(--c-border)">
+    <div class="wrap">
+      <h3 style="font-family:var(--font-d);font-size:1.6rem;color:var(--c-ink);margin-bottom:.5rem;font-weight:700;">Scaling to Large Commercial Volumes?</h3>
+      <p style="font-size:1rem;color:var(--c-body);margin-bottom:1.5rem;max-width:650px;margin-left:auto;margin-right:auto;">Explore our full industrial brewery portfolio with <strong>23 specialized enzymes, clarifying agents, and foam stabilizers</strong> for industrial brew lengths.</p>
+      <a href="breweries.html" style="display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:.85rem 2rem;border-radius:999px;font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 8px 20px rgba(154,29,30,0.25);">Explore Commercial Brewery Solutions &rarr;</a>
     </div>
   </section>
 
   <!-- CTA BAND -->
-  <section class="cta-band">
-    <div class="cta-band-inner">
-      <span class="cta-band-eyebrow">Brew with Confidence</span>
-      <h2 class="cta-band-h2">Get a Craft Brewing Sample Kit</h2>
-      <p class="cta-band-p">Our craft brewing specialists will help you identify the right product set for your beer styles, batch sizes, and production goals — with hands-on technical support.</p>
-      <div class="cta-band-actions">
-        <button class="btn-cta-w btn-quote" data-product="Microbrewery Sample Pack">Get Quote</button>
-        <a href="contact.html" class="btn-cta-o">Contact Craft Specialist</a>
+  <section class="section-cta">
+    <div class="cta-inner">
+      <h2 class="cta-h2">Request a Craft Brewing Trial Kit</h2>
+      <p class="cta-p">Connect with our brewing specialists for small-batch product samples, recipe optimization, and hands-on technical cellar support.</p>
+      <div class="cta-actions">
+        <button class="btn-cta-white btn-quote" data-product="Microbrewery Trial Kit">
+          Request Sample Kit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </button>
+        <a href="contact.html" class="btn-cta-outline">Contact Craft Specialist</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- ════ SHARED FOOTER ════ -->
 <footer class="site-footer">
   <div class="foot-grid">
     <div class="foot-top">
       <div>
-        <div style="margin-bottom:.875rem">
-          <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp" alt="PrĀRAS Bio-Sciences Pvt. Ltd." style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;">
+        <div id="foot-logo-pr" style="margin-bottom:.875rem">
+          <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.png" alt="PrĀRAS Bio-Sciences Pvt. Ltd." style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;">
         </div>
-        <p class="foot-brand-p" id="foot-brand-p">Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.</p>
-        <button type="button" class="foot-switch-link" id="foot-switch" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
-          <span id="foot-switch-label">Visit Airbliss</span>
+        <p class="foot-brand-p">Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.</p>
+        <button type="button" class="foot-switch-link" id="foot-switch" onclick="brand('ab')">
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg>
+          <span>Visit Airbliss</span>
         </button>
       </div>
       <div class="foot-col">
-        <h4>Microbrewery</h4>
+        <h4>Beverage Solutions</h4>
         <ul>
-          <li><a href="#stage-mashing-mb">Mashing Enzymes</a></li>
-          <li><a href="#stage-kettle-mb">Kettle Finings</a></li>
-          <li><a href="#stage-fermentation-mb">Fermentation Aids</a></li>
-          <li><a href="#stage-processing-mb">Processing Aids</a></li>
-          <li><a href="breweries.html">Industrial Brewery</a></li>
+          <li><a href="breweries.html">Commercial Breweries</a></li>
+          <li><a href="distilleries.html">Distilleries</a></li>
+          <li><a href="microbrewery.html">Microbreweries</a></li>
+          <li><a href="wine.html">Wine Solutions</a></li>
+          <li><a href="fruit-based.html">Fruit Beverage Stabilizers</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -1298,6 +1539,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="contract_manufacturing.html">Contract Mfg</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="careers.html">Careers</a></li>
         </ul>
@@ -1307,144 +1549,202 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         <ul>
           <li><a href="tel:+918048904262">+91-80-48904262</a></li>
           <li><a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a></li>
-          <li><a href="contact.html">Bengaluru, India</a></li>
+          <li><a href="#">Bengaluru, Karnataka, India</a></li>
+          <li><a href="contact.html">Send Inquiry &rarr;</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <p class="foot-copy" id="foot-copy">© 2026 Praras Biosciences Pvt Ltd. All rights reserved.</p>
-      <span class="foot-tag" id="foot-tag">Biosciences for Better Value</span>
+      <p>&copy; 2026 Praras Biosciences Pvt Ltd. All rights reserved.</p>
+      <span class="foot-tag">Biosciences for Better Value</span>
     </div>
   </div>
 </footer>
 
-<!-- QUOTE DRAWER -->
-<div class="quote-overlay" id="quote-overlay"></div>
+<!-- ════ SLIDE-OUT QUOTE DRAWER ════ -->
+<div class="quote-overlay" id="quote-overlay" onclick="closeQuoteDrawer()"></div>
 <aside class="quote-drawer" id="quote-drawer" aria-hidden="true" aria-labelledby="quote-drawer-title">
   <div class="quote-drawer-header">
     <div>
       <div class="quote-drawer-title" id="quote-drawer-title">Get a Quote</div>
-      <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">Microbrewery Solutions</div>
+      <div style="font-size:.78rem;color:var(--c-muted);margin-top:2px;">Specialized Microbrewery Solutions</div>
     </div>
-    <button type="button" class="quote-close-btn" id="quote-close" aria-label="Close quote drawer">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    <button class="quote-drawer-close" onclick="closeQuoteDrawer()" aria-label="Close quote drawer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
   </div>
   <div class="quote-drawer-body">
-    <form id="quote-form">
-      <input type="hidden" id="q-product" name="product" value="Microbrewery Solutions">
+    <form class="quote-form" onsubmit="handleQuoteSubmit(event)">
       <div class="quote-form-group">
-        <div class="q-input-wrap">
-          <label for="q-name">Full Name *</label>
-          <input type="text" id="q-name" name="name" required placeholder="Your full name" autocomplete="name">
-        </div>
-        <div class="q-input-wrap">
-          <label for="q-company">Microbrewery Name</label>
-          <input type="text" id="q-company" name="company" placeholder="Your microbrewery name" autocomplete="organization">
-        </div>
+        <label class="quote-form-label" for="quote-product">Product / Application</label>
+        <input type="text" class="quote-form-input" id="quote-product" name="product" readonly>
       </div>
       <div class="quote-form-group">
-        <div class="q-input-wrap">
-          <label for="q-email">Email *</label>
-          <input type="email" id="q-email" name="email" required placeholder="you@brewery.com" autocomplete="email">
-        </div>
-        <div class="q-input-wrap">
-          <label for="q-phone">Phone</label>
-          <input type="tel" id="q-phone" name="phone" placeholder="+91-XXXXX XXXXX" autocomplete="tel">
-        </div>
+        <label class="quote-form-label" for="quote-name">Your Name *</label>
+        <input type="text" class="quote-form-input" id="quote-name" name="name" required placeholder="Full Name">
       </div>
       <div class="quote-form-group">
-        <div class="q-input-wrap">
-          <label for="q-volume">Batch Size / Monthly Volume</label>
-          <select id="q-volume" name="volume">
-            <option>Select range</option>
-            <option>Under 100 HL/month</option>
-            <option>100–500 HL/month</option>
-            <option>500–2,000 HL/month</option>
-            <option>2,000+ HL/month</option>
-          </select>
-        </div>
+        <label class="quote-form-label" for="quote-brewery">Microbrewery / Brewpub *</label>
+        <input type="text" class="quote-form-input" id="quote-brewery" name="brewery" required placeholder="Brewery Name">
       </div>
       <div class="quote-form-group">
-        <div class="q-input-wrap">
-          <label for="q-message">Message</label>
-          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your beer styles, recipe challenges, or specific brewing issues you'd like to solve..."></textarea>
-        </div>
+        <label class="quote-form-label" for="quote-email">Work Email *</label>
+        <input type="email" class="quote-form-input" id="quote-email" name="email" required placeholder="name@brewery.com">
       </div>
-      <button type="submit" class="quote-btn-submit">Send Enquiry</button>
+      <div class="quote-form-group">
+        <label class="quote-form-label" for="quote-phone">Phone Number *</label>
+        <input type="tel" class="quote-form-input" id="quote-phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+      </div>
+      <div class="quote-form-group">
+        <label class="quote-form-label" for="quote-message">Brewing Requirements / Batch Length</label>
+        <textarea class="quote-form-textarea" id="quote-message" name="message" placeholder="Beer styles, monthly HL volume, or recipe challenges..."></textarea>
+      </div>
+      <button type="submit" class="btn-quote-submit">Submit Request</button>
     </form>
   </div>
 </aside>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const savedBrand = localStorage.getItem('praras_brand');
-  if (savedBrand === 'ab') brand('ab', false);
+// ════ INTERACTIVE SCRIPTS FOR MICROBREWERY PAGE ════
 
-  const overlay = document.getElementById('quote-overlay');
+function jumpToStage(stageId) {
+  const el = document.getElementById(stageId);
+  if (el) {
+    const filterBtn = document.querySelector(`.filter-pill-btn[data-filter="${stageId}"]`);
+    if (filterBtn) filterBtn.click();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function navigateProduct(card, e) {
+  if (e.target.closest('button') || e.target.closest('a')) return;
+  const url = card.getAttribute('data-url');
+  if (url) window.location.href = url;
+}
+
+// Quote Drawer logic
+function openQuoteDrawer(productName) {
   const drawer = document.getElementById('quote-drawer');
-  const closeBtn = document.getElementById('quote-close');
-  const subtitle = document.getElementById('quote-drawer-subtitle');
-  const productInput = document.getElementById('q-product');
-
-  function openQuoteDrawer(productName) {
-    if (productName) { subtitle.textContent = productName; productInput.value = productName; }
-    overlay.classList.add('is-active');
+  const overlay = document.getElementById('quote-overlay');
+  const input = document.getElementById('quote-product');
+  if (input && productName) input.value = productName;
+  if (drawer && overlay) {
     drawer.classList.add('is-active');
+    overlay.classList.add('is-active');
     drawer.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
-  function closeQuoteDrawer() {
-    overlay.classList.remove('is-active');
+}
+
+function closeQuoteDrawer() {
+  const drawer = document.getElementById('quote-drawer');
+  const overlay = document.getElementById('quote-overlay');
+  if (drawer && overlay) {
     drawer.classList.remove('is-active');
+    overlay.classList.remove('is-active');
     drawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
+}
 
-  document.querySelectorAll('.btn-quote').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      openQuoteDrawer(btn.getAttribute('data-product') || 'Microbrewery Solutions');
-    });
+function handleQuoteSubmit(e) {
+  e.preventDefault();
+  alert('Thank you! Your quote request has been submitted. Our craft brewing specialists will contact you shortly.');
+  closeQuoteDrawer();
+}
+
+// Attach event listeners to quote buttons
+document.querySelectorAll('.btn-quote').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const prod = btn.getAttribute('data-product') || 'Microbrewery Solutions';
+    openQuoteDrawer(prod);
   });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeQuoteDrawer);
-  if (overlay) overlay.addEventListener('click', closeQuoteDrawer);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && drawer && drawer.classList.contains('is-active')) closeQuoteDrawer();
-  });
-
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('main-nav-links');
-  if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('is-active');
-      mobileBtn.setAttribute('aria-expanded', isOpen);
-    });
-  }
 });
 
-function brand(b, scroll = true) {
-  const isAb = b === 'ab';
-  localStorage.setItem('praras_brand', b);
-  document.body.classList.toggle('ab', isAb);
-  const prBtn = document.getElementById('sw-btn-pr');
-  const abBtn = document.getElementById('sw-btn-ab');
-  if (prBtn && abBtn) { prBtn.classList.toggle('on', !isAb); abBtn.classList.toggle('on', isAb); }
-  const footBrandP = document.getElementById('foot-brand-p');
-  if (footBrandP) footBrandP.textContent = isAb ? 'Probiotic cleaning solutions for B2B facility management — developed by Praras Biosciences.' : 'Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.';
-  const footSwitchLbl = document.getElementById('foot-switch-label');
-  if (footSwitchLbl) footSwitchLbl.textContent = isAb ? 'Back to Praras Biosciences' : 'Visit Airbliss';
-  const footCopy = document.getElementById('foot-copy');
-  if (footCopy) footCopy.textContent = isAb ? '© 2026 Airbliss — A Praras Biosciences Pvt Ltd brand. All rights reserved.' : '© 2026 Praras Biosciences Pvt Ltd. All rights reserved.';
-  const footTag = document.getElementById('foot-tag');
-  if (footTag) footTag.textContent = isAb ? 'Clean spaces. Living solutions.' : 'Biosciences for Better Value';
-  if (scroll) window.scrollTo({top: 0, behavior: 'smooth'});
+// Real-Time Live Search and Category Filter Toolbar
+const searchInput = document.getElementById('prod-search-input');
+const filterBtns = document.querySelectorAll('.filter-pill-btn');
+const stageGroups = document.querySelectorAll('.stage-group');
+const noResultsBox = document.getElementById('no-results-box');
+
+let currentFilter = 'all';
+
+function filterProducts() {
+  const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  let visibleCount = 0;
+
+  stageGroups.forEach(group => {
+    const stageId = group.id;
+    const cards = group.querySelectorAll('.prod-card');
+    let groupMatchCount = 0;
+
+    cards.forEach(card => {
+      const name = (card.getAttribute('data-name') || '').toLowerCase();
+      const stage = (card.getAttribute('data-stage') || '').toLowerCase();
+      const nature = (card.getAttribute('data-nature') || '').toLowerCase();
+      const text = card.textContent.toLowerCase();
+
+      const matchesFilter = (currentFilter === 'all' || stageId === currentFilter);
+      const matchesQuery = !q || name.includes(q) || stage.includes(q) || nature.includes(q) || text.includes(q);
+
+      if (matchesFilter && matchesQuery) {
+        card.style.display = 'flex';
+        groupMatchCount++;
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const spotlightInfo = group.querySelector('.stage-spotlight-info');
+    if (spotlightInfo) {
+      spotlightInfo.style.display = groupMatchCount > 0 ? 'flex' : 'none';
+    }
+
+    if (groupMatchCount > 0) {
+      group.style.display = 'block';
+    } else {
+      group.style.display = 'none';
+    }
+  });
+
+  if (noResultsBox) {
+    if (visibleCount === 0) {
+      noResultsBox.classList.add('visible');
+    } else {
+      noResultsBox.classList.remove('visible');
+    }
+  }
+}
+
+if (searchInput) {
+  searchInput.addEventListener('input', filterProducts);
+}
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.getAttribute('data-filter');
+    filterProducts();
+  });
+});
+
+function resetProductSearch() {
+  if (searchInput) searchInput.value = '';
+  const allBtn = document.querySelector('.filter-pill-btn[data-filter="all"]');
+  if (allBtn) allBtn.click();
+}
+
+function brand(brandId) {
+  if (brandId === 'ab') {
+    window.location.href = 'index.html?brand=ab';
+  } else {
+    window.location.href = 'microbrewery.html';
+  }
 }
 </script>
-
-
-
 
 <script id="universal-mega-menu-js">
 // ════ UNIVERSAL MEGA MENU & NAVIGATION CONTROLLER ════
