@@ -10,11 +10,11 @@
 <meta property="og:description" content="Praras Biosciences provides precision food additives, beverage solutions, and microbial products for Indian manufacturers to enhance quality and reduce costs.">
 <meta property="og:url" content="https://www.prarasbiosciences.com/index.html">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://www.prarasbiosciences.com/assets/images/hero-bg.jpg">
+<meta property="og:image" content="https://www.prarasbiosciences.com/assets/images/hero-bg.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Precision Food Additives & Microbial Solutions | Praras">
 <meta name="twitter:description" content="Praras Biosciences provides precision food additives, beverage solutions, and microbial products for Indian manufacturers to enhance quality and reduce costs.">
-<meta name="twitter:image" content="https://www.prarasbiosciences.com/assets/images/hero-bg.jpg">
+<meta name="twitter:image" content="https://www.prarasbiosciences.com/assets/images/hero-bg.webp">
 <!-- Initial Schema Markup (Praras Default) -->
 <script type="application/ld+json" id="brand-schema">
 {
@@ -731,7 +731,7 @@ body.ab{
 .sw-btn{
   flex:1;display:flex;align-items:center;justify-content:center;gap:12px;
   font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(255,255,255,.4);transition:all var(--transition);
+  color:#A8A39E;transition:all var(--transition);
   position:relative; overflow: hidden;
 }
 .sw-btn::after{
@@ -748,7 +748,7 @@ body.ab{
 .sw-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;box-shadow: 0 0 10px currentColor;}
 .sw-btn.pr .sw-dot{background:var(--c-primary); color: var(--c-primary);}
 .sw-btn.ab .sw-dot{background:var(--c-primary); color: var(--c-primary);}
-.sw-sub{font-weight:400;opacity:.6;margin-left:4px;font-size:.65rem;letter-spacing:.08em}
+.sw-sub{font-weight:400;opacity:.85;color:#C4BFB9;margin-left:4px;font-size:.65rem;letter-spacing:.08em}
 
 /* ─── SHARED NAV (Glassmorphism) ─── */
 .site-nav{
@@ -856,7 +856,7 @@ input[type="submit"]:hover { transform: translateY(-2px); box-shadow: var(--sh-b
 
 /* ─── HERO ─── */
 .hero{
-  background: linear-gradient(135deg, rgba(26,21,18,0.85) 0%, rgba(26,21,18,0.4) 100%), url('assets/images/hero-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(26,21,18,0.85) 0%, rgba(26,21,18,0.4) 100%), url('assets/images/hero-bg.webp') center/cover no-repeat;
   padding:0;overflow:hidden;position:relative;
 }
 .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 60%); pointer-events:none; }
@@ -1686,6 +1686,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 }
 </style>
 
+<link rel="stylesheet" href="assets/css/site-search.css">
 </head>
 <body>
 
@@ -1731,6 +1732,14 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 
 <!-- ════ SHARED NAV ════ -->
+<div class="switcher">
+  <button type="button" class="sw-btn pr on" id="sw-btn-pr" onclick="brand('pr')">
+    <span class="sw-dot"></span>Praras Biosciences <span class="sw-sub">Food &amp; Biotech</span>
+  </button>
+  <button type="button" class="sw-btn ab" id="sw-btn-ab" onclick="brand('ab')">
+    <span class="sw-dot"></span>Airbliss <span class="sw-sub">Probiotic Solutions</span>
+  </button>
+</div>
 <header class="site-nav" role="banner">
   <div class="nav-inner">
     <!-- Praras logo -->
@@ -1833,6 +1842,11 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <a href="blog.html">Blog</a>
       <a href="careers.html">Careers</a>
       <a href="contact.html" class="nav-cta">Contact Us</a>
+      <button type="button" class="nav-search-btn" id="nav-search-btn" aria-label="Search products and applications">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <span>Search</span>
+      <kbd class="nav-search-kbd">⌘K</kbd>
+    </button>
     </nav>
 
     <!-- Hamburger menu toggle -->
@@ -1858,7 +1872,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 <main id="main-content">
   <!-- HERO -->
-  <section class="hero" style="background: linear-gradient(135deg, rgba(26,21,18,0.85) 0%, rgba(26,21,18,0.4) 100%), url('assets/images/troubleshooting-flowchart.jpg') center/cover no-repeat; padding: 12rem 0 10rem;">
+  <section class="hero" style="background: linear-gradient(135deg, rgba(26,21,18,0.85) 0%, rgba(26,21,18,0.4) 100%), url('assets/images/troubleshooting-flowchart.webp') center/cover no-repeat; padding: 12rem 0 10rem;">
     <div class="wrap" style="position:relative; z-index:1; padding: 0 2.5rem; text-align: center;">
       <div class="hero-pill pr-only"><span class="hero-pill-dot"></span>Services</div>
       <h1 class="hero-h1">Troubleshooting</h1>
@@ -1956,11 +1970,10 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <div>
         <!-- Praras footer logo (swapped by JS on brand switch) -->
         <div id="foot-logo-pr" style="margin-bottom:.875rem">
-          <img
-            src="assets/images/cropped-Praras_Biosciences_Logo_New2.png"
+          <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
             alt="PrĀRAS Bio-Sciences Pvt. Ltd."
             style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
-          />
+          / width="156" height="48">
         </div>
         <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:38px;width:auto"><use href="#ab-logo"/></svg>
@@ -2010,6 +2023,39 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </div>
 </footer>
+
+<!-- ════ INTERACTIVE SEARCH MODAL ════ -->
+<div class="site-search-overlay" id="site-search-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product Search">
+  <div class="site-search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" class="search-input" id="site-search-input" placeholder="Search formulations, enzymes, baking, brewing, probiotics..." autocomplete="off" spellcheck="false">
+      <button type="button" class="search-clear-btn" id="site-search-clear" style="display:none;" aria-label="Clear query">&times;</button>
+      <kbd class="search-close-badge">ESC</kbd>
+    </div>
+    <div class="search-filter-bar" id="search-filter-bar">
+      <button type="button" class="search-chip is-active" data-filter="all">All Formulations</button>
+      <button type="button" class="search-chip" data-filter="baking">Baking</button>
+      <button type="button" class="search-chip" data-filter="breweries">Breweries</button>
+      <button type="button" class="search-chip" data-filter="distilleries">Distilleries</button>
+      <button type="button" class="search-chip" data-filter="wine">Wine</button>
+      <button type="button" class="search-chip" data-filter="beverages">Beverages</button>
+      <button type="button" class="search-chip" data-filter="microbial">Microbial</button>
+      <button type="button" class="search-chip" data-filter="airbliss">Airbliss</button>
+    </div>
+    <div class="search-results-list" id="search-results-list" role="listbox">
+      <!-- Injected dynamically by JS -->
+    </div>
+    <div class="search-footer">
+      <span>Search 65+ bio-solutions across Praras &amp; Airbliss</span>
+      <div class="search-shortcuts">
+        <span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> to navigate</span>
+        <span><kbd>&crarr;</kbd> to select</span>
+        <span><kbd>ESC</kbd> to close</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ════ QUOTE DRAWER ════ -->
 <div class="quote-overlay" id="quote-overlay"></div>
@@ -2317,12 +2363,27 @@ function brand(b, scroll = true) {
 
 
 <script id="universal-mega-menu-js">
-// ════ UNIVERSAL MEGA MENU & NAVIGATION CONTROLLER ════
-(function initMegaMenuController() {
-  function setupMegaMenu() {
-    // Dropdown triggers (both Products button and Services link)
+// ════ UNIVERSAL MEGA MENU, SEARCH MATRIX & CONTROLLER ════
+(function initSiteController() {
+  let searchCatalog = null;
+  let activeFilter = 'all';
+  let selectedIndex = -1;
+
+  function loadSearchCatalog() {
+    if (!searchCatalog) {
+      fetch('assets/data/products-search.json')
+        .then(r => r.json())
+        .then(data => { searchCatalog = data; })
+        .catch(e => console.warn('Could not load search catalog', e));
+    }
+  }
+
+  function setupSiteInteractions() {
+    loadSearchCatalog();
+
+    // 1. Dropdown Triggers
     document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-      const trigger = dropdown.querySelector('.dropdown-trigger, > button, > a');
+      const trigger = dropdown.querySelector('.dropdown-trigger, :scope > button, :scope > a');
       const menu = dropdown.querySelector('.mega-menu');
       if (!trigger || !menu) return;
 
@@ -2331,8 +2392,6 @@ function brand(b, scroll = true) {
 
       trigger.addEventListener('click', function(e) {
         const isMobile = window.innerWidth <= 960;
-        
-        // On mobile, or for buttons / hash links, toggle dropdown
         if (isMobile || trigger.tagName === 'BUTTON' || trigger.getAttribute('href') === '#' || trigger.classList.contains('dropdown-trigger')) {
           e.preventDefault();
           e.stopPropagation();
@@ -2341,7 +2400,7 @@ function brand(b, scroll = true) {
           document.querySelectorAll('.nav-dropdown').forEach(d => {
             if (d !== dropdown) {
               d.classList.remove('is-active');
-              const otherTrig = d.querySelector('.dropdown-trigger, > button, > a');
+              const otherTrig = d.querySelector('.dropdown-trigger, :scope > button, :scope > a');
               if (otherTrig) otherTrig.setAttribute('aria-expanded', 'false');
             }
           });
@@ -2357,29 +2416,18 @@ function brand(b, scroll = true) {
       });
     });
 
-    // Close dropdowns when clicking outside
+    // Close dropdowns on outside click
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.nav-dropdown')) {
         document.querySelectorAll('.nav-dropdown').forEach(d => {
           d.classList.remove('is-active');
-          const trig = d.querySelector('.dropdown-trigger, > button, > a');
+          const trig = d.querySelector('.dropdown-trigger, :scope > button, :scope > a');
           if (trig) trig.setAttribute('aria-expanded', 'false');
         });
       }
     });
 
-    // Close dropdowns on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-          d.classList.remove('is-active');
-          const trig = d.querySelector('.dropdown-trigger, > button, > a');
-          if (trig) trig.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    // Mobile Hamburger Menu Toggle
+    // 2. Mobile Hamburger Menu Toggle (Unified)
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.getElementById('main-nav-links');
     if (mobileBtn && navLinks && !mobileBtn._hasMobileMenuListener) {
@@ -2392,12 +2440,298 @@ function brand(b, scroll = true) {
         mobileBtn.setAttribute('aria-expanded', !isActive);
       });
     }
+
+    // 3. Global Quote Drawer System
+    const overlay = document.getElementById('quote-overlay');
+    const drawer = document.getElementById('quote-drawer');
+    const closeBtn = document.getElementById('quote-close');
+    const subtitle = document.getElementById('quote-drawer-subtitle');
+    const productInput = document.getElementById('q-product');
+    const quoteForm = document.getElementById('quote-form');
+
+    if (drawer && !drawer.classList.contains('is-active')) {
+      drawer.setAttribute('aria-hidden', 'true');
+      drawer.setAttribute('inert', '');
+    }
+
+    function openQuoteDrawer(productName) {
+      if (!drawer || !overlay) return;
+      if (productName && subtitle) subtitle.textContent = productName;
+      if (productName && productInput) productInput.value = productName;
+      
+      overlay.classList.add('is-active');
+      drawer.classList.add('is-active');
+      drawer.setAttribute('aria-hidden', 'false');
+      drawer.removeAttribute('inert');
+      document.body.style.overflow = 'hidden';
+      
+      const firstInput = drawer.querySelector('input:not([type="hidden"]), select, textarea');
+      if (firstInput) setTimeout(() => firstInput.focus(), 100);
+    }
+
+    function closeQuoteDrawer() {
+      if (!drawer || !overlay) return;
+      overlay.classList.remove('is-active');
+      drawer.classList.remove('is-active');
+      drawer.setAttribute('aria-hidden', 'true');
+      drawer.setAttribute('inert', '');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.btn-quote').forEach(btn => {
+      if (!btn._hasQuoteListener) {
+        btn._hasQuoteListener = true;
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const prod = btn.getAttribute('data-product') || document.querySelector('h1')?.innerText?.trim() || 'Food & Bio Solutions';
+          openQuoteDrawer(prod);
+        });
+      }
+    });
+
+    if (closeBtn && !closeBtn._hasCloseListener) {
+      closeBtn._hasCloseListener = true;
+      closeBtn.addEventListener('click', closeQuoteDrawer);
+    }
+    if (overlay && !overlay._hasOverlayListener) {
+      overlay._hasOverlayListener = true;
+      overlay.addEventListener('click', closeQuoteDrawer);
+    }
+
+    // AJAX Form Submission for Quote Drawer
+    if (quoteForm && !quoteForm._hasSubmitListener) {
+      quoteForm._hasSubmitListener = true;
+      quoteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = quoteForm.querySelector('.quote-btn-submit');
+        if (!submitBtn) return;
+        
+        const origText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending Enquiry...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(quoteForm);
+        formData.append('source_page', window.location.href);
+
+        fetch('mailer.php', { method: 'POST', body: formData })
+          .then(res => res.json())
+          .then(data => {
+            if (data.status === 'success') {
+              submitBtn.style.background = '#28a745';
+              submitBtn.textContent = 'Enquiry Sent Successfully ✓';
+              setTimeout(() => {
+                quoteForm.reset();
+                submitBtn.style.background = '';
+                submitBtn.textContent = origText;
+                submitBtn.disabled = false;
+                closeQuoteDrawer();
+              }, 2200);
+            } else {
+              alert(data.message || 'There was an issue submitting your request.');
+              submitBtn.textContent = origText;
+              submitBtn.disabled = false;
+            }
+          })
+          .catch(() => {
+            alert('Network error. Please try again or email info@prarasbiosciences.com directly.');
+            submitBtn.textContent = origText;
+            submitBtn.disabled = false;
+          });
+      });
+    }
+
+    // 4. Interactive Product Search Modal System
+    const searchModal = document.getElementById('site-search-modal');
+    const searchInput = document.getElementById('site-search-input');
+    const searchClear = document.getElementById('site-search-clear');
+    const resultsList = document.getElementById('search-results-list');
+    const filterBar = document.getElementById('search-filter-bar');
+    const searchBtns = document.querySelectorAll('.nav-search-btn');
+
+    function openSearch() {
+      if (!searchModal) return;
+      loadSearchCatalog();
+      searchModal.classList.add('is-active');
+      searchModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        if (searchInput) {
+          searchInput.focus();
+          searchInput.select();
+        }
+      }, 50);
+      renderSearchResults(searchInput ? searchInput.value.trim() : '');
+    }
+
+    function closeSearch() {
+      if (!searchModal) return;
+      searchModal.classList.remove('is-active');
+      searchModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    searchBtns.forEach(btn => {
+      btn.addEventListener('click', openSearch);
+    });
+
+    if (searchModal) {
+      searchModal.addEventListener('click', function(e) {
+        if (e.target === searchModal) closeSearch();
+      });
+    }
+
+    if (searchClear && searchInput) {
+      searchClear.addEventListener('click', function() {
+        searchInput.value = '';
+        searchClear.style.display = 'none';
+        searchInput.focus();
+        renderSearchResults('');
+      });
+    }
+
+    if (filterBar) {
+      filterBar.addEventListener('click', function(e) {
+        const chip = e.target.closest('.search-chip');
+        if (!chip) return;
+        filterBar.querySelectorAll('.search-chip').forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        activeFilter = chip.getAttribute('data-filter') || 'all';
+        renderSearchResults(searchInput ? searchInput.value.trim() : '');
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const q = searchInput.value.trim();
+        if (searchClear) searchClear.style.display = q.length > 0 ? 'flex' : 'none';
+        renderSearchResults(q);
+      });
+
+      searchInput.addEventListener('keydown', function(e) {
+        const items = resultsList ? resultsList.querySelectorAll('.search-item') : [];
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (items.length > 0) {
+            selectedIndex = (selectedIndex + 1) % items.length;
+            highlightSelectedItem(items);
+          }
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (items.length > 0) {
+            selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+            highlightSelectedItem(items);
+          }
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          if (selectedIndex >= 0 && items[selectedIndex]) {
+            items[selectedIndex].click();
+          } else if (items.length > 0) {
+            items[0].click();
+          }
+        }
+      });
+    }
+
+    function highlightSelectedItem(items) {
+      items.forEach((it, idx) => {
+        it.classList.toggle('is-selected', idx === selectedIndex);
+        if (idx === selectedIndex) {
+          it.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      });
+    }
+
+    function renderSearchResults(query) {
+      if (!resultsList || !searchCatalog) return;
+      selectedIndex = -1;
+      const q = query.toLowerCase();
+
+      let filtered = searchCatalog.filter(item => {
+        // Filter by category chip
+        if (activeFilter !== 'all') {
+          if (activeFilter === 'airbliss' && item.brand !== 'ab') return false;
+          if (activeFilter !== 'airbliss' && !item.category.toLowerCase().includes(activeFilter)) return false;
+        }
+        if (!q) return true; // show all in category if query is empty
+        return item.name.toLowerCase().includes(q) ||
+               item.tagline.toLowerCase().includes(q) ||
+               item.category.toLowerCase().includes(q) ||
+               (item.keywords && item.keywords.includes(q)) ||
+               (item.description && item.description.toLowerCase().includes(q));
+      });
+
+      if (filtered.length === 0) {
+        resultsList.innerHTML = `<div class="search-empty">
+          <div class="search-empty-icon">🔍</div>
+          <h3>No formulations found</h3>
+          <p>We couldn't find matching solutions for "` + escapeHtml(query) + `". Try searching for <em>baking, yeast, enzymes, floor cleaner,</em> or <em>microbial</em>.</p>
+        </div>`;
+        return;
+      }
+
+      // Render items
+      resultsList.innerHTML = filtered.slice(0, 20).map((item, idx) => {
+        return `<a href="` + item.url + `" class="search-item` + (idx === 0 ? ' is-selected' : '') + `" role="option">
+          <div class="search-item-info">
+            <div class="search-item-header">
+              <span class="search-item-title">` + highlightQuery(item.name, q) + `</span>
+              <span class="search-item-badge">` + item.category.split('>').pop().trim() + `</span>
+            </div>
+            <div class="search-item-sub">` + highlightQuery(item.tagline || item.description, q) + `</div>
+          </div>
+          <div class="search-item-action">
+            <span>View Specs</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>`;
+      }).join('');
+    }
+
+    function highlightQuery(text, query) {
+      if (!query || !text) return escapeHtml(text || '');
+      const clean = escapeHtml(text);
+      const idx = clean.toLowerCase().indexOf(query.toLowerCase());
+      if (idx === -1) return clean;
+      const matched = clean.substr(idx, query.length);
+      return clean.substring(0, idx) + '<strong style="color:var(--c-primary,#9A1D1E);background:rgba(154,29,30,0.08);padding:0 2px;border-radius:3px;">' + matched + '</strong>' + clean.substring(idx + query.length);
+    }
+
+    function escapeHtml(str) {
+      return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // Keyboard Shortcuts: Cmd+K / Ctrl+K and Escape
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        const isOpen = searchModal && searchModal.classList.contains('is-active');
+        if (isOpen) closeSearch();
+        else openSearch();
+      } else if (e.key === 'Escape') {
+        if (searchModal && searchModal.classList.contains('is-active')) {
+          closeSearch();
+        }
+      }
+    });
+
+    // 5. Initial Brand Synchronization on Load
+    const savedBrand = localStorage.getItem('praras_brand');
+    const swPr = document.getElementById('sw-btn-pr');
+    const swAb = document.getElementById('sw-btn-ab');
+    if (savedBrand === 'ab') {
+      if (typeof brand === 'function') brand('ab', false);
+      if (swPr) swPr.classList.remove('on');
+      if (swAb) swAb.classList.add('on');
+    } else {
+      if (swPr) swPr.classList.add('on');
+      if (swAb) swAb.classList.remove('on');
+    }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupMegaMenu);
+    document.addEventListener('DOMContentLoaded', setupSiteInteractions);
   } else {
-    setupMegaMenu();
+    setupSiteInteractions();
   }
 })();
 </script>
