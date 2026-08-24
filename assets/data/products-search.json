@@ -1260,103 +1260,183 @@
     "keywords": "textureaid p® beverages > home distillery boosters wine enzymes fruit juice stabilizers about us 100% quality assured standard dosage rate 0% off-flavour risk textureaid-p"
   },
   {
-    "id": "ab-microbial-floor-cleaner",
-    "name": "Microbial Floor Cleaner",
-    "tagline": "Multi-strain probiotic floor sanitation & long-lasting bio-barrier",
-    "category": "Surface Care · Probiotics",
-    "url": "index.html#ab-products",
+    "id": "ab-stp-activ",
+    "name": "AIRBLISS™ STP ACTIV™",
+    "tagline": "High-potency multi-enzyme and spore concentrate for sewage & effluent treatment plants",
+    "category": "Biological Wastewater & STP",
+    "url": "airbliss.html#catalog",
     "brand": "ab",
-    "description": "Naturally occurring bacteria specially selected for their ability to break down a wide range of organic materials and prevent persistent biofilms.",
+    "description": "Concentrated microbial and bio-enzyme formulation for rapid BOD/COD reduction, scum elimination, and sludge reduction in commercial STPs and ETPs.",
     "benefits": [
-      "Water based formulation",
-      "Alcohol & chlorine free",
-      "Long-lasting bio-barrier",
-      "100% Eco-friendly"
+      "BOD reduction down to 10 ppm",
+      "Scum reduction up to 100%",
+      "Sludge reduction up to 70%",
+      "Restores upset STPs in 24h"
     ],
     "stats": [
-      "100% Bio-based",
-      "Zero Harsh chemicals"
+      "10 ppm Target BOD",
+      "24h STP Kickstart"
     ],
-    "keywords": "airbliss floor cleaner probiotic surface care sanitization biofilm bacteria eco-friendly b2b cleaning"
+    "keywords": "airbliss stp activ biological wastewater sewage treatment plant etp bio-enzymes sludge scum reduction bod cod effluent"
   },
   {
-    "id": "ab-concentrate-floor-cleaner",
-    "name": "Concentrate Floor Cleaner",
-    "tagline": "High-performance concentrate for heavy-duty commercial surface cleaning",
-    "category": "Surface Care · Probiotics",
-    "url": "index.html#ab-products",
+    "id": "ab-u-block-activ",
+    "name": "AIRBLISS™ U BLOCK ACTIV™",
+    "tagline": "Continuous 30-day biological urinal block for uric acid degradation and odor control",
+    "category": "Washroom & Urinal Care",
+    "url": "airbliss.html#catalog",
     "brand": "ab",
-    "description": "High-performance concentrate for heavy-duty surface cleaning, breaking down tough organic stains and preventing biofilm build-up.",
+    "description": "Biological urinal bio-block that breaks down uric acid salt crystals, prevents pipe encrustation, and neutralizes foul malodors in conventional and waterless urinals.",
     "benefits": [
-      "High dilution ratio",
-      "Eliminates persistent biofilm",
-      "Safe on tiles, marble & epoxy",
-      "Low environmental footprint"
+      "Degrades uric acid crystals",
+      "100% Paradichlorobenzene-free",
+      "30-day biological longevity",
+      "Safe on plumbing traps"
     ],
     "stats": [
-      "100% Bio-based",
-      "12+ Formulations"
+      "30-Day Action",
+      "Waterless Ready"
     ],
-    "keywords": "concentrate floor cleaner heavy duty tiles marble epoxy biofilm degreaser airbliss"
+    "keywords": "airbliss u block activ urinal bio block uric acid scaling waterless urinal washroom malodor smell elimination"
   },
   {
-    "id": "ab-liquid-enzymatic-cleaner",
-    "name": "Liquid Enzymatic Cleaner",
-    "tagline": "Active multienzyme blend for grease traps, commercial kitchens & deep cleaning",
-    "category": "Deep Cleaning · Enzymes",
-    "url": "index.html#ab-products",
+    "id": "ab-drain-cleaner",
+    "name": "AIRBLISS™ DRAIN CLEANER",
+    "tagline": "Bio-enzymatic heavy-duty drain opener and grease trap digestor",
+    "category": "Washroom & Urinal Care",
+    "url": "airbliss.html#catalog",
     "brand": "ab",
-    "description": "Advanced enzymatic formulation designed to digest stubborn organic matter, grease, and grime without harsh caustic chemicals.",
+    "description": "Deep-penetrating non-corrosive microbial liquid that liquefies fats, oils, grease, hair, and soap scum in commercial kitchens and bathroom drainage.",
     "benefits": [
-      "Active multienzyme blend",
-      "Rapidly breaks fats & proteins",
-      "Non-corrosive to equipment",
-      "Biodegradable & non-toxic"
+      "Liquefies FOG & organic waste",
+      "Eliminates sewer & drain odors",
+      "Non-corrosive to PVC & metal",
+      "Septic tank safe"
     ],
     "stats": [
-      "Multi-Enzyme",
-      "Non-Corrosive"
+      "100% Non-Acidic",
+      "FOG Digestor"
     ],
-    "keywords": "enzymatic cleaner grease fats proteins kitchen deep clean non-toxic biodegradable airbliss"
+    "keywords": "airbliss drain cleaner grease trap fatberg bio-enzymatic kitchen bathroom clog opener plumbing odor digest"
   },
   {
-    "id": "ab-concentrate-air-freshener",
-    "name": "Concentrate Air Freshener",
-    "tagline": "Bio-enzymatic volatile organic odour eliminator",
-    "category": "Odour Control · Bio-Enzymatic",
-    "url": "index.html#ab-products",
+    "id": "ab-udc",
+    "name": "AIRBLISS™ UDC (Urinal Drain Cleaner)",
+    "tagline": "Deep-cleaning biological liquid for removing hardened uric scale in commercial urinal lines",
+    "category": "Washroom & Urinal Care",
+    "url": "airbliss.html#catalog",
     "brand": "ab",
-    "description": "Environmentally friendly, effective, safe, and cost-effective way to digest volatile odour sources and keep spaces sanitary.",
+    "description": "Specialized probiotic cleaner formulated to dissolve heavy uric salt encrustations in high-traffic public restrooms without hazardous acids.",
     "benefits": [
-      "Targeted odour elimination",
-      "Not a masking fragrance",
-      "Safe for continuous spraying",
-      "Zero synthetic propellants"
+      "Dissolves hardened uric scale",
+      "Maintains free-flowing lines",
+      "Eliminates ammonia odor",
+      "Zero hydrochloric acid"
     ],
     "stats": [
-      "100% Active Digest",
-      "Zero Propellant"
+      "Zero Acid Corrosives",
+      "Uric Scale Remover"
     ],
-    "keywords": "air freshener odour eliminator bio-enzymatic washroom lobby smell removal organic airbliss"
+    "keywords": "airbliss udc urinal drain cleaner uric acid scale pipe descaler public washroom ammonia smell"
   },
   {
-    "id": "ab-biological-waste-mgmt",
-    "name": "Biological Waste Mgmt",
-    "tagline": "Microbial compost activator & STP/ETP biological acceleration",
-    "category": "Waste Management · Composting",
-    "url": "index.html#ab-products",
+    "id": "ab-utc",
+    "name": "AIRBLISS™ UTC (Toilet Cleaner)",
+    "tagline": "Thick biological toilet and urinal bowl cleaner with surface-cling technology",
+    "category": "Washroom & Urinal Care",
+    "url": "airbliss.html#catalog",
     "brand": "ab",
-    "description": "Bacteria-based sanitation products that are ideal for solid and liquid waste management, grease traps, and rapid bio-composting.",
+    "description": "Surface-clinging probiotic descaling gel that lifts organic stains and lime deposits while establishing a protective living barrier against odor.",
     "benefits": [
-      "Accelerates organic breakdown",
-      "Controls flies and foul odour",
-      "Ideal for composting units",
-      "Improves STP/ETP efficiency"
+      "Thick vertical cling gel",
+      "Descales organic stains",
+      "Safe on ceramic glazes & chrome",
+      "Septic system safe"
     ],
     "stats": [
-      "Accelerated Compost",
-      "STP / ETP Compatible"
+      "Surface Cling Gel",
+      "Chrome Safe"
     ],
-    "keywords": "waste management composting bacteria stp etp grease trap sewage bio-compost airbliss"
+    "keywords": "airbliss utc urinal toilet cleaner porcelain ceramic descaler bio-gel stain removal washroom"
+  },
+  {
+    "id": "ab-floor-cleaner",
+    "name": "AIRBLISS™ PROBIOTIC FLOOR CLEANER",
+    "tagline": "Eco-friendly bio-enzymatic floor detergent for continuous 72-hour deep pore cleaning",
+    "category": "Surface & Floor Care",
+    "url": "airbliss.html#catalog",
+    "brand": "ab",
+    "description": "Living probiotic floor cleaner that deep cleans microscopic pores in marble, granite, tile, and epoxy, establishing a beneficial bio-shield.",
+    "benefits": [
+      "72-hour active bio-barrier",
+      "Non-slip lustrous finish",
+      "Safe for food prep areas",
+      "Natural botanical scent"
+    ],
+    "stats": [
+      "72h Bio-Shield",
+      "Non-Slip"
+    ],
+    "keywords": "airbliss probiotic floor cleaner marble tile granite epoxy commercial mopping bio-shield biofilm prevention"
+  },
+  {
+    "id": "ab-multi-surface",
+    "name": "AIRBLISS™ MULTI SURFACE & GLASS CLEANER",
+    "tagline": "Enzyme-powered multi-surface and glass cleaner for sparkling streak-free optical clarity",
+    "category": "Surface & Floor Care",
+    "url": "airbliss.html#catalog",
+    "brand": "ab",
+    "description": "Fast-action enzyme formulation that removes fingerprints, dust, and grease from glass, mirrors, laminates, and stainless steel without toxic fumes.",
+    "benefits": [
+      "Sparkling optical clarity",
+      "Fast-drying, non-hazy",
+      "Alcohol & ammonia free",
+      "Safe on acrylic & metal"
+    ],
+    "stats": [
+      "Streak-Free",
+      "Zero Ammonia"
+    ],
+    "keywords": "airbliss multi surface cleaner glass mirror laminate stainless steel optical clarity enzyme degreaser"
+  },
+  {
+    "id": "ab-air-freshener",
+    "name": "AIRBLISS™ AIR FRESHENER LIQUID",
+    "tagline": "Bio-enzymatic odor eliminator with nanoparticle fragrance encapsulation",
+    "category": "Air & Odour Elimination",
+    "url": "airbliss.html#catalog",
+    "brand": "ab",
+    "description": "Captures and biologically digests volatile sulfur and ammonia odor molecules at the molecular root, providing 12–24 hour fragrance longevity.",
+    "benefits": [
+      "Digests odor molecules at root",
+      "12 to 24-hour fragrance release",
+      "100% water-based, zero propellant",
+      "Non-staining"
+    ],
+    "stats": [
+      "12-24h Freshness",
+      "Aerosol-Free"
+    ],
+    "keywords": "airbliss air freshener liquid odor eliminator bio-enzymatic washroom lobby spray aerosol-free malodor digest"
+  },
+  {
+    "id": "ab-fabric-stain",
+    "name": "AIRBLISS™ FABRIC STAIN REMOVER",
+    "tagline": "Multi-enzyme spot and stain remover enriched with lipases and proteases",
+    "category": "Fabric & Laundry Care",
+    "url": "airbliss.html#catalog",
+    "brand": "ab",
+    "description": "Targeted bio-enzymatic spot lifter for stubborn protein, grease, blood, wine, gravy, and collar grime on commercial laundry and upholstery.",
+    "benefits": [
+      "Targeted lipase & protease action",
+      "Color-safe on cotton & wool",
+      "Chlorine & optical brightener free",
+      "Commercial laundry grade"
+    ],
+    "stats": [
+      "Color Safe",
+      "Dual Enzyme Action"
+    ],
+    "keywords": "airbliss fabric stain remover commercial laundry hotel linen protein grease blood wine coffee spot lifter"
   }
 ]
