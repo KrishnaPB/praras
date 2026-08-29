@@ -89,12 +89,12 @@
     .sw-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 10px currentColor; background: #9DBF82; color: #9DBF82; }
     .sw-sub { font-weight: 400; opacity: 0.85; color: #C4BFB9; margin-left: 4px; font-size: 0.65rem; letter-spacing: 0.08em; }
 
-    /* ─── SITE NAVIGATION ─── */
+    /* ─── SITE NAVIGATION & MEGA MENU ─── */
     .site-nav {
       background: var(--ab-glass);
       -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--ab-border);
-      position: sticky; top: 0; z-index: 200;
+      position: sticky; top: 0; z-index: 1000;
       box-shadow: 0 4px 24px rgba(13, 35, 25, 0.03);
     }
     .nav-inner {
@@ -102,13 +102,178 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
     .nav-links a {
       font-size: 0.88rem; font-weight: 600; color: var(--ab-text-dark);
       text-decoration: none; transition: color var(--transition);
       position: relative; padding: 0.4rem 0;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--ab-emerald); }
+
+    /* Dropdown Submenu */
+    .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .dropdown-trigger {
+      display: flex; align-items: center; gap: 5px;
+      background: none; border: none; font-family: inherit;
+      font-size: 0.88rem; font-weight: 600; color: var(--ab-text-dark);
+      cursor: pointer; padding: 0.4rem 0; transition: color var(--transition);
+    }
+    .nav-dropdown:hover .dropdown-trigger,
+    .nav-dropdown.is-active .dropdown-trigger {
+      color: var(--ab-emerald);
+    }
+    .nav-dropdown:hover .dropdown-trigger svg,
+    .nav-dropdown.is-active .dropdown-trigger svg {
+      transform: rotate(180deg);
+    }
+    .ab-mega-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-35%) translateY(8px);
+      width: min(980px, 94vw);
+      background: #FFFFFF;
+      border: 1px solid rgba(31, 79, 51, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 25px 60px rgba(13, 35, 25, 0.18), 0 0 0 1px rgba(157, 191, 130, 0.2);
+      padding: 1.75rem 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .ab-mega-menu,
+    .nav-dropdown.is-active .ab-mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-35%) translateY(0);
+      pointer-events: auto;
+    }
+    .ab-mega-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 230px;
+      gap: 1.5rem;
+    }
+    .ab-mega-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .ab-mega-col-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
+      border-bottom: 1px solid #EEF3EE;
+    }
+    .ab-mega-col-head h4 {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--ab-emerald);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .ab-mega-item {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .ab-mega-item:hover {
+      background: #F4F8F4;
+      transform: translateX(3px);
+    }
+    .ab-mega-item strong {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ab-text-dark);
+      line-height: 1.25;
+      margin-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .ab-mega-item:hover strong {
+      color: var(--ab-emerald);
+    }
+    .ab-mega-item span {
+      font-size: 0.72rem;
+      color: var(--ab-text-muted);
+      line-height: 1.3;
+    }
+    .ab-mega-featured {
+      background: linear-gradient(135deg, #0D2319, #163B2B);
+      border-radius: 14px;
+      padding: 1.5rem 1.25rem;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(157, 191, 130, 0.3);
+    }
+    .ab-mega-feat-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9DBF82;
+      margin-bottom: 0.5rem;
+    }
+    .ab-mega-featured h5 {
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.4rem;
+      color: #FFFFFF;
+    }
+    .ab-mega-featured p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.45;
+      margin-bottom: 1.25rem;
+    }
+    .ab-mega-feat-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #C18A5B;
+      color: #FFFFFF !important;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .ab-mega-feat-btn:hover {
+      background: #CF9766;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 960px) {
+      .ab-mega-menu {
+        position: static;
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 1rem 0;
+      }
+      .ab-mega-inner {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .ab-mega-featured { display: none; }
+    }
+
     .nav-cta {
       background: var(--ab-emerald); color: #fff !important;
       padding: 0.6rem 1.4rem !important; border-radius: 30px;
@@ -305,6 +470,15 @@
       font-size: 1.25rem; font-weight: 800; color: var(--ab-text-dark);
       margin-bottom: 0.5rem; line-height: 1.3;
     }
+    .ab-card-name a {
+      color: var(--ab-text-dark);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .ab-card-name a:hover {
+      color: var(--ab-emerald);
+      text-decoration: underline;
+    }
     .ab-card-desc {
       font-size: 0.85rem; color: var(--ab-text-muted); line-height: 1.55;
       margin-bottom: 1.25rem; flex-grow: 1;
@@ -333,20 +507,33 @@
     .ab-spec-lbl { color: var(--ab-text-muted); font-size: 0.68rem; text-transform: uppercase; }
     .ab-spec-val { font-weight: 700; color: var(--ab-text-dark); }
 
-    /* Card Action Buttons */
-    .ab-card-actions { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+    /* Card Action Buttons (3-Button Layout) */
+    .ab-card-actions {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 1fr;
+      gap: 6px;
+    }
     .ab-btn-sample {
       background: var(--ab-emerald); color: #fff; border: none;
-      padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700;
-      cursor: pointer; transition: all var(--transition); text-align: center;
+      padding: 0.75rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;
+      cursor: pointer; transition: all var(--transition); text-align: center; white-space: nowrap;
     }
     .ab-btn-sample:hover { background: var(--ab-forest); transform: translateY(-1px); }
     .ab-btn-pds {
       background: #FFFFFF; border: 1px solid var(--ab-border); color: var(--ab-text-dark);
-      padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700;
-      cursor: pointer; transition: all var(--transition); display: flex; align-items: center; gap: 6px;
+      padding: 0.75rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;
+      cursor: pointer; transition: all var(--transition); display: flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap;
     }
     .ab-btn-pds:hover { background: #F4F8F4; border-color: var(--ab-emerald); color: var(--ab-emerald); }
+    .ab-btn-page {
+      background: #F4F8F4; border: 1px solid rgba(31, 79, 51, 0.18); color: var(--ab-emerald);
+      padding: 0.75rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;
+      text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 4px;
+      transition: all var(--transition); white-space: nowrap;
+    }
+    .ab-btn-page:hover {
+      background: var(--ab-emerald); color: #FFFFFF; border-color: var(--ab-emerald); transform: translateY(-1px);
+    }
 
     /* ─── SCIENCE & MECHANISM SECTION ─── */
     .ab-science-sec {
@@ -1257,10 +1444,93 @@
     </a>
 
     <nav class="nav-links" aria-label="Primary" id="main-nav-links">
-      <a href="#catalog">Products</a>
+      <!-- Products Dropdown with Submenu -->
+      <div class="nav-dropdown" id="products-dropdown">
+        <button type="button" class="dropdown-trigger" id="products-dropdown-btn" aria-expanded="false" aria-controls="products-mega-menu">
+          Products <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="products-mega-menu" class="ab-mega-menu">
+          <div class="ab-mega-inner">
+            <!-- Column 1: Washroom & Urinal -->
+            <div class="ab-mega-col">
+              <div class="ab-mega-col-head">
+                <span class="ab-mega-icon">🚽</span>
+                <h4>Washroom &amp; Urinals</h4>
+              </div>
+              <a href="products/airbliss-u-block-activ.html" class="ab-mega-item">
+                <strong>U BLOCK ACTIV™</strong>
+                <span>Waterless urinal bio-block descaler</span>
+              </a>
+              <a href="products/airbliss-udc.html" class="ab-mega-item">
+                <strong>UDC Urinal Cleaner</strong>
+                <span>Urinal drain acid &amp; uric salt cleaner</span>
+              </a>
+              <a href="products/airbliss-utc.html" class="ab-mega-item">
+                <strong>UTC Toilet Cleaner</strong>
+                <span>Viscous probiotic toilet bowl descaler</span>
+              </a>
+            </div>
+
+            <!-- Column 2: Surface & Air -->
+            <div class="ab-mega-col">
+              <div class="ab-mega-col-head">
+                <span class="ab-mega-icon">✨</span>
+                <h4>Surface &amp; Air Care</h4>
+              </div>
+              <a href="products/airbliss-floor-cleaner.html" class="ab-mega-item">
+                <strong>Probiotic Floor Cleaner</strong>
+                <span>72-Hour continuous microbial floor care</span>
+              </a>
+              <a href="products/airbliss-multi-surface.html" class="ab-mega-item">
+                <strong>Multi Surface Cleaner</strong>
+                <span>Enzyme glass &amp; optical surface polish</span>
+              </a>
+              <a href="products/airbliss-air-freshener.html" class="ab-mega-item">
+                <strong>Air Freshener Liquid</strong>
+                <span>Molecular odor capture &amp; digestion</span>
+              </a>
+            </div>
+
+            <!-- Column 3: Drain, Laundry & STP -->
+            <div class="ab-mega-col">
+              <div class="ab-mega-col-head">
+                <span class="ab-mega-icon">🌿</span>
+                <h4>Bio-Drains &amp; STP</h4>
+              </div>
+              <a href="products/airbliss-drain-cleaner.html" class="ab-mega-item">
+                <strong>Bio Drain Cleaner</strong>
+                <span>Grease trap &amp; plumbing line digest</span>
+              </a>
+              <a href="products/airbliss-fabric-stain-remover.html" class="ab-mega-item">
+                <strong>Fabric Stain Remover</strong>
+                <span>Multi-enzyme laundry spot remover</span>
+              </a>
+              <a href="products/airbliss-stp-activ.html" class="ab-mega-item">
+                <strong>STP ACTIV™</strong>
+                <span>Biological wastewater &amp; STP consortia</span>
+              </a>
+            </div>
+
+            <!-- Featured Callout Column -->
+            <div class="ab-mega-featured">
+              <div>
+                <span class="ab-mega-feat-badge">Institutional Range</span>
+                <h5>Complete 9-Product Catalog</h5>
+                <p>Living microbial consortia eliminating odors and biofilms across commercial facilities.</p>
+              </div>
+              <a href="airbliss.html#catalog" class="ab-mega-feat-btn">
+                <span>View Full Catalog</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <a href="#science">The Science</a>
       <a href="#sectors">Industries</a>
       <a href="about.html">About Praras</a>
+      <button type="button" class="nav-cta btn-quote" data-product="Airbliss Institutional Inquiry">Request Trial</button>
     </nav>
   </div>
 </header>
@@ -1375,7 +1645,7 @@
           <span class="ab-card-cat">Wastewater &amp; STP</span>
           <span class="ab-card-type">Multiple Bio-Enzymes</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ STP ACTIV™</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-stp-activ.html">AIRBLISS™ STP ACTIV™</a></h3>
         <p class="ab-card-desc">
           High-potency multi-strain microbial and bio-enzyme powder concentrate designed to boost capacity, accelerate biological digestion, and kickstart upset STPs and ETPs within 24–48 hours.
         </p>
@@ -1390,8 +1660,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">25 Kg HDPE Bags</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss STP ACTIV">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('stp-activ')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss STP ACTIV">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('stp-activ')">PDS</button>
+          <a href="products/airbliss-stp-activ.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1401,7 +1672,7 @@
           <span class="ab-card-cat">Washroom Care</span>
           <span class="ab-card-type">Microbial Consortia</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ U BLOCK ACTIV™</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-u-block-activ.html">AIRBLISS™ U BLOCK ACTIV™</a></h3>
         <p class="ab-card-desc">
           Advanced biological urinal bio-block that continuously degrades uric acid crystals, clears pipe encrustations, and neutralizes malodor for waterless and conventional urinals.
         </p>
@@ -1416,8 +1687,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">Cartons / Multi-packs</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss U BLOCK ACTIV">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('u-block')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss U BLOCK ACTIV">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('u-block')">PDS</button>
+          <a href="products/airbliss-u-block-activ.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1427,7 +1699,7 @@
           <span class="ab-card-cat">Washroom &amp; Kitchen</span>
           <span class="ab-card-type">Bio-Enzymatic</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ DRAIN CLEANER</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-drain-cleaner.html">AIRBLISS™ DRAIN CLEANER</a></h3>
         <p class="ab-card-desc">
           Deep-penetrating microbial liquid that breaks down stubborn grease, fats, oils, hair, and soap scum inside commercial kitchen and bathroom drainage lines without corrosive acids.
         </p>
@@ -1442,8 +1714,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">05 L / 25 L Cans</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Drain Cleaner">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('drain-cleaner')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Drain Cleaner">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('drain-cleaner')">PDS</button>
+          <a href="products/airbliss-drain-cleaner.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1453,7 +1726,7 @@
           <span class="ab-card-cat">Washroom Care</span>
           <span class="ab-card-type">Microbial Consortia</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ UDC (Urinal Drain Cleaner)</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-udc.html">AIRBLISS™ UDC (Urinal Drain Cleaner)</a></h3>
         <p class="ab-card-desc">
           Specialized biological liquid formulated to dissolve heavy uric acid salt encrustations in high-traffic public and commercial urinal pipes, eliminating uric odor at the chemical root.
         </p>
@@ -1468,8 +1741,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">05 L / 25 L Cans</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss UDC Urinal Drain Cleaner">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('udc')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss UDC Urinal Drain Cleaner">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('udc')">PDS</button>
+          <a href="products/airbliss-udc.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1479,7 +1753,7 @@
           <span class="ab-card-cat">Washroom Care</span>
           <span class="ab-card-type">Probiotic Surface Descaler</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ UTC (Toilet Cleaner)</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-utc.html">AIRBLISS™ UTC (Toilet Cleaner)</a></h3>
         <p class="ab-card-desc">
           Thick biological toilet and urinal bowl cleaner that clings to vertical porcelain surfaces, descaling organic stains and establishing an active probiotic shield against odor.
         </p>
@@ -1494,8 +1768,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">05 L / 25 L Cans</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss UTC Toilet Cleaner">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('utc')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss UTC Toilet Cleaner">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('utc')">PDS</button>
+          <a href="products/airbliss-utc.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1505,7 +1780,7 @@
           <span class="ab-card-cat">Surface Care</span>
           <span class="ab-card-type">Active Probiotics</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ FLOOR CLEANER</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-floor-cleaner.html">AIRBLISS™ FLOOR CLEANER</a></h3>
         <p class="ab-card-desc">
           Eco-friendly bio-enzymatic floor cleaner that deep cleans microscopic pores on marble, tile, granite, and epoxy, leaving a living probiotic barrier that keeps floors cleaner up to 72 hours.
         </p>
@@ -1520,8 +1795,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">05 L / 25 L Cans</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Probiotic Floor Cleaner">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('floor-cleaner')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Probiotic Floor Cleaner">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('floor-cleaner')">PDS</button>
+          <a href="products/airbliss-floor-cleaner.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1531,7 +1807,7 @@
           <span class="ab-card-cat">Surface &amp; Glass</span>
           <span class="ab-card-type">Enzyme Formulation</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ MULTI SURFACE CLEANER</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-multi-surface.html">AIRBLISS™ MULTI SURFACE CLEANER</a></h3>
         <p class="ab-card-desc">
           Enzyme-powered multi-surface and glass cleaner that lifts fingerprints, oils, grease, and dust from glass, mirrors, laminates, and stainless steel with zero toxic fumes.
         </p>
@@ -1546,8 +1822,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">05 L / 25 L Cans</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Multi Surface Cleaner">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('multi-surface')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Multi Surface Cleaner">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('multi-surface')">PDS</button>
+          <a href="products/airbliss-multi-surface.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1557,7 +1834,7 @@
           <span class="ab-card-cat">Odour Digestion</span>
           <span class="ab-card-type">Nano-Fragrance Microbial</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ AIR FRESHENER LIQUID</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-air-freshener.html">AIRBLISS™ AIR FRESHENER LIQUID</a></h3>
         <p class="ab-card-desc">
           Advanced bio-enzymatic odor eliminator with nanoparticle fragrance encapsulation that captures and digests airborne volatile organic odor molecules at the molecular source.
         </p>
@@ -1572,8 +1849,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">05 L / 25 L Cans</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Air Freshener Liquid">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('air-freshener')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Air Freshener Liquid">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('air-freshener')">PDS</button>
+          <a href="products/airbliss-air-freshener.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -1583,7 +1861,7 @@
           <span class="ab-card-cat">Laundry &amp; Fabric</span>
           <span class="ab-card-type">Lipase &amp; Protease Enzymes</span>
         </div>
-        <h3 class="ab-card-name">AIRBLISS™ FABRIC STAIN REMOVER</h3>
+        <h3 class="ab-card-name"><a href="products/airbliss-fabric-stain-remover.html">AIRBLISS™ FABRIC STAIN REMOVER</a></h3>
         <p class="ab-card-desc">
           Multi-enzyme spot and stain remover enriched with lipases and non-ionic surfactants that lifts stubborn protein, grease, blood, wine, gravy, and collar stains without fiber damage.
         </p>
@@ -1598,8 +1876,9 @@
           <div class="ab-spec-box"><span class="ab-spec-lbl">Packaging</span><span class="ab-spec-val">05 L / 25 L Cans</span></div>
         </div>
         <div class="ab-card-actions">
-          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Fabric Stain Remover">Request Sample / Quote</button>
-          <button type="button" class="ab-btn-pds" onclick="openPdsModal('fabric-stain')">PDS Specs</button>
+          <button type="button" class="ab-btn-sample btn-quote" data-product="Airbliss Fabric Stain Remover">Request Quote</button>
+          <button type="button" class="ab-btn-pds" onclick="openPdsModal('fabric-stain')">PDS</button>
+          <a href="products/airbliss-fabric-stain-remover.html" class="ab-btn-page"><span>Product Page</span> &rarr;</a>
         </div>
       </article>
 
@@ -2541,6 +2820,35 @@ document.addEventListener('keydown', function(e) {
           });
       });
     }
+
+    // 1.5. Navigation Dropdowns
+    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+      const trigger = dropdown.querySelector('.dropdown-trigger, :scope > button');
+      if (!trigger) return;
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const wasActive = dropdown.classList.contains('is-active');
+        document.querySelectorAll('.nav-dropdown').forEach(d => {
+          d.classList.remove('is-active');
+          const t = d.querySelector('.dropdown-trigger, :scope > button');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+        if (!wasActive) {
+          dropdown.classList.add('is-active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => {
+          d.classList.remove('is-active');
+          const t = d.querySelector('.dropdown-trigger, :scope > button');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
 
     // 2. Interactive Product Search Modal
     const searchModal = document.getElementById('site-search-modal');
