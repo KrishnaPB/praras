@@ -1,0 +1,14 @@
+# Apache configuration for Praras Biosciences
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 301 Permanent Redirect: Legacy root product-*.html to products/*.html
+    RewriteRule ^product-(.*)\.html$ /products/$1.html [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Security and performance headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
