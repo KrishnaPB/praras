@@ -1,19 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
-    <defs>
-        <linearGradient id="grad_product-airbliss-stp-activ" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#F4F8F4;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#E2EBE2;stop-opacity:1" />
-        </linearGradient>
-        <filter id="shadow_product-airbliss-stp-activ">
-            <feDropShadow dx="0" dy="15" stdDeviation="15" flood-opacity="0.15"/>
-        </filter>
-    </defs>
-    <rect width="400" height="400" fill="#ffffff" />
-    <rect x="90" y="40" width="220" height="320" rx="20" ry="20" fill="url(#grad_product-airbliss-stp-activ)" filter="url(#shadow_product-airbliss-stp-activ)" />
-    <rect x="90" y="320" width="220" height="40" rx="0" ry="0" fill="#1F4F33" />
-    <circle cx="200" cy="110" r="45" fill="#1F4F33" />
-    <text x="200" y="117" font-family="sans-serif" font-weight="bold" font-size="28" fill="#9DBF82" text-anchor="middle">AB</text>
-    <text x="200" y="200" font-family="sans-serif" font-weight="bold" font-size="18" fill="#163B2B" text-anchor="middle">STP ACTIV™</text>
-    <line x1="130" y1="228" x2="270" y2="228" stroke="#C18A5B" stroke-width="3"/>
-    <text x="200" y="252" font-family="sans-serif" font-weight="bold" font-size="10" fill="#586B60" text-anchor="middle" letter-spacing="1.2">PROBIOTIC BIO-SOLUTION</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="100%" height="100%">
+  <defs>
+    <!-- Background Drum Shadows & Gradients -->
+    <radialGradient id="drumGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9DBF82" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1F4F33" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Drum Body 3D Cylinder Gradient -->
+    <linearGradient id="drumBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2EBE2"/>
+      <stop offset="20%" stop-color="#F5FAF5"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="80%" stop-color="#E5EFE6"/>
+      <stop offset="100%" stop-color="#C8D8CA"/>
+    </linearGradient>
+
+    <!-- Top Cap & Rims -->
+    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#123321"/>
+      <stop offset="25%" stop-color="#1F4F33"/>
+      <stop offset="50%" stop-color="#2D6E48"/>
+      <stop offset="75%" stop-color="#1F4F33"/>
+      <stop offset="100%" stop-color="#0E2619"/>
+    </linearGradient>
+
+    <!-- Accent Gold Line -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C18A5B"/>
+      <stop offset="50%" stop-color="#E5BE9B"/>
+      <stop offset="100%" stop-color="#A66E40"/>
+    </linearGradient>
+
+    <!-- Label Gradient -->
+    <linearGradient id="labelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2619"/>
+      <stop offset="100%" stop-color="#1A452E"/>
+    </linearGradient>
+
+    <!-- Soft Drop Shadow Filter -->
+    <filter id="drumDropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#081A10" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Glow (Transparent, no white box) -->
+  <circle cx="200" cy="220" r="170" fill="url(#drumGlow)"/>
+
+  <!-- Main Container Body Group with 3D Depth Shadow -->
+  <g filter="url(#drumDropShadow)">
+    
+    <!-- Heavy-Duty Base Ring -->
+    <ellipse cx="200" cy="385" rx="110" ry="16" fill="#A8BAAC"/>
+    <path d="M90 370 Q 90 395 200 395 Q 310 395 310 370 L 310 375 Q 310 400 200 400 Q 90 400 90 375 Z" fill="#123321"/>
+
+    <!-- Main Drum Cylinder -->
+    <rect x="90" y="90" width="220" height="285" rx="28" fill="url(#drumBodyGrad)"/>
+
+    <!-- Industrial Reinforcement Ribs -->
+    <path d="M 90 145 Q 200 156 310 145" stroke="#D1E0D3" stroke-width="4" fill="none"/>
+    <path d="M 90 335 Q 200 346 310 335" stroke="#D1E0D3" stroke-width="4" fill="none"/>
+
+    <!-- Top Shoulder Curve -->
+    <path d="M 90 110 Q 90 75 140 70 L 260 70 Q 310 75 310 110 Z" fill="url(#drumBodyGrad)"/>
+
+    <!-- Heavy-Duty Threaded Neck & Lid -->
+    <rect x="148" y="48" width="104" height="26" rx="6" fill="url(#lidGrad)"/>
+    <ellipse cx="200" cy="48" rx="52" ry="10" fill="#2D6E48"/>
+    <rect x="165" y="32" width="70" height="18" rx="4" fill="url(#lidGrad)"/>
+    <ellipse cx="200" cy="32" rx="35" ry="7" fill="#3D8B5D"/>
+
+    <!-- Dual Heavy Grip Side Handles -->
+    <path d="M 75 110 C 65 110 65 150 75 150 L 92 145 L 92 115 Z" fill="#1A452E"/>
+    <path d="M 325 110 C 335 110 335 150 325 150 L 308 145 L 308 115 Z" fill="#123321"/>
+
+    <!-- ════ HIGH-END INDUSTRIAL PRODUCT LABEL ════ -->
+    <g transform="translate(106, 135)">
+      <!-- Label Base Card -->
+      <rect width="188" height="185" rx="14" fill="url(#labelGrad)"/>
+      <rect width="188" height="185" rx="14" fill="none" stroke="rgba(157, 191, 130, 0.4)" stroke-width="1.5"/>
+
+      <!-- Label Top Stripe (Gold) -->
+      <path d="M 0 12 Q 94 16 188 12 L 188 18 Q 94 22 0 18 Z" fill="url(#goldGrad)"/>
+
+      <!-- Brand Micro-Symbol (Airbliss Living Triple Leaf) -->
+      <g transform="translate(94, 42) scale(0.38)">
+        <circle r="36" fill="none" stroke="#9DBF82" stroke-width="3" stroke-dasharray="100 20"/>
+        <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#9DBF82"/>
+        <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#5C7A4A" transform="rotate(120)"/>
+        <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#C18A5B" transform="rotate(240)"/>
+      </g>
+
+      <!-- Label Brand Name -->
+      <text x="94" y="70" font-family="'Cinzel', serif, system-ui" font-size="11" font-weight="700" fill="#9DBF82" text-anchor="middle" letter-spacing="2.5">AIRBLISS™</text>
+
+      <!-- Product Title -->
+      <text x="94" y="96" font-family="'Inter', sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">STP ACTIV™</text>
+
+      <!-- Category Subtitle Tag -->
+      <rect x="22" y="108" width="144" height="18" rx="4" fill="rgba(157, 191, 130, 0.15)"/>
+      <text x="94" y="120.5" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800" fill="#D4E8DA" text-anchor="middle" letter-spacing="0.8">WASTEWATER BIO-CATALYST</text>
+
+      <!-- Feature Pill Badges inside Label -->
+      <g transform="translate(18, 136)">
+        <rect width="72" height="15" rx="3" fill="#123321" stroke="#2D6E48" stroke-width="0.8"/>
+        <text x="36" y="10.5" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" fill="#9DBF82" text-anchor="middle">BOD &lt; 10 PPM</text>
+
+        <rect x="80" width="72" height="15" rx="3" fill="#123321" stroke="#2D6E48" stroke-width="0.8"/>
+        <text x="116" y="10.5" font-family="'Inter', sans-serif" font-size="6.5" font-weight="700" fill="#9DBF82" text-anchor="middle">70% SLUDGE CUT</text>
+      </g>
+
+      <!-- Bottom Net Weight Strip -->
+      <line x1="18" y1="162" x2="170" y2="162" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+      <text x="24" y="174" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="rgba(255,255,255,0.6)">ISO 9001:2015</text>
+      <text x="164" y="174" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800" fill="#C18A5B" text-anchor="end">NET WT. 25 KG</text>
+    </g>
+
+    <!-- Glossy Specular Highlight Reflection -->
+    <path d="M 100 110 Q 100 90 125 85 L 135 85 Q 110 90 110 350 L 100 345 Z" fill="#FFFFFF" opacity="0.35"/>
+  </g>
 </svg>

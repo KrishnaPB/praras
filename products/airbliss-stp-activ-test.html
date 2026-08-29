@@ -228,14 +228,26 @@
     /* Left Column: Visual Media Showcase */
     .p-media-card {
       background: #FFFFFF; border: 1px solid var(--ab-border);
-      border-radius: var(--radius-xl); padding: 2rem;
+      border-radius: var(--radius-xl); padding: 1.75rem;
       box-shadow: var(--ab-shadow-md); position: sticky; top: 96px;
     }
     .p-visual-box {
       background: radial-gradient(circle at 50% 50%, #EFF6F0 0%, #E2EDE4 100%);
-      border-radius: var(--radius-lg); padding: 2.5rem 1.5rem; text-align: center;
+      border-radius: var(--radius-lg); padding: 1.5rem 1.25rem 2rem; text-align: center;
       position: relative; margin-bottom: 1.5rem; overflow: hidden;
       border: 1px solid rgba(31, 79, 51, 0.08);
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .p-visual-pill-row {
+      display: flex; justify-content: center; gap: 8px; margin-bottom: 1.25rem; width: 100%;
+    }
+    .p-micro-pill {
+      background: rgba(255, 255, 255, 0.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.72rem; font-weight: 800;
+      color: var(--ab-emerald); border: 1px solid rgba(31, 79, 51, 0.15); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .p-visual-img-wrap {
+      display: flex; align-items: center; justify-content: center; width: 100%; min-height: 280px;
     }
     .p-visual-img {
       max-width: 100%; height: auto; max-height: 290px;
@@ -243,15 +255,6 @@
       transition: transform 0.4s ease;
     }
     .p-visual-box:hover .p-visual-img { transform: scale(1.03) translateY(-4px); }
-    
-    .p-visual-badges {
-      position: absolute; top: 12px; right: 12px; display: flex; flex-direction: column; gap: 6px;
-    }
-    .p-micro-badge {
-      background: rgba(255, 255, 255, 0.9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-      padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.68rem; font-weight: 800;
-      color: var(--ab-emerald); border: 1px solid var(--ab-border); box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
 
     /* Media Actions */
     .p-media-actions { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
@@ -653,11 +656,13 @@
         <!-- Left Column: Packaging Media Stage & Quick Actions -->
         <aside class="p-media-card">
           <div class="p-visual-box">
-            <div class="p-visual-badges">
-              <span class="p-micro-badge">⚡ Multi-Enzyme</span>
-              <span class="p-micro-badge">🌿 100% Eco-Safe</span>
+            <div class="p-visual-pill-row">
+              <span class="p-micro-pill">⚡ Multi-Enzyme</span>
+              <span class="p-micro-pill">🌿 100% Eco-Safe</span>
             </div>
-            <img src="../assets/images/airbliss_stp_activ.svg" alt="AIRBLISS™ STP ACTIV™ Formulation Packaging" class="p-visual-img" width="300" height="300">
+            <div class="p-visual-img-wrap">
+              <img src="../assets/images/airbliss_stp_activ.svg" alt="AIRBLISS™ STP ACTIV™ Formulation Packaging" class="p-visual-img" width="280" height="308">
+            </div>
           </div>
 
           <div class="p-media-actions">
