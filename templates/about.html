@@ -1,50 +1,679 @@
 <?php include "header.php"; ?>
+<main id="pg-about" class="page on" role="main">
 
-<main id="pg-about" class="page" role="main">
-  <!-- ABOUT HERO -->
-  <section class="section deep" style="padding-top:8rem; padding-bottom:6rem;">
-    <div class="wrap">
-      <div class="hero-pill"><span class="hero-pill-dot"></span>Est. 2007</div>
-      <h1 class="h2 light" style="font-size:4rem; margin-bottom:1.5rem;">Biosciences for<br><em>Better Value</em></h1>
-      <p class="sec-body" style="font-size:1.1rem; max-width:600px; color:rgba(255,255,255,0.7);">
-        Praras® Biosciences Pvt. Ltd. (PBPL), incorporated on 3rd May 2007, is a bio-science company engaged in the manufacture of specialty biochemicals for diverse industries like Beverages, Food, Plantation and Microbial (Bio-Enzyme).
-      </p>
+  <!-- ══════════════════════════════════════════════
+       SECTION 1: CINEMATIC HERO
+  ══════════════════════════════════════════════ -->
+  <section class="about-hero" id="hero">
+    <div class="about-hero-bg">
+      <img src="assets/images/about_hero.webp" alt="Praras Biosciences Corporate Biotechnology Laboratory" class="about-hero-img" loading="eager" fetchpriority="high">
+      <div class="about-hero-overlay"></div>
+      <div class="about-hero-glow"></div>
+      <div class="about-hero-particles" aria-hidden="true">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+      </div>
+    </div>
+
+    <div class="wrap about-hero-wrap">
+      <div class="about-hero-content">
+        <div class="hero-badge-row">
+          <span class="about-pill"><span class="about-pill-dot"></span>Est. 2007 &middot; Bengaluru, India</span>
+          <span class="about-pill-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> DSIR Recognized R&amp;D</span>
+          <span class="about-pill-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> FSSC 22000 Certified</span>
+        </div>
+
+        <h1 class="about-hero-title">
+          Pioneering Bio-Sciences for <br>
+          <em class="about-hero-em">Sustainable Value &amp; Global Quality</em>
+        </h1>
+
+        <p class="about-hero-lead">
+          Praras&reg; Biosciences Pvt. Ltd. (PBPL), incorporated on <strong>3rd May 2007</strong>, is an Indian bio-science leader manufacturing high-performance specialty biochemicals, proprietary enzymes, and microbial formulations for the <strong>Beverage, Food, Fermentation, and Environmental Hygiene</strong> sectors.
+        </p>
+
+        <div class="about-hero-actions">
+          <a href="#heritage" class="btn-about-primary">
+            <span>Explore Our Journey</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#rd-science" class="btn-about-secondary">
+            <span>DSIR R&amp;D Engine</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </a>
+          <button type="button" class="btn-about-quote btn-quote" data-product="Corporate Partnership &amp; Facility Consultation">
+            <span>Request Consultation</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTENT SECTION -->
-  <section class="section">
+  <!-- ══════════════════════════════════════════════
+       SECTION 2: LIVE STATS BENTO MATRIX (3x2 Balanced Grid)
+  ══════════════════════════════════════════════ -->
+  <section class="about-stats-section">
     <div class="wrap">
-      <div class="sci-split" style="gap:6rem;">
-        <div>
-          <div class="sec-hd-left" style="margin-bottom:1.5rem">
+      <div class="about-stat-grid">
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="stat-number">18+</div>
+          <div class="stat-label">Years of Bio-Innovation</div>
+          <div class="stat-desc">Incorporated in 2007 with dedicated Bengaluru manufacturing &amp; technical facilities.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div class="stat-number">65+</div>
+          <div class="stat-label">Proprietary Formulations</div>
+          <div class="stat-desc">Custom-engineered enzymes, hydrocolloids, and stabilizers deployed industrially.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <div class="stat-number">DSIR</div>
+          <div class="stat-label">Certified In-House R&amp;D</div>
+          <div class="stat-desc">Recognized by the Department of Scientific and Industrial Research, Govt. of India.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="stat-number">FSSC</div>
+          <div class="stat-label">22000 &amp; FSSAI Licensed</div>
+          <div class="stat-desc">International food safety compliance, ISO 9001:2015, ISO 22000:2018 &amp; Halal certified.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div class="stat-number">4</div>
+          <div class="stat-label">Core Industry Verticals</div>
+          <div class="stat-desc">Food Processing, Alcoholic Beverages, Non-Alcoholic Drinks, and Microbial Systems.</div>
+        </div>
+
+        <div class="stat-card highlight-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Custom Toll Formulation</div>
+          <div class="stat-desc">Turnkey pilot trials, contract blending, and on-site troubleshooting for rapid scaling.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 3: JUMP-BAR (SLIDABLE / HORIZONTALLY SCROLLABLE WITH CONTROLS)
+  ══════════════════════════════════════════════ -->
+  <nav class="about-anchor-nav" aria-label="About Page Navigation">
+    <div class="wrap about-anchor-container">
+      <button class="anchor-nav-arrow prev" aria-label="Scroll left" type="button" id="navSlideLeft">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="about-anchor-track" id="aboutNavTrack">
+        <span class="anchor-nav-label">Jump to:</span>
+        <a href="#heritage" class="anchor-nav-link">Heritage &amp; Story</a>
+        <a href="#philosophy" class="anchor-nav-link">Philosophy (Sarva Bhūta)</a>
+        <a href="#rd-science" class="anchor-nav-link">DSIR R&amp;D Engine</a>
+        <a href="#facilities" class="anchor-nav-link">Infrastructure &amp; Labs</a>
+        <a href="#certifications" class="anchor-nav-link">Quality &amp; Certs</a>
+        <a href="#milestones" class="anchor-nav-link">Milestone Journey</a>
+        <a href="#sustainability" class="anchor-nav-link">Sustainability &amp; Impact</a>
+        <a href="#contact-block" class="anchor-nav-link">Connect with Us</a>
+      </div>
+      <button class="anchor-nav-arrow next" aria-label="Scroll right" type="button" id="navSlideRight">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 4: HERITAGE & THE PRARAS STORY
+  ══════════════════════════════════════════════ -->
+  <section class="section about-story-section" id="heritage">
+    <div class="wrap">
+      <div class="story-split-grid">
+        <div class="story-text-col">
+          <div class="sec-hd-left" style="margin-bottom:1.5rem;">
             <div class="sec-rail"></div>
             <div>
-              <div class="eyebrow">Our Mission</div>
-              <h2 class="h2">For the well-being of<br><em>all earthly elements.</em></h2>
+              <div class="eyebrow">Our Heritage</div>
+              <h2 class="h2">Building India's Premier<br><em>Specialty Bio-Science Catalyst</em></h2>
             </div>
           </div>
-          <p style="font-size:1rem;color:var(--c-muted);line-height:1.8;margin-bottom:1.5rem">Our motto is <strong>“SARVA BHUTA HITE RATAH’’</strong>. We strive to continuously improve our products, develop new solutions, better processes, and ensure growth for all our stakeholders.</p>
-          <p style="font-size:1rem;color:var(--c-muted);line-height:1.8;margin-bottom:1.5rem">We specialize in providing solutions for product and/or process improvement, cost savings, import substitution, and greater sustainability for our customers.</p>
+
+          <p class="story-p lead-p">
+            Established on <strong>May 3, 2007</strong> in Bengaluru, Praras&reg; Biosciences was founded on a distinct conviction: industrial processing needed biological, green alternatives to heavy synthetic chemicals and cost-prohibitive imported additives.
+          </p>
+
+          <p class="story-p">
+            Over nearly two decades of scientific dedication, PBPL has transformed from an agile enzyme research facility into a comprehensive bio-science powerhouse. We bridge the gap between deep biochemistry and large-scale industrial execution, formulating bespoke processing aids for bakers, brewmasters, distillers, confectioners, and food processors across the globe.
+          </p>
         </div>
-        
-        <!-- Quick Stats -->
-        <div class="why-grid" style="grid-template-columns:1fr 1fr;">
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">15+</div>
-            <div class="why-h" style="color:var(--c-ink);">Years Experience</div>
+
+        <div class="story-visual-col">
+          <div class="story-visual-card">
+            <img src="assets/images/brewery_overview_facility.webp" alt="Praras Biosciences Advanced Pilot Facility" class="story-img" loading="lazy">
+            <div class="story-card-overlay">
+              <div class="story-card-badge">Bengaluru Operations</div>
+              <h4 class="story-card-title">Where Deep Biochemistry Meets Industrial Scale</h4>
+              <p class="story-card-desc">State-of-the-art pilot extraction, dry blending, and microbiological diagnostic facilities operating under strict ISO and FSSC standards.</p>
+            </div>
           </div>
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">FSSAI</div>
-            <div class="why-h" style="color:var(--c-ink);">Licensed Facility</div>
+        </div>
+      </div>
+
+      <!-- Balanced 3-Pillar Row Spanning Full Width (Zero Whitespace) -->
+      <div class="story-pillars-full-row">
+        <div class="story-pillar-item">
+          <div class="story-pillar-num">01</div>
+          <h4>Import Substitution</h4>
+          <p>Developing indigenous, cost-optimized formulations that outperform expensive European and American imports under local operating conditions.</p>
+        </div>
+        <div class="story-pillar-item">
+          <div class="story-pillar-num">02</div>
+          <h4>Clean-Label Integrity</h4>
+          <p>Formulating natural bio-enzymatic agents that replace chemical oxidizers, synthetic emulsifiers, and artificial texturizers.</p>
+        </div>
+        <div class="story-pillar-item">
+          <div class="story-pillar-num">03</div>
+          <h4>Process Yield Maximization</h4>
+          <p>Optimizing starch conversion, mash filtration, oil reduction, and fermentation velocity to deliver measurable bottom-line gains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 5: GUIDING ETHOS (SARVA BHŪTA HITE RATĀḤ)
+  ══════════════════════════════════════════════ -->
+  <section class="section ethos-section" id="philosophy">
+    <div class="wrap">
+      <div class="ethos-hero-card">
+        <div class="ethos-bg-pattern" aria-hidden="true"></div>
+        <div class="ethos-content">
+          <div class="ethos-sanskrit-tag">Corporate Motto &middot; Bhagavad Gītā (12.4)</div>
+          
+          <div class="ethos-sanskrit-title">
+            “ सर्वभूतहिते रताः ”
           </div>
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">R&amp;D</div>
-            <div class="why-h" style="color:var(--c-ink);">DSIR Certified</div>
+          <div class="ethos-sanskrit-translit">
+            “Sarva Bhūta Hite Ratāḥ”
           </div>
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">FSSC</div>
-            <div class="why-h" style="color:var(--c-ink);">22000 Certified</div>
+          <div class="ethos-translation">
+            <em>“Devoted to the welfare, upliftment, and well-being of all living beings.”</em>
+          </div>
+
+          <p class="ethos-body">
+            This ancient principle is the moral compass and operational foundation of Praras&reg; Biosciences. Every enzyme blend we formulate, every microbial catalyst we screen, and every manufacturing process we refine is guided by the imperative to create value without causing ecological harm.
+          </p>
+
+          <div class="ethos-pillars-grid">
+            <div class="ethos-card">
+              <div class="ethos-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+              </div>
+              <h4>Biological Precision</h4>
+              <p>Harnessing nature&rsquo;s most sophisticated biocatalysts to achieve target molecular reactions without destructive chemical side-effects or synthetic residues.</p>
+            </div>
+
+            <div class="ethos-card">
+              <div class="ethos-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+              </div>
+              <h4>Ecological Responsibility</h4>
+              <p>Developing bio-degradable, eco-active solutions that reduce wastewater effluent BOD/COD, lower thermal energy usage, and eliminate hazardous toxins.</p>
+            </div>
+
+            <div class="ethos-card">
+              <div class="ethos-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h4>Shared Prosperity</h4>
+              <p>Delivering measurable cost savings, higher production uptime, and superior product quality for our enterprise clients, team, and global consumers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 6: DSIR-RECOGNIZED R&D & SCIENTIFIC CORE (2x2 Balanced Grid - 0 Whitespace)
+  ══════════════════════════════════════════════ -->
+  <section class="section rd-section" id="rd-science">
+    <div class="wrap">
+      <div class="sec-hd text-center-hd">
+        <div class="eyebrow">Scientific Engine</div>
+        <h2 class="h2">DSIR-Recognized Research &amp; Development</h2>
+        <p class="sec-body" style="max-width:780px; margin: 0.75rem auto 0;">
+          Our In-House R&amp;D Centre is formally recognized by the <strong>Department of Scientific and Industrial Research (DSIR), Ministry of Science &amp; Technology, Government of India</strong>.
+        </p>
+      </div>
+
+      <div class="rd-pillars-grid">
+        <!-- R&D Pillar 1 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31"></path><path d="M14 9.3V1.99"></path><path d="M8.5 2h7"></path><path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path><path d="M5.52 16h12.96"></path></svg>
+            </div>
+            <span class="rd-badge">Biocatalysis</span>
+          </div>
+          <h3 class="rd-title">Enzyme Engineering &amp; Fermentation</h3>
+          <p class="rd-desc">
+            Screening and optimizing fungal, bacterial, and plant-derived enzyme complexes. We tailor alpha-amylases, proteases, beta-glucanases, xylanases, and pectinases for specific thermal and pH performance curves.
+          </p>
+          <ul class="rd-list">
+            <li>Submerged &amp; solid-state fermentation scaling</li>
+            <li>Enzyme kinetics and thermal inactivation profiling</li>
+            <li>Custom stabilized liquid &amp; dry powder complexes</li>
+          </ul>
+        </div>
+
+        <!-- R&D Pillar 2 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+            </div>
+            <span class="rd-badge">Food Rheology</span>
+          </div>
+          <h3 class="rd-title">Baking &amp; Food Texture Application Lab</h3>
+          <p class="rd-desc">
+            Complete pilot bakery and texture analytical suite. We simulate industrial production conditions to evaluate dough extensibility, crumb structure, moisture retention, and egg-free aeration systems.
+          </p>
+          <ul class="rd-list">
+            <li>Texture Profile Analysis (TPA) &amp; firmness testing</li>
+            <li>Gluten strengthening and dough relaxation enzymes</li>
+            <li>Hydrocolloid synergy for dairy &amp; eggless emulsions</li>
+          </ul>
+        </div>
+
+        <!-- R&D Pillar 3 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 10l-1.5 8c-.2 1.1-1.3 2-2.5 2h-2c-1.2 0-2.3-.9-2.5-2L7 10"></path><path d="M12 2v8"></path><path d="M8 5l4-3 4 3"></path><path d="M4 10h16"></path></svg>
+            </div>
+            <span class="rd-badge">Brewing &amp; Distilling</span>
+          </div>
+          <h3 class="rd-title">Fermentation Diagnostics &amp; Yield Acceleration</h3>
+          <p class="rd-desc">
+            Pilot mashing and micro-distillation units dedicated to maximizing fermentable extract yields, accelerating attenuation, clarifying wort, and eliminating non-biological colloidal haze in beers and wines.
+          </p>
+          <ul class="rd-list">
+            <li>High-gravity mashing &amp; adjunct conversion diagnostics</li>
+            <li>Silica hydrogel &amp; PVPP-alternative colloidal stabilization</li>
+            <li>Enological nutrient balancing &amp; pectinase extraction</li>
+          </ul>
+        </div>
+
+        <!-- R&D Pillar 4 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            </div>
+            <span class="rd-badge">Airbliss&trade; Science</span>
+          </div>
+          <h3 class="rd-title">Environmental Probiotics &amp; Living Solutions</h3>
+          <p class="rd-desc">
+            Pioneering microbial solutions for institutional facilities, wastewater remediation, and biological odor elimination. Our living Bacillus consortia out-compete pathogenic biofilms and degrade organic sludge.
+          </p>
+          <ul class="rd-list">
+            <li>Consortium stabilization &amp; spore viability testing</li>
+            <li>STP/ETP wastewater BOD/COD reduction diagnostics</li>
+            <li>Enzymatic uric acid degradation &amp; grease-trap clearance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 7: WORLD-CLASS INFRASTRUCTURE & FACILITIES (3 Equal Columns)
+  ══════════════════════════════════════════════ -->
+  <section class="section facilities-section" id="facilities">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">Manufacturing &amp; Quality</div>
+            <h2 class="h2">World-Class Infrastructure &amp; Analytical Labs</h2>
+            <p class="sec-body" style="max-width:750px;">
+              Equipped with dedicated, temperature-controlled manufacturing units in Bengaluru designed to deliver ultra-consistent batch purity, international compliance, and seamless scalability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facilities-grid-row">
+        <!-- Facility Card 1 -->
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="assets/images/cm_facility.webp" alt="Praras Biosciences Powder and Liquid Manufacturing Suite" class="facility-img" loading="lazy">
+          </div>
+          <div class="facility-content">
+            <div class="facility-tag">Core Manufacturing</div>
+            <h3 class="facility-title">Powder &amp; Liquid Plants</h3>
+            <p class="facility-desc">Segregated hygienic suites engineered for dry powder micro-blending, liquid enzyme stabilization, and precision toll packaging from 100g to 1,000L totes.</p>
+            <div class="facility-specs">
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> ISO &amp; FSSAI Cleanrooms</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Automated Micro-Dosing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facility Card 2 -->
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="assets/images/fruit_overview_facility.webp" alt="Analytical QC and Microbiology Laboratory" class="facility-img" loading="lazy">
+          </div>
+          <div class="facility-content">
+            <div class="facility-tag">Analytical Lab</div>
+            <h3 class="facility-title">Analytical QC &amp; Testing</h3>
+            <p class="facility-desc">High-precision spectrophotometers, HPLC, viscometers, and enzymatic activity assay benches ensuring zero deviation from COA specifications.</p>
+            <div class="facility-specs">
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> HPLC &amp; Assay Testing</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Microbial Sterility</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facility Card 3 -->
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="assets/images/microbrewery_overview_facility.webp" alt="Pilot Fermentation and Trial Facility" class="facility-img" loading="lazy">
+          </div>
+          <div class="facility-content">
+            <div class="facility-tag">Pilot Plant</div>
+            <h3 class="facility-title">Pilot Trial &amp; Toll Scaling</h3>
+            <p class="facility-desc">Miniaturized industrial setups enabling clients to validate recipe formulations, verify fermentation yields, and run small batch trials prior to full-scale rollout.</p>
+            <div class="facility-specs">
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Pilot Fermenters</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Toll Scaling Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 8: CERTIFICATIONS & GLOBAL QUALITY (4 Equal Columns)
+  ══════════════════════════════════════════════ -->
+  <section class="section cert-section" id="certifications">
+    <div class="wrap">
+      <div class="sec-hd text-center-hd">
+        <div class="eyebrow">Accreditations &amp; Quality</div>
+        <h2 class="h2">Verified Global Quality Standards</h2>
+        <p class="sec-body" style="max-width:700px; margin: 0.75rem auto 0;">
+          Our manufacturing and R&amp;D processes operate under strict international accreditations, ensuring safety, consistency, and regulatory compliance for global markets.
+        </p>
+      </div>
+
+      <div class="cert-cards-grid">
+        <!-- Cert 1: DSIR -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/DSIR.webp" alt="DSIR Recognized In-House R&D Unit" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">DSIR Recognition</h3>
+          <div class="cert-sub">Govt. of India Certified R&amp;D</div>
+          <p class="cert-card-desc">Formal recognition by the Department of Scientific and Industrial Research, Ministry of Science &amp; Technology.</p>
+        </div>
+
+        <!-- Cert 2: FSSC 22000 -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/FSSC-CERTIFICATION.webp" alt="FSSC 22000 Certified Food Safety Management" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">FSSC 22000</h3>
+          <div class="cert-sub">Global Food Safety Initiative</div>
+          <p class="cert-card-desc">Comprehensive food safety certification ensuring international manufacturing hygiene and ingredient safety.</p>
+        </div>
+
+        <!-- Cert 3: FSSAI -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/fssai.webp" alt="FSSAI Licensed Manufacturer" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">FSSAI Licensed</h3>
+          <div class="cert-sub">Apex Indian Food Authority</div>
+          <p class="cert-card-desc">Licensed under the Food Safety and Standards Authority of India for precision food additives and enzymes.</p>
+        </div>
+
+        <!-- Cert 4: Halal -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/HALAL-CERTIFIED.webp" alt="Halal Certified Bio-Solutions" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">HALAL Certified</h3>
+          <div class="cert-sub">Global Export Compliance</div>
+          <p class="cert-card-desc">Certified under international Halal standards, meeting religious and hygienic requirements for overseas export.</p>
+        </div>
+      </div>
+
+      <div class="cert-standards-bar">
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          ISO 9001:2015 Quality Management
+        </div>
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          ISO 22000:2018 Food Safety
+        </div>
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          GMP &amp; HACCP Compliant Operations
+        </div>
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          100% Lot Traceability Protocols
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 9: MILESTONE JOURNEY TIMELINE (REVERSED: TODAY FIRST -> 2007 LAST)
+  ══════════════════════════════════════════════ -->
+  <section class="section timeline-section" id="milestones">
+    <div class="wrap">
+      <div class="sec-hd text-center-hd">
+        <div class="eyebrow">Our Milestones</div>
+        <h2 class="h2">Two Decades of Continuous Bio-Innovation</h2>
+        <p class="sec-body" style="max-width:700px; margin: 0.75rem auto 0;">
+          From our current global presence back to our 2007 founding in Bengaluru, explore the key milestones that shaped Praras Biosciences.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Milestone 1: TODAY (First) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">Today</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Global Reach &amp; Next-Gen Bio-Platforms</h3>
+            <p class="timeline-p">Deploying 65+ proprietary formulations across domestic and overseas enterprise clients, spearheading clean-label eggless baking improvers, vegan protein texturizers, and circular green bio-economy solutions.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 2: 2021 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">FSSC 22000 &amp; Launch of Airbliss&trade;</h3>
+            <p class="timeline-p">Attained prestigious FSSC 22000 certification and launched the Airbliss&trade; line of living probiotic cleaners and eco-active STP wastewater biological treatments.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 3: 2018 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2018</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Enology &amp; High-Gravity Distillery Expansion</h3>
+            <p class="timeline-p">Introduced specialized wine additives, pectolytic enzymes, and high-gravity distillery yield accelerators, significantly reducing fermentation cycle times.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 4: 2015 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2015</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Formal DSIR Recognition</h3>
+            <p class="timeline-p">Awarded in-house R&amp;D recognition by the Department of Scientific and Industrial Research (DSIR), Ministry of Science &amp; Technology, validating our innovative biochemical formulations.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 5: 2011 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2011</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Industrial Scaling &amp; Baking Line Launch</h3>
+            <p class="timeline-p">Commercialized proprietary biscuit improver (Biscamaze&reg;) and brewery mashing enzymes (BrewStabAid&reg;), establishing long-term partnerships with leading Indian food conglomerates.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 6: 2007 (Last) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2007</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Incorporation of Praras&reg; Biosciences</h3>
+            <p class="timeline-p">Incorporated on May 3, 2007 in Bengaluru, establishing pilot research labs for specialty bio-enzymes and biochemical processing aids to advance import substitution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 10: SUSTAINABILITY & CIRCULAR BIOECONOMY (4 Equal Columns)
+  ══════════════════════════════════════════════ -->
+  <section class="section sustainability-section" id="sustainability">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">ESG &amp; Sustainability</div>
+            <h2 class="h2">Pioneering the Circular Bio-Economy</h2>
+            <p class="sec-body" style="max-width:760px;">
+              Our biochemical solutions are designed not merely for superior functional performance, but as catalysts for industrial decarbonization, wastewater minimization, and clean-label safety.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sustainability-grid">
+        <div class="sus-card">
+          <div class="sus-num">40%</div>
+          <h3 class="sus-title">Chemical Effluent Reduction</h3>
+          <p class="sus-desc">Replacing caustic cleaning chemicals and synthetic processing aids with biodegradable bio-enzymatic catalysts.</p>
+        </div>
+
+        <div class="sus-card">
+          <div class="sus-num">15%</div>
+          <h3 class="sus-title">Fat &amp; Oil Savings</h3>
+          <p class="sus-desc">Our snack improvers minimize oil absorption during commercial frying, producing healthier snacks while cutting edible oil waste.</p>
+        </div>
+
+        <div class="sus-card">
+          <div class="sus-num">0%</div>
+          <h3 class="sus-title">Harmful VOCs &amp; Phosphates</h3>
+          <p class="sus-desc">Airbliss&trade; probiotic hygiene formulations utilize live beneficial microbes that eliminate foul odors without toxic chemical emissions.</p>
+        </div>
+
+        <div class="sus-card">
+          <div class="sus-num">100%</div>
+          <h3 class="sus-title">Clean-Label Friendly</h3>
+          <p class="sus-desc">Providing food manufacturers with natural biological alternatives to chemical conditioners, bromates, and artificial stabilizers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 11: DUAL-BRAND SYNERGY
+  ══════════════════════════════════════════════ -->
+  <section class="section dual-brand-section">
+    <div class="wrap">
+      <div class="dual-brand-card">
+        <div class="dual-brand-col praras-col">
+          <span class="dual-badge pr-badge">Industrial Biotechnology</span>
+          <h3 class="dual-title">Praras&reg; Bio-Sciences</h3>
+          <p class="dual-desc">Precision enzyme catalysts, bakery conditioners, brewing &amp; winery processing aids, and custom toll manufacturing for commercial enterprises.</p>
+          <a href="biscuits-cookies.html" class="dual-link">Explore Food &amp; Beverage Solutions &rarr;</a>
+        </div>
+
+        <div class="dual-brand-divider">
+          <span class="dual-divider-badge">Synergy</span>
+        </div>
+
+        <div class="dual-brand-col airbliss-col">
+          <span class="dual-badge ab-badge">Microbial Wellness</span>
+          <h3 class="dual-title">Airbliss&trade; Living Hygiene</h3>
+          <p class="dual-desc">Eco-active probiotic surface cleaners, organic wastewater STP bio-activators, and enzymatic odor elimination systems for commercial facilities.</p>
+          <a href="airbliss.html" class="dual-link ab-link">Discover Airbliss&trade; Probiotics &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 12: ENTERPRISE CTA & CONSULTATION
+  ══════════════════════════════════════════════ -->
+  <section class="section about-cta-section" id="contact-block">
+    <div class="wrap">
+      <div class="about-cta-card">
+        <div class="about-cta-inner">
+          <div class="cta-pill">Collaborate with our R&amp;D Team</div>
+          <h2 class="about-cta-title">Ready to Enhance Your Product Quality &amp; Process Yield?</h2>
+          <p class="about-cta-desc">
+            Whether you need custom enzyme development, diagnostic plant troubleshooting, contract toll blending, or trial sample packs, our Bengaluru scientific team is here to assist.
+          </p>
+
+          <div class="about-cta-btns">
+            <button type="button" class="btn-cta-primary btn-quote" data-product="Corporate R&amp;D Consultation">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Schedule Technical Consultation</span>
+            </button>
+            <a href="contact.html" class="btn-cta-secondary">
+              <span>Visit our Bengaluru Facility</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <div class="about-cta-info-row">
+            <div class="cta-info-item">
+              <strong>Direct Phone:</strong> <a href="tel:+918048904262">+91-80-48904262</a>
+            </div>
+            <div class="cta-info-item">
+              <strong>Corporate Email:</strong> <a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a>
+            </div>
+            <div class="cta-info-item">
+              <strong>Facility:</strong> Bengaluru, Karnataka, India
+            </div>
           </div>
         </div>
       </div>
@@ -52,5 +681,85 @@
   </section>
 
 </main>
+
+<script>
+// Slidable / Horizontal Drag & Scroll Controller for Jump Bar
+(function() {
+  function initAboutNav() {
+    const track = document.getElementById('aboutNavTrack');
+    const prevBtn = document.getElementById('navSlideLeft');
+    const nextBtn = document.getElementById('navSlideRight');
+    if (!track) return;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: -240, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: 240, behavior: 'smooth' });
+      });
+    }
+
+    // Mouse drag-to-scroll support
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    track.addEventListener('mousedown', function(e) {
+      isDown = true;
+      track.classList.add('is-dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', function() {
+      if (isDown) {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      }
+    });
+
+    track.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Check scroll arrows visibility on scroll
+    function updateArrows() {
+      if (!prevBtn || !nextBtn) return;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 4) {
+        prevBtn.style.opacity = '0.35';
+        nextBtn.style.opacity = '0.35';
+        prevBtn.style.pointerEvents = 'none';
+        nextBtn.style.pointerEvents = 'none';
+      } else {
+        prevBtn.style.opacity = track.scrollLeft <= 5 ? '0.35' : '1';
+        prevBtn.style.pointerEvents = track.scrollLeft <= 5 ? 'none' : 'auto';
+        nextBtn.style.opacity = track.scrollLeft >= maxScroll - 5 ? '0.35' : '1';
+        nextBtn.style.pointerEvents = track.scrollLeft >= maxScroll - 5 ? 'none' : 'auto';
+      }
+    }
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    setTimeout(updateArrows, 100);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutNav);
+  } else {
+    initAboutNav();
+  }
+})();
+</script>
 
 <?php include "footer.php"; ?>

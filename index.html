@@ -582,73 +582,6 @@
 
 
 
-/* ─── MEGA MENU HOVER & CLICK ACTIVE STYLES ─── */
-.site-nav .nav-dropdown, header .nav-dropdown, .nav-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-.site-nav .nav-dropdown::after, header .nav-dropdown::after, .nav-dropdown::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 100% !important;
-  left: -20% !important;
-  right: -20% !important;
-  height: 50px !important;
-  display: block !important;
-  z-index: 90 !important;
-}
-.site-nav .mega-menu, header .mega-menu, .mega-menu {
-  position: absolute !important;
-  top: calc(100% + 10px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(15px) scale(0.98) !important;
-  background: rgba(255, 255, 255, 0.97) !important;
-  -webkit-backdrop-filter: blur(40px) !important;
-  backdrop-filter: blur(40px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  border-radius: 24px !important;
-  padding: 0 !important;
-  display: flex !important;
-  min-width: 980px !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  z-index: 1000 !important;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1) !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  max-height: calc(100vh - 100px) !important;
-}
-.site-nav .nav-dropdown:hover .mega-menu,
-.site-nav .nav-dropdown.is-active .mega-menu,
-header .nav-dropdown:hover .mega-menu,
-header .nav-dropdown.is-active .mega-menu,
-.nav-dropdown:hover .mega-menu,
-.nav-dropdown.is-active .mega-menu {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) scale(1) !important;
-}
-.mega-menu-inner { display: flex !important; width: 100% !important; min-height: min-content !important; }
-.mega-content { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 3rem !important; padding: 3rem !important; flex: 1 !important; background: var(--c-surface, #fff) !important; }
-.mega-featured { width: 320px !important; background: linear-gradient(135deg, var(--c-primary-bg, #FDF4F4) 0%, rgba(240, 131, 50, 0.05) 100%) !important; padding: 3rem !important; display: flex !important; flex-direction: column !important; justify-content: center !important; border-left: 1px solid var(--c-border, #EBE5E0) !important; }
-.mega-column-header { display: flex !important; align-items: center !important; gap: 0.75rem !important; margin-bottom: 1.5rem !important; padding-bottom: 0.75rem !important; border-bottom: 1px solid var(--c-border-s, #DED6CD) !important; }
-.mega-column-icon { width: 32px !important; height: 32px !important; border-radius: 8px !important; background: var(--c-primary-bg, #FDF4F4) !important; color: var(--c-primary, #9A1D1E) !important; display: flex !important; align-items: center !important; justify-content: center !important; }
-.mega-column-header h3 { font-family: var(--font-d, serif) !important; font-size: 1.35rem !important; color: var(--c-ink, #181412) !important; font-weight: 700 !important; margin: 0 !important; }
-.mega-sub-header { font-size: 0.75rem !important; font-weight: 800 !important; color: var(--c-muted, #78695E) !important; text-transform: uppercase !important; letter-spacing: 0.15em !important; margin-top: 1.5rem !important; margin-bottom: 0.5rem !important; }
-.mega-column a { color: var(--c-body, #423933) !important; font-size: 0.9rem !important; font-weight: 700 !important; padding: 0.5rem 0.85rem !important; display: block !important; border-radius: 8px !important; margin-left: -0.85rem !important; text-decoration: none !important; }
-.mega-column a:hover { color: var(--c-primary, #9A1D1E) !important; transform: translateX(4px) !important; background: var(--c-primary-bg, #FDF4F4) !important; }
-.mega-menu-services { min-width: 320px !important; }
-.mega-menu-services .mega-content { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; padding: 2rem !important; }
-
-
-
-
-
 </style>
 <style>
 /* ─── RESET & GLOBAL ─── */
@@ -778,7 +711,7 @@ body.ab .nav-logo-ab{display:flex!important}
 
 .nav-links{display:flex;align-items:center;gap:2rem}
 .nav-links a, .nav-links .dropdown-trigger{
-  font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  font-size: 0.85rem !important;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
   color:var(--c-muted);position:relative;
   display: flex; align-items: center; gap: 0.3rem;
 }
@@ -1285,14 +1218,14 @@ body.ab .hero-pill-dot {
   background: transparent;
   border: none;
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size:  0.85rem !important;
   font-weight: 700;
   color: var(--c-ink, #181412);
   cursor: pointer;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   transition: all 0.2s ease;
-  text-transform: none !important;
+  text-transform:  uppercase !important;
 }
 .dropdown-trigger:hover, .nav-dropdown.is-active .dropdown-trigger {
   color: var(--c-primary, #9A1D1E);
@@ -1309,106 +1242,23 @@ body.ab .hero-pill-dot {
 /* ── Desktop Viewport Layout (min-width: 961px) ── */
 @media (min-width: 961px) {
   .site-nav .nav-inner { position: relative !important; }
-  .site-nav #products-dropdown { position: static !important; }
+  .site-nav #products-dropdown { position: relative !important; }
   .nav-dropdown-services { position: relative !important; }
   .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
 
   .nav-dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 25px;
-  }
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
+}
 
-  .mega-menu {
-    position: absolute !important;
-    top: calc(100% + 8px) !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid rgba(225, 219, 214, 0.85);
-    border-radius: 20px;
-    padding: 0;
-    display: flex;
-    width: min(1200px, calc(100vw - 32px)) !important;
-    min-width: 0 !important;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
-    z-index: 1000;
-    box-shadow: 0 35px 80px -15px rgba(24, 20, 18, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset, 0 10px 30px rgba(0, 0, 0, 0.04);
-    overflow: hidden;
-    max-height: calc(100vh - 90px);
-  }
-
-  .nav-dropdown:hover .mega-menu,
-  .nav-dropdown.is-active .mega-menu,
-  .site-nav #products-dropdown:hover #products-mega-menu,
-  .site-nav #products-dropdown.is-active #products-mega-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translateX(-50%) translateY(0) scale(1) !important;
-  }
-
-  .mega-menu-inner {
-    display: flex;
-    width: 100%;
-    overflow-y: auto;
-  }
-
-  .mega-content-grid {
-    display: grid;
-    grid-template-columns: 1.05fr 1.05fr 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 1.75rem;
-    flex: 1;
-    background: #ffffff;
-  }
-
-  .mega-spotlight {
-    width: 300px;
-    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 60%, #FEEDEA 100%);
-    padding: 1.75rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-left: 1px solid rgba(225, 219, 214, 0.85);
-    position: relative;
-    flex-shrink: 0;
-  }
-
-  .nav-dropdown-services .mega-menu-services {
-    position: absolute !important;
-    top: calc(100% + 8px) !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
-    width: 520px !important;
-    min-width: 0 !important;
-    max-width: 90vw;
-  }
-
-  .nav-dropdown-services:hover .mega-menu-services,
-  .nav-dropdown-services.is-active .mega-menu-services {
-    transform: translateX(-50%) translateY(0) scale(1) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
-  .mega-services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding: 1.25rem;
-    background: #ffffff;
-    width: 100%;
-  }
+  /* Note: Desktop Mega Menu styling is unified in universal-mega-menu-css and site-core.css */
 }
 
 /* ── Core Mega Menu Components (Shared) ── */
@@ -1611,39 +1461,7 @@ body.ab .hero-pill-dot {
   color: #ffffff !important;
 }
 
-.mega-spotlight-tools {
-  border-top: 1px solid rgba(154, 29, 30, 0.12);
-  padding-top: 0.85rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.mega-tool-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: var(--c-body, #4A3E39) !important;
-  text-decoration: none;
-  padding: 0.35rem 0.5rem;
-  border-radius: 6px;
-  transition: all 0.15s ease;
-  background: transparent;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-  width: 100%;
-  text-align: left;
-  text-transform: none !important;
-}
-
-.mega-tool-link:hover {
-  background: #ffffff;
-  color: var(--c-primary, #9A1D1E) !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-}
+/* Mega-tool-link styling managed centrally in universal-mega-menu-css and site-core.css */
 
 .mega-service-card {
   display: flex;
@@ -1759,7 +1577,7 @@ body.ab .hero-pill-dot {
     justify-content: space-between !important;
     width: 100% !important;
     padding: 0.95rem 0.65rem !important;
-    font-size: 0.92rem !important;
+    font-size:  0.85rem !important;
     font-weight: 700 !important;
     font-family: inherit !important;
     color: var(--c-ink, #181412) !important;
@@ -1801,8 +1619,16 @@ body.ab .hero-pill-dot {
   }
   
   .nav-dropdown::after {
-    display: none !important;
-  }
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
+}
   
   .mega-menu, 
   .site-nav #products-mega-menu, 
@@ -2174,279 +2000,409 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
 /* ════ UNIVERSAL MEGA MENU & NAVIGATION DROPDOWN CSS ════ */
 .nav-dropdown {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  height: 100%;
 }
 .nav-dropdown::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: -20%;
-  right: -20%;
-  height: 30px;
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
 }
 button.dropdown-trigger, .dropdown-trigger {
   background: transparent !important;
   border: none !important;
   outline: none !important;
-  padding: 0 !important;
+  padding: 0.6rem 0.5rem !important;
   margin: 0 !important;
-  font-family: inherit !important;
-  font-size: 0.75rem !important;
-  font-weight: 800 !important;
+  font-family: var(--font-b, "Mulish", sans-serif) !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  color: var(--c-muted, #78695E) !important;
+  line-height: 1 !important;
+  color: var(--c-ink, #181412) !important;
   cursor: pointer !important;
   box-shadow: none !important;
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
-  gap: 0.3rem !important;
-  transition: color var(--transition, 0.4s ease) !important;
+  gap: 5px !important;
+  transition: color 0.2s ease !important;
+  vertical-align: middle !important;
 }
 button.dropdown-trigger:hover, .dropdown-trigger:hover,
 .nav-dropdown:hover .dropdown-trigger, .nav-dropdown.is-active .dropdown-trigger {
-  color: var(--c-ink, #181412) !important;
+  color: var(--c-primary, #9A1D1E) !important;
 }
 .dropdown-trigger svg, .nav-dropdown > a svg {
-  transition: transform 0.3s ease !important;
+  transition: transform 0.25s ease !important;
 }
 .nav-dropdown:hover .dropdown-trigger svg, .nav-dropdown.is-active .dropdown-trigger svg,
 .nav-dropdown:hover > a svg, .nav-dropdown.is-active > a svg {
   transform: rotate(180deg) !important;
 }
 
-/* Desktop Mega Menu */
-.mega-menu {
-  position: absolute !important;
-  top: calc(100% + 15px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(15px) scale(0.98) !important;
-  background: rgba(255, 255, 255, 0.98) !important;
-  -webkit-backdrop-filter: blur(40px) !important;
-  backdrop-filter: blur(40px) !important;
-  border: 1px solid rgba(235, 229, 224, 0.9) !important;
-  border-radius: 24px !important;
-  padding: 0 !important;
-  display: flex !important;
-  min-width: 980px !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s !important;
-  z-index: 1000 !important;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-  overflow-y: auto !important;
-  max-height: calc(100vh - 100px) !important;
-}
-.mega-menu-inner {
-  display: flex !important;
-  width: 100% !important;
-}
-.mega-content {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 2.5rem !important;
-  padding: 2.5rem 3rem !important;
-  flex: 1 !important;
-  background: var(--c-surface, #FFFFFF) !important;
-}
-.nav-dropdown:hover .mega-menu,
-.nav-dropdown.is-active .mega-menu {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) scale(1) !important;
-}
-.mega-featured {
-  width: 300px !important;
-  background: linear-gradient(135deg, var(--c-primary-bg, #FDF4F4) 0%, rgba(240, 131, 50, 0.06) 100%) !important;
-  padding: 2.5rem !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  border-left: 1px solid var(--c-border, #EBE5E0) !important;
-}
-.mega-featured h3 {
-  font-family: var(--font-d, serif) !important;
-  font-size: 1.5rem !important;
-  color: var(--c-primary, #9A1D1E) !important;
-  margin-bottom: 0.85rem !important;
-  font-weight: 700 !important;
-  line-height: 1.3 !important;
-}
-.mega-featured p {
-  font-size: 0.88rem !important;
-  color: var(--c-muted, #78695E) !important;
-  line-height: 1.55 !important;
-  margin-bottom: 1.75rem !important;
-}
-.btn-mega-featured {
-  align-self: flex-start !important;
-  background: var(--c-primary, #9A1D1E) !important;
-  color: #fff !important;
-  padding: 0.65rem 1.4rem !important;
-  border-radius: var(--r-pill, 999px) !important;
-  font-size: 0.78rem !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  box-shadow: var(--sh-btn, 0 8px 20px rgba(154,29,30,0.25)) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.4rem !important;
-  text-decoration: none !important;
-}
-.btn-mega-featured:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: var(--sh-btn-hover, 0 12px 28px rgba(154,29,30,0.4)) !important;
-  color: #fff !important;
-}
-.mega-column-header {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.75rem !important;
-  margin-bottom: 1.25rem !important;
-  padding-bottom: 0.65rem !important;
-  border-bottom: 1px solid var(--c-border-s, #DED6CD) !important;
-}
-.mega-column-icon {
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 8px !important;
-  background: var(--c-primary-bg, #FDF4F4) !important;
-  color: var(--c-primary, #9A1D1E) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-}
-.mega-column-header h3 {
-  font-family: var(--font-d, serif) !important;
-  font-size: 1.3rem !important;
-  color: var(--c-ink, #181412) !important;
-  font-weight: 700 !important;
-  margin: 0 !important;
-}
-.mega-sub-header {
-  font-size: 0.72rem !important;
-  font-weight: 800 !important;
-  color: var(--c-muted, #78695E) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.15em !important;
-  margin-top: 1.25rem !important;
-  margin-bottom: 0.4rem !important;
-}
-.mega-column a {
-  color: var(--c-body, #423933) !important;
-  font-size: 0.88rem !important;
-  font-weight: 700 !important;
-  padding: 0.45rem 0.75rem !important;
-  display: block !important;
-  border-radius: 8px !important;
-  margin-left: -0.75rem !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
-}
-.mega-column a:hover {
-  color: var(--c-primary, #9A1D1E) !important;
-  transform: translateX(4px) !important;
-  background: var(--c-primary-bg, #FDF4F4) !important;
-}
-.mega-menu-services {
-  min-width: 280px !important;
-  width: auto !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(15px) scale(0.98) !important;
-}
-.mega-menu-services .mega-content {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.5rem !important;
-  padding: 1.5rem 2rem !important;
-}
-.nav-dropdown:hover .mega-menu-services,
-.nav-dropdown.is-active .mega-menu-services {
-  transform: translateX(-50%) translateY(0) scale(1) !important;
-}
+@media (min-width: 961px) {
+  .site-nav .nav-inner { position: relative !important; }
+  .site-nav #products-dropdown { position: relative !important; }
+  .nav-dropdown-services { position: relative !important; }
 
-/* Mobile & Tablet Responsive Styles (max-width: 960px) */
-@media (max-width: 960px) {
-  .nav-dropdown {
-    width: 100% !important;
-    height: auto !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-  }
-  .nav-dropdown::after {
-    display: none !important;
-  }
-  button.dropdown-trigger, .dropdown-trigger, .nav-dropdown > a {
-    width: 100% !important;
-    justify-content: space-between !important;
-    padding: 0.75rem 0 !important;
-    font-size: 0.9rem !important;
-    border-bottom: 1px solid var(--c-border, #EBE5E0) !important;
-  }
   .mega-menu {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    min-width: 100% !important;
-    width: 100% !important;
-    max-height: 0 !important;
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(12px) scale(0.99) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    border: 1px solid rgba(225, 219, 214, 0.85) !important;
+    border-radius: 20px !important;
+    padding: 0 !important;
+    display: block !important;
+    width: min(1180px, calc(100vw - 32px)) !important;
+    max-width: 1180px !important;
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 12px !important;
-    background: var(--c-surface-alt, #F7F4F2) !important;
+    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s !important;
+    z-index: 1002 !important;
+    box-shadow: 0 35px 80px -15px rgba(24, 20, 18, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset, 0 10px 30px rgba(0, 0, 0, 0.05) !important;
     overflow: hidden !important;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    max-height: none !important;
   }
-  .nav-dropdown.is-active .mega-menu {
-    max-height: 1200px !important;
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown.is-active .mega-menu,
+  .site-nav #products-dropdown:hover #products-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    padding: 1.25rem !important;
-    margin: 0.5rem 0 !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
   }
+
   .mega-menu-inner {
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: 1fr 310px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    align-items: stretch !important;
   }
-  .mega-content {
-    grid-template-columns: 1fr !important;
+
+  .mega-content-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
     gap: 1.5rem !important;
-    padding: 0 !important;
-    background: transparent !important;
+    padding: 1.75rem 2rem !important;
+    background: #FFFFFF !important;
   }
-  .mega-featured {
-    width: 100% !important;
-    border-left: none !important;
-    border-top: 1px solid var(--c-border, #EBE5E0) !important;
-    padding: 1.5rem 0 0.5rem !important;
-    margin-top: 1rem !important;
-    background: transparent !important;
+
+  .mega-col-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.1rem !important;
   }
-  .mega-column a {
-    padding: 0.4rem 0.5rem !important;
-    margin-left: 0 !important;
+
+  .mega-col-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    padding-bottom: 0.6rem !important;
+    border-bottom: 1.5px solid rgba(154, 29, 30, 0.12) !important;
+  }
+
+  .mega-col-icon {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    background: rgba(154, 29, 30, 0.08) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mega-col-title {
+    font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+    text-transform: none !important;
+  }
+
+  .mega-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+  }
+
+  .mega-group-label {
+    font-size: 0.7rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--c-accent, #C25E2E) !important;
+    margin-bottom: 0.25rem !important;
+    padding-left: 0.35rem !important;
+  }
+
+  .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.45rem 0.65rem !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.18s ease !important;
+  }
+
+  .mega-item:hover {
+    background: #FAF6F3 !important;
+    transform: translateX(3px) !important;
+  }
+
+  .mega-item-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+  }
+
+  .mega-item-name {
+    font-size: 0.86rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    display: block !important;
+    line-height: 1.3 !important;
+    text-transform: none !important;
+  }
+
+  .mega-item-desc {
+    font-size: 0.72rem !important;
+    color: var(--c-muted, #78695E) !important;
+    display: block !important;
+    line-height: 1.3 !important;
+    text-transform: none !important;
+  }
+
+  .mega-item-arrow {
+    opacity: 0 !important;
+    transform: translateX(-4px) !important;
+    transition: all 0.18s ease !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    font-weight: 800 !important;
     font-size: 0.85rem !important;
+    margin-left: 6px !important;
+    flex-shrink: 0 !important;
   }
-  .mega-menu-services {
-    min-width: 100% !important;
+
+  .mega-item:hover .mega-item-arrow {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  .mega-spotlight {
+    background: linear-gradient(150deg, #1A1513 0%, #2A211D 60%, #361718 100%) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 1.75rem 1.6rem !important;
+    color: #FFFFFF !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    width: 310px !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 19px 19px 0 !important;
+  }
+
+  .mega-spotlight-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 0.3rem 0.65rem !important;
+    border-radius: 6px !important;
+    background: rgba(232, 121, 37, 0.25) !important;
+    border: 1px solid rgba(255, 179, 138, 0.3) !important;
+    color: #FFB38A !important;
+    font-size: 0.66rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 0.85rem !important;
+    width: fit-content !important;
+  }
+
+  .mega-spotlight-title {
+    font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    margin: 0 0 0.45rem 0 !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+  }
+
+  .mega-spotlight-desc {
+    font-family: var(--font-b, "Mulish", sans-serif) !important;
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    line-height: 1.5 !important;
+    margin: 0 0 1.15rem 0 !important;
+    text-transform: none !important;
+  }
+
+  .mega-spotlight-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #751516)) !important;
+    color: #FFFFFF !important;
+    padding: 0.68rem 1.25rem !important;
+    border-radius: 8px !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(154, 29, 30, 0.45) !important;
+    transition: all 0.2s ease !important;
     width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 1.15rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
-  .mega-menu-services .mega-content {
-    padding: 0 !important;
+
+  .mega-spotlight-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(154, 29, 30, 0.6) !important;
+    color: #FFFFFF !important;
+  }
+
+  .mega-spotlight-tools {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .mega-tool-link {
+    background: transparent !important;
+    border: none !important;
+    color: #FAF6EE !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    padding: 0.45rem 0.65rem !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    font-family: inherit !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    text-transform: none !important;
+  }
+
+  .mega-tool-link svg {
+    color: #FAF6EE !important;
+    stroke: #FAF6EE !important;
+    flex-shrink: 0 !important;
+    opacity: 0.85 !important;
+    transition: transform 0.2s ease, stroke 0.2s ease, opacity 0.2s ease !important;
+  }
+
+  .mega-tool-link:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #FFB38A !important;
+  }
+
+  .mega-tool-link:hover svg {
+    stroke: #FFB38A !important;
+    color: #FFB38A !important;
+    opacity: 1 !important;
+    transform: translateX(2px) !important;
+  }
+
+  .nav-dropdown-services .mega-menu-services {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(12px) scale(0.99) !important;
+    width: 580px !important;
+    max-width: 90vw !important;
+  }
+
+  .nav-dropdown-services:hover .mega-menu-services,
+  .nav-dropdown-services.is-active .mega-menu-services {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mega-services-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem !important;
+    padding: 1.75rem !important;
+    background: #FFFFFF !important;
+  }
+
+  .mega-service-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.45rem !important;
+    padding: 1.25rem !important;
+    background: #FAF7F4 !important;
+    border: 1px solid var(--c-border, #E8E2D9) !important;
+    border-radius: 14px !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .mega-service-card:hover {
+    background: #FFFFFF !important;
+    border-color: var(--c-primary, #9A1D1E) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .mega-service-icon {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    background: rgba(154, 29, 30, 0.08) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mega-service-title {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+  }
+
+  .mega-service-desc {
+    font-size: 0.76rem !important;
+    color: var(--c-muted, #78695E) !important;
+    line-height: 1.45 !important;
   }
 }
 </style>
@@ -2867,6 +2823,1262 @@ body.ab .hero {
 <link rel="stylesheet" href="assets/css/site-search.css">
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <link rel="stylesheet" href="assets/css/site-core.css">
+
+<style id="homepage-worldclass-styles">
+/* ══════════════════════════════════════════════════════════════════
+   WORLD-CLASS HOMEPAGE STYLES (PRARAS & AIRBLISS DUAL THEMES)
+   ══════════════════════════════════════════════════════════════════ */
+
+/* --- GENERAL WRAP & SECTION SPACING --- */
+.page#pg-pr .section,
+.page#pg-ab .section {
+  padding: 5rem 0 !important;
+}
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- 1. PRARAS & AIRBLISS HERO --- */
+.home-hero {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+  padding: 7rem 0 5.5rem;
+}
+
+.hero-pr {
+  background: #0d0b0a;
+}
+
+.hero-ab {
+  background: #0B1A11;
+}
+
+.home-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.home-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.62) contrast(1.1);
+  transform: scale(1.02);
+  transition: transform 12s ease-out;
+}
+
+.home-hero:hover .home-hero-img {
+  transform: scale(1.06);
+}
+
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 11, 10, 0.94) 0%, rgba(94, 21, 21, 0.82) 55%, rgba(26, 21, 18, 0.88) 100%);
+  mix-blend-mode: multiply;
+}
+
+.ab-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 26, 17, 0.95) 0%, rgba(26, 64, 40, 0.85) 55%, rgba(13, 30, 20, 0.92) 100%);
+}
+
+.home-hero-glow {
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 121, 37, 0.22) 0%, rgba(138, 29, 30, 0.1) 50%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  animation: pulseGlow 8s infinite alternate ease-in-out;
+}
+
+.home-hero-glow.ab-glow {
+  background: radial-gradient(circle, rgba(157, 191, 130, 0.28) 0%, rgba(35, 74, 50, 0.15) 50%, transparent 70%);
+}
+
+.home-hero-particles .particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+.home-hero-particles .p1 { width: 6px; height: 6px; top: 25%; left: 15%; animation: floatP 9s infinite linear; }
+.home-hero-particles .p2 { width: 10px; height: 10px; top: 60%; left: 80%; animation: floatP 14s infinite linear 2s; background: rgba(232, 121, 37, 0.35); }
+.home-hero-particles .p3 { width: 4px; height: 4px; top: 40%; left: 70%; animation: floatP 11s infinite linear 1s; }
+.home-hero-particles .p4 { width: 8px; height: 8px; top: 75%; left: 25%; animation: floatP 16s infinite linear 3s; background: rgba(157, 191, 130, 0.3); }
+
+.home-hero-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-logo-box {
+  margin-bottom: 1.5rem;
+}
+
+.hero-brand-logo {
+  height: 60px;
+  width: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  font-family: var(--font-b);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FAF6EE;
+  margin-bottom: 1.4rem;
+}
+
+.hero-pill-badge.ab-pill {
+  background: rgba(157, 191, 130, 0.15);
+  border-color: rgba(157, 191, 130, 0.35);
+  color: #E2F0D9;
+}
+
+.hero-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E87925;
+  box-shadow: 0 0 10px #E87925;
+}
+
+.hero-pill-dot.ab-dot {
+  background: #9DBF82;
+  box-shadow: 0 0 10px #9DBF82;
+}
+
+.home-hero-h1 {
+  font-family: var(--font-d);
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: #FAF6EE;
+  margin-bottom: 1.4rem;
+}
+
+.home-hero-em {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, #FAF6EE 20%, #E87925 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-hero-em.ab-em {
+  background: linear-gradient(135deg, #FAF6EE 20%, #9DBF82 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-hero-lead {
+  font-family: var(--font-b);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.7;
+  color: rgba(250, 246, 238, 0.88);
+  margin-bottom: 2.2rem;
+  max-width: 620px;
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.95rem;
+  align-items: center;
+}
+
+.btn-home-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, #8A1D1E 0%, #B52A2C 100%);
+  color: #FAF6EE;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(138, 29, 30, 0.4);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-home-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(138, 29, 30, 0.55);
+  background: linear-gradient(135deg, #9C2224 0%, #C83234 100%);
+  color: #FFFFFF;
+}
+
+.btn-home-primary.ab-btn-primary {
+  background: linear-gradient(135deg, #234A32 0%, #3D6B4F 100%);
+  box-shadow: 0 8px 24px rgba(35, 74, 50, 0.4);
+}
+.btn-home-primary.ab-btn-primary:hover {
+  background: linear-gradient(135deg, #2D5E40 0%, #4C8263 100%);
+  box-shadow: 0 12px 28px rgba(35, 74, 50, 0.55);
+}
+
+.btn-home-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FAF6EE;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem 1.45rem;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-home-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Hero Glass Bento Stack */
+.hero-bento-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero-glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 18px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+}
+
+.hero-glass-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(232, 121, 37, 0.4);
+  transform: translateY(-3px);
+}
+
+.hero-glass-card.ab-glass:hover {
+  border-color: rgba(157, 191, 130, 0.5);
+}
+
+.hg-badge {
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E87925;
+  margin-bottom: 0.4rem;
+}
+
+.hg-badge.ab-badge-pill {
+  color: #9DBF82;
+}
+
+.hg-title {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FAF6EE;
+  margin-bottom: 0.45rem;
+}
+
+.hg-body {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(250, 246, 238, 0.82);
+}
+
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.hero-stat-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 1.1rem 0.8rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.hero-stat-box:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.hs-num {
+  font-family: var(--font-d);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #E87925;
+  margin-bottom: 0.25rem;
+}
+
+.hs-num.ab-num {
+  color: #9DBF82;
+}
+
+.hs-lbl {
+  font-family: var(--font-b);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(250, 246, 238, 0.85);
+}
+
+/* --- 2. ACCREDITATION STRIP --- */
+.cert-strip-worldclass {
+  background: #FFFFFF;
+  border-top: 1px solid var(--c-border, #E8E2D9);
+  border-bottom: 1px solid var(--c-border, #E8E2D9);
+  padding: 2.25rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.cert-inner-worldclass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.cert-text-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cert-title-txt {
+  font-family: var(--font-d);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--c-primary, #8A1D1E);
+  letter-spacing: 0.06em;
+}
+
+.cert-sub-txt {
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--c-muted, #6B5E55);
+}
+
+.cert-divider-line {
+  width: 1px;
+  height: 40px;
+  background: var(--c-border, #E8E2D9);
+}
+
+.ab-cert-strip {
+  background: #FAF7F2;
+}
+
+.ab-cert-txt {
+  font-family: var(--font-b);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #1F4F33;
+  letter-spacing: 0.03em;
+}
+
+/* --- 3. INDUSTRIES 4-COLUMN BENTO --- */
+.home-products-sec {
+  background: var(--c-bg, #FAF7F2);
+}
+
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.ind-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ind-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(138, 29, 30, 0.35);
+  box-shadow: 0 16px 36px rgba(138, 29, 30, 0.08);
+}
+
+.ind-card.ab-card {
+  background: linear-gradient(145deg, #153926 0%, #234A32 100%);
+  color: #FAF6EE;
+  border-color: rgba(157, 191, 130, 0.3);
+  cursor: pointer;
+}
+
+.ind-card.ab-card:hover {
+  border-color: #9DBF82;
+  box-shadow: 0 16px 36px rgba(35, 74, 50, 0.3);
+}
+
+.ind-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.ind-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.ind-card:hover .ind-img {
+  transform: scale(1.08);
+}
+
+.ind-label {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.85rem;
+  background: rgba(26, 21, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FAF6EE;
+  font-family: var(--font-b);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.ab-sub-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  background: #9DBF82;
+  color: #0D1E14;
+  font-family: var(--font-b);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ind-body {
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ind-h {
+  font-family: var(--font-d);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.5rem;
+}
+
+.ind-card.ab-card .ind-h {
+  color: #FAF6EE;
+}
+
+.ind-p {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--c-muted, #6B5E55);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.ind-card.ab-card .ind-p {
+  color: rgba(250, 246, 238, 0.82);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.tag {
+  background: var(--c-bg, #FAF7F2);
+  border: 1px solid var(--c-border, #E8E2D9);
+  color: var(--c-ink, #1A1512);
+  font-family: var(--font-b);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+.ind-card.ab-card .tag {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #FAF6EE;
+}
+
+/* --- 4. WHY PRARAS (3x2 DARK LUXURY MATRIX) --- */
+.home-why-sec {
+  background: #0D0B0A;
+  color: #FAF6EE;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.why-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 2.2rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.why-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(232, 121, 37, 0.4);
+  transform: translateY(-4px);
+}
+
+.why-n {
+  font-family: var(--font-d);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: rgba(232, 121, 37, 0.28);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.why-card:hover .why-n {
+  color: #E87925;
+}
+
+.why-h {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FAF6EE;
+  margin-bottom: 0.6rem;
+}
+
+.why-p {
+  font-family: var(--font-b);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(250, 246, 238, 0.78);
+  margin: 0;
+}
+
+/* --- 5. OUR SERVICES (2x2 PRECISION CARDS) --- */
+.home-services-sec {
+  background: #FFFFFF;
+}
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.svc-card {
+  background: var(--c-bg, #FAF7F2);
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  padding: 2rem 1.85rem;
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+}
+
+.svc-card:hover {
+  background: #FFFFFF;
+  border-color: rgba(138, 29, 30, 0.3);
+  box-shadow: 0 12px 30px rgba(138, 29, 30, 0.06);
+  transform: translateY(-3px);
+}
+
+.svc-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(138, 29, 30, 0.08);
+  color: var(--c-primary, #8A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.svc-h {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.45rem;
+}
+
+.svc-p {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--c-muted, #6B5E55);
+  margin: 0;
+}
+
+/* --- 6. CTA BAND --- */
+.home-cta-band {
+  background: linear-gradient(135deg, #1A1512 0%, #3B1213 100%);
+  border-top: 1px solid rgba(232, 121, 37, 0.3);
+  border-bottom: 1px solid rgba(232, 121, 37, 0.3);
+  padding: 4rem 0;
+  color: #FAF6EE;
+}
+
+.home-cta-band.ab-cta-band {
+  background: linear-gradient(135deg, #0B1A11 0%, #153926 100%);
+  border-color: rgba(157, 191, 130, 0.3);
+}
+
+.cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-text-col {
+  max-width: 650px;
+}
+
+.cta-h {
+  font-family: var(--font-d);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.cta-p {
+  font-family: var(--font-b);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(250, 246, 238, 0.85);
+  margin: 0;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-cta-w {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #E87925;
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(232, 121, 37, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-cta-w:hover {
+  background: #F08938;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(232, 121, 37, 0.55);
+}
+
+.btn-cta-w.ab-btn-cta {
+  background: #9DBF82;
+  color: #0D1E14;
+  box-shadow: 0 8px 24px rgba(157, 191, 130, 0.35);
+}
+.btn-cta-w.ab-btn-cta:hover {
+  background: #AFCE96;
+}
+
+.btn-cta-o {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #FAF6EE;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem 1.45rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-cta-o:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --- 7. CLIENT PERSPECTIVES (3-COL TESTIMONIALS) --- */
+.home-testi-sec {
+  background: var(--c-bg, #FAF7F2);
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.testi-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(138, 29, 30, 0.3);
+  box-shadow: 0 14px 30px rgba(138, 29, 30, 0.08);
+}
+
+.stars {
+  color: #E87925;
+  font-size: 1.15rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.25rem;
+}
+
+.testi-q {
+  font-family: var(--font-b);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.testi-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-top: 1px solid var(--c-border, #E8E2D9);
+  padding-top: 1.25rem;
+}
+
+.testi-av {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(138, 29, 30, 0.08);
+  color: var(--c-primary, #8A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+}
+
+.testi-role {
+  font-family: var(--font-b);
+  font-size: 0.78rem;
+  color: var(--c-muted, #6B5E55);
+}
+
+/* --- 8. AIRBLISS HOW IT WORKS (4 STEPS) --- */
+.home-how-sec {
+  background: var(--c-bg, #FAF7F2);
+}
+
+.how-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.how-step {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  padding: 2.2rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.how-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(35, 74, 50, 0.35);
+  box-shadow: 0 14px 30px rgba(35, 74, 50, 0.08);
+}
+
+.how-n {
+  font-family: var(--font-d);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(35, 74, 50, 0.15);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.how-step:hover .how-n {
+  color: #234A32;
+}
+
+.how-h {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.55rem;
+}
+
+.how-p {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--c-muted, #6B5E55);
+  margin: 0;
+}
+
+/* --- 9. AIRBLISS PRODUCT GRID (3x3 BALANCED) --- */
+.home-products-ab {
+  background: #FFFFFF;
+}
+
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.prod-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.prod-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(35, 74, 50, 0.35);
+  box-shadow: 0 16px 36px rgba(35, 74, 50, 0.08);
+}
+
+.prod-head.ab-prod-head {
+  background: linear-gradient(135deg, #1A3E29 0%, #2E6B47 100%);
+  padding: 1.8rem 1.6rem;
+  color: #FAF6EE;
+}
+
+.prod-cat {
+  font-family: var(--font-b);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.75);
+  margin-bottom: 0.4rem;
+}
+
+.prod-h {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FAF6EE;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.prod-body {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.prod-p {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--c-muted, #6B5E55);
+  margin-bottom: 1.25rem;
+}
+
+.feat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  border-top: 1px solid var(--c-border, #E8E2D9);
+  padding-top: 1rem;
+}
+
+.feat-list li {
+  font-family: var(--font-b);
+  font-size: 0.82rem;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.45rem;
+  position: relative;
+  padding-left: 1.2rem;
+  line-height: 1.45;
+}
+
+.feat-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #234A32;
+  font-weight: 800;
+}
+
+.prod-pack-info {
+  font-family: var(--font-b);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--c-muted, #6B5E55);
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.prod-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
+}
+
+.btn-prod-quote {
+  font-family: var(--font-b);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: #234A32;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-prod-quote:hover {
+  background: #2E6B47;
+  transform: translateY(-1px);
+}
+
+/* --- 10. AIRBLISS SEGMENTS (6 CARDS) --- */
+.home-seg-sec {
+  background: #0B1A11;
+  color: #FAF6EE;
+}
+
+.seg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.seg-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 2.2rem 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.seg-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(157, 191, 130, 0.4);
+  transform: translateY(-4px);
+}
+
+.seg-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(157, 191, 130, 0.12);
+  color: #9DBF82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.seg-h {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FAF6EE;
+  margin-bottom: 0.55rem;
+}
+
+.seg-p {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(250, 246, 238, 0.78);
+  margin: 0;
+}
+
+/* --- 11. AIRBLISS SCIENCE SPLIT --- */
+.home-sci-sec {
+  background: var(--c-bg, #FAF7F2);
+}
+
+.sci-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.sci-p {
+  font-family: var(--font-b);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--c-muted, #6B5E55);
+  margin-bottom: 1.25rem;
+}
+
+.sci-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.sci-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.sci-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(35, 74, 50, 0.35);
+  box-shadow: 0 12px 25px rgba(35, 74, 50, 0.06);
+}
+
+.sci-n {
+  font-family: var(--font-d);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #234A32;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.sci-l {
+  font-family: var(--font-b);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  line-height: 1.4;
+}
+
+/* --- THEME HELPER STYLES --- */
+.ab-rail {
+  background: #234A32 !important;
+}
+
+.ab-eyebrow {
+  color: #234A32 !important;
+}
+
+.ab-link {
+  color: #234A32 !important;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .ind-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+  .testi-grid {
+    grid-template-columns: 1fr;
+  }
+  .how-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .prod-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .seg-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sci-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 5.5rem 0 3.5rem;
+  }
+  .cert-inner-worldclass {
+    gap: 1.5rem;
+  }
+  .cert-divider-line {
+    display: none;
+  }
+  .ind-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .how-row {
+    grid-template-columns: 1fr;
+  }
+  .prod-grid {
+    grid-template-columns: 1fr;
+  }
+  .seg-grid {
+    grid-template-columns: 1fr;
+  }
+  .sci-cards {
+    grid-template-columns: 1fr;
+  }
+  .cta-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.75rem;
+  }
+  .cta-btns {
+    justify-content: center;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -3266,80 +4478,120 @@ body.ab .hero {
 ════════════════════════════════════════ -->
 <main id="pg-pr" class="page on" role="main">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div style="margin-bottom:1.75rem">
-          <img
-            src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
-            alt="PrĀRAS Bio-Sciences Pvt. Ltd."
-            width="201" height="62" style="height:62px;width:auto;background:#fff;border-radius:8px;padding:8px 16px;"
-          />
-        </div>
-        <div class="hero-pill"><span class="hero-pill-dot"></span>FSSAI · FSSC · DSIR · Halal Certified</div>
-        <h1 class="hero-h1">Science that<br><em>improves</em><br>what you make.</h1>
-        <p class="hero-p">We specialize in providing solutions for product and / or process improvement, cost savings, import substitution and greater sustainability to our customers.</p>
-        <div class="hero-actions">
-          <a href="#" class="btn-hero-p">Explore industries <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <a href="#" class="btn-hero-g">Our services</a>
-        </div>
+  <!-- ══════════════════════════════════════════════
+       HERO SECTION (PRARAS)
+  ══════════════════════════════════════════════ -->
+  <section class="home-hero hero-pr" id="pr-hero">
+    <div class="home-hero-bg">
+      <img src="assets/images/about_hero.webp" alt="Praras Biosciences Biotechnology Laboratory" class="home-hero-img" loading="eager" fetchpriority="high">
+      <div class="home-hero-overlay"></div>
+      <div class="home-hero-glow"></div>
+      <div class="home-hero-particles" aria-hidden="true">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
       </div>
-      <div class="hero-visual">
-        <div class="hero-glass">
-          <div class="hg-label">Food additives</div>
-          <div class="hg-title">Baking · Meat · Pasta · Snacks</div>
-          <div class="hg-body">Baking improvers, emulsifiers, anti-staling agents, and texturisers that directly reduce your per-unit cost.</div>
+    </div>
+
+    <div class="wrap home-hero-wrap">
+      <div class="home-hero-grid">
+        <div class="home-hero-left">
+          <div class="hero-logo-box">
+            <img
+              src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
+              alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+              width="201" height="62" class="hero-brand-logo"
+            />
+          </div>
+          <div class="hero-pill-badge">
+            <span class="hero-pill-dot"></span>
+            <span>FSSAI &middot; FSSC &middot; DSIR &middot; Halal Certified</span>
+          </div>
+          <h1 class="home-hero-h1">
+            Science that<br>
+            <em class="home-hero-em">improves</em><br>
+            what you make.
+          </h1>
+          <p class="home-hero-lead">
+            We specialize in providing solutions for product and / or process improvement, cost savings, import substitution and greater sustainability to our customers.
+          </p>
+          <div class="home-hero-actions">
+            <a href="#products" class="btn-home-primary">
+              <span>Explore industries</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="services.html" class="btn-home-secondary">
+              <span>Our services</span>
+            </a>
+          </div>
         </div>
-        <div class="hero-glass">
-          <div class="hg-label">Beverage science</div>
-          <div class="hg-title">Brewery · Distillery · Wine · Juice</div>
-          <div class="hg-body">Fermentation boosters and clarifying agents for alcoholic and non-alcoholic beverage producers.</div>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="hs-num">25+</div><div class="hs-lbl">Years R&amp;D</div></div>
-          <div class="hero-stat"><div class="hs-num">300+</div><div class="hs-lbl">Products</div></div>
-          <div class="hero-stat"><div class="hs-num">500+</div><div class="hs-lbl">Clients</div></div>
+
+        <div class="home-hero-right">
+          <div class="hero-bento-stack">
+            <div class="hero-glass-card">
+              <div class="hg-badge">Food additives</div>
+              <div class="hg-title">Baking &middot; Meat &middot; Pasta &middot; Snacks</div>
+              <div class="hg-body">Baking improvers, emulsifiers, anti-staling agents, and texturisers that directly reduce your per-unit cost.</div>
+            </div>
+            
+            <div class="hero-glass-card">
+              <div class="hg-badge">Beverage science</div>
+              <div class="hg-title">Brewery &middot; Distillery &middot; Wine &middot; Juice</div>
+              <div class="hg-body">Fermentation boosters and clarifying agents for alcoholic and non-alcoholic beverage producers.</div>
+            </div>
+
+            <div class="hero-stats-row">
+              <div class="hero-stat-box">
+                <div class="hs-num">25+</div>
+                <div class="hs-lbl">Years R&amp;D</div>
+              </div>
+              <div class="hero-stat-box">
+                <div class="hs-num">300+</div>
+                <div class="hs-lbl">Products</div>
+              </div>
+              <div class="hero-stat-box">
+                <div class="hs-num">500+</div>
+                <div class="hs-lbl">Clients</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CERT STRIP -->
-  <div class="cert-strip" style="background: linear-gradient(90deg, var(--c-surface), var(--c-surface-alt)); padding: 2.5rem 1rem; border-bottom: 1px solid var(--c-border); border-top: 1px solid var(--c-border); box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
-    <div class="cert-inner" style="display: flex; justify-content: center; gap: 4rem; align-items: center; flex-wrap: wrap;">
-      
-      <div class="cert-text-item" style="text-align: center; display: flex; flex-direction: column; gap: 0.25rem;">
-        <span style="font-size: 1.5rem; font-weight: 800; color: var(--c-primary); letter-spacing: 2px; text-shadow: 0 2px 10px rgba(154, 29, 30, 0.1);">FSSAI</span>
-        <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--c-text-muted);">Licensed</span>
+  <!-- ══════════════════════════════════════════════
+       CERTIFICATION ACCREDITATION STRIP
+  ══════════════════════════════════════════════ -->
+  <div class="cert-strip-worldclass">
+    <div class="wrap cert-inner-worldclass">
+      <div class="cert-text-item">
+        <span class="cert-title-txt">FSSAI</span>
+        <span class="cert-sub-txt">Licensed</span>
       </div>
-
-      <div style="width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, var(--c-border), transparent);"></div>
-
-      <div class="cert-text-item" style="text-align: center; display: flex; flex-direction: column; gap: 0.25rem;">
-        <span style="font-size: 1.5rem; font-weight: 800; color: var(--c-primary); letter-spacing: 2px; text-shadow: 0 2px 10px rgba(154, 29, 30, 0.1);">FSSC 22000</span>
-        <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--c-text-muted);">Certified</span>
+      <div class="cert-divider-line"></div>
+      <div class="cert-text-item">
+        <span class="cert-title-txt">FSSC 22000</span>
+        <span class="cert-sub-txt">Certified</span>
       </div>
-
-      <div style="width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, var(--c-border), transparent);"></div>
-
-      <div class="cert-text-item" style="text-align: center; display: flex; flex-direction: column; gap: 0.25rem;">
-        <span style="font-size: 1.5rem; font-weight: 800; color: var(--c-primary); letter-spacing: 2px; text-shadow: 0 2px 10px rgba(154, 29, 30, 0.1);">DSIR</span>
-        <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--c-text-muted);">Recognized</span>
+      <div class="cert-divider-line"></div>
+      <div class="cert-text-item">
+        <span class="cert-title-txt">DSIR</span>
+        <span class="cert-sub-txt">Recognized</span>
       </div>
-
-      <div style="width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, var(--c-border), transparent);"></div>
-
-      <div class="cert-text-item" style="text-align: center; display: flex; flex-direction: column; gap: 0.25rem;">
-        <span style="font-size: 1.5rem; font-weight: 800; color: var(--c-primary); letter-spacing: 2px; text-shadow: 0 2px 10px rgba(154, 29, 30, 0.1);">HALAL</span>
-        <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--c-text-muted);">Certified</span>
+      <div class="cert-divider-line"></div>
+      <div class="cert-text-item">
+        <span class="cert-title-txt">HALAL</span>
+        <span class="cert-sub-txt">Certified</span>
       </div>
-
     </div>
   </div>
 
-  <!-- INDUSTRIES & PRODUCTS -->
-  <section class="section" id="products">
+  <!-- ══════════════════════════════════════════════
+       INDUSTRIES & PRODUCTS (4-COLUMN BALANCED BENTO)
+  ══════════════════════════════════════════════ -->
+  <section class="section home-products-sec" id="products">
     <div class="wrap">
       <div class="sec-hd">
         <div class="sec-hd-left">
@@ -3350,67 +4602,141 @@ body.ab .hero {
             <p class="sec-body">Specialising in product and process improvement, cost savings, and import substitution across food, beverages, and beyond.</p>
           </div>
         </div>
-        <a href="#" class="arr-link">All solutions <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="industry.html" class="arr-link">All solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
+
       <div class="ind-grid">
+        <!-- 01 Food -->
         <div class="ind-card">
-          <img src="assets/images/food.webp" alt="Food Industry" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1.5rem;">
-          <div class="ind-label">01 — Segment</div>
-          <h3 class="ind-h">Food</h3>
-          <p class="ind-p">Our food additives enables direct cost savings while ensuring global food safety standards.</p>
-          <div class="tags"><span class="tag">Baking</span><span class="tag">Meat</span><span class="tag">Pasta</span><span class="tag">Snacks</span></div>
+          <div class="ind-img-wrap">
+            <img src="assets/images/food.webp" alt="Food Industry" class="ind-img" loading="lazy">
+            <div class="ind-label">01 &mdash; Segment</div>
+          </div>
+          <div class="ind-body">
+            <h3 class="ind-h">Food</h3>
+            <p class="ind-p">Our food additives enables direct cost savings while ensuring global food safety standards.</p>
+            <div class="tags">
+              <span class="tag">Baking</span>
+              <span class="tag">Meat</span>
+              <span class="tag">Pasta</span>
+              <span class="tag">Snacks</span>
+            </div>
+          </div>
         </div>
+
+        <!-- 02 Beverages -->
         <div class="ind-card">
-          <img src="assets/images/beverages.webp" alt="Beverages Industry" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1.5rem;">
-          <div class="ind-label">02 — Segment</div>
-          <h3 class="ind-h">Beverages</h3>
-          <p class="ind-p">Evolve your process by applying our knowledge to alcoholic and non-alcoholic beverages.</p>
-          <div class="tags"><span class="tag">Breweries</span><span class="tag">Distilleries</span><span class="tag">Wine</span><span class="tag">Juice</span></div>
+          <div class="ind-img-wrap">
+            <img src="assets/images/beverages.webp" alt="Beverages Industry" class="ind-img" loading="lazy">
+            <div class="ind-label">02 &mdash; Segment</div>
+          </div>
+          <div class="ind-body">
+            <h3 class="ind-h">Beverages</h3>
+            <p class="ind-p">Evolve your process by applying our knowledge to alcoholic and non-alcoholic beverages.</p>
+            <div class="tags">
+              <span class="tag">Breweries</span>
+              <span class="tag">Distilleries</span>
+              <span class="tag">Wine</span>
+              <span class="tag">Juice</span>
+            </div>
+          </div>
         </div>
+
+        <!-- 03 Others -->
         <div class="ind-card">
-          <img src="assets/images/wine.webp" alt="Other Industries" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1.5rem;">
-          <div class="ind-label">03 — Segment</div>
-          <h3 class="ind-h">Others</h3>
-          <p class="ind-p">Improve quality and process efficiencies by using our fermentation boosters in other process products.</p>
-          <div class="tags"><span class="tag">Plantation</span></div>
+          <div class="ind-img-wrap">
+            <img src="assets/images/wine.webp" alt="Other Industries" class="ind-img" loading="lazy">
+            <div class="ind-label">03 &mdash; Segment</div>
+          </div>
+          <div class="ind-body">
+            <h3 class="ind-h">Others</h3>
+            <p class="ind-p">Improve quality and process efficiencies by using our fermentation boosters in other process products.</p>
+            <div class="tags">
+              <span class="tag">Plantation</span>
+            </div>
+          </div>
         </div>
+
+        <!-- 04 Airbliss Sub-brand -->
         <div class="ind-card ab-card" onclick="brand('ab')" role="button" tabindex="0" aria-label="Go to Airbliss sub-brand">
-          <img src="assets/images/microbial.webp" alt="Microbial Solutions" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1.5rem;">
-          <div class="ab-sub-badge">↗ Sub-brand</div>
-          <div class="ind-label" style="color:rgba(255,255,255,.75)">04 — Sub-brand</div>
-          <h3 class="ind-h">Airbliss</h3>
-          <p class="ind-p">Get next generation environment friendly and sustainable solutions for mal-odour, facility management, bio-composting, and more.</p>
-          <div class="tags"><span class="tag">Malodour</span><span class="tag">Hygiene</span><span class="tag">Biocompost</span></div>
+          <div class="ind-img-wrap">
+            <img src="assets/images/microbial.webp" alt="Microbial Solutions" class="ind-img" loading="lazy">
+            <div class="ab-sub-badge">&nearr; Sub-brand</div>
+            <div class="ind-label" style="color:rgba(255,255,255,.9)">04 &mdash; Sub-brand</div>
+          </div>
+          <div class="ind-body">
+            <h3 class="ind-h">Airbliss</h3>
+            <p class="ind-p">Get next generation environment friendly and sustainable solutions for mal-odour, facility management, bio-composting, and more.</p>
+            <div class="tags">
+              <span class="tag">Malodour</span>
+              <span class="tag">Hygiene</span>
+              <span class="tag">Biocompost</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY PRARAS (dark) -->
-  <section class="section deep">
+  <!-- ══════════════════════════════════════════════
+       WHY PRARAS (3x2 DARK LUXURY MATRIX)
+  ══════════════════════════════════════════════ -->
+  <section class="section deep home-why-sec">
     <div class="wrap">
-      <div class="sec-hd" style="margin-bottom:2.5rem">
+      <div class="sec-hd" style="margin-bottom:2.75rem">
         <div class="sec-hd-left">
-          <div class="sec-rail" style="background:var(--c-accent)"></div>
+          <div class="sec-rail" style="background:var(--c-accent, #C25E2E)"></div>
           <div>
             <div class="eyebrow">Why Praras</div>
             <h2 class="h2 light">Built on science.<br><em>Proven</em> in production.</h2>
           </div>
         </div>
       </div>
+      
       <div class="why-grid">
-        <div class="why-card"><div class="why-n">01</div><div class="why-h">In-house R&amp;D</div><p class="why-p">Our DSIR-certified facility develops and validates every formulation before it reaches your production line.</p></div>
-        <div class="why-card"><div class="why-n">02</div><div class="why-h">Regulatory certainty</div><p class="why-p">FSSAI, FSSC 22000, and Halal certifications maintained across our entire catalogue for domestic and export use.</p></div>
-        <div class="why-card"><div class="why-n">03</div><div class="why-h">Troubleshooting support</div><p class="why-p">When yields drop or batches fail, our technical team diagnoses root causes — not just upsells a new product.</p></div>
-        <div class="why-card"><div class="why-n">04</div><div class="why-h">Import substitution</div><p class="why-p">Domestically manufactured alternatives to costly imports at equal or better efficacy across our range.</p></div>
-        <div class="why-card"><div class="why-n">05</div><div class="why-h">Cost engineering</div><p class="why-p">Every additive is designed with your process economics in mind — dosage optimisation that directly reduces input cost.</p></div>
-        <div class="why-card"><div class="why-n">06</div><div class="why-h">Sustainability focus</div><p class="why-p">Enzyme-assisted and fermentation-based formulations reduce chemical load and waste across your production chain.</p></div>
+        <div class="why-card">
+          <div class="why-n">01</div>
+          <div class="why-h">In-house R&amp;D</div>
+          <p class="why-p">Our DSIR-certified facility develops and validates every formulation before it reaches your production line.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-n">02</div>
+          <div class="why-h">Regulatory certainty</div>
+          <p class="why-p">FSSAI, FSSC 22000, and Halal certifications maintained across our entire catalogue for domestic and export use.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-n">03</div>
+          <div class="why-h">Troubleshooting support</div>
+          <p class="why-p">When yields drop or batches fail, our technical team diagnoses root causes &mdash; not just upsells a new product.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-n">04</div>
+          <div class="why-h">Import substitution</div>
+          <p class="why-p">Domestically manufactured alternatives to costly imports at equal or better efficacy across our range.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-n">05</div>
+          <div class="why-h">Cost engineering</div>
+          <p class="why-p">Every additive is designed with your process economics in mind &mdash; dosage optimisation that directly reduces input cost.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-n">06</div>
+          <div class="why-h">Sustainability focus</div>
+          <p class="why-p">Enzyme-assisted and fermentation-based formulations reduce chemical load and waste across your production chain.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section alt">
+  <!-- ══════════════════════════════════════════════
+       OUR SERVICES (2x2 PRECISION CARDS)
+  ══════════════════════════════════════════════ -->
+  <section class="section alt home-services-sec">
     <div class="wrap">
       <div class="sec-hd">
         <div class="sec-hd-left">
@@ -3418,47 +4744,75 @@ body.ab .hero {
           <div>
             <div class="eyebrow">Our services</div>
             <h2 class="h2">Beyond the <em>product</em></h2>
-            <p class="sec-body">We work as a technical partner throughout your production cycle — from pilot batches to full-scale troubleshooting.</p>
+            <p class="sec-body">We work as a technical partner throughout your production cycle &mdash; from pilot batches to full-scale troubleshooting.</p>
           </div>
         </div>
       </div>
+
       <div class="svc-grid">
         <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
-          <div><div class="svc-h">Contract Manufacturing</div><p class="svc-p">Custom blending and white-label production in our FSSC-certified facility. Scale-up, QC, and regulatory documentation handled end to end.</p></div>
+          <div class="svc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+          </div>
+          <div>
+            <div class="svc-h">Contract Manufacturing</div>
+            <p class="svc-p">Custom blending and white-label production in our FSSC-certified facility. Scale-up, QC, and regulatory documentation handled end to end.</p>
+          </div>
         </div>
+
         <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div>
-          <div><div class="svc-h">Process Troubleshooting</div><p class="svc-p">On-site or remote diagnosis of yield losses, texture defects, fermentation failures, and stability issues with actionable fixes.</p></div>
+          <div class="svc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+          </div>
+          <div>
+            <div class="svc-h">Process Troubleshooting</div>
+            <p class="svc-p">On-site or remote diagnosis of yield losses, texture defects, fermentation failures, and stability issues with actionable fixes.</p>
+          </div>
         </div>
+
         <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
-          <div><div class="svc-h">R&D &amp; Contract Research</div><p class="svc-p">New product development, reformulation, shelf-life extension, and regulatory support co-developed with your team.</p></div>
+          <div class="svc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <div>
+            <div class="svc-h">R&amp;D &amp; Contract Research</div>
+            <p class="svc-p">New product development, reformulation, shelf-life extension, and regulatory support co-developed with your team.</p>
+          </div>
         </div>
+
         <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
-          <div><div class="svc-h">Technical Consulting</div><p class="svc-p">Expert guidance on ingredient selection, import substitution strategy, and process optimisation to improve margins.</p></div>
+          <div class="svc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <div>
+            <div class="svc-h">Technical Consulting</div>
+            <p class="svc-p">Expert guidance on ingredient selection, import substitution strategy, and process optimisation to improve margins.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="cta-band">
-    <div class="cta-inner">
-      <div>
+  <!-- ══════════════════════════════════════════════
+       CTA BAND
+  ══════════════════════════════════════════════ -->
+  <div class="cta-band home-cta-band">
+    <div class="wrap cta-inner">
+      <div class="cta-text-col">
         <div class="cta-h">Ready to upgrade your formulation?</div>
         <p class="cta-p">Our technical team will recommend the right additive stack for your process and volume.</p>
       </div>
       <div class="cta-btns">
-        <a href="#" class="btn-cta-w">Request a sample <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#" class="btn-cta-w btn-quote" data-product="Formulation Upgrade Consultation">Request a sample <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="tel:+918048904262" class="btn-cta-o">+91-80-48904262</a>
       </div>
     </div>
   </div>
 
-  <!-- TESTIMONIALS -->
-  <section class="section tinted">
+  <!-- ══════════════════════════════════════════════
+       CLIENT PERSPECTIVES (TESTIMONIALS)
+  ══════════════════════════════════════════════ -->
+  <section class="section tinted home-testi-sec">
     <div class="wrap">
       <div class="sec-hd">
         <div class="sec-hd-left">
@@ -3469,107 +4823,211 @@ body.ab .hero {
           </div>
         </div>
       </div>
+      
       <div class="testi-grid">
-        <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-q">"Switching to Praras's flour improver cut our bread returns by 40%. Their team was on-site within a week — that kind of technical response is rare."</p><div class="testi-auth"><div class="testi-av">RK</div><div><div class="testi-name">Rajesh Kumar</div><div class="testi-role">Production Head, Large Bakery Chain</div></div></div></div>
-        <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-q">"Their brewery additives replaced three separate imports with one locally sourced SKU. We saved 18% on input costs in the first quarter alone."</p><div class="testi-auth"><div class="testi-av">SP</div><div><div class="testi-name">Shreya Pillai</div><div class="testi-role">Operations Director, Microbrewery Group</div></div></div></div>
-        <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-q">"The DSIR certification and in-house R&D gave our QA team the documentation confidence we needed for export compliance. No other supplier offered that."</p><div class="testi-auth"><div class="testi-av">AM</div><div><div class="testi-name">Anand Mehta</div><div class="testi-role">Quality Manager, Food Export Company</div></div></div></div>
+        <div class="testi-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-q">"Switching to Praras's flour improver cut our bread returns by 40%. Their team was on-site within a week — that kind of technical response is rare."</p>
+          <div class="testi-auth">
+            <div class="testi-av">RK</div>
+            <div>
+              <div class="testi-name">Rajesh Kumar</div>
+              <div class="testi-role">Production Head, Large Bakery Chain</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-q">"Their brewery additives replaced three separate imports with one locally sourced SKU. We saved 18% on input costs in the first quarter alone."</p>
+          <div class="testi-auth">
+            <div class="testi-av">SP</div>
+            <div>
+              <div class="testi-name">Shreya Pillai</div>
+              <div class="testi-role">Operations Director, Microbrewery Group</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-q">"The DSIR certification and in-house R&amp;D gave our QA team the documentation confidence we needed for export compliance. No other supplier offered that."</p>
+          <div class="testi-auth">
+            <div class="testi-av">AM</div>
+            <div>
+              <div class="testi-name">Anand Mehta</div>
+              <div class="testi-role">Quality Manager, Food Export Company</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ════════════════════════════════════════
-     AIRBLISS PAGE
-════════════════════════════════════════ -->
 <main id="pg-ab" class="page" role="main">
 
-  <!-- HERO -->
-  <section class="hero" id="ab-hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-pill"><span class="hero-pill-dot"></span>Probiotic · Microbial · B2B Cleaning</div>
-        <h1 class="hero-h1">Clean spaces.<br><em>Living</em><br>solutions.</h1>
-        <p class="hero-p">Better Microbial Solutions through Microbiology and Nanotechnology to aid towards environment and healthy human lifestyle. Environmentally friendly, effective, safe, and cost-effective way to keep your spaces clean and sanitary.</p>
-        <div class="hero-actions">
-          <a href="#ab-products" class="btn-hero-p">Explore products <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <button type="button" class="btn-hero-g btn-quote" data-product="Airbliss Probiotic Demo">Request a demo</button>
-        </div>
+  <!-- ══════════════════════════════════════════════
+       HERO SECTION (AIRBLISS)
+  ══════════════════════════════════════════════ -->
+  <section class="home-hero hero-ab" id="ab-hero">
+    <div class="home-hero-bg">
+      <div class="ab-hero-gradient"></div>
+      <div class="home-hero-glow ab-glow"></div>
+      <div class="home-hero-particles" aria-hidden="true">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
       </div>
-      <div class="hero-visual">
-        <div class="hero-glass">
-          <div class="hg-label">Surface care</div>
-          <div class="hg-title">Probiotic surface cleaners</div>
-          <div class="hg-body">Multi-strain formulations that colonise treated surfaces, preventing biofilm regrowth — not just cleaning it once.</div>
+    </div>
+
+    <div class="wrap home-hero-wrap">
+      <div class="home-hero-grid">
+        <div class="home-hero-left">
+          <div class="hero-pill-badge ab-pill">
+            <span class="hero-pill-dot ab-dot"></span>
+            <span>Probiotic &middot; Microbial &middot; B2B Cleaning</span>
+          </div>
+          <h1 class="home-hero-h1">
+            Clean spaces.<br>
+            <em class="home-hero-em ab-em">Living</em><br>
+            solutions.
+          </h1>
+          <p class="home-hero-lead">
+            Better Microbial Solutions through Microbiology and Nanotechnology to aid towards environment and healthy human lifestyle. Environmentally friendly, effective, safe, and cost-effective way to keep your spaces clean and sanitary.
+          </p>
+          <div class="home-hero-actions">
+            <a href="#ab-products" class="btn-home-primary ab-btn-primary">
+              <span>Explore products</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <button type="button" class="btn-home-secondary ab-btn-sec btn-quote" data-product="Airbliss Probiotic Demo">
+              <span>Request a demo</span>
+            </button>
+          </div>
         </div>
-        <div class="hero-glass">
-          <div class="hg-label">Odour control</div>
-          <div class="hg-title">Bio-enzymatic odour eliminators</div>
-          <div class="hg-body">Enzymatic formulas that digest the organic source of odour rather than masking it with fragrance.</div>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="hs-num">100%</div><div class="hs-lbl">Bio-based</div></div>
-          <div class="hero-stat"><div class="hs-num">12+</div><div class="hs-lbl">Formulations</div></div>
-          <div class="hero-stat"><div class="hs-num">Zero</div><div class="hs-lbl">Harsh chemicals</div></div>
+
+        <div class="home-hero-right">
+          <div class="hero-bento-stack">
+            <div class="hero-glass-card ab-glass">
+              <div class="hg-badge ab-badge-pill">Surface care</div>
+              <div class="hg-title">Probiotic surface cleaners</div>
+              <div class="hg-body">Multi-strain formulations that colonise treated surfaces, preventing biofilm regrowth &mdash; not just cleaning it once.</div>
+            </div>
+
+            <div class="hero-glass-card ab-glass">
+              <div class="hg-badge ab-badge-pill">Odour control</div>
+              <div class="hg-title">Bio-enzymatic odour eliminators</div>
+              <div class="hg-body">Enzymatic formulas that digest the organic source of odour rather than masking it with fragrance.</div>
+            </div>
+
+            <div class="hero-stats-row">
+              <div class="hero-stat-box ab-stat">
+                <div class="hs-num ab-num">100%</div>
+                <div class="hs-lbl">Bio-based</div>
+              </div>
+              <div class="hero-stat-box ab-stat">
+                <div class="hs-num ab-num">12+</div>
+                <div class="hs-lbl">Formulations</div>
+              </div>
+              <div class="hero-stat-box ab-stat">
+                <div class="hs-num ab-num">Zero</div>
+                <div class="hs-lbl">Harsh chemicals</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CERT STRIP -->
-  <div class="cert-strip">
-    <div class="cert-inner">
-      <div class="cert-item">DSIR Certified R&amp;D</div><div class="cert-div"></div>
-      <div class="cert-item">Halal Certified</div><div class="cert-div"></div>
-      <div class="cert-item">Eco-safe Formulations</div><div class="cert-div"></div>
-      <div class="cert-item">B2B Supply Ready</div><div class="cert-div"></div>
-      <div class="cert-item">Backed by Praras Biosciences</div>
+  <!-- ══════════════════════════════════════════════
+       AIRBLISS CERT STRIP
+  ══════════════════════════════════════════════ -->
+  <div class="cert-strip-worldclass ab-cert-strip">
+    <div class="wrap cert-inner-worldclass">
+      <div class="cert-text-item ab-cert-txt">DSIR Certified R&amp;D</div>
+      <div class="cert-divider-line ab-div"></div>
+      <div class="cert-text-item ab-cert-txt">Halal Certified</div>
+      <div class="cert-divider-line ab-div"></div>
+      <div class="cert-text-item ab-cert-txt">Eco-safe Formulations</div>
+      <div class="cert-divider-line ab-div"></div>
+      <div class="cert-text-item ab-cert-txt">B2B Supply Ready</div>
+      <div class="cert-divider-line ab-div"></div>
+      <div class="cert-text-item ab-cert-txt">Backed by Praras Biosciences</div>
     </div>
   </div>
 
-  <!-- HOW IT WORKS -->
-  <section class="section alt" id="ab-how">
+  <!-- ══════════════════════════════════════════════
+       HOW AIRBLISS WORKS (4-STEP PROCESS)
+  ══════════════════════════════════════════════ -->
+  <section class="section alt home-how-sec" id="ab-how">
     <div class="wrap">
       <div class="sec-hd">
         <div class="sec-hd-left">
-          <div class="sec-rail"></div>
+          <div class="sec-rail ab-rail"></div>
           <div>
-            <div class="eyebrow">How Airbliss works</div>
+            <div class="eyebrow ab-eyebrow">How Airbliss works</div>
             <h2 class="h2">Probiotics clean differently.<br>Here's <em>why that matters.</em></h2>
             <p class="sec-body">Conventional cleaners kill everything on contact. Airbliss uses live probiotic cultures that establish themselves on surfaces, crowding out pathogens naturally and working long after application.</p>
           </div>
         </div>
       </div>
+
       <div class="how-row">
-        <div class="how-step"><div class="how-n">01</div><div class="how-h">Apply</div><p class="how-p">Spray or mop the Airbliss solution onto the surface. Probiotic cultures are delivered in their active state, ready to work immediately.</p></div>
-        <div class="how-step"><div class="how-n">02</div><div class="how-h">Colonise</div><p class="how-p">Beneficial bacteria establish a living colony on the surface, bio-competitively excluding harmful pathogens and odour-causing organisms.</p></div>
-        <div class="how-step"><div class="how-n">03</div><div class="how-h">Digest</div><p class="how-p">Enzymes secreted by probiotic strains break down organic matter — the root cause of persistent odour and biofilm — rather than masking it.</p></div>
-        <div class="how-step"><div class="how-n">04</div><div class="how-h">Protect</div><p class="how-p">The probiotic colony continues working for days after application, providing residual protection that no chemical cleaner can match.</p></div>
+        <div class="how-step">
+          <div class="how-n">01</div>
+          <div class="how-h">Apply</div>
+          <p class="how-p">Spray or mop the Airbliss solution onto the surface. Probiotic cultures are delivered in their active state, ready to work immediately.</p>
+        </div>
+
+        <div class="how-step">
+          <div class="how-n">02</div>
+          <div class="how-h">Colonise</div>
+          <p class="how-p">Beneficial bacteria establish a living colony on the surface, bio-competitively excluding harmful pathogens and odour-causing organisms.</p>
+        </div>
+
+        <div class="how-step">
+          <div class="how-n">03</div>
+          <div class="how-h">Digest</div>
+          <p class="how-p">Enzymes secreted by probiotic strains break down organic matter &mdash; the root cause of persistent odour and biofilm &mdash; rather than masking it.</p>
+        </div>
+
+        <div class="how-step">
+          <div class="how-n">04</div>
+          <div class="how-h">Protect</div>
+          <p class="how-p">The probiotic colony continues working for days after application, providing residual protection that no chemical cleaner can match.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section class="section" id="ab-products">
+  <!-- ══════════════════════════════════════════════
+       PRODUCT RANGE (3x3 BALANCED GRID)
+  ══════════════════════════════════════════════ -->
+  <section class="section home-products-ab" id="ab-products">
     <div class="wrap">
       <div class="sec-hd">
         <div class="sec-hd-left">
-          <div class="sec-rail"></div>
+          <div class="sec-rail ab-rail"></div>
           <div>
-            <div class="eyebrow">Product range</div>
+            <div class="eyebrow ab-eyebrow">Product range</div>
             <h2 class="h2">Formulated for every<br><em>surface and application</em></h2>
             <p class="sec-body">Each Airbliss product is developed in Praras Biosciences' DSIR-certified R&amp;D facility and validated for B2B commercial use at scale.</p>
           </div>
         </div>
-        <button type="button" class="btn-quote arr-link" data-product="Airbliss Full Catalogue" style="font-family:inherit;background:none;border:none;cursor:pointer;">
-          Request Catalogue &amp; Pricing <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <button type="button" class="btn-quote arr-link ab-link" data-product="Airbliss Full Catalogue" style="font-family:inherit;background:none;border:none;cursor:pointer;">
+          Request Catalogue &amp; Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
-            <div class="prod-grid">
+
+      <div class="prod-grid">
         <!-- 1. AIRBLISS™ STP ACTIV™ -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-stp-activ.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ STP ACTIV™">
-          <div class="prod-head">
-            <div class="prod-cat">Wastewater &amp; STP · Bio-Enzymes</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Wastewater &amp; STP &middot; Bio-Enzymes</div>
             <h3 class="prod-h"><a href="products/airbliss-stp-activ.html" style="color:inherit;text-decoration:none;">AIRBLISS™ STP ACTIV™</a></h3>
           </div>
           <div class="prod-body">
@@ -3580,14 +5038,14 @@ body.ab .hero {
               <li>Sludge volume reduction up to 70%</li>
               <li>Restores upset STPs in 24–48 hours</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
+            <div class="prod-pack-info">
               Packaging: 25 Kg HDPE Bags / Drums
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-stp-activ.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-stp-activ.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS STP ACTIV" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS STP ACTIV">
                 Get Quote
               </button>
             </div>
@@ -3596,8 +5054,8 @@ body.ab .hero {
 
         <!-- 2. AIRBLISS™ U BLOCK ACTIV™ -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-u-block-activ.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ U BLOCK ACTIV™">
-          <div class="prod-head">
-            <div class="prod-cat">Washroom Care · Microbial Spores</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Washroom Care &middot; Microbial Spores</div>
             <h3 class="prod-h"><a href="products/airbliss-u-block-activ.html" style="color:inherit;text-decoration:none;">AIRBLISS™ U BLOCK ACTIV™</a></h3>
           </div>
           <div class="prod-body">
@@ -3608,14 +5066,14 @@ body.ab .hero {
               <li>Sustained 30-day biological action</li>
               <li>Ideal for waterless &amp; conventional urinals</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
+            <div class="prod-pack-info">
               Packaging: Master Cartons / Multi-pack Discs
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-u-block-activ.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-u-block-activ.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS U BLOCK ACTIV" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS U BLOCK ACTIV">
                 Get Quote
               </button>
             </div>
@@ -3624,8 +5082,8 @@ body.ab .hero {
 
         <!-- 3. AIRBLISS™ Bio Drain Cleaner -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-drain-cleaner.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ Bio Drain Cleaner">
-          <div class="prod-head">
-            <div class="prod-cat">Drainage &amp; Kitchens · Bio-Enzymatic</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Drainage &amp; Kitchens &middot; Bio-Enzymatic</div>
             <h3 class="prod-h"><a href="products/airbliss-drain-cleaner.html" style="color:inherit;text-decoration:none;">AIRBLISS™ Bio Drain Cleaner</a></h3>
           </div>
           <div class="prod-body">
@@ -3636,14 +5094,14 @@ body.ab .hero {
               <li>100% Non-corrosive to PVC &amp; metal pipes</li>
               <li>Safe for septic systems &amp; bio-digesters</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
-              Packaging: 05 L / 25 L HDPE Cans · pH 6.5–8.0
+            <div class="prod-pack-info">
+              Packaging: 05 L / 25 L HDPE Cans &middot; pH 6.5–8.0
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-drain-cleaner.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-drain-cleaner.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Bio Drain Cleaner" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Bio Drain Cleaner">
                 Get Quote
               </button>
             </div>
@@ -3652,8 +5110,8 @@ body.ab .hero {
 
         <!-- 4. AIRBLISS™ UDC (Urinal Drain Cleaner) -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-udc.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ UDC (Urinal Drain Cleaner)">
-          <div class="prod-head">
-            <div class="prod-cat">Washroom Care · Scale Descaling</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Washroom Care &middot; Scale Descaling</div>
             <h3 class="prod-h"><a href="products/airbliss-udc.html" style="color:inherit;text-decoration:none;">AIRBLISS™ UDC (Urinal Drain Cleaner)</a></h3>
           </div>
           <div class="prod-body">
@@ -3664,14 +5122,14 @@ body.ab .hero {
               <li>Eliminates pungent ammonia odors</li>
               <li>Zero hydrochloric or sulfuric acid</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
+            <div class="prod-pack-info">
               Packaging: 05 L / 25 L HDPE Cans
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-udc.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-udc.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS UDC Urinal Drain Cleaner" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS UDC Urinal Drain Cleaner">
                 Get Quote
               </button>
             </div>
@@ -3680,8 +5138,8 @@ body.ab .hero {
 
         <!-- 5. AIRBLISS™ UTC (Toilet Cleaner) -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-utc.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ UTC (Toilet Cleaner)">
-          <div class="prod-head">
-            <div class="prod-cat">Sanitary Ware · Probiotic Bio-Gel</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Sanitary Ware &middot; Probiotic Bio-Gel</div>
             <h3 class="prod-h"><a href="products/airbliss-utc.html" style="color:inherit;text-decoration:none;">AIRBLISS™ UTC (Toilet Cleaner)</a></h3>
           </div>
           <div class="prod-body">
@@ -3692,14 +5150,14 @@ body.ab .hero {
               <li>Prevents yellowing &amp; mineral rings</li>
               <li>Enhances septic tank biological digestion</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
+            <div class="prod-pack-info">
               Packaging: 05 L / 25 L HDPE Cans
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-utc.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-utc.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS UTC Toilet Cleaner" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS UTC Toilet Cleaner">
                 Get Quote
               </button>
             </div>
@@ -3708,8 +5166,8 @@ body.ab .hero {
 
         <!-- 6. AIRBLISS™ Probiotic Floor Cleaner -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-floor-cleaner.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ Probiotic Floor Cleaner">
-          <div class="prod-head">
-            <div class="prod-cat">Surface Care · Active Probiotics</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Surface Care &middot; Active Probiotics</div>
             <h3 class="prod-h"><a href="products/airbliss-floor-cleaner.html" style="color:inherit;text-decoration:none;">AIRBLISS™ Probiotic Floor Cleaner</a></h3>
           </div>
           <div class="prod-body">
@@ -3720,14 +5178,14 @@ body.ab .hero {
               <li>Safe for pets, food zones &amp; children</li>
               <li>Refreshing botanical aroma</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
-              Dilution: 10–20 ml / L Water · 05 L / 25 L Cans
+            <div class="prod-pack-info">
+              Dilution: 10–20 ml / L Water &middot; 05 L / 25 L Cans
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-floor-cleaner.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-floor-cleaner.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Probiotic Floor Cleaner" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Probiotic Floor Cleaner">
                 Get Quote
               </button>
             </div>
@@ -3736,8 +5194,8 @@ body.ab .hero {
 
         <!-- 7. AIRBLISS™ Multi Surface Cleaner -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-multi-surface.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ Multi Surface Cleaner">
-          <div class="prod-head">
-            <div class="prod-cat">Surface &amp; Glass · Enzyme Formula</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Surface &amp; Glass &middot; Enzyme Formula</div>
             <h3 class="prod-h"><a href="products/airbliss-multi-surface.html" style="color:inherit;text-decoration:none;">AIRBLISS™ Multi Surface Cleaner</a></h3>
           </div>
           <div class="prod-body">
@@ -3748,14 +5206,14 @@ body.ab .hero {
               <li>Alcohol, ammonia &amp; chlorine free</li>
               <li>Safe on acrylic, glass, mirrors &amp; metal</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
-              Ready-to-Use Liquid · 05 L / 25 L Cans
+            <div class="prod-pack-info">
+              Ready-to-Use Liquid &middot; 05 L / 25 L Cans
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-multi-surface.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-multi-surface.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Multi Surface Cleaner" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Multi Surface Cleaner">
                 Get Quote
               </button>
             </div>
@@ -3764,8 +5222,8 @@ body.ab .hero {
 
         <!-- 8. AIRBLISS™ Air Freshener Liquid -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-air-freshener.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ Air Freshener Liquid">
-          <div class="prod-head">
-            <div class="prod-cat">Odour Control · Nano-Fragrance</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Odour Control &middot; Nano-Fragrance</div>
             <h3 class="prod-h"><a href="products/airbliss-air-freshener.html" style="color:inherit;text-decoration:none;">AIRBLISS™ Air Freshener Liquid</a></h3>
           </div>
           <div class="prod-body">
@@ -3776,14 +5234,14 @@ body.ab .hero {
               <li>100% Water-based, zero synthetic propellant</li>
               <li>Non-staining on curtains &amp; upholstery</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
-              Aerosol-Free Spray / Fogging · 05 L / 25 L Cans
+            <div class="prod-pack-info">
+              Aerosol-Free Spray / Fogging &middot; 05 L / 25 L Cans
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-air-freshener.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-air-freshener.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Air Freshener Liquid" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Air Freshener Liquid">
                 Get Quote
               </button>
             </div>
@@ -3792,8 +5250,8 @@ body.ab .hero {
 
         <!-- 9. AIRBLISS™ Fabric Stain Remover -->
         <div class="prod-card" onclick="window.location.href='products/airbliss-fabric-stain-remover.html'" style="cursor:pointer;" role="link" tabindex="0" aria-label="View details for AIRBLISS™ Fabric Stain Remover">
-          <div class="prod-head">
-            <div class="prod-cat">Laundry &amp; Fabrics · Dual Enzymes</div>
+          <div class="prod-head ab-prod-head">
+            <div class="prod-cat">Laundry &amp; Fabrics &middot; Dual Enzymes</div>
             <h3 class="prod-h"><a href="products/airbliss-fabric-stain-remover.html" style="color:inherit;text-decoration:none;">AIRBLISS™ Fabric Stain Remover</a></h3>
           </div>
           <div class="prod-body">
@@ -3804,88 +5262,151 @@ body.ab .hero {
               <li>Chlorine &amp; optical brightener free</li>
               <li>Ideal for commercial laundries &amp; hotels</li>
             </ul>
-            <div style="font-size:0.75rem;font-weight:700;color:var(--c-muted);margin:0.75rem 0 0.5rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);">
-              Lipase + Protease Matrix · 05 L / 25 L Cans
+            <div class="prod-pack-info">
+              Lipase + Protease Matrix &middot; 05 L / 25 L Cans
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;">
-              <a href="products/airbliss-fabric-stain-remover.html" class="arr-link" style="font-weight:800;color:#1F4F33;">
-                View Product Details <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="prod-action-row">
+              <a href="products/airbliss-fabric-stain-remover.html" class="arr-link ab-link" style="font-weight:800;">
+                View Product Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <button type="button" class="btn-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Fabric Stain Remover" style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:#1F4F33;color:#fff;border:none;cursor:pointer;font-weight:700;">
+              <button type="button" class="btn-quote btn-prod-quote" onclick="event.stopPropagation();" data-product="AIRBLISS Fabric Stain Remover">
                 Get Quote
               </button>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- SEGMENTS (dark) -->
-  <section class="section deep" id="ab-segments">
+  <!-- ══════════════════════════════════════════════
+       SEGMENTS (DARK SECTION)
+  ══════════════════════════════════════════════ -->
+  <section class="section deep home-seg-sec" id="ab-segments">
     <div class="wrap">
-      <div class="sec-hd" style="margin-bottom:2.5rem">
+      <div class="sec-hd" style="margin-bottom:2.75rem">
         <div class="sec-hd-left">
-          <div class="sec-rail" style="background:var(--c-accent)"></div>
+          <div class="sec-rail ab-rail"></div>
           <div>
-            <div class="eyebrow">Who it's for</div>
+            <div class="eyebrow ab-eyebrow">Who it's for</div>
             <h2 class="h2 light">Built for industries where<br><em>hygiene is non-negotiable.</em></h2>
           </div>
         </div>
       </div>
+
       <div class="seg-grid">
-        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3 class="seg-h">Hospitality &amp; Hotels</h3><p class="seg-p">Odour-free rooms, lobbies, and washrooms without the chemical residue that guests notice.</p></div>
-        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg></div><h3 class="seg-h">Food Processing Units</h3><p class="seg-p">Facility hygiene, drain management, and waste zone treatment meeting FSSAI floor-level standards.</p></div>
-        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3"/></svg></div><h3 class="seg-h">Corporate Facilities</h3><p class="seg-p">Office blocks, IT parks, and commercial campuses requiring low-chemical, safe-for-occupants cleaning.</p></div>
-        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3 class="seg-h">Healthcare &amp; Clinics</h3><p class="seg-p">Probiotic protocols for non-critical areas where chemical overload creates antimicrobial resistance risk.</p></div>
-        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3 class="seg-h">Warehousing &amp; Logistics</h3><p class="seg-p">Loading docks, cold-chain facilities, and packing zones with persistent odour from organic cargo.</p></div>
-        <div class="seg-card"><div class="seg-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 22V12"/></svg></div><h3 class="seg-h">Municipal &amp; Public Spaces</h3><p class="seg-p">Public restrooms, waste transfer stations, and civic composting facilities across India.</p></div>
+        <div class="seg-card">
+          <div class="seg-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="seg-h">Hospitality &amp; Hotels</h3>
+          <p class="seg-p">Odour-free rooms, lobbies, and washrooms without the chemical residue that guests notice.</p>
+        </div>
+
+        <div class="seg-card">
+          <div class="seg-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg>
+          </div>
+          <h3 class="seg-h">Food Processing Units</h3>
+          <p class="seg-p">Facility hygiene, drain management, and waste zone treatment meeting FSSAI floor-level standards.</p>
+        </div>
+
+        <div class="seg-card">
+          <div class="seg-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3"/></svg>
+          </div>
+          <h3 class="seg-h">Corporate Facilities</h3>
+          <p class="seg-p">Office blocks, IT parks, and commercial campuses requiring low-chemical, safe-for-occupants cleaning.</p>
+        </div>
+
+        <div class="seg-card">
+          <div class="seg-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="seg-h">Healthcare &amp; Clinics</h3>
+          <p class="seg-p">Probiotic protocols for non-critical areas where chemical overload creates antimicrobial resistance risk.</p>
+        </div>
+
+        <div class="seg-card">
+          <div class="seg-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="seg-h">Warehousing &amp; Logistics</h3>
+          <p class="seg-p">Loading docks, cold-chain facilities, and packing zones with persistent odour from organic cargo.</p>
+        </div>
+
+        <div class="seg-card">
+          <div class="seg-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 22V12"/></svg>
+          </div>
+          <h3 class="seg-h">Municipal &amp; Public Spaces</h3>
+          <p class="seg-p">Public restrooms, waste transfer stations, and civic composting facilities across India.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SCIENCE SPLIT -->
-  <section class="section tinted" id="ab-science">
+  <!-- ══════════════════════════════════════════════
+       SCIENCE SPLIT
+  ══════════════════════════════════════════════ -->
+  <section class="section tinted home-sci-sec" id="ab-science">
     <div class="wrap">
       <div class="sci-split">
-        <div>
+        <div class="sci-text-col">
           <div class="sec-hd-left" style="margin-bottom:1.5rem">
-            <div class="sec-rail"></div>
+            <div class="sec-rail ab-rail"></div>
             <div>
-              <div class="eyebrow">Backed by science</div>
+              <div class="eyebrow ab-eyebrow">Backed by science</div>
               <h2 class="h2">R&amp;D from Praras.<br><em>Delivered as Airbliss.</em></h2>
             </div>
           </div>
-          <p style="font-size:.9rem;color:var(--c-muted);line-height: 1.6;margin-bottom: 1.5rem;">Praras Biosciences has developed a range of products for sanitation and cleaning by harvesting beneficial bacteria. Our products are made with naturally occurring bacteria that have been specially selected for their ability to break down a wide range of organic materials.</p>
-          <p style="font-size:.9rem;color:var(--c-muted);line-height: 1.6;margin-bottom: 1.5rem;">This makes them ideal for a variety of applications, including surface cleaning, stain removal, odor control, and waste management.</p>
-          <button type="button" class="arr-link" onclick="brand('pr')" style="font-family:'Mulish',sans-serif;background:none;padding:0;cursor:pointer;border:none;">About Praras Biosciences <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          <p class="sci-p">Praras Biosciences has developed a range of products for sanitation and cleaning by harvesting beneficial bacteria. Our products are made with naturally occurring bacteria that have been specially selected for their ability to break down a wide range of organic materials.</p>
+          <p class="sci-p">This makes them ideal for a variety of applications, including surface cleaning, stain removal, odor control, and waste management.</p>
+          <button type="button" class="arr-link ab-link" onclick="brand('pr')" style="font-family:'Mulish',sans-serif;background:none;padding:0;cursor:pointer;border:none;font-weight:700;">About Praras Biosciences <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
         </div>
+
         <div class="sci-cards">
-          <div class="sci-card"><div class="sci-n">25+</div><div class="sci-l">Years of fermentation R&amp;D</div></div>
-          <div class="sci-card"><div class="sci-n">12+</div><div class="sci-l">Probiotic strains in use</div></div>
-          <div class="sci-card"><div class="sci-n">DSIR</div><div class="sci-l">Certified research facility</div></div>
-          <div class="sci-card"><div class="sci-n">Zero</div><div class="sci-l">Harsh chemical inputs</div></div>
+          <div class="sci-card">
+            <div class="sci-n">25+</div>
+            <div class="sci-l">Years of fermentation R&amp;D</div>
+          </div>
+          <div class="sci-card">
+            <div class="sci-n">12+</div>
+            <div class="sci-l">Probiotic strains in use</div>
+          </div>
+          <div class="sci-card">
+            <div class="sci-n">DSIR</div>
+            <div class="sci-l">Certified research facility</div>
+          </div>
+          <div class="sci-card">
+            <div class="sci-n">Zero</div>
+            <div class="sci-l">Harsh chemical inputs</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="cta-band">
-    <div class="cta-inner">
-      <div>
+  <!-- ══════════════════════════════════════════════
+       AIRBLISS CTA BAND
+  ══════════════════════════════════════════════ -->
+  <div class="cta-band home-cta-band ab-cta-band">
+    <div class="wrap cta-inner">
+      <div class="cta-text-col">
         <div class="cta-h">Ready to switch your facility to living clean?</div>
         <p class="cta-p">Talk to our team for a product recommendation and free trial sample for your space.</p>
       </div>
       <div class="cta-btns">
-        <button type="button" class="btn-cta-w btn-quote" data-product="Airbliss Facility Trial">Request a sample <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-        <a href="tel:+918048904262" class="btn-cta-o">+91-80-48904262</a>
+        <button type="button" class="btn-cta-w ab-btn-cta btn-quote" data-product="Airbliss Facility Trial">Request a sample <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        <a href="tel:+918048904262" class="btn-cta-o ab-btn-tel">+91-80-48904262</a>
       </div>
     </div>
   </div>
 
 </main>
+
+
+
 
 <!-- ════ SHARED FOOTER ════ -->
 <footer class="site-footer">

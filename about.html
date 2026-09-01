@@ -3,31 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Praras Biosciences | Bio-Sciences for Better Value</title>
-<meta name="description" content="Learn about Praras Biosciences - an Indian leader in precision food additives, brewing enzymes, and microbial innovations.">
+<title>About Praras Biosciences | Bio-Sciences for Better Value &middot; Industrial Enzymes &amp; Bio-Solutions</title>
+<meta name="description" content="Discover Praras Biosciences (PBPL) - an Indian leader in precision biochemicals, industrial enzymes, baking improvers, brewing solutions, and DSIR-recognized R&D.">
 <link rel="canonical" href="https://www.prarasbiosciences.com/about.html">
-<meta property="og:title" content="Precision Food Additives & Microbial Solutions | Praras">
-<meta property="og:description" content="Praras Biosciences provides precision food additives, beverage solutions, and microbial products for Indian manufacturers to enhance quality and reduce costs.">
-<meta property="og:url" content="https://www.prarasbiosciences.com/index.html">
+<meta property="og:title" content="About Praras Biosciences | Bio-Sciences for Better Value">
+<meta property="og:description" content="Discover Praras Biosciences - an Indian leader in precision biochemicals, industrial enzymes, baking improvers, brewing solutions, and DSIR-recognized R&D.">
+<meta property="og:url" content="https://www.prarasbiosciences.com/about.html">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://www.prarasbiosciences.com/assets/images/hero-bg.webp">
+<meta property="og:image" content="https://www.prarasbiosciences.com/assets/images/about_hero.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Precision Food Additives & Microbial Solutions | Praras">
-<meta name="twitter:description" content="Praras Biosciences provides precision food additives, beverage solutions, and microbial products for Indian manufacturers to enhance quality and reduce costs.">
-<meta name="twitter:image" content="https://www.prarasbiosciences.com/assets/images/hero-bg.webp">
+<meta name="twitter:title" content="About Praras Biosciences | Bio-Sciences for Better Value">
+<meta name="twitter:description" content="Discover Praras Biosciences - an Indian leader in precision biochemicals, industrial enzymes, baking improvers, brewing solutions, and DSIR-recognized R&D.">
+<meta name="twitter:image" content="https://www.prarasbiosciences.com/assets/images/about_hero.webp">
 <!-- Initial Schema Markup (Praras Default) -->
 <script type="application/ld+json" id="brand-schema">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Precision Food Additives & Microbial Solutions | Praras",
-  "description": "Praras Biosciences provides precision food additives, beverage solutions, and microbial products for Indian manufacturers to enhance quality and reduce costs.",
-  "url": "https://www.prarasbiosciences.com/index.html",
+  "@type": "AboutPage",
+  "name": "About Praras Biosciences | Bio-Sciences for Better Value",
+  "description": "Praras Biosciences provides precision food additives, beverage solutions, and microbial products for Indian and international manufacturers to enhance quality, increase yields, and reduce costs.",
+  "url": "https://www.prarasbiosciences.com/about.html",
   "publisher": {
     "@type": "Organization",
     "name": "Praras Biosciences",
     "url": "https://www.prarasbiosciences.com",
-    "logo": "https://www.prarasbiosciences.com/logo.png"
+    "logo": "https://www.prarasbiosciences.com/assets/images/cropped-Praras_Biosciences_Logo_New2.webp",
+    "foundingDate": "2007-05-03",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    }
   }
 }
 </script>
@@ -584,73 +591,6 @@
 
 
 
-/* ─── MEGA MENU HOVER & CLICK ACTIVE STYLES ─── */
-.site-nav .nav-dropdown, header .nav-dropdown, .nav-dropdown {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  height: 100% !important;
-}
-.site-nav .nav-dropdown::after, header .nav-dropdown::after, .nav-dropdown::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 100% !important;
-  left: -20% !important;
-  right: -20% !important;
-  height: 50px !important;
-  display: block !important;
-  z-index: 90 !important;
-}
-.site-nav .mega-menu, header .mega-menu, .mega-menu {
-  position: absolute !important;
-  top: calc(100% + 10px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(15px) scale(0.98) !important;
-  background: rgba(255, 255, 255, 0.97) !important;
-  -webkit-backdrop-filter: blur(40px) !important;
-  backdrop-filter: blur(40px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  border-radius: 24px !important;
-  padding: 0 !important;
-  display: flex !important;
-  min-width: 980px !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  z-index: 1000 !important;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1) !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  max-height: calc(100vh - 100px) !important;
-}
-.site-nav .nav-dropdown:hover .mega-menu,
-.site-nav .nav-dropdown.is-active .mega-menu,
-header .nav-dropdown:hover .mega-menu,
-header .nav-dropdown.is-active .mega-menu,
-.nav-dropdown:hover .mega-menu,
-.nav-dropdown.is-active .mega-menu {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) scale(1) !important;
-}
-.mega-menu-inner { display: flex !important; width: 100% !important; min-height: min-content !important; }
-.mega-content { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 3rem !important; padding: 3rem !important; flex: 1 !important; background: var(--c-surface, #fff) !important; }
-.mega-featured { width: 320px !important; background: linear-gradient(135deg, var(--c-primary-bg, #FDF4F4) 0%, rgba(240, 131, 50, 0.05) 100%) !important; padding: 3rem !important; display: flex !important; flex-direction: column !important; justify-content: center !important; border-left: 1px solid var(--c-border, #EBE5E0) !important; }
-.mega-column-header { display: flex !important; align-items: center !important; gap: 0.75rem !important; margin-bottom: 1.5rem !important; padding-bottom: 0.75rem !important; border-bottom: 1px solid var(--c-border-s, #DED6CD) !important; }
-.mega-column-icon { width: 32px !important; height: 32px !important; border-radius: 8px !important; background: var(--c-primary-bg, #FDF4F4) !important; color: var(--c-primary, #9A1D1E) !important; display: flex !important; align-items: center !important; justify-content: center !important; }
-.mega-column-header h3 { font-family: var(--font-d, serif) !important; font-size: 1.35rem !important; color: var(--c-ink, #181412) !important; font-weight: 700 !important; margin: 0 !important; }
-.mega-sub-header { font-size: 0.75rem !important; font-weight: 800 !important; color: var(--c-muted, #78695E) !important; text-transform: uppercase !important; letter-spacing: 0.15em !important; margin-top: 1.5rem !important; margin-bottom: 0.5rem !important; }
-.mega-column a { color: var(--c-body, #423933) !important; font-size: 0.9rem !important; font-weight: 700 !important; padding: 0.5rem 0.85rem !important; display: block !important; border-radius: 8px !important; margin-left: -0.85rem !important; text-decoration: none !important; }
-.mega-column a:hover { color: var(--c-primary, #9A1D1E) !important; transform: translateX(4px) !important; background: var(--c-primary-bg, #FDF4F4) !important; }
-.mega-menu-services { min-width: 320px !important; }
-.mega-menu-services .mega-content { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; padding: 2rem !important; }
-
-
-
-
-
 </style>
 <style>
 /* ─── RESET & GLOBAL ─── */
@@ -780,7 +720,7 @@ body.ab .nav-logo-ab{display:flex!important}
 
 .nav-links{display:flex;align-items:center;gap:2rem}
 .nav-links a, .nav-links .dropdown-trigger{
-  font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  font-size: 0.85rem !important;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
   color:var(--c-muted);position:relative;
   display: flex; align-items: center; gap: 0.3rem;
 }
@@ -1061,14 +1001,14 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
   background: transparent;
   border: none;
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size:  0.85rem !important;
   font-weight: 700;
   color: var(--c-ink, #181412);
   cursor: pointer;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   transition: all 0.2s ease;
-  text-transform: none !important;
+  text-transform:  uppercase !important;
 }
 .dropdown-trigger:hover, .nav-dropdown.is-active .dropdown-trigger {
   color: var(--c-primary, #9A1D1E);
@@ -1085,18 +1025,21 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
 /* ── Desktop Viewport Layout (min-width: 961px) ── */
 @media (min-width: 961px) {
   .site-nav .nav-inner { position: relative !important; }
-  .site-nav #products-dropdown { position: static !important; }
+  .site-nav #products-dropdown { position: relative !important; }
   .nav-dropdown-services { position: relative !important; }
   .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
 
   .nav-dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 25px;
-  }
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
+}
 
   .mega-menu {
     position: absolute !important;
@@ -1535,7 +1478,7 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
     justify-content: space-between !important;
     width: 100% !important;
     padding: 0.95rem 0.65rem !important;
-    font-size: 0.92rem !important;
+    font-size:  0.85rem !important;
     font-weight: 700 !important;
     font-family: inherit !important;
     color: var(--c-ink, #181412) !important;
@@ -1577,8 +1520,16 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
   }
   
   .nav-dropdown::after {
-    display: none !important;
-  }
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
+}
   
   .mega-menu, 
   .site-nav #products-mega-menu, 
@@ -1945,279 +1896,409 @@ button.btn-cta-w:hover, .btn-cta-w:hover {
 /* ════ UNIVERSAL MEGA MENU & NAVIGATION DROPDOWN CSS ════ */
 .nav-dropdown {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  height: 100%;
 }
 .nav-dropdown::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: -20%;
-  right: -20%;
-  height: 30px;
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
 }
 button.dropdown-trigger, .dropdown-trigger {
   background: transparent !important;
   border: none !important;
   outline: none !important;
-  padding: 0 !important;
+  padding: 0.6rem 0.5rem !important;
   margin: 0 !important;
-  font-family: inherit !important;
-  font-size: 0.75rem !important;
-  font-weight: 800 !important;
+  font-family: var(--font-b, "Mulish", sans-serif) !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  color: var(--c-muted, #78695E) !important;
+  line-height: 1 !important;
+  color: var(--c-ink, #181412) !important;
   cursor: pointer !important;
   box-shadow: none !important;
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
-  gap: 0.3rem !important;
-  transition: color var(--transition, 0.4s ease) !important;
+  gap: 5px !important;
+  transition: color 0.2s ease !important;
+  vertical-align: middle !important;
 }
 button.dropdown-trigger:hover, .dropdown-trigger:hover,
 .nav-dropdown:hover .dropdown-trigger, .nav-dropdown.is-active .dropdown-trigger {
-  color: var(--c-ink, #181412) !important;
+  color: var(--c-primary, #9A1D1E) !important;
 }
 .dropdown-trigger svg, .nav-dropdown > a svg {
-  transition: transform 0.3s ease !important;
+  transition: transform 0.25s ease !important;
 }
 .nav-dropdown:hover .dropdown-trigger svg, .nav-dropdown.is-active .dropdown-trigger svg,
 .nav-dropdown:hover > a svg, .nav-dropdown.is-active > a svg {
   transform: rotate(180deg) !important;
 }
 
-/* Desktop Mega Menu */
-.mega-menu {
-  position: absolute !important;
-  top: calc(100% + 15px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(15px) scale(0.98) !important;
-  background: rgba(255, 255, 255, 0.98) !important;
-  -webkit-backdrop-filter: blur(40px) !important;
-  backdrop-filter: blur(40px) !important;
-  border: 1px solid rgba(235, 229, 224, 0.9) !important;
-  border-radius: 24px !important;
-  padding: 0 !important;
-  display: flex !important;
-  min-width: 980px !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s !important;
-  z-index: 1000 !important;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-  overflow-y: auto !important;
-  max-height: calc(100vh - 100px) !important;
-}
-.mega-menu-inner {
-  display: flex !important;
-  width: 100% !important;
-}
-.mega-content {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 2.5rem !important;
-  padding: 2.5rem 3rem !important;
-  flex: 1 !important;
-  background: var(--c-surface, #FFFFFF) !important;
-}
-.nav-dropdown:hover .mega-menu,
-.nav-dropdown.is-active .mega-menu {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) scale(1) !important;
-}
-.mega-featured {
-  width: 300px !important;
-  background: linear-gradient(135deg, var(--c-primary-bg, #FDF4F4) 0%, rgba(240, 131, 50, 0.06) 100%) !important;
-  padding: 2.5rem !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  border-left: 1px solid var(--c-border, #EBE5E0) !important;
-}
-.mega-featured h3 {
-  font-family: var(--font-d, serif) !important;
-  font-size: 1.5rem !important;
-  color: var(--c-primary, #9A1D1E) !important;
-  margin-bottom: 0.85rem !important;
-  font-weight: 700 !important;
-  line-height: 1.3 !important;
-}
-.mega-featured p {
-  font-size: 0.88rem !important;
-  color: var(--c-muted, #78695E) !important;
-  line-height: 1.55 !important;
-  margin-bottom: 1.75rem !important;
-}
-.btn-mega-featured {
-  align-self: flex-start !important;
-  background: var(--c-primary, #9A1D1E) !important;
-  color: #fff !important;
-  padding: 0.65rem 1.4rem !important;
-  border-radius: var(--r-pill, 999px) !important;
-  font-size: 0.78rem !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  box-shadow: var(--sh-btn, 0 8px 20px rgba(154,29,30,0.25)) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.4rem !important;
-  text-decoration: none !important;
-}
-.btn-mega-featured:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: var(--sh-btn-hover, 0 12px 28px rgba(154,29,30,0.4)) !important;
-  color: #fff !important;
-}
-.mega-column-header {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.75rem !important;
-  margin-bottom: 1.25rem !important;
-  padding-bottom: 0.65rem !important;
-  border-bottom: 1px solid var(--c-border-s, #DED6CD) !important;
-}
-.mega-column-icon {
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 8px !important;
-  background: var(--c-primary-bg, #FDF4F4) !important;
-  color: var(--c-primary, #9A1D1E) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-}
-.mega-column-header h3 {
-  font-family: var(--font-d, serif) !important;
-  font-size: 1.3rem !important;
-  color: var(--c-ink, #181412) !important;
-  font-weight: 700 !important;
-  margin: 0 !important;
-}
-.mega-sub-header {
-  font-size: 0.72rem !important;
-  font-weight: 800 !important;
-  color: var(--c-muted, #78695E) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.15em !important;
-  margin-top: 1.25rem !important;
-  margin-bottom: 0.4rem !important;
-}
-.mega-column a {
-  color: var(--c-body, #423933) !important;
-  font-size: 0.88rem !important;
-  font-weight: 700 !important;
-  padding: 0.45rem 0.75rem !important;
-  display: block !important;
-  border-radius: 8px !important;
-  margin-left: -0.75rem !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
-}
-.mega-column a:hover {
-  color: var(--c-primary, #9A1D1E) !important;
-  transform: translateX(4px) !important;
-  background: var(--c-primary-bg, #FDF4F4) !important;
-}
-.mega-menu-services {
-  min-width: 280px !important;
-  width: auto !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(15px) scale(0.98) !important;
-}
-.mega-menu-services .mega-content {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.5rem !important;
-  padding: 1.5rem 2rem !important;
-}
-.nav-dropdown:hover .mega-menu-services,
-.nav-dropdown.is-active .mega-menu-services {
-  transform: translateX(-50%) translateY(0) scale(1) !important;
-}
+@media (min-width: 961px) {
+  .site-nav .nav-inner { position: relative !important; }
+  .site-nav #products-dropdown { position: relative !important; }
+  .nav-dropdown-services { position: relative !important; }
 
-/* Mobile & Tablet Responsive Styles (max-width: 960px) */
-@media (max-width: 960px) {
-  .nav-dropdown {
-    width: 100% !important;
-    height: auto !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-  }
-  .nav-dropdown::after {
-    display: none !important;
-  }
-  button.dropdown-trigger, .dropdown-trigger, .nav-dropdown > a {
-    width: 100% !important;
-    justify-content: space-between !important;
-    padding: 0.75rem 0 !important;
-    font-size: 0.9rem !important;
-    border-bottom: 1px solid var(--c-border, #EBE5E0) !important;
-  }
   .mega-menu {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    min-width: 100% !important;
-    width: 100% !important;
-    max-height: 0 !important;
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(12px) scale(0.99) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    border: 1px solid rgba(225, 219, 214, 0.85) !important;
+    border-radius: 20px !important;
+    padding: 0 !important;
+    display: block !important;
+    width: min(1180px, calc(100vw - 32px)) !important;
+    max-width: 1180px !important;
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 12px !important;
-    background: var(--c-surface-alt, #F7F4F2) !important;
+    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s !important;
+    z-index: 1002 !important;
+    box-shadow: 0 35px 80px -15px rgba(24, 20, 18, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset, 0 10px 30px rgba(0, 0, 0, 0.05) !important;
     overflow: hidden !important;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    max-height: none !important;
   }
-  .nav-dropdown.is-active .mega-menu {
-    max-height: 1200px !important;
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown.is-active .mega-menu,
+  .site-nav #products-dropdown:hover #products-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    padding: 1.25rem !important;
-    margin: 0.5rem 0 !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
   }
+
   .mega-menu-inner {
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: 1fr 310px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    align-items: stretch !important;
   }
-  .mega-content {
-    grid-template-columns: 1fr !important;
+
+  .mega-content-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
     gap: 1.5rem !important;
-    padding: 0 !important;
-    background: transparent !important;
+    padding: 1.75rem 2rem !important;
+    background: #FFFFFF !important;
   }
-  .mega-featured {
-    width: 100% !important;
-    border-left: none !important;
-    border-top: 1px solid var(--c-border, #EBE5E0) !important;
-    padding: 1.5rem 0 0.5rem !important;
-    margin-top: 1rem !important;
-    background: transparent !important;
+
+  .mega-col-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.1rem !important;
   }
-  .mega-column a {
-    padding: 0.4rem 0.5rem !important;
-    margin-left: 0 !important;
+
+  .mega-col-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    padding-bottom: 0.6rem !important;
+    border-bottom: 1.5px solid rgba(154, 29, 30, 0.12) !important;
+  }
+
+  .mega-col-icon {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    background: rgba(154, 29, 30, 0.08) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mega-col-title {
+    font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+    text-transform: none !important;
+  }
+
+  .mega-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+  }
+
+  .mega-group-label {
+    font-size: 0.7rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--c-accent, #C25E2E) !important;
+    margin-bottom: 0.25rem !important;
+    padding-left: 0.35rem !important;
+  }
+
+  .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.45rem 0.65rem !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.18s ease !important;
+  }
+
+  .mega-item:hover {
+    background: #FAF6F3 !important;
+    transform: translateX(3px) !important;
+  }
+
+  .mega-item-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+  }
+
+  .mega-item-name {
+    font-size: 0.86rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    display: block !important;
+    line-height: 1.3 !important;
+    text-transform: none !important;
+  }
+
+  .mega-item-desc {
+    font-size: 0.72rem !important;
+    color: var(--c-muted, #78695E) !important;
+    display: block !important;
+    line-height: 1.3 !important;
+    text-transform: none !important;
+  }
+
+  .mega-item-arrow {
+    opacity: 0 !important;
+    transform: translateX(-4px) !important;
+    transition: all 0.18s ease !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    font-weight: 800 !important;
     font-size: 0.85rem !important;
+    margin-left: 6px !important;
+    flex-shrink: 0 !important;
   }
-  .mega-menu-services {
-    min-width: 100% !important;
+
+  .mega-item:hover .mega-item-arrow {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  .mega-spotlight {
+    background: linear-gradient(150deg, #1A1513 0%, #2A211D 60%, #361718 100%) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 1.75rem 1.6rem !important;
+    color: #FFFFFF !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    width: 310px !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 19px 19px 0 !important;
+  }
+
+  .mega-spotlight-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 0.3rem 0.65rem !important;
+    border-radius: 6px !important;
+    background: rgba(232, 121, 37, 0.25) !important;
+    border: 1px solid rgba(255, 179, 138, 0.3) !important;
+    color: #FFB38A !important;
+    font-size: 0.66rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 0.85rem !important;
+    width: fit-content !important;
+  }
+
+  .mega-spotlight-title {
+    font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    margin: 0 0 0.45rem 0 !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+  }
+
+  .mega-spotlight-desc {
+    font-family: var(--font-b, "Mulish", sans-serif) !important;
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    line-height: 1.5 !important;
+    margin: 0 0 1.15rem 0 !important;
+    text-transform: none !important;
+  }
+
+  .mega-spotlight-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #751516)) !important;
+    color: #FFFFFF !important;
+    padding: 0.68rem 1.25rem !important;
+    border-radius: 8px !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(154, 29, 30, 0.45) !important;
+    transition: all 0.2s ease !important;
     width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 1.15rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
-  .mega-menu-services .mega-content {
-    padding: 0 !important;
+
+  .mega-spotlight-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(154, 29, 30, 0.6) !important;
+    color: #FFFFFF !important;
+  }
+
+  .mega-spotlight-tools {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .mega-tool-link {
+    background: transparent !important;
+    border: none !important;
+    color: #FAF6EE !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    padding: 0.45rem 0.65rem !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    font-family: inherit !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    text-transform: none !important;
+  }
+
+  .mega-tool-link svg {
+    color: #FAF6EE !important;
+    stroke: #FAF6EE !important;
+    flex-shrink: 0 !important;
+    opacity: 0.85 !important;
+    transition: transform 0.2s ease, stroke 0.2s ease, opacity 0.2s ease !important;
+  }
+
+  .mega-tool-link:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #FFB38A !important;
+  }
+
+  .mega-tool-link:hover svg {
+    stroke: #FFB38A !important;
+    color: #FFB38A !important;
+    opacity: 1 !important;
+    transform: translateX(2px) !important;
+  }
+
+  .nav-dropdown-services .mega-menu-services {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(12px) scale(0.99) !important;
+    width: 580px !important;
+    max-width: 90vw !important;
+  }
+
+  .nav-dropdown-services:hover .mega-menu-services,
+  .nav-dropdown-services.is-active .mega-menu-services {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mega-services-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem !important;
+    padding: 1.75rem !important;
+    background: #FFFFFF !important;
+  }
+
+  .mega-service-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.45rem !important;
+    padding: 1.25rem !important;
+    background: #FAF7F4 !important;
+    border: 1px solid var(--c-border, #E8E2D9) !important;
+    border-radius: 14px !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .mega-service-card:hover {
+    background: #FFFFFF !important;
+    border-color: var(--c-primary, #9A1D1E) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .mega-service-icon {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    background: rgba(154, 29, 30, 0.08) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mega-service-title {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+  }
+
+  .mega-service-desc {
+    font-size: 0.76rem !important;
+    color: var(--c-muted, #78695E) !important;
+    line-height: 1.45 !important;
   }
 }
 </style>
@@ -2376,6 +2457,1432 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 <link rel="stylesheet" href="assets/css/site-search.css">
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <link rel="stylesheet" href="assets/css/site-core.css">
+
+<style id="about-page-worldclass-styles">
+/* ══════════════════════════════════════════════════════════════════
+   WORLD-CLASS ABOUT PAGE STYLES (TIGHT, BALANCED, ZERO-UNWANTED-SPACE)
+   ══════════════════════════════════════════════════════════════════ */
+
+/* --- GENERAL SECTION RHYTHM & SCROLL OFFSET --- */
+.page#pg-about .section {
+  padding: 4.5rem 0 !important;
+}
+
+#heritage, #philosophy, #rd-science, #facilities, #certifications, #milestones, #sustainability, #contact-block {
+  scroll-margin-top: 130px;
+}
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- 1. HERO SECTION --- */
+.about-hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0d0b0a;
+  color: #ffffff;
+  padding: 6.5rem 0 4.5rem;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.62) contrast(1.1);
+  transform: scale(1.02);
+  transition: transform 12s ease-out;
+}
+
+.about-hero:hover .about-hero-img {
+  transform: scale(1.06);
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 11, 10, 0.94) 0%, rgba(94, 21, 21, 0.82) 55%, rgba(26, 21, 18, 0.88) 100%);
+  mix-blend-mode: multiply;
+}
+
+.about-hero-glow {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 121, 37, 0.18) 0%, rgba(138, 29, 30, 0.08) 50%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  animation: pulseGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9) translate(0, 0); opacity: 0.7; }
+  100% { transform: scale(1.15) translate(30px, -20px); opacity: 1; }
+}
+
+.about-hero-particles .particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+.about-hero-particles .p1 { width: 6px; height: 6px; top: 25%; left: 15%; animation: floatP 9s infinite linear; }
+.about-hero-particles .p2 { width: 10px; height: 10px; top: 60%; left: 80%; animation: floatP 14s infinite linear 2s; background: rgba(232, 121, 37, 0.35); }
+.about-hero-particles .p3 { width: 4px; height: 4px; top: 40%; left: 70%; animation: floatP 11s infinite linear 1s; }
+.about-hero-particles .p4 { width: 8px; height: 8px; top: 75%; left: 25%; animation: floatP 16s infinite linear 3s; background: rgba(157, 191, 130, 0.3); }
+
+@keyframes floatP {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.about-hero-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.about-hero-content {
+  max-width: 860px;
+}
+
+.hero-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  font-family: var(--font-b);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FAF6EE;
+}
+
+.about-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E87925;
+  box-shadow: 0 0 10px #E87925;
+}
+
+.about-pill-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(138, 29, 30, 0.35);
+  border: 1px solid rgba(232, 121, 37, 0.4);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--font-b);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #fce8db;
+}
+
+.about-hero-title {
+  font-family: var(--font-d);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #FAF6EE;
+  margin-bottom: 1.4rem;
+}
+
+.about-hero-em {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, #FAF6EE 20%, #E87925 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-hero-lead {
+  font-family: var(--font-b);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(250, 246, 238, 0.88);
+  margin-bottom: 2.2rem;
+  max-width: 780px;
+}
+
+.about-hero-lead strong {
+  color: #FAF6EE;
+  font-weight: 700;
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.btn-about-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, #8A1D1E 0%, #B52A2C 100%);
+  color: #FAF6EE;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(138, 29, 30, 0.4);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-about-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(138, 29, 30, 0.55);
+  background: linear-gradient(135deg, #9C2224 0%, #C83234 100%);
+  color: #FFFFFF;
+}
+
+.btn-about-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FAF6EE;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem 1.45rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-about-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-about-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: none;
+  border: none;
+  color: #E87925;
+  font-family: var(--font-b);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-about-quote:hover {
+  color: #ff994d;
+}
+
+/* --- 2. STATS BENTO MATRIX (3 COLUMNS BALANCED) --- */
+.about-stats-section {
+  background: var(--c-bg, #FAF7F2);
+  padding: 2.75rem 0;
+  margin-top: -2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.about-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.stat-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 16px;
+  padding: 1.6rem 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: var(--c-primary, #8A1D1E);
+  opacity: 0.85;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(138, 29, 30, 0.08);
+  border-color: rgba(138, 29, 30, 0.3);
+}
+
+.stat-card.highlight-card {
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFF8F5 100%);
+  border-color: rgba(232, 121, 37, 0.35);
+}
+
+.stat-card.highlight-card::before {
+  background: linear-gradient(90deg, #8A1D1E, #E87925);
+}
+
+.stat-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(138, 29, 30, 0.08);
+  color: var(--c-primary, #8A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.stat-card.highlight-card .stat-icon-wrap {
+  background: rgba(232, 121, 37, 0.12);
+  color: #E87925;
+}
+
+.stat-number {
+  font-family: var(--font-d);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.35rem;
+}
+
+.stat-label {
+  font-family: var(--font-b);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--c-primary, #8A1D1E);
+  margin-bottom: 0.45rem;
+}
+
+.stat-desc {
+  font-family: var(--font-b);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--c-muted, #6B5E55);
+}
+
+/* --- 3. JUMP-BAR (SLIDABLE HORIZONTALLY, ZERO TRUNCATION) --- */
+.about-anchor-nav {
+  position: sticky;
+  top: 72px;
+  z-index: 900;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(232, 226, 217, 0.7);
+  border-bottom: 1px solid var(--c-border, #E8E2D9);
+  padding: 0.45rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.about-anchor-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.about-anchor-track {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  white-space: nowrap;
+  padding: 0.25rem 0.25rem;
+  cursor: grab;
+  flex: 1;
+  mask-image: linear-gradient(to right, transparent 0%, black 15px, black calc(100% - 15px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15px, black calc(100% - 15px), transparent 100%);
+}
+
+.about-anchor-track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.about-anchor-track::-webkit-scrollbar {
+  display: none;
+}
+
+.anchor-nav-label {
+  font-family: var(--font-b);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-primary, #8A1D1E);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.4rem 0 0.5rem;
+}
+
+.anchor-nav-link {
+  font-family: var(--font-b);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--c-ink, #1A1512);
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.035);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.anchor-nav-link:hover {
+  background: var(--c-primary, #8A1D1E);
+  color: #FFFFFF;
+  border-color: var(--c-primary, #8A1D1E);
+}
+
+.anchor-nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  color: var(--c-ink, #1A1512);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.anchor-nav-arrow:hover {
+  background: var(--c-primary, #8A1D1E);
+  color: #FFFFFF;
+  border-color: var(--c-primary, #8A1D1E);
+}
+
+/* --- 4. HERITAGE & STORY --- */
+.about-story-section {
+  padding: 4.5rem 0;
+}
+
+.story-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.story-p {
+  font-family: var(--font-b);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--c-muted, #6B5E55);
+  margin-bottom: 1.25rem;
+}
+
+.story-p.lead-p {
+  font-size: 1.1rem;
+  color: var(--c-ink, #1A1512);
+  font-weight: 500;
+}
+
+/* Full-width 3-pillar row with 3 equal columns */
+.story-pillars-full-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+}
+
+.story-pillar-item {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+}
+
+.story-pillar-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(138, 29, 30, 0.06);
+  border-color: rgba(138, 29, 30, 0.3);
+}
+
+.story-pillar-num {
+  font-family: var(--font-d);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--c-primary, #8A1D1E);
+  margin-bottom: 0.35rem;
+}
+
+.story-pillar-item h4 {
+  font-family: var(--font-b);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.45rem;
+}
+
+.story-pillar-item p {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--c-muted, #6B5E55);
+  margin: 0;
+}
+
+.story-visual-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--c-border, #E8E2D9);
+}
+
+.story-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.story-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(0deg, rgba(26, 21, 18, 0.96) 0%, rgba(26, 21, 18, 0.6) 70%, transparent 100%);
+  color: #FAF6EE;
+}
+
+.story-card-badge {
+  display: inline-block;
+  background: #E87925;
+  color: #FFFFFF;
+  font-family: var(--font-b);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.45rem;
+}
+
+.story-card-title {
+  font-family: var(--font-d);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.story-card-desc {
+  font-family: var(--font-b);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: rgba(250, 246, 238, 0.85);
+  margin: 0;
+}
+
+/* --- 5. ETHOS SECTION (SARVA BHUTA) --- */
+.ethos-section {
+  background: #0D0B0A;
+  color: #FAF6EE;
+  position: relative;
+}
+
+.ethos-hero-card {
+  background: linear-gradient(145deg, #1A1512 0%, #291212 100%);
+  border: 1px solid rgba(232, 121, 37, 0.3);
+  border-radius: 24px;
+  padding: 3.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.ethos-sanskrit-tag {
+  font-family: var(--font-b);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #E87925;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ethos-sanskrit-title {
+  font-family: var(--font-d);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  color: #FAF6EE;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 4px 20px rgba(232, 121, 37, 0.25);
+}
+
+.ethos-sanskrit-translit {
+  font-family: var(--font-b);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #FAF6EE;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.ethos-translation {
+  font-family: var(--font-d);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-style: italic;
+  color: #E87925;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.ethos-body {
+  font-family: var(--font-b);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: rgba(250, 246, 238, 0.85);
+  max-width: 820px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.ethos-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ethos-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.ethos-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(232, 121, 37, 0.4);
+  transform: translateY(-3px);
+}
+
+.ethos-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(232, 121, 37, 0.15);
+  color: #E87925;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.ethos-card h4 {
+  font-family: var(--font-d);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #FAF6EE;
+  margin-bottom: 0.6rem;
+}
+
+.ethos-card p {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(250, 246, 238, 0.75);
+  margin: 0;
+}
+
+/* --- 6. DSIR R&D SECTION (2x2 BALANCED GRID - ZERO WHITESPACE) --- */
+.rd-section {
+  background: var(--c-bg, #FAF7F2);
+}
+
+.text-center-hd {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.text-center-hd .sec-body {
+  color: var(--c-muted, #6B5E55);
+}
+
+.rd-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.rd-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  padding: 2rem 1.85rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rd-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(138, 29, 30, 0.35);
+  box-shadow: 0 16px 36px rgba(138, 29, 30, 0.08);
+}
+
+.rd-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.rd-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(138, 29, 30, 0.08);
+  color: var(--c-primary, #8A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rd-badge {
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-primary, #8A1D1E);
+  background: var(--c-primary-bg, #FDF4F4);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 29, 30, 0.15);
+}
+
+.rd-title {
+  font-family: var(--font-d);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.rd-desc {
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--c-muted, #6B5E55);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.rd-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--c-border, #E8E2D9);
+  padding-top: 1rem;
+}
+
+.rd-list li {
+  font-family: var(--font-b);
+  font-size: 0.84rem;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.45;
+}
+
+.rd-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--c-primary, #8A1D1E);
+  font-weight: 800;
+}
+
+/* --- 7. FACILITIES (3 EQUAL COLUMNS) --- */
+.facilities-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.facility-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-img-wrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.facility-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.facility-card:hover .facility-img {
+  transform: scale(1.05);
+}
+
+.facility-content {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.facility-tag {
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-primary, #8A1D1E);
+  margin-bottom: 0.4rem;
+}
+
+.facility-title {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.6rem;
+}
+
+.facility-desc {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--c-muted, #6B5E55);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.facility-specs {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  border-top: 1px solid var(--c-border, #E8E2D9);
+  padding-top: 1rem;
+}
+
+.facility-specs span {
+  font-family: var(--font-b);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c-ink, #1A1512);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--c-bg, #FAF7F2);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* --- 8. CERTIFICATIONS (4 EQUAL COLUMNS) --- */
+.cert-section {
+  background: var(--c-bg, #FAF7F2);
+}
+
+.cert-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.cert-item-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-item-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(138, 29, 30, 0.3);
+  box-shadow: 0 14px 30px rgba(138, 29, 30, 0.08);
+}
+
+.cert-img-badge {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.cert-logo-img {
+  max-height: 70px;
+  max-width: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
+}
+
+.cert-card-title {
+  font-family: var(--font-d);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.25rem;
+}
+
+.cert-sub {
+  font-family: var(--font-b);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-primary, #8A1D1E);
+  margin-bottom: 0.75rem;
+}
+
+.cert-card-desc {
+  font-family: var(--font-b);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--c-muted, #6B5E55);
+  margin: 0;
+}
+
+.cert-standards-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.cert-standard-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-family: var(--font-b);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.cert-standard-pill svg {
+  color: #2E7D32;
+}
+
+/* --- 9. TIMELINE MILESTONES --- */
+.timeline-container {
+  max-width: 840px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2.25rem;
+  border-left: 2px solid rgba(138, 29, 30, 0.2);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.25rem;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--c-primary, #8A1D1E);
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 2px rgba(138, 29, 30, 0.3);
+  transform: translateX(-50%);
+}
+
+.timeline-year {
+  font-family: var(--font-d);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c-primary, #8A1D1E);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+}
+
+.timeline-title {
+  font-family: var(--font-d);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-p {
+  font-family: var(--font-b);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--c-muted, #6B5E55);
+  margin: 0;
+}
+
+/* --- 10. SUSTAINABILITY (4 EQUAL COLUMNS) --- */
+.sustainability-section {
+  background: #153926;
+  color: #FAF6EE;
+}
+
+.sustainability-section .eyebrow {
+  color: #9DBF82;
+}
+
+.sustainability-section .h2 {
+  color: #FAF6EE;
+}
+
+.sustainability-section .sec-body {
+  color: rgba(250, 246, 238, 0.85);
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+}
+
+.sus-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.sus-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #9DBF82;
+  transform: translateY(-3px);
+}
+
+.sus-num {
+  font-family: var(--font-d);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #9DBF82;
+  margin-bottom: 0.5rem;
+}
+
+.sus-title {
+  font-family: var(--font-b);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FAF6EE;
+  margin-bottom: 0.5rem;
+}
+
+.sus-desc {
+  font-family: var(--font-b);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: rgba(250, 246, 238, 0.78);
+  margin: 0;
+}
+
+/* --- 11. DUAL-BRAND SYNERGY --- */
+.dual-brand-card {
+  background: #FFFFFF;
+  border: 1px solid var(--c-border, #E8E2D9);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+}
+
+.dual-brand-col {
+  padding: 2.75rem 2.5rem;
+}
+
+.dual-brand-col.praras-col {
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFF9F7 100%);
+}
+
+.dual-brand-col.airbliss-col {
+  background: linear-gradient(145deg, #F8FAF8 0%, #F0F6F1 100%);
+}
+
+.dual-badge {
+  display: inline-block;
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.pr-badge {
+  background: rgba(138, 29, 30, 0.1);
+  color: #8A1D1E;
+}
+
+.ab-badge {
+  background: rgba(31, 79, 51, 0.12);
+  color: #1F4F33;
+}
+
+.dual-title {
+  font-family: var(--font-d);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--c-ink, #1A1512);
+  margin-bottom: 0.65rem;
+}
+
+.dual-desc {
+  font-family: var(--font-b);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--c-muted, #6B5E55);
+  margin-bottom: 1.25rem;
+}
+
+.dual-link {
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #8A1D1E;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dual-link.ab-link {
+  color: #1F4F33;
+}
+
+.dual-link:hover {
+  text-decoration: underline;
+}
+
+.dual-brand-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+.dual-divider-badge {
+  background: var(--c-ink, #1A1512);
+  color: #FFFFFF;
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 12. ENTERPRISE CTA --- */
+.about-cta-section {
+  padding-bottom: 5.5rem;
+}
+
+.about-cta-card {
+  background: linear-gradient(135deg, #1A1512 0%, #3B1213 100%);
+  border: 1px solid rgba(232, 121, 37, 0.35);
+  border-radius: 24px;
+  padding: 3.75rem 2.5rem;
+  color: #FAF6EE;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-cta-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.cta-pill {
+  display: inline-block;
+  background: rgba(232, 121, 37, 0.18);
+  border: 1px solid rgba(232, 121, 37, 0.4);
+  color: #E87925;
+  font-family: var(--font-b);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.about-cta-title {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.about-cta-desc {
+  font-family: var(--font-b);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(250, 246, 238, 0.85);
+  margin-bottom: 2.25rem;
+}
+
+.about-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #E87925;
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(232, 121, 37, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-cta-primary:hover {
+  background: #F08938;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(232, 121, 37, 0.55);
+}
+
+.btn-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: #FAF6EE;
+  font-family: var(--font-b);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.about-cta-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.75rem;
+  font-family: var(--font-b);
+  font-size: 0.85rem;
+  color: rgba(250, 246, 238, 0.75);
+}
+
+.cta-info-item a {
+  color: #E87925;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta-info-item a:hover {
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+  .story-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .story-pillars-full-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .rd-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .facilities-grid-row {
+    grid-template-columns: 1fr;
+  }
+  .cert-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sustainability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dual-brand-card {
+    grid-template-columns: 1fr;
+  }
+  .dual-brand-divider {
+    padding: 1.25rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 5rem 0 3.5rem;
+  }
+  .about-stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .story-pillars-full-row {
+    grid-template-columns: 1fr;
+  }
+  .ethos-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .rd-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .sustainability-grid {
+    grid-template-columns: 1fr;
+  }
+  .ethos-hero-card {
+    padding: 2.5rem 1.25rem;
+  }
+  .about-cta-card {
+    padding: 2.5rem 1.25rem;
+  }
+  .about-cta-info-row {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -2765,50 +4272,680 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 
 <main id="pg-about" class="page on" role="main">
-  <!-- ABOUT HERO -->
-  <section class="section deep" style="padding-top:8rem; padding-bottom:6rem;">
-    <div class="wrap">
-      <div class="hero-pill"><span class="hero-pill-dot"></span>Est. 2007</div>
-      <h1 class="h2 light" style="font-size:4rem; margin-bottom:1.5rem;">Biosciences for<br><em>Better Value</em></h1>
-      <p class="sec-body" style="font-size:1.1rem; max-width:600px; color:rgba(255,255,255,0.7);">
-        Praras® Biosciences Pvt. Ltd. (PBPL), incorporated on 3rd May 2007, is a bio-science company engaged in the manufacture of specialty biochemicals for diverse industries like Beverages, Food, Plantation and Microbial (Bio-Enzyme).
-      </p>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 1: CINEMATIC HERO
+  ══════════════════════════════════════════════ -->
+  <section class="about-hero" id="hero">
+    <div class="about-hero-bg">
+      <img src="assets/images/about_hero.webp" alt="Praras Biosciences Corporate Biotechnology Laboratory" class="about-hero-img" loading="eager" fetchpriority="high">
+      <div class="about-hero-overlay"></div>
+      <div class="about-hero-glow"></div>
+      <div class="about-hero-particles" aria-hidden="true">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+      </div>
+    </div>
+
+    <div class="wrap about-hero-wrap">
+      <div class="about-hero-content">
+        <div class="hero-badge-row">
+          <span class="about-pill"><span class="about-pill-dot"></span>Est. 2007 &middot; Bengaluru, India</span>
+          <span class="about-pill-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> DSIR Recognized R&amp;D</span>
+          <span class="about-pill-cert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> FSSC 22000 Certified</span>
+        </div>
+
+        <h1 class="about-hero-title">
+          Pioneering Bio-Sciences for <br>
+          <em class="about-hero-em">Sustainable Value &amp; Global Quality</em>
+        </h1>
+
+        <p class="about-hero-lead">
+          Praras&reg; Biosciences Pvt. Ltd. (PBPL), incorporated on <strong>3rd May 2007</strong>, is an Indian bio-science leader manufacturing high-performance specialty biochemicals, proprietary enzymes, and microbial formulations for the <strong>Beverage, Food, Fermentation, and Environmental Hygiene</strong> sectors.
+        </p>
+
+        <div class="about-hero-actions">
+          <a href="#heritage" class="btn-about-primary">
+            <span>Explore Our Journey</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#rd-science" class="btn-about-secondary">
+            <span>DSIR R&amp;D Engine</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </a>
+          <button type="button" class="btn-about-quote btn-quote" data-product="Corporate Partnership &amp; Facility Consultation">
+            <span>Request Consultation</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTENT SECTION -->
-  <section class="section">
+  <!-- ══════════════════════════════════════════════
+       SECTION 2: LIVE STATS BENTO MATRIX (3x2 Balanced Grid)
+  ══════════════════════════════════════════════ -->
+  <section class="about-stats-section">
     <div class="wrap">
-      <div class="sci-split" style="gap:6rem;">
-        <div>
-          <div class="sec-hd-left" style="margin-bottom:1.5rem">
+      <div class="about-stat-grid">
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="stat-number">18+</div>
+          <div class="stat-label">Years of Bio-Innovation</div>
+          <div class="stat-desc">Incorporated in 2007 with dedicated Bengaluru manufacturing &amp; technical facilities.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div class="stat-number">65+</div>
+          <div class="stat-label">Proprietary Formulations</div>
+          <div class="stat-desc">Custom-engineered enzymes, hydrocolloids, and stabilizers deployed industrially.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <div class="stat-number">DSIR</div>
+          <div class="stat-label">Certified In-House R&amp;D</div>
+          <div class="stat-desc">Recognized by the Department of Scientific and Industrial Research, Govt. of India.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="stat-number">FSSC</div>
+          <div class="stat-label">22000 &amp; FSSAI Licensed</div>
+          <div class="stat-desc">International food safety compliance, ISO 9001:2015, ISO 22000:2018 &amp; Halal certified.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div class="stat-number">4</div>
+          <div class="stat-label">Core Industry Verticals</div>
+          <div class="stat-desc">Food Processing, Alcoholic Beverages, Non-Alcoholic Drinks, and Microbial Systems.</div>
+        </div>
+
+        <div class="stat-card highlight-card">
+          <div class="stat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Custom Toll Formulation</div>
+          <div class="stat-desc">Turnkey pilot trials, contract blending, and on-site troubleshooting for rapid scaling.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 3: JUMP-BAR (SLIDABLE / HORIZONTALLY SCROLLABLE WITH CONTROLS)
+  ══════════════════════════════════════════════ -->
+  <nav class="about-anchor-nav" aria-label="About Page Navigation">
+    <div class="wrap about-anchor-container">
+      <button class="anchor-nav-arrow prev" aria-label="Scroll left" type="button" id="navSlideLeft">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="about-anchor-track" id="aboutNavTrack">
+        <span class="anchor-nav-label">Jump to:</span>
+        <a href="#heritage" class="anchor-nav-link">Heritage &amp; Story</a>
+        <a href="#philosophy" class="anchor-nav-link">Philosophy (Sarva Bhūta)</a>
+        <a href="#rd-science" class="anchor-nav-link">DSIR R&amp;D Engine</a>
+        <a href="#facilities" class="anchor-nav-link">Infrastructure &amp; Labs</a>
+        <a href="#certifications" class="anchor-nav-link">Quality &amp; Certs</a>
+        <a href="#milestones" class="anchor-nav-link">Milestone Journey</a>
+        <a href="#sustainability" class="anchor-nav-link">Sustainability &amp; Impact</a>
+        <a href="#contact-block" class="anchor-nav-link">Connect with Us</a>
+      </div>
+      <button class="anchor-nav-arrow next" aria-label="Scroll right" type="button" id="navSlideRight">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 4: HERITAGE & THE PRARAS STORY
+  ══════════════════════════════════════════════ -->
+  <section class="section about-story-section" id="heritage">
+    <div class="wrap">
+      <div class="story-split-grid">
+        <div class="story-text-col">
+          <div class="sec-hd-left" style="margin-bottom:1.5rem;">
             <div class="sec-rail"></div>
             <div>
-              <div class="eyebrow">Our Mission</div>
-              <h2 class="h2">For the well-being of<br><em>all earthly elements.</em></h2>
+              <div class="eyebrow">Our Heritage</div>
+              <h2 class="h2">Building India's Premier<br><em>Specialty Bio-Science Catalyst</em></h2>
             </div>
           </div>
-          <p style="font-size:1rem;color:var(--c-muted);line-height: 1.6;margin-bottom: 1.5rem;">Our motto is <strong>“SARVA BHUTA HITE RATAH’’</strong>. We strive to continuously improve our products, develop new solutions, better processes, and ensure growth for all our stakeholders.</p>
-          <p style="font-size:1rem;color:var(--c-muted);line-height: 1.6;margin-bottom: 1.5rem;">We specialize in providing solutions for product and/or process improvement, cost savings, import substitution, and greater sustainability for our customers.</p>
+
+          <p class="story-p lead-p">
+            Established on <strong>May 3, 2007</strong> in Bengaluru, Praras&reg; Biosciences was founded on a distinct conviction: industrial processing needed biological, green alternatives to heavy synthetic chemicals and cost-prohibitive imported additives.
+          </p>
+
+          <p class="story-p">
+            Over nearly two decades of scientific dedication, PBPL has transformed from an agile enzyme research facility into a comprehensive bio-science powerhouse. We bridge the gap between deep biochemistry and large-scale industrial execution, formulating bespoke processing aids for bakers, brewmasters, distillers, confectioners, and food processors across the globe.
+          </p>
         </div>
-        
-        <!-- Quick Stats -->
-        <div class="why-grid" style="grid-template-columns:1fr 1fr;">
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">15+</div>
-            <div class="why-h" style="color:var(--c-ink);">Years Experience</div>
+
+        <div class="story-visual-col">
+          <div class="story-visual-card">
+            <img src="assets/images/brewery_overview_facility.webp" alt="Praras Biosciences Advanced Pilot Facility" class="story-img" loading="lazy">
+            <div class="story-card-overlay">
+              <div class="story-card-badge">Bengaluru Operations</div>
+              <h4 class="story-card-title">Where Deep Biochemistry Meets Industrial Scale</h4>
+              <p class="story-card-desc">State-of-the-art pilot extraction, dry blending, and microbiological diagnostic facilities operating under strict ISO and FSSC standards.</p>
+            </div>
           </div>
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">FSSAI</div>
-            <div class="why-h" style="color:var(--c-ink);">Licensed Facility</div>
+        </div>
+      </div>
+
+      <!-- Balanced 3-Pillar Row Spanning Full Width (Zero Whitespace) -->
+      <div class="story-pillars-full-row">
+        <div class="story-pillar-item">
+          <div class="story-pillar-num">01</div>
+          <h4>Import Substitution</h4>
+          <p>Developing indigenous, cost-optimized formulations that outperform expensive European and American imports under local operating conditions.</p>
+        </div>
+        <div class="story-pillar-item">
+          <div class="story-pillar-num">02</div>
+          <h4>Clean-Label Integrity</h4>
+          <p>Formulating natural bio-enzymatic agents that replace chemical oxidizers, synthetic emulsifiers, and artificial texturizers.</p>
+        </div>
+        <div class="story-pillar-item">
+          <div class="story-pillar-num">03</div>
+          <h4>Process Yield Maximization</h4>
+          <p>Optimizing starch conversion, mash filtration, oil reduction, and fermentation velocity to deliver measurable bottom-line gains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 5: GUIDING ETHOS (SARVA BHŪTA HITE RATĀḤ)
+  ══════════════════════════════════════════════ -->
+  <section class="section ethos-section" id="philosophy">
+    <div class="wrap">
+      <div class="ethos-hero-card">
+        <div class="ethos-bg-pattern" aria-hidden="true"></div>
+        <div class="ethos-content">
+          <div class="ethos-sanskrit-tag">Corporate Motto &middot; Bhagavad Gītā (12.4)</div>
+          
+          <div class="ethos-sanskrit-title">
+            “ सर्वभूतहिते रताः ”
           </div>
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">R&amp;D</div>
-            <div class="why-h" style="color:var(--c-ink);">DSIR Certified</div>
+          <div class="ethos-sanskrit-translit">
+            “Sarva Bhūta Hite Ratāḥ”
           </div>
-          <div class="why-card" style="background:var(--c-surface); border-color:var(--c-border);">
-            <div class="why-n" style="color:var(--c-primary); font-size:2rem;">FSSC</div>
-            <div class="why-h" style="color:var(--c-ink);">22000 Certified</div>
+          <div class="ethos-translation">
+            <em>“Devoted to the welfare, upliftment, and well-being of all living beings.”</em>
+          </div>
+
+          <p class="ethos-body">
+            This ancient principle is the moral compass and operational foundation of Praras&reg; Biosciences. Every enzyme blend we formulate, every microbial catalyst we screen, and every manufacturing process we refine is guided by the imperative to create value without causing ecological harm.
+          </p>
+
+          <div class="ethos-pillars-grid">
+            <div class="ethos-card">
+              <div class="ethos-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+              </div>
+              <h4>Biological Precision</h4>
+              <p>Harnessing nature&rsquo;s most sophisticated biocatalysts to achieve target molecular reactions without destructive chemical side-effects or synthetic residues.</p>
+            </div>
+
+            <div class="ethos-card">
+              <div class="ethos-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+              </div>
+              <h4>Ecological Responsibility</h4>
+              <p>Developing bio-degradable, eco-active solutions that reduce wastewater effluent BOD/COD, lower thermal energy usage, and eliminate hazardous toxins.</p>
+            </div>
+
+            <div class="ethos-card">
+              <div class="ethos-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h4>Shared Prosperity</h4>
+              <p>Delivering measurable cost savings, higher production uptime, and superior product quality for our enterprise clients, team, and global consumers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 6: DSIR-RECOGNIZED R&D & SCIENTIFIC CORE (2x2 Balanced Grid - 0 Whitespace)
+  ══════════════════════════════════════════════ -->
+  <section class="section rd-section" id="rd-science">
+    <div class="wrap">
+      <div class="sec-hd text-center-hd">
+        <div class="eyebrow">Scientific Engine</div>
+        <h2 class="h2">DSIR-Recognized Research &amp; Development</h2>
+        <p class="sec-body" style="max-width:780px; margin: 0.75rem auto 0;">
+          Our In-House R&amp;D Centre is formally recognized by the <strong>Department of Scientific and Industrial Research (DSIR), Ministry of Science &amp; Technology, Government of India</strong>.
+        </p>
+      </div>
+
+      <div class="rd-pillars-grid">
+        <!-- R&D Pillar 1 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31"></path><path d="M14 9.3V1.99"></path><path d="M8.5 2h7"></path><path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path><path d="M5.52 16h12.96"></path></svg>
+            </div>
+            <span class="rd-badge">Biocatalysis</span>
+          </div>
+          <h3 class="rd-title">Enzyme Engineering &amp; Fermentation</h3>
+          <p class="rd-desc">
+            Screening and optimizing fungal, bacterial, and plant-derived enzyme complexes. We tailor alpha-amylases, proteases, beta-glucanases, xylanases, and pectinases for specific thermal and pH performance curves.
+          </p>
+          <ul class="rd-list">
+            <li>Submerged &amp; solid-state fermentation scaling</li>
+            <li>Enzyme kinetics and thermal inactivation profiling</li>
+            <li>Custom stabilized liquid &amp; dry powder complexes</li>
+          </ul>
+        </div>
+
+        <!-- R&D Pillar 2 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+            </div>
+            <span class="rd-badge">Food Rheology</span>
+          </div>
+          <h3 class="rd-title">Baking &amp; Food Texture Application Lab</h3>
+          <p class="rd-desc">
+            Complete pilot bakery and texture analytical suite. We simulate industrial production conditions to evaluate dough extensibility, crumb structure, moisture retention, and egg-free aeration systems.
+          </p>
+          <ul class="rd-list">
+            <li>Texture Profile Analysis (TPA) &amp; firmness testing</li>
+            <li>Gluten strengthening and dough relaxation enzymes</li>
+            <li>Hydrocolloid synergy for dairy &amp; eggless emulsions</li>
+          </ul>
+        </div>
+
+        <!-- R&D Pillar 3 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 10l-1.5 8c-.2 1.1-1.3 2-2.5 2h-2c-1.2 0-2.3-.9-2.5-2L7 10"></path><path d="M12 2v8"></path><path d="M8 5l4-3 4 3"></path><path d="M4 10h16"></path></svg>
+            </div>
+            <span class="rd-badge">Brewing &amp; Distilling</span>
+          </div>
+          <h3 class="rd-title">Fermentation Diagnostics &amp; Yield Acceleration</h3>
+          <p class="rd-desc">
+            Pilot mashing and micro-distillation units dedicated to maximizing fermentable extract yields, accelerating attenuation, clarifying wort, and eliminating non-biological colloidal haze in beers and wines.
+          </p>
+          <ul class="rd-list">
+            <li>High-gravity mashing &amp; adjunct conversion diagnostics</li>
+            <li>Silica hydrogel &amp; PVPP-alternative colloidal stabilization</li>
+            <li>Enological nutrient balancing &amp; pectinase extraction</li>
+          </ul>
+        </div>
+
+        <!-- R&D Pillar 4 -->
+        <div class="rd-card">
+          <div class="rd-card-top">
+            <div class="rd-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            </div>
+            <span class="rd-badge">Airbliss&trade; Science</span>
+          </div>
+          <h3 class="rd-title">Environmental Probiotics &amp; Living Solutions</h3>
+          <p class="rd-desc">
+            Pioneering microbial solutions for institutional facilities, wastewater remediation, and biological odor elimination. Our living Bacillus consortia out-compete pathogenic biofilms and degrade organic sludge.
+          </p>
+          <ul class="rd-list">
+            <li>Consortium stabilization &amp; spore viability testing</li>
+            <li>STP/ETP wastewater BOD/COD reduction diagnostics</li>
+            <li>Enzymatic uric acid degradation &amp; grease-trap clearance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 7: WORLD-CLASS INFRASTRUCTURE & FACILITIES (3 Equal Columns)
+  ══════════════════════════════════════════════ -->
+  <section class="section facilities-section" id="facilities">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">Manufacturing &amp; Quality</div>
+            <h2 class="h2">World-Class Infrastructure &amp; Analytical Labs</h2>
+            <p class="sec-body" style="max-width:750px;">
+              Equipped with dedicated, temperature-controlled manufacturing units in Bengaluru designed to deliver ultra-consistent batch purity, international compliance, and seamless scalability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facilities-grid-row">
+        <!-- Facility Card 1 -->
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="assets/images/cm_facility.webp" alt="Praras Biosciences Powder and Liquid Manufacturing Suite" class="facility-img" loading="lazy">
+          </div>
+          <div class="facility-content">
+            <div class="facility-tag">Core Manufacturing</div>
+            <h3 class="facility-title">Powder &amp; Liquid Plants</h3>
+            <p class="facility-desc">Segregated hygienic suites engineered for dry powder micro-blending, liquid enzyme stabilization, and precision toll packaging from 100g to 1,000L totes.</p>
+            <div class="facility-specs">
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> ISO &amp; FSSAI Cleanrooms</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Automated Micro-Dosing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facility Card 2 -->
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="assets/images/fruit_overview_facility.webp" alt="Analytical QC and Microbiology Laboratory" class="facility-img" loading="lazy">
+          </div>
+          <div class="facility-content">
+            <div class="facility-tag">Analytical Lab</div>
+            <h3 class="facility-title">Analytical QC &amp; Testing</h3>
+            <p class="facility-desc">High-precision spectrophotometers, HPLC, viscometers, and enzymatic activity assay benches ensuring zero deviation from COA specifications.</p>
+            <div class="facility-specs">
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> HPLC &amp; Assay Testing</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Microbial Sterility</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facility Card 3 -->
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="assets/images/microbrewery_overview_facility.webp" alt="Pilot Fermentation and Trial Facility" class="facility-img" loading="lazy">
+          </div>
+          <div class="facility-content">
+            <div class="facility-tag">Pilot Plant</div>
+            <h3 class="facility-title">Pilot Trial &amp; Toll Scaling</h3>
+            <p class="facility-desc">Miniaturized industrial setups enabling clients to validate recipe formulations, verify fermentation yields, and run small batch trials prior to full-scale rollout.</p>
+            <div class="facility-specs">
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Pilot Fermenters</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg> Toll Scaling Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 8: CERTIFICATIONS & GLOBAL QUALITY (4 Equal Columns)
+  ══════════════════════════════════════════════ -->
+  <section class="section cert-section" id="certifications">
+    <div class="wrap">
+      <div class="sec-hd text-center-hd">
+        <div class="eyebrow">Accreditations &amp; Quality</div>
+        <h2 class="h2">Verified Global Quality Standards</h2>
+        <p class="sec-body" style="max-width:700px; margin: 0.75rem auto 0;">
+          Our manufacturing and R&amp;D processes operate under strict international accreditations, ensuring safety, consistency, and regulatory compliance for global markets.
+        </p>
+      </div>
+
+      <div class="cert-cards-grid">
+        <!-- Cert 1: DSIR -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/DSIR.webp" alt="DSIR Recognized In-House R&D Unit" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">DSIR Recognition</h3>
+          <div class="cert-sub">Govt. of India Certified R&amp;D</div>
+          <p class="cert-card-desc">Formal recognition by the Department of Scientific and Industrial Research, Ministry of Science &amp; Technology.</p>
+        </div>
+
+        <!-- Cert 2: FSSC 22000 -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/FSSC-CERTIFICATION.webp" alt="FSSC 22000 Certified Food Safety Management" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">FSSC 22000</h3>
+          <div class="cert-sub">Global Food Safety Initiative</div>
+          <p class="cert-card-desc">Comprehensive food safety certification ensuring international manufacturing hygiene and ingredient safety.</p>
+        </div>
+
+        <!-- Cert 3: FSSAI -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/fssai.webp" alt="FSSAI Licensed Manufacturer" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">FSSAI Licensed</h3>
+          <div class="cert-sub">Apex Indian Food Authority</div>
+          <p class="cert-card-desc">Licensed under the Food Safety and Standards Authority of India for precision food additives and enzymes.</p>
+        </div>
+
+        <!-- Cert 4: Halal -->
+        <div class="cert-item-card">
+          <div class="cert-img-badge">
+            <img src="assets/images/HALAL-CERTIFIED.webp" alt="Halal Certified Bio-Solutions" class="cert-logo-img">
+          </div>
+          <h3 class="cert-card-title">HALAL Certified</h3>
+          <div class="cert-sub">Global Export Compliance</div>
+          <p class="cert-card-desc">Certified under international Halal standards, meeting religious and hygienic requirements for overseas export.</p>
+        </div>
+      </div>
+
+      <div class="cert-standards-bar">
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          ISO 9001:2015 Quality Management
+        </div>
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          ISO 22000:2018 Food Safety
+        </div>
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          GMP &amp; HACCP Compliant Operations
+        </div>
+        <div class="cert-standard-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          100% Lot Traceability Protocols
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 9: MILESTONE JOURNEY TIMELINE (REVERSED: TODAY FIRST -> 2007 LAST)
+  ══════════════════════════════════════════════ -->
+  <section class="section timeline-section" id="milestones">
+    <div class="wrap">
+      <div class="sec-hd text-center-hd">
+        <div class="eyebrow">Our Milestones</div>
+        <h2 class="h2">Two Decades of Continuous Bio-Innovation</h2>
+        <p class="sec-body" style="max-width:700px; margin: 0.75rem auto 0;">
+          From our current global presence back to our 2007 founding in Bengaluru, explore the key milestones that shaped Praras Biosciences.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Milestone 1: TODAY (First) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">Today</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Global Reach &amp; Next-Gen Bio-Platforms</h3>
+            <p class="timeline-p">Deploying 65+ proprietary formulations across domestic and overseas enterprise clients, spearheading clean-label eggless baking improvers, vegan protein texturizers, and circular green bio-economy solutions.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 2: 2021 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">FSSC 22000 &amp; Launch of Airbliss&trade;</h3>
+            <p class="timeline-p">Attained prestigious FSSC 22000 certification and launched the Airbliss&trade; line of living probiotic cleaners and eco-active STP wastewater biological treatments.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 3: 2018 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2018</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Enology &amp; High-Gravity Distillery Expansion</h3>
+            <p class="timeline-p">Introduced specialized wine additives, pectolytic enzymes, and high-gravity distillery yield accelerators, significantly reducing fermentation cycle times.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 4: 2015 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2015</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Formal DSIR Recognition</h3>
+            <p class="timeline-p">Awarded in-house R&amp;D recognition by the Department of Scientific and Industrial Research (DSIR), Ministry of Science &amp; Technology, validating our innovative biochemical formulations.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 5: 2011 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2011</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Industrial Scaling &amp; Baking Line Launch</h3>
+            <p class="timeline-p">Commercialized proprietary biscuit improver (Biscamaze&reg;) and brewery mashing enzymes (BrewStabAid&reg;), establishing long-term partnerships with leading Indian food conglomerates.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 6: 2007 (Last) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2007</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Incorporation of Praras&reg; Biosciences</h3>
+            <p class="timeline-p">Incorporated on May 3, 2007 in Bengaluru, establishing pilot research labs for specialty bio-enzymes and biochemical processing aids to advance import substitution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 10: SUSTAINABILITY & CIRCULAR BIOECONOMY (4 Equal Columns)
+  ══════════════════════════════════════════════ -->
+  <section class="section sustainability-section" id="sustainability">
+    <div class="wrap">
+      <div class="sec-hd">
+        <div class="sec-hd-left">
+          <div class="sec-rail"></div>
+          <div>
+            <div class="eyebrow">ESG &amp; Sustainability</div>
+            <h2 class="h2">Pioneering the Circular Bio-Economy</h2>
+            <p class="sec-body" style="max-width:760px;">
+              Our biochemical solutions are designed not merely for superior functional performance, but as catalysts for industrial decarbonization, wastewater minimization, and clean-label safety.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sustainability-grid">
+        <div class="sus-card">
+          <div class="sus-num">40%</div>
+          <h3 class="sus-title">Chemical Effluent Reduction</h3>
+          <p class="sus-desc">Replacing caustic cleaning chemicals and synthetic processing aids with biodegradable bio-enzymatic catalysts.</p>
+        </div>
+
+        <div class="sus-card">
+          <div class="sus-num">15%</div>
+          <h3 class="sus-title">Fat &amp; Oil Savings</h3>
+          <p class="sus-desc">Our snack improvers minimize oil absorption during commercial frying, producing healthier snacks while cutting edible oil waste.</p>
+        </div>
+
+        <div class="sus-card">
+          <div class="sus-num">0%</div>
+          <h3 class="sus-title">Harmful VOCs &amp; Phosphates</h3>
+          <p class="sus-desc">Airbliss&trade; probiotic hygiene formulations utilize live beneficial microbes that eliminate foul odors without toxic chemical emissions.</p>
+        </div>
+
+        <div class="sus-card">
+          <div class="sus-num">100%</div>
+          <h3 class="sus-title">Clean-Label Friendly</h3>
+          <p class="sus-desc">Providing food manufacturers with natural biological alternatives to chemical conditioners, bromates, and artificial stabilizers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 11: DUAL-BRAND SYNERGY
+  ══════════════════════════════════════════════ -->
+  <section class="section dual-brand-section">
+    <div class="wrap">
+      <div class="dual-brand-card">
+        <div class="dual-brand-col praras-col">
+          <span class="dual-badge pr-badge">Industrial Biotechnology</span>
+          <h3 class="dual-title">Praras&reg; Bio-Sciences</h3>
+          <p class="dual-desc">Precision enzyme catalysts, bakery conditioners, brewing &amp; winery processing aids, and custom toll manufacturing for commercial enterprises.</p>
+          <a href="biscuits-cookies.html" class="dual-link">Explore Food &amp; Beverage Solutions &rarr;</a>
+        </div>
+
+        <div class="dual-brand-divider">
+          <span class="dual-divider-badge">Synergy</span>
+        </div>
+
+        <div class="dual-brand-col airbliss-col">
+          <span class="dual-badge ab-badge">Microbial Wellness</span>
+          <h3 class="dual-title">Airbliss&trade; Living Hygiene</h3>
+          <p class="dual-desc">Eco-active probiotic surface cleaners, organic wastewater STP bio-activators, and enzymatic odor elimination systems for commercial facilities.</p>
+          <a href="airbliss.html" class="dual-link ab-link">Discover Airbliss&trade; Probiotics &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 12: ENTERPRISE CTA & CONSULTATION
+  ══════════════════════════════════════════════ -->
+  <section class="section about-cta-section" id="contact-block">
+    <div class="wrap">
+      <div class="about-cta-card">
+        <div class="about-cta-inner">
+          <div class="cta-pill">Collaborate with our R&amp;D Team</div>
+          <h2 class="about-cta-title">Ready to Enhance Your Product Quality &amp; Process Yield?</h2>
+          <p class="about-cta-desc">
+            Whether you need custom enzyme development, diagnostic plant troubleshooting, contract toll blending, or trial sample packs, our Bengaluru scientific team is here to assist.
+          </p>
+
+          <div class="about-cta-btns">
+            <button type="button" class="btn-cta-primary btn-quote" data-product="Corporate R&amp;D Consultation">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Schedule Technical Consultation</span>
+            </button>
+            <a href="contact.html" class="btn-cta-secondary">
+              <span>Visit our Bengaluru Facility</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <div class="about-cta-info-row">
+            <div class="cta-info-item">
+              <strong>Direct Phone:</strong> <a href="tel:+918048904262">+91-80-48904262</a>
+            </div>
+            <div class="cta-info-item">
+              <strong>Corporate Email:</strong> <a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a>
+            </div>
+            <div class="cta-info-item">
+              <strong>Facility:</strong> Bengaluru, Karnataka, India
+            </div>
           </div>
         </div>
       </div>
@@ -2816,6 +4953,333 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   </section>
 
 </main>
+
+<script>
+// Slidable / Horizontal Drag & Scroll Controller for Jump Bar
+(function() {
+  function initAboutNav() {
+    const track = document.getElementById('aboutNavTrack');
+    const prevBtn = document.getElementById('navSlideLeft');
+    const nextBtn = document.getElementById('navSlideRight');
+    if (!track) return;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: -240, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: 240, behavior: 'smooth' });
+      });
+    }
+
+    // Mouse drag-to-scroll support
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    track.addEventListener('mousedown', function(e) {
+      isDown = true;
+      track.classList.add('is-dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', function() {
+      if (isDown) {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      }
+    });
+
+    track.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Check scroll arrows visibility on scroll
+    function updateArrows() {
+      if (!prevBtn || !nextBtn) return;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 4) {
+        prevBtn.style.opacity = '0.35';
+        nextBtn.style.opacity = '0.35';
+        prevBtn.style.pointerEvents = 'none';
+        nextBtn.style.pointerEvents = 'none';
+      } else {
+        prevBtn.style.opacity = track.scrollLeft <= 5 ? '0.35' : '1';
+        prevBtn.style.pointerEvents = track.scrollLeft <= 5 ? 'none' : 'auto';
+        nextBtn.style.opacity = track.scrollLeft >= maxScroll - 5 ? '0.35' : '1';
+        nextBtn.style.pointerEvents = track.scrollLeft >= maxScroll - 5 ? 'none' : 'auto';
+      }
+    }
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    setTimeout(updateArrows, 100);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutNav);
+  } else {
+    initAboutNav();
+  }
+})();
+</script>
+
+
+<script>
+// Slidable / Horizontal Drag & Scroll Controller for Jump Bar
+(function() {
+  function initAboutNav() {
+    const track = document.getElementById('aboutNavTrack');
+    const prevBtn = document.getElementById('navSlideLeft');
+    const nextBtn = document.getElementById('navSlideRight');
+    if (!track) return;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: -240, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: 240, behavior: 'smooth' });
+      });
+    }
+
+    // Mouse drag-to-scroll support
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    track.addEventListener('mousedown', function(e) {
+      isDown = true;
+      track.classList.add('is-dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', function() {
+      if (isDown) {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      }
+    });
+
+    track.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Check scroll arrows visibility on scroll
+    function updateArrows() {
+      if (!prevBtn || !nextBtn) return;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 4) {
+        prevBtn.style.opacity = '0.35';
+        nextBtn.style.opacity = '0.35';
+        prevBtn.style.pointerEvents = 'none';
+        nextBtn.style.pointerEvents = 'none';
+      } else {
+        prevBtn.style.opacity = track.scrollLeft <= 5 ? '0.35' : '1';
+        prevBtn.style.pointerEvents = track.scrollLeft <= 5 ? 'none' : 'auto';
+        nextBtn.style.opacity = track.scrollLeft >= maxScroll - 5 ? '0.35' : '1';
+        nextBtn.style.pointerEvents = track.scrollLeft >= maxScroll - 5 ? 'none' : 'auto';
+      }
+    }
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    setTimeout(updateArrows, 100);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutNav);
+  } else {
+    initAboutNav();
+  }
+})();
+</script>
+
+
+<script>
+// Slidable / Horizontal Drag & Scroll Controller for Jump Bar
+(function() {
+  function initAboutNav() {
+    const track = document.getElementById('aboutNavTrack');
+    const prevBtn = document.getElementById('navSlideLeft');
+    const nextBtn = document.getElementById('navSlideRight');
+    if (!track) return;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: -240, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: 240, behavior: 'smooth' });
+      });
+    }
+
+    // Mouse drag-to-scroll support
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    track.addEventListener('mousedown', function(e) {
+      isDown = true;
+      track.classList.add('is-dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', function() {
+      if (isDown) {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      }
+    });
+
+    track.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Check scroll arrows visibility on scroll
+    function updateArrows() {
+      if (!prevBtn || !nextBtn) return;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 4) {
+        prevBtn.style.opacity = '0.35';
+        nextBtn.style.opacity = '0.35';
+        prevBtn.style.pointerEvents = 'none';
+        nextBtn.style.pointerEvents = 'none';
+      } else {
+        prevBtn.style.opacity = track.scrollLeft <= 5 ? '0.35' : '1';
+        prevBtn.style.pointerEvents = track.scrollLeft <= 5 ? 'none' : 'auto';
+        nextBtn.style.opacity = track.scrollLeft >= maxScroll - 5 ? '0.35' : '1';
+        nextBtn.style.pointerEvents = track.scrollLeft >= maxScroll - 5 ? 'none' : 'auto';
+      }
+    }
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    setTimeout(updateArrows, 100);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutNav);
+  } else {
+    initAboutNav();
+  }
+})();
+</script>
+
+
+<script>
+// Slidable / Horizontal Drag & Scroll Controller for Jump Bar
+(function() {
+  function initAboutNav() {
+    const track = document.getElementById('aboutNavTrack');
+    const prevBtn = document.getElementById('navSlideLeft');
+    const nextBtn = document.getElementById('navSlideRight');
+    if (!track) return;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: -240, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: 240, behavior: 'smooth' });
+      });
+    }
+
+    // Mouse drag-to-scroll support
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    track.addEventListener('mousedown', function(e) {
+      isDown = true;
+      track.classList.add('is-dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', function() {
+      if (isDown) {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      }
+    });
+
+    track.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Check scroll arrows visibility on scroll
+    function updateArrows() {
+      if (!prevBtn || !nextBtn) return;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 4) {
+        prevBtn.style.opacity = '0.35';
+        nextBtn.style.opacity = '0.35';
+        prevBtn.style.pointerEvents = 'none';
+        nextBtn.style.pointerEvents = 'none';
+      } else {
+        prevBtn.style.opacity = track.scrollLeft <= 5 ? '0.35' : '1';
+        prevBtn.style.pointerEvents = track.scrollLeft <= 5 ? 'none' : 'auto';
+        nextBtn.style.opacity = track.scrollLeft >= maxScroll - 5 ? '0.35' : '1';
+        nextBtn.style.pointerEvents = track.scrollLeft >= maxScroll - 5 ? 'none' : 'auto';
+      }
+    }
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    setTimeout(updateArrows, 100);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutNav);
+  } else {
+    initAboutNav();
+  }
+})();
+</script>
+
+
+
+
 
 <!-- ════ SHARED FOOTER ════ -->
 <footer class="site-footer">
