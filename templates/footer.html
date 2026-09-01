@@ -61,6 +61,7 @@
 </footer>
 
 <!-- ════ QUOTE DRAWER ════ -->
+<!-- QUOTE DRAWER -->
 <div class="quote-overlay" id="quote-overlay"></div>
 <aside class="quote-drawer" id="quote-drawer" aria-hidden="true" aria-labelledby="quote-drawer-title">
   <div class="quote-drawer-header">
@@ -69,12 +70,12 @@
       <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">Product Name</div>
     </div>
     <button type="button" class="quote-close-btn" id="quote-close" aria-label="Close quote drawer">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
   </div>
   <div class="quote-drawer-body">
     <form id="quote-form">
-      <input type="hidden" id="q-product" name="product" value="">
+      <input type="hidden" id="q-product" name="product" value="Product Solution">
       <div class="quote-form-group">
         <div class="q-input-wrap">
           <label for="q-name">Full Name *</label>
@@ -126,179 +127,13 @@
           <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, flour types, specific challenges, or what documentation you need..."></textarea>
         </div>
       </div>
-      <button type="submit" class="quote-btn-submit">Send enquiry</button>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
+      <button type="submit" class="quote-btn-submit">Send Enquiry</button>
     </form>
   </div>
 </aside>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const savedBrand = localStorage.getItem('praras_brand');
-  if (savedBrand === 'ab') {
-    brand('ab', false);
-  }
-  
-  const abCard = document.querySelector('.ind-card.ab-card');
-  if (abCard) abCard.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') brand('ab'); });
+<script defer src="../assets/js/site-controller.js"></script>
 
-  // Quote Drawer Logic
-  const overlay = document.getElementById('quote-overlay');
-  const drawer = document.getElementById('quote-drawer');
-  const closeBtn = document.getElementById('quote-close');
-  const subtitle = document.getElementById('quote-drawer-subtitle');
-  const productInput = document.getElementById('q-product');
-
-  function openQuoteDrawer(productName) {
-    if (productName) {
-      subtitle.textContent = productName;
-      productInput.value = productName;
-    }
-    overlay.classList.add('is-active');
-    drawer.classList.add('is-active');
-    drawer.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeQuoteDrawer() {
-    overlay.classList.remove('is-active');
-    drawer.classList.remove('is-active');
-    drawer.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.btn-quote').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openQuoteDrawer(btn.getAttribute('data-product') || 'Food Additives');
-    });
-  });
-
-  if(closeBtn) closeBtn.addEventListener('click', closeQuoteDrawer);
-  if(overlay) overlay.addEventListener('click', closeQuoteDrawer);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && drawer && drawer.classList.contains('is-active')) closeQuoteDrawer();
-  });
-});
-
-function brand(b, scroll = true) {
-  const isAb = b === 'ab';
-  // Save preference
-  localStorage.setItem('praras_brand', b);
-  
-  // Update SEO Meta Tags & Title
-  document.title = isAb 
-    ? 'Airbliss - Clean spaces. Living solutions.' 
-    : 'Praras Biosciences - Biosciences for Better Value';
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) {
-    metaDesc.content = isAb
-      ? 'Probiotic cleaning solutions for B2B facility management — developed by Praras Biosciences.'
-      : 'Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.';
-  }
-  
-  // Update Schema Markup
-  const schemaScript = document.getElementById('brand-schema');
-  if (schemaScript) {
-    try {
-      const schemaData = JSON.parse(schemaScript.textContent);
-      if (isAb) {
-        schemaData.name = "Airbliss";
-        schemaData.url = "https://www.prarasbiosciences.com"; // Change if there is a specific sub-brand URL
-        schemaData.description = "Probiotic cleaning solutions for B2B facility management.";
-      } else {
-        schemaData.name = "Praras Biosciences";
-        schemaData.url = "https://www.prarasbiosciences.com";
-        schemaData.description = "Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.";
-      }
-      schemaScript.textContent = JSON.stringify(schemaData, null, 2);
-    } catch (e) {
-      console.error("Failed to update schema", e);
-    }
-  }
-
-  // body class
-  document.body.classList.toggle('ab', isAb);
-  // pages
-  const pgPr = document.getElementById('pg-pr');
-  if (pgPr) pgPr.classList.toggle('on', !isAb);
-  const pgAb = document.getElementById('pg-ab');
-  if (pgAb) pgAb.classList.toggle('on', isAb);
-  // nav links
-  document.querySelectorAll('.pr-only').forEach(el => el.style.display = isAb ? 'none' : '');
-  document.querySelectorAll('.ab-only').forEach(el => el.style.display = isAb ? '' : 'none');
-  // footer
-  // footer logos
-  document.getElementById('foot-logo-pr').style.display = isAb ? 'none' : 'block';
-  document.getElementById('foot-logo-ab').style.display = isAb ? 'block' : 'none';
-  document.getElementById('foot-brand-name').textContent = isAb ? 'Airbliss' : 'Praras Biosciences';
-  document.getElementById('foot-brand-p').textContent = isAb
-    ? 'Probiotic cleaning solutions for B2B facility management — developed by Praras Biosciences.'
-    : 'Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.';
-  document.getElementById('foot-switch-label').textContent = isAb ? 'Back to Praras Biosciences' : 'Visit Airbliss';
-  document.getElementById('foot-ab-btn').textContent = isAb ? 'Praras Biosciences ↗' : 'Airbliss ↗';
-  document.querySelectorAll('.pr-f').forEach(el => el.style.display = isAb ? 'none' : '');
-  document.querySelectorAll('.ab-f').forEach(el => el.style.display = isAb ? '' : 'none');
-  document.getElementById('foot-copy').textContent = isAb
-    ? '© 2026 Airbliss — A Praras Biosciences Pvt Ltd brand. All rights reserved.'
-    : '© 2026 Praras Biosciences Pvt Ltd. All rights reserved.';
-  document.getElementById('foot-tag').textContent = isAb ? 'Clean spaces. Living solutions.' : 'Biosciences for Better Value';
-  if (scroll) {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
-}
-
-  // Navigation Toggles
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('main-nav-links');
-  const productsBtn = document.getElementById('products-dropdown-btn');
-  const productsDropdown = document.getElementById('products-dropdown');
-
-  if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const isActive = mobileBtn.classList.contains('is-active');
-      if (isActive) {
-        mobileBtn.classList.remove('is-active');
-        navLinks.classList.remove('is-active');
-        mobileBtn.setAttribute('aria-expanded', 'false');
-      } else {
-        mobileBtn.classList.add('is-active');
-        navLinks.classList.add('is-active');
-        mobileBtn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  }
-
-  if (productsBtn && productsDropdown) {
-    productsBtn.addEventListener('click', function(e) {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        e.stopPropagation();
-        const isActive = productsDropdown.classList.contains('is-active');
-        if (isActive) {
-          productsDropdown.classList.remove('is-active');
-          productsBtn.setAttribute('aria-expanded', 'false');
-          productsBtn.querySelector('svg').style.transform = 'rotate(0deg)';
-        } else {
-          productsDropdown.classList.add('is-active');
-          productsBtn.setAttribute('aria-expanded', 'true');
-          productsBtn.querySelector('svg').style.transform = 'rotate(180deg)';
-        }
-      }
-    });
-  }
-
-  // Close menus when clicking outside
-  document.addEventListener('click', function(e) {
-    if (window.innerWidth <= 768) {
-      if (navLinks && navLinks.classList.contains('is-active') && !navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
-        mobileBtn.classList.remove('is-active');
-        navLinks.classList.remove('is-active');
-        mobileBtn.setAttribute('aria-expanded', 'false');
-      }
-    }
-  });
-
-</script>
 </body>
 </html>

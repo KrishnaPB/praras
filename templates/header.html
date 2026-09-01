@@ -577,6 +577,11 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+
+
+
+
+
 </style>
 <style>
 /* ─── RESET & GLOBAL ─── */
@@ -972,45 +977,726 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
 .foot-copy{font-size:.8rem;color:rgba(255,255,255,.5)}
 .foot-tag{font-family:var(--font-d);font-style:italic;font-size:.95rem;color:rgba(255,255,255,.4)}
 
-/* ─── MEGA MENU ─── */
-.nav-dropdown { position: relative; display: flex; align-items: center; height: 100%; }
-.mega-menu {
-  position: absolute; top: calc(100% + 15px); left: 50%; transform: translateX(-50%) translateY(20px) scale(0.98);
-  background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
-  border: 1px solid rgba(255,255,255,0.8); border-radius: 24px;
-  padding: 0; display: flex; min-width: 1000px;
-  opacity: 0; visibility: hidden; pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 100; 
-  box-shadow: 0 40px 100px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,1);
-  overflow-y: auto; overflow-x: hidden; max-height: calc(100vh - 100px);
+
+
+
+
+/* ─── WORLD-CLASS ENTERPRISE MEGA MENU & UNIFORM RESPONSIVE NAVIGATION ─── */
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-transform: none !important;
 }
-.mega-menu-inner { display: flex; width: 100%; min-height: min-content; }
-.mega-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding: 3rem; flex: 1; background:var(--c-surface); min-height: min-content; align-content: start;}
-.nav-dropdown::after { content: ''; position: absolute; top: 100%; left: -20%; right: -20%; height: 40px; }
-.nav-dropdown:hover .mega-menu, .nav-dropdown.is-active .mega-menu {
-  opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0) scale(1);
+.dropdown-trigger:hover, .nav-dropdown.is-active .dropdown-trigger {
+  color: var(--c-primary, #9A1D1E);
+  background: rgba(154, 29, 30, 0.05);
 }
-.mega-menu-inner { display: flex; width: 100%; min-height: min-content; }
-.mega-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding: 3rem; flex: 1; background:var(--c-surface); min-height: min-content; align-content: start;}
-.mega-featured { 
-  width: 340px; background: linear-gradient(135deg, var(--c-primary-bg) 0%, rgba(240, 131, 50, 0.05) 100%); 
-  padding: 3rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--c-border);
+.dropdown-trigger svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.mega-featured h3 { font-family: var(--font-d); font-size: 1.8rem; color: var(--c-primary); margin-bottom: 1rem; font-weight: 700; line-height:1.1;}
-.mega-featured p { font-size: 0.9rem; color: var(--c-muted); line-height: 1.7; margin-bottom: 2rem; }
-.btn-mega-featured {
-  align-self: flex-start; background: var(--c-primary); color: #fff; padding: 0.7rem 1.6rem; border-radius: var(--r-pill); font-size: 0.8rem; font-weight: 800; text-transform:uppercase; letter-spacing:0.05em; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: var(--sh-btn);
+.nav-dropdown:hover .dropdown-trigger svg,
+.nav-dropdown.is-active .dropdown-trigger svg {
+  transform: rotate(180deg);
 }
-.btn-mega-featured:hover { transform: translateY(-2px); box-shadow: var(--sh-btn-hover); color:#fff; }
-.mega-column-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--c-border-s); }
-.mega-column-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--c-primary-bg); color: var(--c-primary); display: flex; align-items: center; justify-content: center; }
-.mega-column-header h3 { font-family: var(--font-d); font-size: 1.35rem; color: var(--c-ink); font-weight: 700; margin: 0; }
-.mega-sub-header { font-size: 0.75rem; font-weight: 800; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.15em; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-.mega-column a { color: var(--c-body) !important; font-size: 0.9rem !important; font-weight: 700 !important; padding: 0.5rem 0.85rem; display: block; border-radius: 8px; margin-left: -0.85rem; }
-.mega-column a:hover { color: var(--c-primary) !important; transform: translateX(4px); background:var(--c-primary-bg);}
-.mega-menu-services { min-width: 320px; }
-.mega-menu-services .mega-content { display: flex; flex-direction: column; gap: 0.5rem; padding: 2rem; }
+
+/* ── Desktop Viewport Layout (min-width: 961px) ── */
+@media (min-width: 961px) {
+  .site-nav .nav-inner { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
+  .nav-dropdown-services { position: relative !important; }
+  .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
+
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 25px;
+  }
+
+  .mega-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(225, 219, 214, 0.85);
+    border-radius: 20px;
+    padding: 0;
+    display: flex;
+    width: min(1200px, calc(100vw - 32px)) !important;
+    min-width: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+    z-index: 1000;
+    box-shadow: 0 35px 80px -15px rgba(24, 20, 18, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset, 0 10px 30px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    max-height: calc(100vh - 90px);
+  }
+
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown.is-active .mega-menu,
+  .site-nav #products-dropdown:hover #products-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+  }
+
+  .mega-menu-inner {
+    display: flex;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .mega-content-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.05fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    flex: 1;
+    background: #ffffff;
+  }
+
+  .mega-spotlight {
+    width: 300px;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 60%, #FEEDEA 100%);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid rgba(225, 219, 214, 0.85);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-dropdown-services .mega-menu-services {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    width: 520px !important;
+    min-width: 0 !important;
+    max-width: 90vw;
+  }
+
+  .nav-dropdown-services:hover .mega-menu-services,
+  .nav-dropdown-services.is-active .mega-menu-services {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mega-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #ffffff;
+    width: 100%;
+  }
+}
+
+/* ── Core Mega Menu Components (Shared) ── */
+.mega-col-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mega-col-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid rgba(154, 29, 30, 0.12);
+}
+
+.mega-col-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(154, 29, 30, 0.1), rgba(217, 119, 6, 0.1));
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-col-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin: 0;
+  line-height: 1.15;
+  text-transform: none !important;
+}
+
+.mega-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mega-group-label {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--c-muted, #78695E);
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.25rem;
+  padding-left: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mega-group-label::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-primary, #9A1D1E);
+}
+
+.mega-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.42rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  background: transparent;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover {
+  background: #FAF6F3;
+  transform: translateX(3px);
+}
+
+.mega-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mega-item-name {
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  color: var(--c-ink, #181412) !important;
+  line-height: 1.25;
+  transition: color 0.18s ease;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover .mega-item-name {
+  color: var(--c-primary, #9A1D1E) !important;
+}
+
+.mega-item-desc {
+  font-size: 0.71rem !important;
+  font-weight: 500 !important;
+  color: var(--c-muted, #78695E) !important;
+  line-height: 1.3;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.18s ease;
+  color: var(--c-primary, #9A1D1E);
+  font-size: 0.85rem;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.mega-item:hover .mega-item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mega-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(154, 29, 30, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mega-spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 30, 0.15);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary, #9A1D1E);
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  margin-bottom: 0.75rem;
+}
+
+.mega-spotlight-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-desc {
+  font-size: 0.8rem;
+  color: var(--c-body, #4A3E39);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718));
+  color: #ffffff !important;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(154, 29, 30, 0.22);
+  transition: all 0.2s ease;
+  margin-bottom: 1.1rem;
+}
+
+.mega-spotlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(154, 29, 30, 0.32);
+  color: #ffffff !important;
+}
+
+.mega-spotlight-tools {
+  border-top: 1px solid rgba(154, 29, 30, 0.12);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mega-tool-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--c-body, #4A3E39) !important;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+  text-transform: none !important;
+}
+
+.mega-tool-link:hover {
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.mega-service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem;
+  border-radius: 12px;
+  background: #FAF7F5;
+  border: 1px solid rgba(225, 219, 214, 0.65);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover {
+  background: #FFF5F2;
+  border-color: rgba(154, 29, 30, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154, 29, 30, 0.08);
+}
+
+.mega-service-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.mega-service-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover .mega-service-title {
+  color: var(--c-primary, #9A1D1E);
+}
+
+.mega-service-desc {
+  font-size: 0.74rem;
+  color: var(--c-muted, #78695E);
+  line-height: 1.4;
+  margin: 0;
+  text-transform: none !important;
+}
+
+/* ── Mobile & Tablet Uniform Drawer Layout (max-width: 960px) ── */
+@media (max-width: 960px) {
+  .site-nav .nav-inner {
+    position: relative !important;
+  }
+  .nav-links {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #FFFFFF !important;
+    border-bottom: 1px solid var(--c-border, #EBE5E0) !important;
+    box-shadow: 0 25px 50px -12px rgba(24, 20, 18, 0.18) !important;
+    padding: 0.75rem 1.25rem 1.75rem 1.25rem !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    z-index: 999 !important;
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .nav-links.is-active {
+    display: flex !important;
+  }
+  
+  /* Brand visibility toggles */
+  body:not(.ab) .ab-only,
+  body.ab .pr-only,
+  .nav-links > span[style*="display:none"],
+  .nav-links > span[style*="display: none"] {
+    display: none !important;
+  }
+
+  /* Uniform top-level mobile nav item rows */
+  .nav-links > span:not(.ab-only),
+  body.ab .nav-links > span.ab-only,
+  .nav-links > .nav-dropdown,
+  .nav-links > a:not(.nav-cta) {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(225, 219, 214, 0.55) !important;
+    margin: 0 !important;
+  }
+  
+  body.ab .nav-links > .nav-dropdown.pr-only {
+    display: none !important;
+  }
+  
+  .nav-links > span > a,
+  .nav-links > a:not(.nav-cta),
+  .nav-links .dropdown-trigger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0.95rem 0.65rem !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    font-family: inherit !important;
+    color: var(--c-ink, #181412) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: all 0.18s ease !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > span > a::after,
+  .nav-links > a:not(.nav-cta)::after,
+  .nav-links .dropdown-trigger::after {
+    display: none !important;
+  }
+  
+  .nav-links > span > a:hover,
+  .nav-links > span > a:active,
+  .nav-links > a:not(.nav-cta):hover,
+  .nav-links > a:not(.nav-cta):active,
+  .nav-links .dropdown-trigger:hover,
+  .nav-links .dropdown-trigger:active,
+  .nav-dropdown.is-active > .dropdown-trigger {
+    background: #FAF6F3 !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .dropdown-trigger svg {
+    transition: transform 0.25s ease !important;
+    color: var(--c-muted, #78695E) !important;
+  }
+  
+  .nav-dropdown.is-active > .dropdown-trigger svg {
+    transform: rotate(180deg) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .nav-dropdown::after {
+    display: none !important;
+  }
+  
+  .mega-menu, 
+  .site-nav #products-mega-menu, 
+  #products-mega-menu, 
+  #services-mega-menu, 
+  .mega-menu-services {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 12px !important;
+    background: #FAF7F5 !important;
+    overflow: hidden !important;
+    transition: max-height 0.35s ease, opacity 0.25s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-dropdown.is-active .mega-menu,
+  .nav-dropdown.is-active #products-mega-menu,
+  .nav-dropdown.is-active #services-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    max-height: 4500px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    padding: 0.85rem !important;
+    margin: 0.3rem 0 0.85rem 0 !important;
+    border: 1px solid rgba(225, 219, 214, 0.7) !important;
+    transform: none !important;
+  }
+  
+  .mega-menu-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  
+  .mega-content-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding-bottom: 0.4rem !important;
+    border-bottom: 1.5px solid rgba(154, 29, 30, 0.12) !important;
+  }
+  
+  .mega-col-title {
+    font-size: 1.1rem !important;
+    color: var(--c-ink, #181412) !important;
+  }
+  
+  .mega-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mega-group-label {
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 0.2rem !important;
+    padding-left: 0.25rem !important;
+  }
+  
+  .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.55rem 0.65rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 8px !important;
+    margin-bottom: 0.25rem !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  
+  .mega-item:hover, .mega-item:active {
+    background: #FFF5F2 !important;
+    border-color: rgba(154, 29, 30, 0.25) !important;
+    transform: none !important;
+  }
+  
+  .mega-item-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+  
+  .mega-item-name {
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    line-height: 1.2 !important;
+  }
+  
+  .mega-item-desc {
+    font-size: 0.68rem !important;
+    color: var(--c-muted, #78695E) !important;
+    line-height: 1.25 !important;
+  }
+  
+  .mega-item-arrow {
+    opacity: 0.7 !important;
+    transform: none !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    font-size: 0.85rem !important;
+    margin-left: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .mega-spotlight {
+    width: 100% !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(154, 29, 30, 0.15) !important;
+    margin-top: 0.5rem !important;
+    padding: 1rem 0.75rem !important;
+    border-radius: 10px !important;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 100%) !important;
+    box-sizing: border-box !important;
+  }
+  
+  .mega-services-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-service-card {
+    padding: 0.85rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > .nav-cta, .nav-links > a.nav-cta, .nav-links .nav-cta {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0.95rem 1rem !important;
+    margin-top: 1rem !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    font-size: 0.92rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718)) !important;
+    box-shadow: 0 6px 18px rgba(154, 29, 30, 0.28) !important;
+  }
+}
+
 
 /* ─── GLOBALS ─── */
 .visually-hidden{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}
@@ -1081,6 +1767,8 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
 </style>
 <style id="universal-card-fix-css">
 </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link rel="stylesheet" href="../assets/css/site-core.css">
 </head>
 <body>
 
@@ -1147,83 +1835,286 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
       
       <!-- Mega Menu Dropdown -->
       <div class="nav-dropdown pr-only" id="products-dropdown">
-        <button class="dropdown-trigger" id="products-dropdown-btn" aria-expanded="false" aria-controls="products-mega-menu">
-          Products <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <button class="dropdown-trigger" id="products-dropdown-btn" aria-expanded="false" aria-controls="products-mega-menu" aria-haspopup="true">
+          Products <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
-        <div id="products-mega-menu" class="mega-menu">
+        <div id="products-mega-menu" class="mega-menu" role="region" aria-label="Products Mega Menu">
           <div class="mega-menu-inner">
-            <div class="mega-content">
-              <div class="mega-column">
-                <div class="mega-column-header">
-                  <div class="mega-column-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg></div>
-                  <h3>Food</h3>
-                </div>
-                <div class="mega-sub-header">Baking</div>
-                <a href="biscuits-cookies.html">Biscuit Improver</a>
-                <a href="preccel-93.html">Eggless Cake Improver</a>
-                <a href="bread-buns-pizza-base.html">Flour Improver</a>
-                <a href="wafers.html">Wafer Improver</a>
-                
-                <div class="mega-sub-header">Non-Baking</div>
-                <a href="meat.html">Meat Texturizer</a>
-                <a href="pasta-and-noodles.html">Pasta & Noodle Improver</a>
-                <a href="egg-free-nougat.html">Nougat Improver</a>
-                <a href="a-hango.html">Anti-Hangover</a>
-                <a href="extruded-fried-snacks.html">Oil Reduction for Fried Snacks</a>
-                <a href="mayonnaise.html">Eggless Mayonnaise</a>
-              </div>
+            <div class="mega-content-grid">
               
-              <div class="mega-column">
-                <div class="mega-column-header">
-                  <div class="mega-column-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10l-1.5 8c-.2 1.1-1.3 2-2.5 2h-2c-1.2 0-2.3-.9-2.5-2L7 10"></path><path d="M12 2v8"></path><path d="M8 5l4-3 4 3"></path><path d="M4 10h16"></path></svg></div>
-                  <h3>Beverages</h3>
+              <!-- Column 1: Food Bio-Solutions -->
+              <div class="mega-col-panel">
+                <div class="mega-col-top">
+                  <div class="mega-col-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                  </div>
+                  <h3 class="mega-col-title">Food Bio-Solutions</h3>
                 </div>
-                <div class="mega-sub-header">Alcoholic</div>
-                <a href="breweries.html">Brewery Enzymes &amp; Additives</a>
-                <a href="distilleries.html">Distillery &amp; Fermentation Aids</a>
-                <a href="wine.html">Wine Enzymes &amp; Additives</a>
-                
-                <div class="mega-sub-header">Microbrewery</div>
-                <a href="microbrewery.html">Microbrewery Solutions</a>
-                
-                <div class="mega-sub-header">Non-Alcoholic</div>
-                <a href="fruit-based.html">Stabilizers for Fruit Beverages</a>
-                <a href="milk-based.html">Stabilizers for Milk Beverages</a>
-                <a href="chocolate-coffee.html">Stabilizers for Choco &amp; Coffee</a>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Baking Improvers</div>
+                  <a href="biscuits-cookies.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Biscuit Improver</span>
+                      <span class="mega-item-desc">Dough relaxers &amp; texture enzymes</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="preccel-93.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Eggless Cake Improver</span>
+                      <span class="mega-item-desc">Preccel® 93 volume &amp; softness</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="bread-buns-pizza-base.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Flour &amp; Bread Improver</span>
+                      <span class="mega-item-desc">Gluten strength &amp; oven spring</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="wafers.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Wafer Improver</span>
+                      <span class="mega-item-desc">Crispness &amp; mold release</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Savory &amp; Texture Systems</div>
+                  <a href="meat.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Meat Texturizers</span>
+                      <span class="mega-item-desc">TextureAid® MSK yield enhancer</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="pasta-and-noodles.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Pasta &amp; Noodle Improvers</span>
+                      <span class="mega-item-desc">Cooking firmness &amp; bite</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="extruded-fried-snacks.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Snack Oil Reducers</span>
+                      <span class="mega-item-desc">Fat uptake control for frying</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="mayonnaise.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Eggless Mayonnaise</span>
+                      <span class="mega-item-desc">Premaycel emulsion stability</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="egg-free-nougat.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Nougat Improver</span>
+                      <span class="mega-item-desc">Hydrocolloid aeration &amp; chew</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="a-hango.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Anti-Hangover Blend</span>
+                      <span class="mega-item-desc">A-Hango® natural functional bio-aid</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
               </div>
-              
-              <div class="mega-column">
-                <div class="mega-column-header">
-                  <div class="mega-column-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>
-                  <h3>Microbial & Others</h3>
+
+              <!-- Column 2: Beverages & Fermentation -->
+              <div class="mega-col-panel">
+                <div class="mega-col-top">
+                  <div class="mega-col-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10l-1.5 8c-.2 1.1-1.3 2-2.5 2h-2c-1.2 0-2.3-.9-2.5-2L7 10"></path><path d="M12 2v8"></path><path d="M8 5l4-3 4 3"></path><path d="M4 10h16"></path></svg>
+                  </div>
+                  <h3 class="mega-col-title">Beverages &amp; Brewing</h3>
                 </div>
-                <div class="mega-sub-header">Advanced Science</div>
-                <a href="microbial-solutions.html">Microbial Solutions</a>
-                <a href="wine.html">Wine Kit</a>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Alcoholic Fermentation</div>
+                  <a href="breweries.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Brewery Enzymes</span>
+                      <span class="mega-item-desc">BrewStabAid® mashing &amp; foam</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="distilleries.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Distillery &amp; Fermentation</span>
+                      <span class="mega-item-desc">High-gravity yield accelerators</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="wine.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Wine Enzymes &amp; Additives</span>
+                      <span class="mega-item-desc">Pectinase, aroma &amp; fining</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="microbrewery.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Microbrewery Solutions</span>
+                      <span class="mega-item-desc">Specialized craft brewing enzymes</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Non-Alcoholic &amp; Dairy</div>
+                  <a href="fruit-based.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Fruit Beverage Stabilizers</span>
+                      <span class="mega-item-desc">Cloud stability &amp; pulp suspension</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="milk-based.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Milk &amp; Dairy Stabilizers</span>
+                      <span class="mega-item-desc">Heat stability &amp; anti-curdling</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="chocolate-coffee.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Choco &amp; Coffee Stabilizers</span>
+                      <span class="mega-item-desc">Emulsion &amp; fat sedimentation control</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Column 3: Microbial & Living Hygiene -->
+              <div class="mega-col-panel">
+                <div class="mega-col-top">
+                  <div class="mega-col-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                  </div>
+                  <h3 class="mega-col-title">Microbial &amp; Living</h3>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Biotechnology Platforms</div>
+                  <a href="microbial-solutions.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Microbial Solutions</span>
+                      <span class="mega-item-desc">Custom biological catalysts</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="wine.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Wine Kit</span>
+                      <span class="mega-item-desc">Enological nutrients &amp; yeast aids</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Airbliss™ Living Solutions</div>
+                  <a href="airbliss.html#catalog" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Probiotic Facility Hygiene</span>
+                      <span class="mega-item-desc">Eco-active surface &amp; drain cleaners</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="products/airbliss-stp-activ.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">STP ACTIV™ Wastewater Bio</span>
+                      <span class="mega-item-desc">Rapid sludge &amp; BOD reduction</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="airbliss.html#science" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Bio-Enzymatic Odor Elimination</span>
+                      <span class="mega-item-desc">Uric acid degradation &amp; scale control</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Column 4: Innovation Spotlight & Quick Access -->
+            <div class="mega-spotlight">
+              <div>
+                <div class="mega-spotlight-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  Innovation Spotlight
+                </div>
+                <h4 class="mega-spotlight-title">Biscamaze® &amp; TextureAid®</h4>
+                <p class="mega-spotlight-desc">Next-generation enzyme dough conditioners &amp; hydrocolloid yield systems engineered for industrial food manufacturers.</p>
+                <a href="biscuits-cookies.html" class="mega-spotlight-btn">
+                  Explore Solutions <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+
+              <div class="mega-spotlight-tools">
+                <button type="button" class="mega-tool-link btn-quote" data-product="Formulation Consultation">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                  Request Free Sample Pack
+                </button>
+                <a href="services.html" class="mega-tool-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                  Contract Toll Blending
+                </a>
+                <button type="button" class="mega-tool-link nav-search-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  Quick Search (Ctrl + K)
+                </button>
               </div>
             </div>
-            <div class="mega-featured">
-              <h3>Discover Our Microbial Edge</h3>
-              <p>Explore precision-engineered microbial solutions that enhance quality, reduce costs, and elevate your manufacturing process.</p>
-              <a href="microbial-solutions.html" class="btn-mega-featured">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-            </div>
+
           </div>
         </div>
       </div>
 
       <span class="pr-only"><a href="industry.html">Industries</a></span>
-      <span class="ab-only" style="display:none"><a href="airbliss.html#catalog">Products</a></span>
-      <span class="ab-only" style="display:none"><a href="airbliss.html#science">The Science</a></span>
-      <span class="ab-only" style="display:none"><a href="airbliss.html#sectors">Industries</a></span>
-      <span class="ab-only" style="display:none"><a href="about.html">About Praras</a></span>
-      <div class="nav-dropdown pr-only">
-        <a href="services.html" style="display:flex;align-items:center;gap:4px;">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-        <div class="mega-menu mega-menu-services">
-          <div class="mega-content">
-            <div class="mega-column">
-                <a href="contract_manufacturing.html">Contract Manufacturing</a>
-                <a href="troubleshooting.html">Troubleshooting</a>
-            </div>
+      <span class="ab-only"><a href="airbliss.html#catalog">Products</a></span>
+      <span class="ab-only"><a href="airbliss.html#science">The Science</a></span>
+      <span class="ab-only"><a href="airbliss.html#sectors">Industries</a></span>
+      <span class="ab-only"><a href="about.html">About Praras</a></span>
+      <div class="nav-dropdown nav-dropdown-services pr-only">
+        <button class="dropdown-trigger" id="services-dropdown-btn" aria-expanded="false" aria-controls="services-mega-menu" aria-haspopup="true">
+          Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div id="services-mega-menu" class="mega-menu mega-menu-services" role="region" aria-label="Services Menu">
+          <div class="mega-services-grid">
+            <a href="contract_manufacturing.html" class="mega-service-card">
+              <div class="mega-service-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"></path><path d="M5 20V8l5 3V4l5 3v5l5-2v10"></path></svg>
+              </div>
+              <div class="mega-service-title">
+                Contract Manufacturing &rarr;
+              </div>
+              <p class="mega-service-desc">ISO &amp; FSSAI compliant dry blending, liquid enzyme formulation &amp; pilot toll scaling.</p>
+            </a>
+            <a href="troubleshooting.html" class="mega-service-card">
+              <div class="mega-service-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div class="mega-service-title">
+                Plant Troubleshooting &rarr;
+              </div>
+              <p class="mega-service-desc">On-site yield diagnostics, fermentation optimization &amp; sensory recipe tuning.</p>
+            </a>
           </div>
         </div>
       </div>

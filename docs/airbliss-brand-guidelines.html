@@ -283,6 +283,11 @@ header .nav-dropdown.is-active .mega-menu,
 .mega-column a:hover { color: var(--c-primary, #9A1D1E) !important; transform: translateX(4px) !important; background: var(--c-primary-bg, #FDF4F4) !important; }
 .mega-menu-services { min-width: 320px !important; }
 .mega-menu-services .mega-content { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; padding: 2rem !important; }
+
+
+
+
+
 </style><style>
 /* Fix button default outline & background on dropdown triggers */
 button.dropdown-trigger, .dropdown-trigger {
@@ -779,6 +784,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 }
 </style>
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link rel="stylesheet" href="../assets/css/site-core.css">
 </head>
 <body class="no-js">
 
@@ -1136,90 +1143,6 @@ document.querySelectorAll('.reveal').forEach((el,i)=>{io.observe(el);});
 
 
 
-<script id="universal-mega-menu-js">
-// ════ UNIVERSAL MEGA MENU & NAVIGATION CONTROLLER ════
-(function initMegaMenuController() {
-  function setupMegaMenu() {
-    // Dropdown triggers (both Products button and Services link)
-    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-      const trigger = dropdown.querySelector('.dropdown-trigger, > button, > a');
-      const menu = dropdown.querySelector('.mega-menu');
-      if (!trigger || !menu) return;
-
-      if (trigger._hasMegaMenuListener) return;
-      trigger._hasMegaMenuListener = true;
-
-      trigger.addEventListener('click', function(e) {
-        const isMobile = window.innerWidth <= 960;
-        
-        // On mobile, or for buttons / hash links, toggle dropdown
-        if (isMobile || trigger.tagName === 'BUTTON' || trigger.getAttribute('href') === '#' || trigger.classList.contains('dropdown-trigger')) {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          const wasActive = dropdown.classList.contains('is-active');
-          document.querySelectorAll('.nav-dropdown').forEach(d => {
-            if (d !== dropdown) {
-              d.classList.remove('is-active');
-              const otherTrig = d.querySelector('.dropdown-trigger, > button, > a');
-              if (otherTrig) otherTrig.setAttribute('aria-expanded', 'false');
-            }
-          });
-
-          if (!wasActive) {
-            dropdown.classList.add('is-active');
-            trigger.setAttribute('aria-expanded', 'true');
-          } else {
-            dropdown.classList.remove('is-active');
-            trigger.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-          d.classList.remove('is-active');
-          const trig = d.querySelector('.dropdown-trigger, > button, > a');
-          if (trig) trig.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    // Close dropdowns on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-          d.classList.remove('is-active');
-          const trig = d.querySelector('.dropdown-trigger, > button, > a');
-          if (trig) trig.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    // Mobile Hamburger Menu Toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.getElementById('main-nav-links');
-    if (mobileBtn && navLinks && !mobileBtn._hasMobileMenuListener) {
-      mobileBtn._hasMobileMenuListener = true;
-      mobileBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const isActive = mobileBtn.classList.contains('is-active');
-        mobileBtn.classList.toggle('is-active', !isActive);
-        navLinks.classList.toggle('is-active', !isActive);
-        mobileBtn.setAttribute('aria-expanded', !isActive);
-      });
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupMegaMenu);
-  } else {
-    setupMegaMenu();
-  }
-})();
-</script>
+<script defer src="../assets/js/site-controller.js"></script>
 
 </body></html>

@@ -333,7 +333,7 @@
     }
     .ab-hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
     .ab-btn-gold {
-      background: linear-gradient(135deg, #C18A5B 0%, #A87143 100%);
+      background: linear-gradient(135deg, #1F4F33 0%, #153926 100%);
       color: #FFFFFF; font-weight: 700; font-size: 0.95rem;
       padding: 0.85rem 2rem; border-radius: 30px; text-decoration: none;
       box-shadow: 0 8px 24px rgba(193, 138, 91, 0.35);
@@ -342,7 +342,7 @@
     }
     .ab-btn-gold:hover {
       transform: translateY(-2px); box-shadow: 0 12px 30px rgba(193, 138, 91, 0.45);
-      background: linear-gradient(135deg, #CF9766 0%, #B57D4F 100%);
+      background: linear-gradient(135deg, #286441 0%, #1A442E 100%);
     }
     .ab-btn-outline {
       background: rgba(255, 255, 255, 0.08);
@@ -380,7 +380,7 @@
     .ab-tech-badge {
       font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
       background: rgba(193, 138, 91, 0.25); color: #E2B98E;
-      border: 1px solid rgba(193, 138, 91, 0.4); padding: 4px 10px; border-radius: 20px;
+      border: 1px solid rgba(31, 79, 51, 0.35); padding: 4px 10px; border-radius: 20px;
     }
     .ab-mechanism-step {
       display: flex; gap: 14px; margin-bottom: 1.25rem;
@@ -1141,7 +1141,7 @@
     }
     .ab-cta-btn-main {
       width: 100%;
-      background: linear-gradient(135deg, #C18A5B 0%, #A87143 100%);
+      background: linear-gradient(135deg, #1F4F33 0%, #153926 100%);
       color: #FFFFFF;
       font-size: 0.95rem;
       font-weight: 800;
@@ -1154,15 +1154,15 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      box-shadow: 0 8px 24px rgba(193, 138, 91, 0.4);
+      box-shadow: 0 8px 24px rgba(31, 79, 51, 0.35);
       transition: all 0.25s ease;
       margin-bottom: 1.25rem;
       text-transform: uppercase;
     }
     .ab-cta-btn-main:hover {
-      background: linear-gradient(135deg, #CF9766 0%, #B57D4F 100%);
+      background: linear-gradient(135deg, #286441 0%, #1A442E 100%);
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(193, 138, 91, 0.55);
+      box-shadow: 0 12px 32px rgba(31, 79, 51, 0.45);
     }
     .ab-cta-hotline {
       display: flex;
@@ -1267,12 +1267,12 @@
       letter-spacing: -0.01em;
     }
     .quote-drawer-subtitle {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #9DBF82;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1F4F33;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
     .quote-drawer-close {
       background: rgba(255,255,255,0.12);
       border: none;
@@ -1338,26 +1338,28 @@
       box-shadow: 0 0 0 3px rgba(31,79,51,0.15);
     }
     .quote-btn-submit {
-      width: 100%;
-      background: #1F4F33;
-      color: #FFFFFF;
-      padding: 1rem;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(31,79,51,0.25);
-      margin-top: 0.5rem;
-    }
+  width: 100%;
+  background: linear-gradient(135deg, #1F4F33, #153926);
+  color: #ffffff;
+  padding: 1.1rem;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 20px rgba(31, 79, 51, 0.28);
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
     .quote-btn-submit:hover {
-      background: #153926;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(31,79,51,0.35);
-    }
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #153926, #0E261C);
+  box-shadow: 0 8px 25px rgba(31, 79, 51, 0.38);
+}
     @media (max-width: 600px) {
       .quote-form-group {
         flex-direction: column;
@@ -1367,7 +1369,886 @@
         max-width: 100%;
       }
     }
-  </style>
+  
+
+/* ─── UNIFORM GET A QUOTE DRAWER STYLES ─── */
+.quote-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.quote-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.quote-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  background: var(--c-surface, #ffffff);
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -30px 0 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.quote-drawer.is-active {
+  transform: translateX(0);
+}
+.quote-drawer-header {
+  padding: 2rem 2.5rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: transparent;
+}
+.quote-drawer-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
+}
+.quote-drawer-subtitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1F4F33;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.quote-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--c-surface-alt, #f8f9fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-muted, #78695E);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+.quote-close-btn:hover {
+  background: #F4F8F4;
+  color: #1F4F33;
+  transform: rotate(90deg);
+}
+.quote-drawer-body {
+  padding: 1.5rem 2.5rem 3rem;
+  flex: 1;
+}
+.quote-form-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.q-input-wrap {
+  flex: 1;
+}
+.q-input-wrap label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--c-muted, #78695E);
+  margin-bottom: 0.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.q-input-wrap input,
+.q-input-wrap select,
+.q-input-wrap textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: var(--c-ink, #181412);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.q-input-wrap input:focus,
+.q-input-wrap select:focus,
+.q-input-wrap textarea:focus {
+  background: #ffffff;
+  border-color: #1F4F33;
+  box-shadow: 0 0 0 4px rgba(31, 79, 51, 0.15);
+  outline: none;
+}
+.quote-btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #1F4F33, #153926);
+  color: #ffffff;
+  padding: 1.1rem;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 20px rgba(31, 79, 51, 0.28);
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+.quote-btn-submit:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #153926, #0E261C);
+  box-shadow: 0 8px 25px rgba(31, 79, 51, 0.38);
+}
+
+
+
+
+
+
+
+/* ─── WORLD-CLASS ENTERPRISE MEGA MENU & UNIFORM RESPONSIVE NAVIGATION ─── */
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-transform: none !important;
+}
+.dropdown-trigger:hover, .nav-dropdown.is-active .dropdown-trigger {
+  color: var(--c-primary, #9A1D1E);
+  background: rgba(154, 29, 30, 0.05);
+}
+.dropdown-trigger svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-dropdown:hover .dropdown-trigger svg,
+.nav-dropdown.is-active .dropdown-trigger svg {
+  transform: rotate(180deg);
+}
+
+/* ── Desktop Viewport Layout (min-width: 961px) ── */
+@media (min-width: 961px) {
+  .site-nav .nav-inner { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
+  .nav-dropdown-services { position: relative !important; }
+  .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
+
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 25px;
+  }
+
+  .mega-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(225, 219, 214, 0.85);
+    border-radius: 20px;
+    padding: 0;
+    display: flex;
+    width: min(1200px, calc(100vw - 32px)) !important;
+    min-width: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+    z-index: 1000;
+    box-shadow: 0 35px 80px -15px rgba(24, 20, 18, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset, 0 10px 30px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    max-height: calc(100vh - 90px);
+  }
+
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown.is-active .mega-menu,
+  .site-nav #products-dropdown:hover #products-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+  }
+
+  .mega-menu-inner {
+    display: flex;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .mega-content-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.05fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    flex: 1;
+    background: #ffffff;
+  }
+
+  .mega-spotlight {
+    width: 300px;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 60%, #FEEDEA 100%);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid rgba(225, 219, 214, 0.85);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-dropdown-services .mega-menu-services {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    width: 520px !important;
+    min-width: 0 !important;
+    max-width: 90vw;
+  }
+
+  .nav-dropdown-services:hover .mega-menu-services,
+  .nav-dropdown-services.is-active .mega-menu-services {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mega-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #ffffff;
+    width: 100%;
+  }
+}
+
+/* ── Core Mega Menu Components (Shared) ── */
+.mega-col-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mega-col-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid rgba(154, 29, 30, 0.12);
+}
+
+.mega-col-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(154, 29, 30, 0.1), rgba(217, 119, 6, 0.1));
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-col-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin: 0;
+  line-height: 1.15;
+  text-transform: none !important;
+}
+
+.mega-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mega-group-label {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--c-muted, #78695E);
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.25rem;
+  padding-left: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mega-group-label::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-primary, #9A1D1E);
+}
+
+.mega-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.42rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  background: transparent;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover {
+  background: #FAF6F3;
+  transform: translateX(3px);
+}
+
+.mega-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mega-item-name {
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  color: var(--c-ink, #181412) !important;
+  line-height: 1.25;
+  transition: color 0.18s ease;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover .mega-item-name {
+  color: var(--c-primary, #9A1D1E) !important;
+}
+
+.mega-item-desc {
+  font-size: 0.71rem !important;
+  font-weight: 500 !important;
+  color: var(--c-muted, #78695E) !important;
+  line-height: 1.3;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.18s ease;
+  color: var(--c-primary, #9A1D1E);
+  font-size: 0.85rem;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.mega-item:hover .mega-item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mega-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(154, 29, 30, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mega-spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 30, 0.15);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary, #9A1D1E);
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  margin-bottom: 0.75rem;
+}
+
+.mega-spotlight-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-desc {
+  font-size: 0.8rem;
+  color: var(--c-body, #4A3E39);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718));
+  color: #ffffff !important;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(154, 29, 30, 0.22);
+  transition: all 0.2s ease;
+  margin-bottom: 1.1rem;
+}
+
+.mega-spotlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(154, 29, 30, 0.32);
+  color: #ffffff !important;
+}
+
+.mega-spotlight-tools {
+  border-top: 1px solid rgba(154, 29, 30, 0.12);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mega-tool-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--c-body, #4A3E39) !important;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+  text-transform: none !important;
+}
+
+.mega-tool-link:hover {
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.mega-service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem;
+  border-radius: 12px;
+  background: #FAF7F5;
+  border: 1px solid rgba(225, 219, 214, 0.65);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover {
+  background: #FFF5F2;
+  border-color: rgba(154, 29, 30, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154, 29, 30, 0.08);
+}
+
+.mega-service-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.mega-service-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover .mega-service-title {
+  color: var(--c-primary, #9A1D1E);
+}
+
+.mega-service-desc {
+  font-size: 0.74rem;
+  color: var(--c-muted, #78695E);
+  line-height: 1.4;
+  margin: 0;
+  text-transform: none !important;
+}
+
+/* ── Mobile & Tablet Uniform Drawer Layout (max-width: 960px) ── */
+@media (max-width: 960px) {
+  .site-nav .nav-inner {
+    position: relative !important;
+  }
+  .nav-links {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #FFFFFF !important;
+    border-bottom: 1px solid var(--c-border, #EBE5E0) !important;
+    box-shadow: 0 25px 50px -12px rgba(24, 20, 18, 0.18) !important;
+    padding: 0.75rem 1.25rem 1.75rem 1.25rem !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    z-index: 999 !important;
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .nav-links.is-active {
+    display: flex !important;
+  }
+  
+  /* Brand visibility toggles */
+  body:not(.ab) .ab-only,
+  body.ab .pr-only,
+  .nav-links > span[style*="display:none"],
+  .nav-links > span[style*="display: none"] {
+    display: none !important;
+  }
+
+  /* Uniform top-level mobile nav item rows */
+  .nav-links > span:not(.ab-only),
+  body.ab .nav-links > span.ab-only,
+  .nav-links > .nav-dropdown,
+  .nav-links > a:not(.nav-cta) {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(225, 219, 214, 0.55) !important;
+    margin: 0 !important;
+  }
+  
+  body.ab .nav-links > .nav-dropdown.pr-only {
+    display: none !important;
+  }
+  
+  .nav-links > span > a,
+  .nav-links > a:not(.nav-cta),
+  .nav-links .dropdown-trigger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0.95rem 0.65rem !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    font-family: inherit !important;
+    color: var(--c-ink, #181412) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: all 0.18s ease !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > span > a::after,
+  .nav-links > a:not(.nav-cta)::after,
+  .nav-links .dropdown-trigger::after {
+    display: none !important;
+  }
+  
+  .nav-links > span > a:hover,
+  .nav-links > span > a:active,
+  .nav-links > a:not(.nav-cta):hover,
+  .nav-links > a:not(.nav-cta):active,
+  .nav-links .dropdown-trigger:hover,
+  .nav-links .dropdown-trigger:active,
+  .nav-dropdown.is-active > .dropdown-trigger {
+    background: #FAF6F3 !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .dropdown-trigger svg {
+    transition: transform 0.25s ease !important;
+    color: var(--c-muted, #78695E) !important;
+  }
+  
+  .nav-dropdown.is-active > .dropdown-trigger svg {
+    transform: rotate(180deg) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .nav-dropdown::after {
+    display: none !important;
+  }
+  
+  .mega-menu, 
+  .site-nav #products-mega-menu, 
+  #products-mega-menu, 
+  #services-mega-menu, 
+  .mega-menu-services {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 12px !important;
+    background: #FAF7F5 !important;
+    overflow: hidden !important;
+    transition: max-height 0.35s ease, opacity 0.25s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-dropdown.is-active .mega-menu,
+  .nav-dropdown.is-active #products-mega-menu,
+  .nav-dropdown.is-active #services-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    max-height: 4500px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    padding: 0.85rem !important;
+    margin: 0.3rem 0 0.85rem 0 !important;
+    border: 1px solid rgba(225, 219, 214, 0.7) !important;
+    transform: none !important;
+  }
+  
+  .mega-menu-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  
+  .mega-content-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding-bottom: 0.4rem !important;
+    border-bottom: 1.5px solid rgba(154, 29, 30, 0.12) !important;
+  }
+  
+  .mega-col-title {
+    font-size: 1.1rem !important;
+    color: var(--c-ink, #181412) !important;
+  }
+  
+  .mega-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mega-group-label {
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 0.2rem !important;
+    padding-left: 0.25rem !important;
+  }
+  
+  .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.55rem 0.65rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 8px !important;
+    margin-bottom: 0.25rem !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  
+  .mega-item:hover, .mega-item:active {
+    background: #FFF5F2 !important;
+    border-color: rgba(154, 29, 30, 0.25) !important;
+    transform: none !important;
+  }
+  
+  .mega-item-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+  
+  .mega-item-name {
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    line-height: 1.2 !important;
+  }
+  
+  .mega-item-desc {
+    font-size: 0.68rem !important;
+    color: var(--c-muted, #78695E) !important;
+    line-height: 1.25 !important;
+  }
+  
+  .mega-item-arrow {
+    opacity: 0.7 !important;
+    transform: none !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    font-size: 0.85rem !important;
+    margin-left: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .mega-spotlight {
+    width: 100% !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(154, 29, 30, 0.15) !important;
+    margin-top: 0.5rem !important;
+    padding: 1rem 0.75rem !important;
+    border-radius: 10px !important;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 100%) !important;
+    box-sizing: border-box !important;
+  }
+  
+  .mega-services-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-service-card {
+    padding: 0.85rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > .nav-cta, .nav-links > a.nav-cta, .nav-links .nav-cta {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0.95rem 1rem !important;
+    margin-top: 1rem !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    font-size: 0.92rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718)) !important;
+    box-shadow: 0 6px 18px rgba(154, 29, 30, 0.28) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+</style>
 
   <!-- Structured Data JSON-LD (Rich Graph for Airbliss Collection & Products) -->
   <script type="application/ld+json">
@@ -1397,6 +2278,8 @@
     ]
   }
   </script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link rel="stylesheet" href="assets/css/site-core.css">
 </head>
 <body class="ab">
 
@@ -1432,7 +2315,7 @@
       </div>
     </a>
 
-    <nav class="nav-links" aria-label="Primary" id="main-nav-links">
+            <nav class="nav-links" aria-label="Primary" id="main-nav-links">
       <!-- Products Dropdown with Submenu -->
       <div class="nav-dropdown" id="products-dropdown">
         <button type="button" class="dropdown-trigger" id="products-dropdown-btn" aria-expanded="false" aria-controls="products-mega-menu">
@@ -1516,11 +2399,16 @@
         </div>
       </div>
 
-      <a href="#science">The Science</a>
-      <a href="#sectors">Industries</a>
-      <a href="about.html">About Praras</a>
+      <span><a href="airbliss.html#science">The Science</a></span>
+      <span><a href="airbliss.html#sectors">Industries</a></span>
+      <span><a href="about.html">About Praras</a></span>
       <button type="button" class="nav-cta btn-quote" data-product="Airbliss Institutional Inquiry">Request Trial</button>
     </nav>
+    <button class="hamburger-menu" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 
@@ -2416,389 +3304,79 @@
 </div>
 
 <!-- ════ QUOTE DRAWER ════ -->
+<!-- QUOTE DRAWER -->
 <div class="quote-overlay" id="quote-overlay"></div>
-<aside class="quote-drawer" id="quote-drawer" aria-labelledby="quote-drawer-title" aria-hidden="true">
+<aside class="quote-drawer" id="quote-drawer" aria-hidden="true" aria-labelledby="quote-drawer-title">
   <div class="quote-drawer-header">
-    <div class="quote-drawer-title-group">
-      <h3 class="quote-drawer-title" id="quote-drawer-title">Request Quotation &amp; Sample</h3>
+    <div>
+      <div class="quote-drawer-title" id="quote-drawer-title">Get a Quote</div>
       <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">Airbliss Living Solutions</div>
     </div>
-    <button class="quote-drawer-close" id="quote-close" aria-label="Close quote drawer">&times;</button>
+    <button type="button" class="quote-close-btn" id="quote-close" aria-label="Close quote drawer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
   </div>
   <div class="quote-drawer-body">
     <form id="quote-form">
       <input type="hidden" id="q-product" name="product" value="Airbliss Living Solutions">
-      
-      <!-- Honeypot -->
-      <div style="display:none;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-
       <div class="quote-form-group">
-        <div class="quote-field">
-          <label for="q-name" class="quote-label">Full Name *</label>
-          <input type="text" id="q-name" name="name" class="quote-input" placeholder="e.g. Rajesh Kumar" required>
+        <div class="q-input-wrap">
+          <label for="q-name">Full Name *</label>
+          <input type="text" id="q-name" name="name" required placeholder="Your full name" autocomplete="name">
         </div>
-        <div class="quote-field">
-          <label for="q-company" class="quote-label">Company / Facility *</label>
-          <input type="text" id="q-company" name="company" class="quote-input" placeholder="e.g. Apex Facilities / Marriott" required>
+        <div class="q-input-wrap">
+          <label for="q-company">Company</label>
+          <input type="text" id="q-company" name="company" placeholder="Bakery / company name" autocomplete="organization">
         </div>
       </div>
-
       <div class="quote-form-group">
-        <div class="quote-field">
-          <label for="q-email" class="quote-label">Business Email *</label>
-          <input type="email" id="q-email" name="email" class="quote-input" placeholder="e.g. rajesh@company.com" required>
+        <div class="q-input-wrap">
+          <label for="q-email">Email *</label>
+          <input type="email" id="q-email" name="email" required placeholder="you@company.com" autocomplete="email">
         </div>
-        <div class="quote-field">
-          <label for="q-phone" class="quote-label">Phone Number *</label>
-          <input type="tel" id="q-phone" name="phone" class="quote-input" placeholder="e.g. +91 98765 43210" required>
+        <div class="q-input-wrap">
+          <label for="q-phone">Phone</label>
+          <input type="tel" id="q-phone" name="phone" placeholder="+91-XXXXX XXXXX" autocomplete="tel">
         </div>
       </div>
-
       <div class="quote-form-group">
-        <div class="quote-field">
-          <label for="q-type" class="quote-label">Enquiry Type</label>
-          <select id="q-type" name="type" class="quote-select">
-            <option value="Institutional Trial Sample">Request Facility Trial Sample</option>
-            <option value="Commercial Quotation">Commercial Bulk Quotation</option>
-            <option value="STP Technical Audit">STP / ETP Wastewater Audit</option>
-            <option value="Distribution Partnership">Distributorship / Channel Partner</option>
-          </select>
-        </div>
-        <div class="quote-field">
-          <label for="q-volume" class="quote-label">Facility Size / Requirement</label>
-          <select id="q-volume" name="volume" class="quote-select">
-            <option value="Single Facility">Single Facility / Property</option>
-            <option value="Multiple Properties (2-10)">Multiple Properties (2-10 Units)</option>
-            <option value="Large Enterprise (>10 Facilities)">Large Enterprise / FM Contract (>10 Units)</option>
-            <option value="STP > 100 KLD">STP / ETP Capacity > 100 KLD</option>
+        <div class="q-input-wrap">
+          <label for="q-type">Enquiry Type</label>
+          <select id="q-type" name="type">
+            <option>Request samples</option>
+            <option>Request pricing</option>
+            <option>Technical consultation</option>
+            <option>Bulk order enquiry</option>
+            <option>Request documentation</option>
           </select>
         </div>
       </div>
-
       <div class="quote-form-group">
-        <div class="quote-field" style="width:100%;">
-          <label for="q-message" class="quote-label">Specific Application or Hygiene Challenge</label>
-          <textarea id="q-message" name="message" class="quote-textarea" rows="3" placeholder="Describe your facility requirements (e.g., washroom odor elimination, STP scum control, grease trap clearing)..."></textarea>
+        <div class="q-input-wrap">
+          <label for="q-volume">Monthly Production Volume</label>
+          <select id="q-volume" name="volume">
+            <option>Select range</option>
+            <option>Under 1 tonne/month</option>
+            <option>1-10 tonnes/month</option>
+            <option>10-50 tonnes/month</option>
+            <option>50-200 tonnes/month</option>
+            <option>200+ tonnes/month</option>
+          </select>
         </div>
       </div>
-
-      <button type="submit" class="quote-btn-submit" style="background:#1F4F33;">Send Institutional Enquiry &rarr;</button>
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-message">Message</label>
+          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, flour types, specific challenges, or what documentation you need..."></textarea>
+        </div>
+      </div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
+      <button type="submit" class="quote-btn-submit">Send Enquiry</button>
     </form>
   </div>
 </aside>
 
-<!-- ════ CATEGORY FILTER SCRIPT ════ -->
-<script>
-// Category filter interaction
-document.querySelectorAll('#ab-category-filters .cat-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('#ab-category-filters .cat-btn').forEach(b => b.classList.remove('is-active'));
-    this.classList.add('is-active');
-    const cat = this.getAttribute('data-cat');
-    
-    document.querySelectorAll('#ab-products-container .ab-prod-card').forEach(card => {
-      if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-});
-</script>
-
-<script id="universal-mega-menu-js">
-// ════ UNIVERSAL MEGA MENU, SEARCH MATRIX & CONTROLLER ════
-(function initSiteController() {
-  let searchCatalog = null;
-  let activeFilter = 'all';
-  let selectedIndex = -1;
-
-  function loadSearchCatalog() {
-    if (!searchCatalog) {
-      fetch('assets/data/products-search.json')
-        .then(r => r.json())
-        .then(data => { searchCatalog = data; })
-        .catch(e => console.warn('Could not load search catalog', e));
-    }
-  }
-
-  function setupSiteInteractions() {
-    loadSearchCatalog();
-
-    // 1. Global Quote Drawer System
-    const overlay = document.getElementById('quote-overlay');
-    const drawer = document.getElementById('quote-drawer');
-    const closeBtn = document.getElementById('quote-close');
-    const subtitle = document.getElementById('quote-drawer-subtitle');
-    const productInput = document.getElementById('q-product');
-    const quoteForm = document.getElementById('quote-form');
-
-    if (drawer && !drawer.classList.contains('is-active')) {
-      drawer.setAttribute('aria-hidden', 'true');
-      drawer.setAttribute('inert', '');
-    }
-
-    function openQuoteDrawer(productName) {
-      if (!drawer || !overlay) return;
-      if (productName && subtitle) subtitle.textContent = productName;
-      if (productName && productInput) productInput.value = productName;
-      
-      overlay.classList.add('is-active');
-      drawer.classList.add('is-active');
-      drawer.setAttribute('aria-hidden', 'false');
-      drawer.removeAttribute('inert');
-      document.body.style.overflow = 'hidden';
-      
-      const firstInput = drawer.querySelector('input:not([type="hidden"]), select, textarea');
-      if (firstInput) setTimeout(() => firstInput.focus(), 100);
-    }
-
-    function closeQuoteDrawer() {
-      if (!drawer || !overlay) return;
-      overlay.classList.remove('is-active');
-      drawer.classList.remove('is-active');
-      drawer.setAttribute('aria-hidden', 'true');
-      drawer.setAttribute('inert', '');
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('.btn-quote').forEach(btn => {
-      if (!btn._hasQuoteListener) {
-        btn._hasQuoteListener = true;
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          const prod = btn.getAttribute('data-product') || 'Airbliss Living Solutions';
-          openQuoteDrawer(prod);
-        });
-      }
-    });
-
-    if (closeBtn && !closeBtn._hasCloseListener) {
-      closeBtn._hasCloseListener = true;
-      closeBtn.addEventListener('click', closeQuoteDrawer);
-    }
-    if (overlay && !overlay._hasOverlayListener) {
-      overlay._hasOverlayListener = true;
-      overlay.addEventListener('click', closeQuoteDrawer);
-    }
-
-    if (quoteForm && !quoteForm._hasSubmitListener) {
-      quoteForm._hasSubmitListener = true;
-      quoteForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const submitBtn = quoteForm.querySelector('.quote-btn-submit');
-        if (!submitBtn) return;
-        
-        const origText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending Enquiry...';
-        submitBtn.disabled = true;
-
-        const formData = new FormData(quoteForm);
-        formData.append('source_page', window.location.href);
-
-        fetch('mailer.php', { method: 'POST', body: formData })
-          .then(res => res.json())
-          .then(data => {
-            if (data.status === 'success') {
-              submitBtn.style.background = '#28a745';
-              submitBtn.textContent = 'Enquiry Sent Successfully ✓';
-              setTimeout(() => {
-                quoteForm.reset();
-                submitBtn.style.background = '';
-                submitBtn.textContent = origText;
-                submitBtn.disabled = false;
-                closeQuoteDrawer();
-              }, 2200);
-            } else {
-              alert(data.message || 'There was an issue submitting your request.');
-              submitBtn.textContent = origText;
-              submitBtn.disabled = false;
-            }
-          })
-          .catch(() => {
-            alert('Network error. Please try again or email info@prarasbiosciences.com directly.');
-            submitBtn.textContent = origText;
-            submitBtn.disabled = false;
-          });
-      });
-    }
-
-    // 1.5. Navigation Dropdowns
-    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-      const trigger = dropdown.querySelector('.dropdown-trigger, :scope > button');
-      if (!trigger) return;
-      trigger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const wasActive = dropdown.classList.contains('is-active');
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-          d.classList.remove('is-active');
-          const t = d.querySelector('.dropdown-trigger, :scope > button');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-        if (!wasActive) {
-          dropdown.classList.add('is-active');
-          trigger.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-          d.classList.remove('is-active');
-          const t = d.querySelector('.dropdown-trigger, :scope > button');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    // 2. Interactive Product Search Modal
-    const searchModal = document.getElementById('site-search-modal');
-    const searchInput = document.getElementById('site-search-input');
-    const searchClear = document.getElementById('site-search-clear');
-    const resultsList = document.getElementById('search-results-list');
-    const filterBar = document.getElementById('search-filter-bar');
-    const searchBtns = document.querySelectorAll('.nav-search-btn');
-
-    function openSearch() {
-      if (!searchModal) return;
-      loadSearchCatalog();
-      searchModal.classList.add('is-active');
-      searchModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        if (searchInput) {
-          searchInput.focus();
-          searchInput.select();
-        }
-      }, 50);
-      renderSearchResults(searchInput ? searchInput.value.trim() : '');
-    }
-
-    function closeSearch() {
-      if (!searchModal) return;
-      searchModal.classList.remove('is-active');
-      searchModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    searchBtns.forEach(btn => {
-      btn.addEventListener('click', openSearch);
-    });
-
-    if (searchModal) {
-      searchModal.addEventListener('click', function(e) {
-        if (e.target === searchModal) closeSearch();
-      });
-    }
-
-    if (searchClear && searchInput) {
-      searchClear.addEventListener('click', function() {
-        searchInput.value = '';
-        searchClear.style.display = 'none';
-        searchInput.focus();
-        renderSearchResults('');
-      });
-    }
-
-    if (filterBar) {
-      filterBar.addEventListener('click', function(e) {
-        const chip = e.target.closest('.search-chip');
-        if (!chip) return;
-        filterBar.querySelectorAll('.search-chip').forEach(c => c.classList.remove('is-active'));
-        chip.classList.add('is-active');
-        activeFilter = chip.getAttribute('data-filter') || 'all';
-        renderSearchResults(searchInput ? searchInput.value.trim() : '');
-      });
-    }
-
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        const q = searchInput.value.trim();
-        if (searchClear) searchClear.style.display = q.length > 0 ? 'flex' : 'none';
-        renderSearchResults(q);
-      });
-    }
-
-    function renderSearchResults(query) {
-      if (!resultsList || !searchCatalog) return;
-      selectedIndex = -1;
-      const q = query.toLowerCase();
-
-      let filtered = searchCatalog.filter(item => {
-        if (activeFilter !== 'all') {
-          if (activeFilter === 'airbliss' && item.brand !== 'ab') return false;
-          if (activeFilter !== 'airbliss' && !item.category.toLowerCase().includes(activeFilter)) return false;
-        }
-        if (!q) return true;
-        return item.name.toLowerCase().includes(q) ||
-               item.tagline.toLowerCase().includes(q) ||
-               item.category.toLowerCase().includes(q) ||
-               (item.keywords && item.keywords.includes(q)) ||
-               (item.description && item.description.toLowerCase().includes(q));
-      });
-
-      if (filtered.length === 0) {
-        resultsList.innerHTML = `<div class="search-empty">
-          <div class="search-empty-icon">🔍</div>
-          <h3>No formulations found</h3>
-          <p>We couldn't find matching solutions for "${escapeHtml(query)}". Try searching for <em>floor cleaner, urinal, drain, or stp</em>.</p>
-        </div>`;
-        return;
-      }
-
-      resultsList.innerHTML = filtered.slice(0, 20).map((item, idx) => {
-        return `<a href="${item.url}" class="search-item${idx === 0 ? ' is-selected' : ''}" role="option">
-          <div class="search-item-info">
-            <div class="search-item-header">
-              <span class="search-item-title">${highlightQuery(item.name, q)}</span>
-              <span class="search-item-badge">${item.category.split('>').pop().trim()}</span>
-            </div>
-            <div class="search-item-sub">${highlightQuery(item.tagline || item.description, q)}</div>
-          </div>
-          <div class="search-item-action">
-            <span>View Specs</span>
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </a>`;
-      }).join('');
-    }
-
-    function highlightQuery(text, query) {
-      if (!query || !text) return escapeHtml(text || '');
-      const clean = escapeHtml(text);
-      const idx = clean.toLowerCase().indexOf(query.toLowerCase());
-      if (idx === -1) return clean;
-      const matched = clean.substr(idx, query.length);
-      return clean.substring(0, idx) + '<strong style="color:#1F4F33;background:rgba(31,79,51,0.1);padding:0 2px;border-radius:3px;">' + matched + '</strong>' + clean.substring(idx + query.length);
-    }
-
-    function escapeHtml(str) {
-      return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        const isOpen = searchModal && searchModal.classList.contains('is-active');
-        if (isOpen) closeSearch();
-        else openSearch();
-      } else if (e.key === 'Escape') {
-        if (searchModal && searchModal.classList.contains('is-active')) {
-          closeSearch();
-        }
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupSiteInteractions);
-  } else {
-    setupSiteInteractions();
-  }
-})();
-</script>
+<script defer src="assets/js/site-controller.js"></script>
 
 </body>
 </html>

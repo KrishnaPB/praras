@@ -54,7 +54,8 @@
             <label style="display:block; margin-bottom:0.5rem; font-weight:500;">Message</label>
             <textarea name="message" rows="5" required style="width:100%; padding:0.8rem; border:1px solid var(--c-border); border-radius:0.5rem; background:#fff; font-family:inherit; resize:vertical;"></textarea>
           </div>
-          <button type="submit" class="btn btn-outline" style="width:100%; justify-content:center;">Submit</button>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
+        <button type="submit" class="btn btn-outline" style="width:100%; justify-content:center;">Submit</button>
           <div id="form-feedback" style="margin-top:1rem; font-weight:500; display:none;"></div>
         </form>
       </div>
@@ -82,7 +83,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
   
-  fetch('mailer.php', {
+  fetch('/mailer.php', {
     method: 'POST',
     body: formData
   })
@@ -91,19 +92,25 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     feedback.style.display = 'block';
     feedback.textContent = data.message;
     if (data.status === 'success') {
-      feedback.style.color = 'green';
+      feedback.style.color = '#2E7D32';
+      feedback.style.background = '#E8F5E9';
       this.reset();
+      if (window.turnstile) { turnstile.reset(); }
     } else {
-      feedback.style.color = 'red';
+      feedback.style.color = '#C62828';
+      feedback.style.background = '#FFEBEE';
+      if (window.turnstile) { turnstile.reset(); }
     }
   })
   .catch(err => {
     feedback.style.display = 'block';
     feedback.textContent = 'An error occurred. Please try again.';
-    feedback.style.color = 'red';
+    feedback.style.color = '#C62828';
+    feedback.style.background = '#FFEBEE';
+    if (window.turnstile) { turnstile.reset(); }
   })
   .finally(() => {
-    btn.textContent = 'Submit';
+    btn.textContent = 'Send Message';
     btn.disabled = false;
   });
 });

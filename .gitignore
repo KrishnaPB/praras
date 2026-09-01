@@ -1,40 +1,29 @@
-# Python & Node environments
+# Virtual Environments
 venv/
-env/
 myenv/
 img_env/
-node_modules/
-__pycache__/
-
-# Environment variables
+env/
 .env
 
-# Backups & Archives
-*.tar.gz
-*.zip
+# Dependencies & Build Cache
+node_modules/
+__pycache__/
+*.pyc
 
-# Logs and temporary files
-*.log
-out.txt
-out2.txt
-output.txt
-git-out.txt
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-data/*.json
-
-# Internal Scratch & Backups
-scratch/
-backups/
-
-# IDE & Editor Configs
+# IDE and Editor configs
 .idx/
 .vscode/
 
+# Lead & Backup Storage (Protected)
+enquiries/*.json
+!enquiries/.htaccess
+backups/
+storage/
+
+# Temporary & Scratch Files
+scratch/
+*.log
+*.zip
+*.tar.gz
+*.xlsx
+.DS_Store

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Praras Biosciences & Airbliss — Internal Brand Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --c-bg: #FAF7F2;
+      --c-surface: #FFFFFF;
+      --c-border: #E8E2D9;
+      --c-ink: #181412;
+      --c-muted: #6B5E55;
+      --c-primary: #9A1D1E;
+      --c-ab-emerald: #1F4F33;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--c-bg);
+      color: var(--c-ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .docs-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 24px;
+      padding: 3rem;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      color: var(--c-muted);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .doc-link {
+      display: flex;
+      flex-direction: column;
+      padding: 1.75rem;
+      background: #FAF7F4;
+      border: 1.5px solid var(--c-border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
+    }
+    .doc-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-color: var(--c-primary);
+    }
+    .doc-link.ab:hover {
+      border-color: var(--c-ab-emerald);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .badge-pr { background: rgba(154, 29, 30, 0.1); color: var(--c-primary); }
+    .badge-ab { background: rgba(31, 79, 51, 0.1); color: var(--c-ab-emerald); }
+    .doc-link h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .doc-link span {
+      font-size: 0.85rem;
+      color: var(--c-muted);
+      line-height: 1.5;
+    }
+    .back-home {
+      display: inline-block;
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--c-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-home:hover { color: var(--c-primary); }
+  </style>
+  <link rel="stylesheet" href="../assets/css/site-core.css">
+</head>
+<body>
+  <div class="docs-card">
+    <h1>Brand &amp; Technical Docs</h1>
+    <p>Official brand guidelines, design systems, and technical documentation for Praras Biosciences and Airbliss.</p>
+    <div class="grid">
+      <a href="praras-brand-kit.html" class="doc-link">
+        <span class="badge badge-pr">Praras Biosciences</span>
+        <h3>Praras Brand Kit</h3>
+        <span>Master brand assets, typography, color palettes, and enterprise stationery guidelines.</span>
+      </a>
+      <a href="airbliss-brand-guidelines.html" class="doc-link ab">
+        <span class="badge badge-ab">Airbliss Living</span>
+        <h3>Airbliss Guidelines</h3>
+        <span>Probiotic brand identity, living solutions typography, and institutional catalog systems.</span>
+      </a>
+    </div>
+    <a href="../index.html" class="back-home">&larr; Return to Main Website</a>
+  </div>
+
+<script defer src="../assets/js/site-controller.js"></script>
+</body>
+</html>

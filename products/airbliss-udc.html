@@ -464,7 +464,885 @@
     }
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-  </style>
+  
+
+/* ─── UNIFORM GET A QUOTE DRAWER STYLES ─── */
+.quote-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.quote-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.quote-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  background: var(--c-surface, #ffffff);
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -30px 0 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.quote-drawer.is-active {
+  transform: translateX(0);
+}
+.quote-drawer-header {
+  padding: 2rem 2.5rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: transparent;
+}
+.quote-drawer-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
+}
+.quote-drawer-subtitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1F4F33;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.quote-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--c-surface-alt, #f8f9fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-muted, #78695E);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+.quote-close-btn:hover {
+  background: #F4F8F4;
+  color: #1F4F33;
+  transform: rotate(90deg);
+}
+.quote-drawer-body {
+  padding: 1.5rem 2.5rem 3rem;
+  flex: 1;
+}
+.quote-form-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.q-input-wrap {
+  flex: 1;
+}
+.q-input-wrap label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--c-muted, #78695E);
+  margin-bottom: 0.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.q-input-wrap input,
+.q-input-wrap select,
+.q-input-wrap textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: var(--c-ink, #181412);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.q-input-wrap input:focus,
+.q-input-wrap select:focus,
+.q-input-wrap textarea:focus {
+  background: #ffffff;
+  border-color: #1F4F33;
+  box-shadow: 0 0 0 4px rgba(31, 79, 51, 0.15);
+  outline: none;
+}
+.quote-btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #1F4F33, #153926);
+  color: #ffffff;
+  padding: 1.1rem;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 20px rgba(31, 79, 51, 0.28);
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+.quote-btn-submit:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #153926, #0E261C);
+  box-shadow: 0 8px 25px rgba(31, 79, 51, 0.38);
+}
+
+
+
+
+
+
+/* ─── WORLD-CLASS ENTERPRISE MEGA MENU & UNIFORM RESPONSIVE NAVIGATION ─── */
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-transform: none !important;
+}
+.dropdown-trigger:hover, .nav-dropdown.is-active .dropdown-trigger {
+  color: var(--c-primary, #9A1D1E);
+  background: rgba(154, 29, 30, 0.05);
+}
+.dropdown-trigger svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-dropdown:hover .dropdown-trigger svg,
+.nav-dropdown.is-active .dropdown-trigger svg {
+  transform: rotate(180deg);
+}
+
+/* ── Desktop Viewport Layout (min-width: 961px) ── */
+@media (min-width: 961px) {
+  .site-nav .nav-inner { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
+  .nav-dropdown-services { position: relative !important; }
+  .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
+
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 25px;
+  }
+
+  .mega-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(225, 219, 214, 0.85);
+    border-radius: 20px;
+    padding: 0;
+    display: flex;
+    width: min(1200px, calc(100vw - 32px)) !important;
+    min-width: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+    z-index: 1000;
+    box-shadow: 0 35px 80px -15px rgba(24, 20, 18, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset, 0 10px 30px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    max-height: calc(100vh - 90px);
+  }
+
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown.is-active .mega-menu,
+  .site-nav #products-dropdown:hover #products-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+  }
+
+  .mega-menu-inner {
+    display: flex;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .mega-content-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.05fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    flex: 1;
+    background: #ffffff;
+  }
+
+  .mega-spotlight {
+    width: 300px;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 60%, #FEEDEA 100%);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid rgba(225, 219, 214, 0.85);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-dropdown-services .mega-menu-services {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    width: 520px !important;
+    min-width: 0 !important;
+    max-width: 90vw;
+  }
+
+  .nav-dropdown-services:hover .mega-menu-services,
+  .nav-dropdown-services.is-active .mega-menu-services {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mega-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #ffffff;
+    width: 100%;
+  }
+}
+
+/* ── Core Mega Menu Components (Shared) ── */
+.mega-col-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mega-col-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid rgba(154, 29, 30, 0.12);
+}
+
+.mega-col-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(154, 29, 30, 0.1), rgba(217, 119, 6, 0.1));
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-col-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin: 0;
+  line-height: 1.15;
+  text-transform: none !important;
+}
+
+.mega-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mega-group-label {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--c-muted, #78695E);
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.25rem;
+  padding-left: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mega-group-label::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-primary, #9A1D1E);
+}
+
+.mega-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.42rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  background: transparent;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover {
+  background: #FAF6F3;
+  transform: translateX(3px);
+}
+
+.mega-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mega-item-name {
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  color: var(--c-ink, #181412) !important;
+  line-height: 1.25;
+  transition: color 0.18s ease;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover .mega-item-name {
+  color: var(--c-primary, #9A1D1E) !important;
+}
+
+.mega-item-desc {
+  font-size: 0.71rem !important;
+  font-weight: 500 !important;
+  color: var(--c-muted, #78695E) !important;
+  line-height: 1.3;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.18s ease;
+  color: var(--c-primary, #9A1D1E);
+  font-size: 0.85rem;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.mega-item:hover .mega-item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mega-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(154, 29, 30, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mega-spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 30, 0.15);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary, #9A1D1E);
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  margin-bottom: 0.75rem;
+}
+
+.mega-spotlight-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-desc {
+  font-size: 0.8rem;
+  color: var(--c-body, #4A3E39);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718));
+  color: #ffffff !important;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(154, 29, 30, 0.22);
+  transition: all 0.2s ease;
+  margin-bottom: 1.1rem;
+}
+
+.mega-spotlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(154, 29, 30, 0.32);
+  color: #ffffff !important;
+}
+
+.mega-spotlight-tools {
+  border-top: 1px solid rgba(154, 29, 30, 0.12);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mega-tool-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--c-body, #4A3E39) !important;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+  text-transform: none !important;
+}
+
+.mega-tool-link:hover {
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.mega-service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem;
+  border-radius: 12px;
+  background: #FAF7F5;
+  border: 1px solid rgba(225, 219, 214, 0.65);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover {
+  background: #FFF5F2;
+  border-color: rgba(154, 29, 30, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154, 29, 30, 0.08);
+}
+
+.mega-service-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.mega-service-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover .mega-service-title {
+  color: var(--c-primary, #9A1D1E);
+}
+
+.mega-service-desc {
+  font-size: 0.74rem;
+  color: var(--c-muted, #78695E);
+  line-height: 1.4;
+  margin: 0;
+  text-transform: none !important;
+}
+
+/* ── Mobile & Tablet Uniform Drawer Layout (max-width: 960px) ── */
+@media (max-width: 960px) {
+  .site-nav .nav-inner {
+    position: relative !important;
+  }
+  .nav-links {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #FFFFFF !important;
+    border-bottom: 1px solid var(--c-border, #EBE5E0) !important;
+    box-shadow: 0 25px 50px -12px rgba(24, 20, 18, 0.18) !important;
+    padding: 0.75rem 1.25rem 1.75rem 1.25rem !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    z-index: 999 !important;
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .nav-links.is-active {
+    display: flex !important;
+  }
+  
+  /* Brand visibility toggles */
+  body:not(.ab) .ab-only,
+  body.ab .pr-only,
+  .nav-links > span[style*="display:none"],
+  .nav-links > span[style*="display: none"] {
+    display: none !important;
+  }
+
+  /* Uniform top-level mobile nav item rows */
+  .nav-links > span:not(.ab-only),
+  body.ab .nav-links > span.ab-only,
+  .nav-links > .nav-dropdown,
+  .nav-links > a:not(.nav-cta) {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(225, 219, 214, 0.55) !important;
+    margin: 0 !important;
+  }
+  
+  body.ab .nav-links > .nav-dropdown.pr-only {
+    display: none !important;
+  }
+  
+  .nav-links > span > a,
+  .nav-links > a:not(.nav-cta),
+  .nav-links .dropdown-trigger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0.95rem 0.65rem !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    font-family: inherit !important;
+    color: var(--c-ink, #181412) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: all 0.18s ease !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > span > a::after,
+  .nav-links > a:not(.nav-cta)::after,
+  .nav-links .dropdown-trigger::after {
+    display: none !important;
+  }
+  
+  .nav-links > span > a:hover,
+  .nav-links > span > a:active,
+  .nav-links > a:not(.nav-cta):hover,
+  .nav-links > a:not(.nav-cta):active,
+  .nav-links .dropdown-trigger:hover,
+  .nav-links .dropdown-trigger:active,
+  .nav-dropdown.is-active > .dropdown-trigger {
+    background: #FAF6F3 !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .dropdown-trigger svg {
+    transition: transform 0.25s ease !important;
+    color: var(--c-muted, #78695E) !important;
+  }
+  
+  .nav-dropdown.is-active > .dropdown-trigger svg {
+    transform: rotate(180deg) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .nav-dropdown::after {
+    display: none !important;
+  }
+  
+  .mega-menu, 
+  .site-nav #products-mega-menu, 
+  #products-mega-menu, 
+  #services-mega-menu, 
+  .mega-menu-services {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 12px !important;
+    background: #FAF7F5 !important;
+    overflow: hidden !important;
+    transition: max-height 0.35s ease, opacity 0.25s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-dropdown.is-active .mega-menu,
+  .nav-dropdown.is-active #products-mega-menu,
+  .nav-dropdown.is-active #services-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    max-height: 4500px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    padding: 0.85rem !important;
+    margin: 0.3rem 0 0.85rem 0 !important;
+    border: 1px solid rgba(225, 219, 214, 0.7) !important;
+    transform: none !important;
+  }
+  
+  .mega-menu-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  
+  .mega-content-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding-bottom: 0.4rem !important;
+    border-bottom: 1.5px solid rgba(154, 29, 30, 0.12) !important;
+  }
+  
+  .mega-col-title {
+    font-size: 1.1rem !important;
+    color: var(--c-ink, #181412) !important;
+  }
+  
+  .mega-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mega-group-label {
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 0.2rem !important;
+    padding-left: 0.25rem !important;
+  }
+  
+  .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.55rem 0.65rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 8px !important;
+    margin-bottom: 0.25rem !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  
+  .mega-item:hover, .mega-item:active {
+    background: #FFF5F2 !important;
+    border-color: rgba(154, 29, 30, 0.25) !important;
+    transform: none !important;
+  }
+  
+  .mega-item-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+  
+  .mega-item-name {
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    line-height: 1.2 !important;
+  }
+  
+  .mega-item-desc {
+    font-size: 0.68rem !important;
+    color: var(--c-muted, #78695E) !important;
+    line-height: 1.25 !important;
+  }
+  
+  .mega-item-arrow {
+    opacity: 0.7 !important;
+    transform: none !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    font-size: 0.85rem !important;
+    margin-left: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .mega-spotlight {
+    width: 100% !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(154, 29, 30, 0.15) !important;
+    margin-top: 0.5rem !important;
+    padding: 1rem 0.75rem !important;
+    border-radius: 10px !important;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 100%) !important;
+    box-sizing: border-box !important;
+  }
+  
+  .mega-services-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-service-card {
+    padding: 0.85rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > .nav-cta, .nav-links > a.nav-cta, .nav-links .nav-cta {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0.95rem 1rem !important;
+    margin-top: 1rem !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    font-size: 0.92rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718)) !important;
+    box-shadow: 0 6px 18px rgba(154, 29, 30, 0.28) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+</style>
 
   <!-- SVG Logos -->
   <svg style="display:none">
@@ -477,6 +1355,8 @@
       <text x="235" y="220" font-family="'Mulish',sans-serif" font-size="12" font-weight="700" fill="#C18A5B" text-anchor="middle" letter-spacing="4">LIVING SOLUTIONS</text>
     </symbol>
   </svg>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link rel="stylesheet" href="../assets/css/site-core.css">
 </head>
 <body class="ab">
 
@@ -501,12 +1381,18 @@
         </div>
       </a>
 
-      <nav class="nav-links" id="main-nav-links" aria-label="Primary navigation">
-        <a href="../airbliss.html#catalog">Products</a>
-        <a href="../airbliss.html#science">The Science</a>
-        <a href="../airbliss.html#sectors">Industries</a>
-        <a href="../about.html">About Praras</a>
-      </nav>
+              <nav class="nav-links" id="main-nav-links" aria-label="Primary navigation">
+      <span><a href="../airbliss.html#catalog">Products</a></span>
+      <span><a href="../airbliss.html#science">The Science</a></span>
+      <span><a href="../airbliss.html#sectors">Industries</a></span>
+      <span><a href="../about.html">About Praras</a></span>
+      <button type="button" class="nav-cta btn-quote" data-product="Airbliss Institutional Inquiry">Request Trial</button>
+    </nav>
+    <button class="hamburger-menu" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     </div>
   </header>
 
@@ -800,156 +1686,79 @@
   </footer>
 
   <!-- ── 7. QUOTE DRAWER MODAL ── -->
-  <div id="quote-overlay" class="quote-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;backdrop-filter:blur(4px);"></div>
-  <div id="quote-drawer" class="quote-drawer" style="position:fixed;top:0;right:-480px;width:440px;max-width:100%;height:100%;background:#fff;z-index:1000;box-shadow:-10px 0 40px rgba(0,0,0,0.2);transition:right 0.3s ease;display:flex;flex-direction:column;">
-    <div style="padding:1.5rem 2rem;background:#1F4F33;color:#fff;display:flex;align-items:center;justify-content:space-between;">
-      <div>
-        <h3 style="margin:0;font-size:1.15rem;font-weight:700;">Request Product Sample / Quote</h3>
-        <p style="margin:0.25rem 0 0;font-size:0.78rem;opacity:0.8;">Technical evaluation kit &amp; institutional pricing</p>
-      </div>
-      <button type="button" id="quote-close" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;line-height:1;">&times;</button>
+  <!-- QUOTE DRAWER -->
+<div class="quote-overlay" id="quote-overlay"></div>
+<aside class="quote-drawer" id="quote-drawer" aria-hidden="true" aria-labelledby="quote-drawer-title">
+  <div class="quote-drawer-header">
+    <div>
+      <div class="quote-drawer-title" id="quote-drawer-title">Get a Quote</div>
+      <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">AIRBLISS™ UDC (Urinal Drain Cleaner) Enquiry</div>
     </div>
-    <form id="quote-form" style="padding:2rem;display:flex;flex-direction:column;gap:1rem;overflow-y:auto;flex:1;">
-      <div>
-        <label style="font-size:0.78rem;font-weight:700;color:#1F4F33;display:block;margin-bottom:0.35rem;">Product of Interest</label>
-        <input type="text" id="quote-product-name" name="product" value="AIRBLISS™ UDC (Urinal Drain Cleaner)" readonly style="width:100%;padding:0.75rem;border:1px solid #DCE5D8;border-radius:8px;background:#F4F8F4;font-weight:700;color:#1F4F33;box-sizing:border-box;">
+    <button type="button" class="quote-close-btn" id="quote-close" aria-label="Close quote drawer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  <div class="quote-drawer-body">
+    <form id="quote-form">
+      <input type="hidden" id="q-product" name="product" value="AIRBLISS™ UDC (Urinal Drain Cleaner)">
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-name">Full Name *</label>
+          <input type="text" id="q-name" name="name" required placeholder="Your full name" autocomplete="name">
+        </div>
+        <div class="q-input-wrap">
+          <label for="q-company">Company</label>
+          <input type="text" id="q-company" name="company" placeholder="Bakery / company name" autocomplete="organization">
+        </div>
       </div>
-      <div>
-        <label style="font-size:0.78rem;font-weight:700;color:#333;display:block;margin-bottom:0.35rem;">Full Name *</label>
-        <input type="text" name="name" required placeholder="Dr. / Mr. / Ms. John Doe" style="width:100%;padding:0.75rem;border:1px solid #DCE5D8;border-radius:8px;box-sizing:border-box;">
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-email">Email *</label>
+          <input type="email" id="q-email" name="email" required placeholder="you@company.com" autocomplete="email">
+        </div>
+        <div class="q-input-wrap">
+          <label for="q-phone">Phone</label>
+          <input type="tel" id="q-phone" name="phone" placeholder="+91-XXXXX XXXXX" autocomplete="tel">
+        </div>
       </div>
-      <div>
-        <label style="font-size:0.78rem;font-weight:700;color:#333;display:block;margin-bottom:0.35rem;">Work Email *</label>
-        <input type="email" name="email" required placeholder="name@company.com" style="width:100%;padding:0.75rem;border:1px solid #DCE5D8;border-radius:8px;box-sizing:border-box;">
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-type">Enquiry Type</label>
+          <select id="q-type" name="type">
+            <option>Request samples</option>
+            <option>Request pricing</option>
+            <option>Technical consultation</option>
+            <option>Bulk order enquiry</option>
+            <option>Request documentation</option>
+          </select>
+        </div>
       </div>
-      <div>
-        <label style="font-size:0.78rem;font-weight:700;color:#333;display:block;margin-bottom:0.35rem;">Phone Number *</label>
-        <input type="tel" name="phone" required placeholder="+91 98765 43210" style="width:100%;padding:0.75rem;border:1px solid #DCE5D8;border-radius:8px;box-sizing:border-box;">
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-volume">Monthly Production Volume</label>
+          <select id="q-volume" name="volume">
+            <option>Select range</option>
+            <option>Under 1 tonne/month</option>
+            <option>1-10 tonnes/month</option>
+            <option>10-50 tonnes/month</option>
+            <option>50-200 tonnes/month</option>
+            <option>200+ tonnes/month</option>
+          </select>
+        </div>
       </div>
-      <div>
-        <label style="font-size:0.78rem;font-weight:700;color:#333;display:block;margin-bottom:0.35rem;">Company / Facility Name</label>
-        <input type="text" name="company" placeholder="E.g. Grand Horizon Hotel / Tech Park" style="width:100%;padding:0.75rem;border:1px solid #DCE5D8;border-radius:8px;box-sizing:border-box;">
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-message">Message</label>
+          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, flour types, specific challenges, or what documentation you need..."></textarea>
+        </div>
       </div>
-      <div>
-        <label style="font-size:0.78rem;font-weight:700;color:#333;display:block;margin-bottom:0.35rem;">Specific Application / Inflow Details</label>
-        <textarea name="message" rows="3" placeholder="Specify facility volume, issue, or trial requirements..." style="width:100%;padding:0.75rem;border:1px solid #DCE5D8;border-radius:8px;box-sizing:border-box;resize:vertical;"></textarea>
-      </div>
-      <button type="submit" id="quote-submit-btn" style="margin-top:0.5rem;padding:0.9rem;background:#1F4F33;color:#fff;border:none;border-radius:8px;font-weight:800;cursor:pointer;font-size:0.95rem;transition:all 0.2s;">
-        Submit Sample Request →
-      </button>
-      <div id="quote-status" style="display:none;font-size:0.85rem;padding:0.75rem;border-radius:6px;text-align:center;"></div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
+      <button type="submit" class="quote-btn-submit">Send Enquiry</button>
     </form>
   </div>
+</aside>
 
-  <script>
-    function switchWcTab(tabId, btn) {
-      document.querySelectorAll('.wc-tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.wc-tab-btn').forEach(b => b.classList.remove('active'));
-      const target = document.getElementById(tabId);
-      if (target) target.classList.add('active');
-      if (btn) btn.classList.add('active');
-    }
+<script defer src="../assets/js/site-controller.js"></script>
 
-    // Quote Drawer Interactions
-    const quoteOverlay = document.getElementById('quote-overlay');
-    const quoteDrawer = document.getElementById('quote-drawer');
-    const quoteClose = document.getElementById('quote-close');
-    const quoteForm = document.getElementById('quote-form');
-    const quoteProdInput = document.getElementById('quote-product-name');
-    const quoteStatus = document.getElementById('quote-status');
-
-    function openQuote(prodName) {
-      if (prodName && quoteProdInput) quoteProdInput.value = prodName;
-      quoteOverlay.style.display = 'block';
-      setTimeout(() => { quoteDrawer.style.right = '0'; }, 10);
-    }
-    function closeQuote() {
-      quoteDrawer.style.right = '-480px';
-      setTimeout(() => { quoteOverlay.style.display = 'none'; }, 300);
-    }
-
-    document.querySelectorAll('.btn-quote').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openQuote(btn.getAttribute('data-product') || 'AIRBLISS™ UDC (Urinal Drain Cleaner)');
-      });
-    });
-
-    if (quoteClose) quoteClose.addEventListener('click', closeQuote);
-    if (quoteOverlay) quoteOverlay.addEventListener('click', closeQuote);
-
-    if (quoteForm) {
-      quoteForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const submitBtn = document.getElementById('quote-submit-btn');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting Request...';
-
-        const formData = new FormData(quoteForm);
-        try {
-          const res = await fetch('mailer.php', {
-            method: 'POST',
-            body: formData
-          });
-          const text = await res.text();
-          quoteStatus.style.display = 'block';
-          quoteStatus.style.background = '#E8F5E9';
-          quoteStatus.style.color = '#2E7D32';
-          quoteStatus.textContent = 'Enquiry submitted successfully! Our technical team will reach out shortly.';
-          submitBtn.textContent = 'Submitted ✓';
-          setTimeout(closeQuote, 2500);
-        } catch (err) {
-          quoteStatus.style.display = 'block';
-          quoteStatus.style.background = '#FFEBEE';
-          quoteStatus.style.color = '#C62828';
-          quoteStatus.textContent = 'There was an issue sending your request. Please call +91-80-48904262.';
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Retry Submission';
-        }
-      });
-    }
-  </script>
-
-  <!-- Structured Data JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Product",
-        "name": "AIRBLISS™ UDC (Urinal Drain Cleaner)",
-        "image": "https://www.prarasbiosciences.com/assets/images/airbliss_udc.svg",
-        "description": "Specialized Biological Liquid Descaler for Removing Hardened Uric Salt Encrustations in Urinal Lines",
-        "category": "Washroom & Urinal Care",
-        "brand": {
-          "@type": "Brand",
-          "name": "Airbliss - A Praras Biosciences Brand"
-        },
-        "manufacturer": {
-          "@type": "Organization",
-          "name": "Praras Biosciences Pvt. Ltd.",
-          "url": "https://www.prarasbiosciences.com",
-          "logo": "https://www.prarasbiosciences.com/assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "INR",
-          "availability": "https://schema.org/InStock",
-          "description": "Available for commercial institutional supply, facility trial kits, and B2B orders.",
-          "url": "https://www.prarasbiosciences.com/products/airbliss-udc.html"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.prarasbiosciences.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Airbliss", "item": "https://www.prarasbiosciences.com/airbliss.html" },
-          { "@type": "ListItem", "position": 3, "name": "AIRBLISS™ UDC (Urinal Drain Cleaner)", "item": "https://www.prarasbiosciences.com/products/airbliss-udc.html" }
-        ]
-      }
-    ]
-  }
-  </script>
 </body>
 </html>
