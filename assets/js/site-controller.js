@@ -18,11 +18,40 @@ function brand(b, scroll) {
     abBtn.classList.toggle('on', isAb);
   }
 
+  // Dual Page Switching on index.html
+  var pgPr = document.getElementById('pg-pr');
+  var pgAb = document.getElementById('pg-ab');
+  if (pgPr && pgAb) {
+    pgPr.classList.toggle('on', !isAb);
+    pgAb.classList.toggle('on', isAb);
+    pgPr.style.display = isAb ? 'none' : 'block';
+    pgAb.style.display = isAb ? 'block' : 'none';
+  }
+
+  // Toggle brand-specific elements
+  document.querySelectorAll('.pr-only').forEach(function(el) {
+    el.style.display = isAb ? 'none' : '';
+  });
+  document.querySelectorAll('.ab-only').forEach(function(el) {
+    el.style.display = isAb ? '' : 'none';
+  });
+  document.querySelectorAll('.pr-f').forEach(function(el) {
+    el.style.display = isAb ? 'none' : '';
+  });
+  document.querySelectorAll('.ab-f').forEach(function(el) {
+    el.style.display = isAb ? '' : 'none';
+  });
+
   var footPrLogo = document.getElementById('foot-logo-pr');
   var footAbLogo = document.getElementById('foot-logo-ab');
   if (footPrLogo && footAbLogo) {
     footPrLogo.style.display = isAb ? 'none' : 'block';
     footAbLogo.style.display = isAb ? 'block' : 'none';
+  }
+
+  var footBrandName = document.getElementById('foot-brand-name');
+  if (footBrandName) {
+    footBrandName.textContent = isAb ? 'Airbliss' : 'Praras Biosciences';
   }
 
   var footBrandP = document.getElementById('foot-brand-p');
@@ -35,6 +64,11 @@ function brand(b, scroll) {
   var footSwitchLbl = document.getElementById('foot-switch-label');
   if (footSwitchLbl) {
     footSwitchLbl.textContent = isAb ? 'Back to Praras Biosciences' : 'Visit Airbliss';
+  }
+
+  var footAbBtn = document.getElementById('foot-ab-btn');
+  if (footAbBtn) {
+    footAbBtn.textContent = isAb ? 'Praras Biosciences ↗' : 'Airbliss ↗';
   }
 
   var footCopy = document.getElementById('foot-copy');

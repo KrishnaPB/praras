@@ -1301,3 +1301,24 @@ body.ab .quote-btn-submit:hover {
   font-weight: 700;
   font-size: 0.68rem;
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   GLOBAL BRAND DUAL-PAGE TOGGLE (INDEX.HTML & SITEWIDE)
+   ══════════════════════════════════════════════════════════════════ */
+.page { display: none; }
+.page.on { display: block; }
+
+body:not(.ab) #pg-pr { display: block !important; }
+body:not(.ab) #pg-ab { display: none !important; }
+body:not(.ab) .pr-only { display: revert; }
+body:not(.ab) .ab-only { display: none !important; }
+body:not(.ab) .pr-f { display: revert; }
+body:not(.ab) .ab-f { display: none !important; }
+
+body.ab #pg-pr { display: none !important; }
+body.ab #pg-ab { display: block !important; }
+body.ab .pr-only { display: none !important; }
+body.ab .ab-only { display: revert; }
+body.ab .pr-f { display: none !important; }
+body.ab .ab-f { display: revert; }
+
