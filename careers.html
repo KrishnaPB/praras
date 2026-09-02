@@ -2505,6 +2505,18 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     <span class="sw-dot"></span>Airbliss <span class="sw-sub">Probiotic Solutions</span>
   </button>
 </div>
+<!-- START: SITE-HEADER -->
+<!-- BRAND SWITCHER STRIP -->
+<div class="switcher">
+  <button type="button" class="sw-btn pr on" id="sw-btn-pr" onclick="brand('pr')">
+    <span class="sw-dot"></span>Praras Biosciences <span class="sw-sub">Food &amp; Biotech</span>
+  </button>
+  <button type="button" class="sw-btn ab" id="sw-btn-ab" onclick="brand('ab')">
+    <span class="sw-dot"></span>Airbliss <span class="sw-sub">Probiotic Solutions</span>
+  </button>
+</div>
+
+<!-- ════ SHARED NAV ════ -->
 <header class="site-nav" role="banner">
   <div class="nav-inner">
     <!-- Praras logo -->
@@ -2786,10 +2798,13 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       </div>
 
       <span class="pr-only"><a href="industry.html">Industries</a></span>
+
+      <!-- Airbliss specific links when brand is switched -->
       <span class="ab-only"><a href="airbliss.html#catalog">Products</a></span>
       <span class="ab-only"><a href="airbliss.html#science">The Science</a></span>
       <span class="ab-only"><a href="airbliss.html#sectors">Industries</a></span>
       <span class="ab-only"><a href="about.html">About Praras</a></span>
+
       <div class="nav-dropdown nav-dropdown-services pr-only">
         <button class="dropdown-trigger" id="services-dropdown-btn" aria-expanded="false" aria-controls="services-mega-menu" aria-haspopup="true">
           Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -2820,7 +2835,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <span class="pr-only"><a href="blog.html">Blog</a></span>
       <span class="pr-only"><a href="careers.html">Careers</a></span>
       <a href="contact.html" class="nav-cta pr-only">Contact Us</a>
-      </nav>
+      <button type="button" class="nav-cta ab-only btn-quote" data-product="Airbliss Institutional Inquiry">Request Trial</button>
+    </nav>
 
     <!-- Hamburger menu toggle -->
     <button class="hamburger-menu" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
@@ -2830,6 +2846,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </button>
   </div>
 </header>
+<!-- END: SITE-HEADER -->
+
 
 
 
@@ -2887,6 +2905,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   </section>
 </main>
 
+<!-- START: SITE-FOOTER -->
 <!-- ════ SHARED FOOTER ════ -->
 <footer class="site-footer">
   <div class="foot-grid">
@@ -2897,10 +2916,13 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
           <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
             alt="PrĀRAS Bio-Sciences Pvt. Ltd."
             style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
-          / width="156" height="48">
+            width="156" height="48"
+          />
         </div>
         <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:38px;width:auto"><use href="#ab-logo"/></svg>
+          <div style="background:#fff;border-radius:8px;padding:6px 14px;display:inline-flex;width:fit-content;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:36px;width:auto"><use href="#ab-logo"/></svg>
+          </div>
         </div>
         <div class="foot-brand-name" id="foot-brand-name" style="display:none">Praras Biosciences</div>
         <p class="foot-brand-p" id="foot-brand-p">Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.</p>
@@ -2912,20 +2934,27 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <div class="foot-col">
         <h3 id="foot-col1-h">Products</h3>
         <ul id="foot-col1">
-          <li class="pr-f"><a href="#">Food Additives</a></li>
-          <li class="pr-f"><a href="#">Beverage Solutions</a></li>
-          <li class="pr-f"><a href="#">Contract Mfg</a></li>
-          <li class="ab-f" style="display:none"><a href="#">ProClean Surface</a></li>
-          <li class="ab-f" style="display:none"><a href="#">OdourZero Bio</a></li>
-          <li class="ab-f" style="display:none"><a href="#">BioCompost Activator</a></li>
+          <li class="pr-f"><a href="biscuits-cookies.html">Food Additives</a></li>
+          <li class="pr-f"><a href="breweries.html">Beverage Solutions</a></li>
+          <li class="pr-f"><a href="contract_manufacturing.html">Contract Mfg</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-stp-activ.html">AIRBLISS™ STP ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-u-block-activ.html">AIRBLISS™ U BLOCK ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-drain-cleaner.html">AIRBLISS™ Bio Drain Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-udc.html">AIRBLISS™ UDC Urinal Drain</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-utc.html">AIRBLISS™ UTC Toilet Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-floor-cleaner.html">AIRBLISS™ Probiotic Floor Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-multi-surface.html">AIRBLISS™ Multi Surface Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-air-freshener.html">AIRBLISS™ Air Freshener Liquid</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-fabric-stain-remover.html">AIRBLISS™ Fabric Stain Remover</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-glass-cleaner.html">AIRBLISS™ Glass Cleaner</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h3>Company</h3>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li class="pr-f"><a href="#">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li class="pr-f"><a href="industry.html">Industries</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><button type="button" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')" id="foot-ab-btn">Airbliss ↗</button></li>
@@ -2947,7 +2976,11 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </div>
 </footer>
+<!-- END: SITE-FOOTER -->
 
+
+<!-- ════ INTERACTIVE SEARCH MODAL ════ -->
+<!-- START: SEARCH-MODAL -->
 <!-- ════ INTERACTIVE SEARCH MODAL ════ -->
 <div class="site-search-overlay" id="site-search-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product Search">
   <div class="site-search-modal">
@@ -2971,7 +3004,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <!-- Injected dynamically by JS -->
     </div>
     <div class="search-footer">
-      <span>Search 65+ bio-solutions across Praras &amp; Airbliss</span>
+      <span>Search 70+ bio-solutions across Praras &amp; Airbliss</span>
       <div class="search-shortcuts">
         <span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> to navigate</span>
         <span><kbd>&crarr;</kbd> to select</span>
@@ -2980,15 +3013,21 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </div>
 </div>
+<!-- END: SEARCH-MODAL -->
+
+  </div>
+</div>
 
 <!-- ════ QUOTE DRAWER ════ -->
 <!-- QUOTE DRAWER -->
+<!-- START: QUOTE-DRAWER -->
+<!-- ════ QUOTE DRAWER ════ -->
 <div class="quote-overlay" id="quote-overlay"></div>
 <aside class="quote-drawer" id="quote-drawer" aria-hidden="true" aria-labelledby="quote-drawer-title">
   <div class="quote-drawer-header">
     <div>
       <div class="quote-drawer-title" id="quote-drawer-title">Get a Quote</div>
-      <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">Product Name</div>
+      <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">Product Consultation &amp; Sample Request</div>
     </div>
     <button type="button" class="quote-close-btn" id="quote-close" aria-label="Close quote drawer">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -2996,7 +3035,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   </div>
   <div class="quote-drawer-body">
     <form id="quote-form">
-      <input type="hidden" id="q-product" name="product" value="Careers atPraras BiosciencesAirbliss">
+      <input type="hidden" id="q-product" name="product" value="General Inquiry">
       <div class="quote-form-group">
         <div class="q-input-wrap">
           <label for="q-name">Full Name *</label>
@@ -3045,7 +3084,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <div class="quote-form-group">
         <div class="q-input-wrap">
           <label for="q-message">Message</label>
-          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, flour types, specific challenges, or what documentation you need..."></textarea>
+          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, specific challenges, or required sample documentation..."></textarea>
         </div>
       </div>
       <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
@@ -3053,6 +3092,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </form>
   </div>
 </aside>
+<!-- END: QUOTE-DRAWER -->
 
 <script defer src="assets/js/site-controller.js"></script>
 

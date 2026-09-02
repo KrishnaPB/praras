@@ -1,0 +1,73 @@
+<!-- START: QUOTE-DRAWER -->
+<!-- ════ QUOTE DRAWER ════ -->
+<div class="quote-overlay" id="quote-overlay"></div>
+<aside class="quote-drawer" id="quote-drawer" aria-hidden="true" aria-labelledby="quote-drawer-title">
+  <div class="quote-drawer-header">
+    <div>
+      <div class="quote-drawer-title" id="quote-drawer-title">Get a Quote</div>
+      <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">Product Consultation &amp; Sample Request</div>
+    </div>
+    <button type="button" class="quote-close-btn" id="quote-close" aria-label="Close quote drawer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  <div class="quote-drawer-body">
+    <form id="quote-form">
+      <input type="hidden" id="q-product" name="product" value="General Inquiry">
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-name">Full Name *</label>
+          <input type="text" id="q-name" name="name" required placeholder="Your full name" autocomplete="name">
+        </div>
+        <div class="q-input-wrap">
+          <label for="q-company">Company</label>
+          <input type="text" id="q-company" name="company" placeholder="Bakery / company name" autocomplete="organization">
+        </div>
+      </div>
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-email">Email *</label>
+          <input type="email" id="q-email" name="email" required placeholder="you@company.com" autocomplete="email">
+        </div>
+        <div class="q-input-wrap">
+          <label for="q-phone">Phone</label>
+          <input type="tel" id="q-phone" name="phone" placeholder="+91-XXXXX XXXXX" autocomplete="tel">
+        </div>
+      </div>
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-type">Enquiry Type</label>
+          <select id="q-type" name="type">
+            <option>Request samples</option>
+            <option>Request pricing</option>
+            <option>Technical consultation</option>
+            <option>Bulk order enquiry</option>
+            <option>Request documentation</option>
+          </select>
+        </div>
+      </div>
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-volume">Monthly Production Volume</label>
+          <select id="q-volume" name="volume">
+            <option>Select range</option>
+            <option>Under 1 tonne/month</option>
+            <option>1-10 tonnes/month</option>
+            <option>10-50 tonnes/month</option>
+            <option>50-200 tonnes/month</option>
+            <option>200+ tonnes/month</option>
+          </select>
+        </div>
+      </div>
+      <div class="quote-form-group">
+        <div class="q-input-wrap">
+          <label for="q-message">Message</label>
+          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, specific challenges, or required sample documentation..."></textarea>
+        </div>
+      </div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
+      <button type="submit" class="quote-btn-submit">Send Enquiry</button>
+    </form>
+  </div>
+</aside>
+<!-- END: QUOTE-DRAWER -->

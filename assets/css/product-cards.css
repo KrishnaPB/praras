@@ -1,0 +1,199 @@
+/* ══════════════════════════════════════════════════════════════════
+   SCOPED PRODUCT CARDS & GRID SYSTEMS
+   Dedicated stylesheet for product grids, cards, and specifications
+   ══════════════════════════════════════════════════════════════════ */
+
+/* 2-Column Product Grid */
+.prod-grid-2 {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 850px) {
+  .prod-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* 3-Column Product Grid */
+.prod-grid-3 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.75rem !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 1024px) {
+  .prod-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .prod-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Standard Praras Product Card (V2) */
+.prod-card-v2 {
+  background: #FFFFFF !important;
+  border: 1px solid #E8E2D9 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+}
+
+.prod-card-v2:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(154, 29, 30, 0.35) !important;
+  box-shadow: 0 18px 45px rgba(154, 29, 30, 0.08) !important;
+}
+
+.prod-card-inner {
+  padding: 2rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.prod-card-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.prod-cat-tag {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #9A1D1E !important;
+  background: rgba(154, 29, 30, 0.07) !important;
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 999px !important;
+  display: inline-block !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.prod-title-h3 {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+  font-size: 1.38rem !important;
+  font-weight: 700 !important;
+  color: #181412 !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}
+
+.prod-title-h3 a {
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.prod-title-h3 a:hover {
+  color: #9A1D1E !important;
+}
+
+.prod-img-box {
+  width: 75px !important;
+  height: 75px !important;
+  border-radius: 12px !important;
+  background: #FAF7F4 !important;
+  border: 1px solid #EAE4DC !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+.prod-img-box img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain !important;
+}
+
+.prod-desc-p {
+  font-size: 0.88rem !important;
+  color: #55483F !important;
+  line-height: 1.55 !important;
+  margin: 0 0 1.25rem 0 !important;
+}
+
+.feat-spec-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 1.5rem 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.65rem !important;
+  flex: 1 1 auto !important;
+}
+
+.feat-spec-list li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.55rem !important;
+  font-size: 0.82rem !important;
+  color: #423933 !important;
+  line-height: 1.4 !important;
+}
+
+.feat-spec-list li svg {
+  width: 14px !important;
+  height: 14px !important;
+  color: #9A1D1E !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+}
+
+.prod-card-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  padding-top: 1.25rem !important;
+  border-top: 1px solid #EBE5E0 !important;
+  margin-top: auto !important;
+}
+
+.btn-card-quote {
+  background: #9A1D1E !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  padding: 0.6rem 1.15rem !important;
+  border-radius: 999px !important;
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-card-quote:hover {
+  background: #751516 !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-card-view {
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
+  color: #9A1D1E !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.btn-card-view:hover {
+  text-decoration: underline !important;
+}

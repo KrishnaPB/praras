@@ -1,0 +1,161 @@
+/* ══════════════════════════════════════════════════════════════════
+   SCOPED QUOTE DRAWER & MODAL STYLESHEET
+   Dedicated styling for lead forms and inquiry drawers
+   ══════════════════════════════════════════════════════════════════ */
+
+.quote-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 12, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 2000;
+}
+
+.quote-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quote-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(540px, 92vw);
+  background: #FFFFFF;
+  box-shadow: -15px 0 45px rgba(0, 0, 0, 0.2);
+  z-index: 2001;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.quote-drawer.is-open {
+  transform: translateX(0);
+}
+
+.quote-drawer-header {
+  padding: 1.5rem 2rem;
+  background: #FAF7F4;
+  border-bottom: 1px solid #EBE5DF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quote-drawer-title {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #181412;
+  margin: 0;
+}
+
+.quote-drawer-subtitle {
+  font-size: 0.78rem;
+  color: #7A6D63;
+  margin-top: 2px;
+}
+
+.quote-close-btn {
+  background: transparent;
+  border: 1px solid #DCD5CD;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5A4E45;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quote-close-btn:hover {
+  background: #EFE9E2;
+  color: #181412;
+  border-color: #C0B7AE;
+}
+
+.quote-drawer-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.quote-form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+@media (max-width: 500px) {
+  .quote-form-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quote-form-group:has(textarea),
+.quote-form-group:has(select) {
+  grid-template-columns: 1fr;
+}
+
+.q-input-wrap label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #55483F;
+  margin-bottom: 0.35rem;
+}
+
+.q-input-wrap input,
+.q-input-wrap select,
+.q-input-wrap textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #DCD5CD;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: #181412;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.q-input-wrap input:focus,
+.q-input-wrap select:focus,
+.q-input-wrap textarea:focus {
+  outline: none;
+  border-color: #9A1D1E;
+  box-shadow: 0 0 0 3px rgba(154, 29, 30, 0.12);
+}
+
+.quote-btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #9A1D1E, #6B1415);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quote-btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154, 29, 30, 0.35);
+}

@@ -1,0 +1,72 @@
+<!-- START: SITE-FOOTER -->
+<!-- ════ SHARED FOOTER ════ -->
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div class="foot-top">
+      <div>
+        <!-- Praras footer logo (swapped by JS on brand switch) -->
+        <div id="foot-logo-pr" style="margin-bottom:.875rem">
+          <img src="{{ROOT}}assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
+            alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+            style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
+            width="156" height="48"
+          />
+        </div>
+        <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
+          <div style="background:#fff;border-radius:8px;padding:6px 14px;display:inline-flex;width:fit-content;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:36px;width:auto"><use href="#ab-logo"/></svg>
+          </div>
+        </div>
+        <div class="foot-brand-name" id="foot-brand-name" style="display:none">Praras Biosciences</div>
+        <p class="foot-brand-p" id="foot-brand-p">Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.</p>
+        <button type="button" class="foot-switch-link" id="foot-switch" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')">
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <span id="foot-switch-label">Visit Airbliss</span>
+        </button>
+      </div>
+      <div class="foot-col">
+        <h3 id="foot-col1-h">Products</h3>
+        <ul id="foot-col1">
+          <li class="pr-f"><a href="{{ROOT}}biscuits-cookies.html">Food Additives</a></li>
+          <li class="pr-f"><a href="{{ROOT}}breweries.html">Beverage Solutions</a></li>
+          <li class="pr-f"><a href="{{ROOT}}contract_manufacturing.html">Contract Mfg</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-stp-activ.html">AIRBLISS™ STP ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-u-block-activ.html">AIRBLISS™ U BLOCK ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-drain-cleaner.html">AIRBLISS™ Bio Drain Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-udc.html">AIRBLISS™ UDC Urinal Drain</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-utc.html">AIRBLISS™ UTC Toilet Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-floor-cleaner.html">AIRBLISS™ Probiotic Floor Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-multi-surface.html">AIRBLISS™ Multi Surface Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-air-freshener.html">AIRBLISS™ Air Freshener Liquid</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-fabric-stain-remover.html">AIRBLISS™ Fabric Stain Remover</a></li>
+          <li class="ab-f" style="display:none"><a href="{{ROOT}}products/airbliss-glass-cleaner.html">AIRBLISS™ Glass Cleaner</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="{{ROOT}}about.html">About Us</a></li>
+          <li><a href="{{ROOT}}services.html">Services</a></li>
+          <li class="pr-f"><a href="{{ROOT}}industry.html">Industries</a></li>
+          <li><a href="{{ROOT}}blog.html">Blog</a></li>
+          <li><a href="{{ROOT}}careers.html">Careers</a></li>
+          <li><button type="button" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')" id="foot-ab-btn">Airbliss ↗</button></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+918048904262">+91-80-48904262</a></li>
+          <li><a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a></li>
+          <li><a href="#">Mon–Fri, 9AM–5:30PM</a></li>
+          <li><a href="#">Bengaluru, India</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy" id="foot-copy">© 2026 Praras Biosciences Pvt Ltd. All rights reserved.</p>
+      <span class="foot-tag" id="foot-tag">Biosciences for Better Value</span>
+    </div>
+  </div>
+</footer>
+<!-- END: SITE-FOOTER -->

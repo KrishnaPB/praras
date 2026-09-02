@@ -1708,6 +1708,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 </head>
 <body>
 
+<!-- START: SITE-HEADER -->
 <!-- BRAND SWITCHER STRIP -->
 <div class="switcher">
   <button type="button" class="sw-btn pr on" id="sw-btn-pr" onclick="brand('pr')">
@@ -1718,13 +1719,21 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   </button>
 </div>
 
-<!-- NAVIGATION -->
+<!-- ════ SHARED NAV ════ -->
 <header class="site-nav" role="banner">
   <div class="nav-inner">
+    <!-- Praras logo -->
     <a href="index.html" class="nav-logo" aria-label="Praras Biosciences home">
-      <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp" alt="PrĀRAS Bio-Sciences Pvt. Ltd." class="nav-logo-pr-img" width="156" height="48" style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 14px;">
+      <!-- Praras real logo (hidden when AB brand active) -->
+      <img
+        src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
+        alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+        class="nav-logo-pr-img"
+        width="156" height="48" style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 14px;"
+      />
+      <!-- Airbliss logo (shown via CSS when .ab brand active) -->
       <div class="nav-logo-ab" aria-hidden="true">
-        <svg class="ab-nav-svg" xmlns="http://www.w3.org/2000/svg"><use href="#ab-logo"></use></svg>
+        <svg class="ab-nav-svg" xmlns="http://www.w3.org/2000/svg"><use href="#ab-logo"/></svg>
       </div>
     </a>
     <nav class="nav-links" aria-label="Primary" id="main-nav-links">
@@ -1992,10 +2001,13 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       </div>
 
       <span class="pr-only"><a href="industry.html">Industries</a></span>
+
+      <!-- Airbliss specific links when brand is switched -->
       <span class="ab-only"><a href="airbliss.html#catalog">Products</a></span>
       <span class="ab-only"><a href="airbliss.html#science">The Science</a></span>
       <span class="ab-only"><a href="airbliss.html#sectors">Industries</a></span>
       <span class="ab-only"><a href="about.html">About Praras</a></span>
+
       <div class="nav-dropdown nav-dropdown-services pr-only">
         <button class="dropdown-trigger" id="services-dropdown-btn" aria-expanded="false" aria-controls="services-mega-menu" aria-haspopup="true">
           Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -2026,7 +2038,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <span class="pr-only"><a href="blog.html">Blog</a></span>
       <span class="pr-only"><a href="careers.html">Careers</a></span>
       <a href="contact.html" class="nav-cta pr-only">Contact Us</a>
-      </nav>
+      <button type="button" class="nav-cta ab-only btn-quote" data-product="Airbliss Institutional Inquiry">Request Trial</button>
+    </nav>
 
     <!-- Hamburger menu toggle -->
     <button class="hamburger-menu" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
@@ -2036,6 +2049,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </button>
   </div>
 </header>
+<!-- END: SITE-HEADER -->
+
 
 <main id="main-content">
 
@@ -2246,30 +2261,48 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 </main>
 
 <!-- SHARED FOOTER -->
+<!-- START: SITE-FOOTER -->
+<!-- ════ SHARED FOOTER ════ -->
 <footer class="site-footer">
   <div class="foot-grid">
     <div class="foot-top">
       <div>
+        <!-- Praras footer logo (swapped by JS on brand switch) -->
         <div id="foot-logo-pr" style="margin-bottom:.875rem">
-          <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp" alt="PrĀRAS Bio-Sciences Pvt. Ltd." style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;" width="250" height="77">
+          <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
+            alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+            style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
+            width="156" height="48"
+          />
         </div>
         <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:38px;width:auto"><use href="#ab-logo"></use></svg>
+          <div style="background:#fff;border-radius:8px;padding:6px 14px;display:inline-flex;width:fit-content;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:36px;width:auto"><use href="#ab-logo"/></svg>
+          </div>
         </div>
+        <div class="foot-brand-name" id="foot-brand-name" style="display:none">Praras Biosciences</div>
         <p class="foot-brand-p" id="foot-brand-p">Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.</p>
         <button type="button" class="foot-switch-link" id="foot-switch" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
           <span id="foot-switch-label">Visit Airbliss</span>
         </button>
       </div>
       <div class="foot-col">
-        <h3>Products</h3>
-        <ul>
-          <li><a href="biscuits-cookies.html">Biscuit Improver</a></li>
-          <li><a href="preccel-93.html">Eggless Cake Improver</a></li>
-          <li><a href="bread-buns-pizza-base.html">Flour Improver</a></li>
-          <li><a href="wafers.html">Wafer Improver</a></li>
-          <li><a href="meat.html">Meat Texturizer</a></li>
+        <h3 id="foot-col1-h">Products</h3>
+        <ul id="foot-col1">
+          <li class="pr-f"><a href="biscuits-cookies.html">Food Additives</a></li>
+          <li class="pr-f"><a href="breweries.html">Beverage Solutions</a></li>
+          <li class="pr-f"><a href="contract_manufacturing.html">Contract Mfg</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-stp-activ.html">AIRBLISS™ STP ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-u-block-activ.html">AIRBLISS™ U BLOCK ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-drain-cleaner.html">AIRBLISS™ Bio Drain Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-udc.html">AIRBLISS™ UDC Urinal Drain</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-utc.html">AIRBLISS™ UTC Toilet Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-floor-cleaner.html">AIRBLISS™ Probiotic Floor Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-multi-surface.html">AIRBLISS™ Multi Surface Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-air-freshener.html">AIRBLISS™ Air Freshener Liquid</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-fabric-stain-remover.html">AIRBLISS™ Fabric Stain Remover</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-glass-cleaner.html">AIRBLISS™ Glass Cleaner</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -2277,6 +2310,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
+          <li class="pr-f"><a href="industry.html">Industries</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><button type="button" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')" id="foot-ab-btn">Airbliss ↗</button></li>
@@ -2287,7 +2321,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         <ul>
           <li><a href="tel:+918048904262">+91-80-48904262</a></li>
           <li><a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a></li>
-          <li><a href="contact.html">Bengaluru, India</a></li>
+          <li><a href="#">Mon–Fri, 9AM–5:30PM</a></li>
+          <li><a href="#">Bengaluru, India</a></li>
         </ul>
       </div>
     </div>
@@ -2297,15 +2332,19 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </div>
   </div>
 </footer>
+<!-- END: SITE-FOOTER -->
+
 
 <!-- QUOTE DRAWER -->
 <!-- QUOTE DRAWER -->
+<!-- START: QUOTE-DRAWER -->
+<!-- ════ QUOTE DRAWER ════ -->
 <div class="quote-overlay" id="quote-overlay"></div>
 <aside class="quote-drawer" id="quote-drawer" aria-hidden="true" aria-labelledby="quote-drawer-title">
   <div class="quote-drawer-header">
     <div>
       <div class="quote-drawer-title" id="quote-drawer-title">Get a Quote</div>
-      <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">PRECCEL 93</div>
+      <div class="quote-drawer-subtitle" id="quote-drawer-subtitle">Product Consultation &amp; Sample Request</div>
     </div>
     <button type="button" class="quote-close-btn" id="quote-close" aria-label="Close quote drawer">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -2313,7 +2352,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   </div>
   <div class="quote-drawer-body">
     <form id="quote-form">
-      <input type="hidden" id="q-product" name="product" value="PRECCEL 93">
+      <input type="hidden" id="q-product" name="product" value="General Inquiry">
       <div class="quote-form-group">
         <div class="q-input-wrap">
           <label for="q-name">Full Name *</label>
@@ -2362,7 +2401,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <div class="quote-form-group">
         <div class="q-input-wrap">
           <label for="q-message">Message</label>
-          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, flour types, specific challenges, or what documentation you need..."></textarea>
+          <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your production, specific challenges, or required sample documentation..."></textarea>
         </div>
       </div>
       <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
@@ -2370,39 +2409,9 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </form>
   </div>
 </aside>
+<!-- END: QUOTE-DRAWER -->
 
 <script defer src="assets/js/site-controller.js"></script>
 
-<div class="site-search-overlay" id="site-search-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product Search">
-  <div class="site-search-modal">
-    <div class="search-input-wrap">
-      <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-      <input type="text" class="search-input" id="site-search-input" placeholder="Search formulations, enzymes, baking, brewing, probiotics..." autocomplete="off" spellcheck="false">
-      <button type="button" class="search-clear-btn" id="site-search-clear" style="display:none;" aria-label="Clear query">&times;</button>
-      <kbd class="search-close-badge">ESC</kbd>
-    </div>
-    <div class="search-filter-bar" id="search-filter-bar">
-      <button type="button" class="search-chip is-active" data-filter="all">All Formulations</button>
-      <button type="button" class="search-chip" data-filter="baking">Baking</button>
-      <button type="button" class="search-chip" data-filter="breweries">Breweries</button>
-      <button type="button" class="search-chip" data-filter="distilleries">Distilleries</button>
-      <button type="button" class="search-chip" data-filter="wine">Wine</button>
-      <button type="button" class="search-chip" data-filter="beverages">Beverages</button>
-      <button type="button" class="search-chip" data-filter="microbial">Microbial</button>
-      <button type="button" class="search-chip" data-filter="airbliss">Airbliss</button>
-    </div>
-    <div class="search-results-list" id="search-results-list" role="listbox">
-      <!-- Injected dynamically by JS -->
-    </div>
-    <div class="search-footer">
-      <span>Search 65+ bio-solutions across Praras &amp; Airbliss</span>
-      <div class="search-shortcuts">
-        <span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> to navigate</span>
-        <span><kbd>&crarr;</kbd> to select</span>
-        <span><kbd>ESC</kbd> to close</span>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>
