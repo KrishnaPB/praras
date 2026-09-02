@@ -2190,3 +2190,20 @@ body.ab .ab-f { display: revert; }
   text-decoration: underline;
 }
 
+
+
+/* ════ 2-COLUMN BALANCED PRODUCT GRID ════ */
+.prod-grid-2 {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 850px) {
+  .prod-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
