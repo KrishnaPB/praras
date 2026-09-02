@@ -55,6 +55,24 @@ function brand(b, scroll) {
 }
 window.brand = brand;
 
+// ════ 1b. GLOBAL PRODUCT CARD NAVIGATOR ════
+function navigateProduct(element, event) {
+  if (event) {
+    if (event.target.closest('button, a, input, select, textarea, .btn-quote, .btn-card-quote, .btn-prod-quote')) {
+      return;
+    }
+  }
+  var url = element ? element.getAttribute('data-url') : null;
+  if (!url && element) {
+    var link = element.querySelector('a.btn-prod-learn, a.btn-card-view, a.ab-btn-page, h3 a, .prod-title-h3 a, .ab-card-name a, a[href^="products/"]');
+    if (link) url = link.getAttribute('href');
+  }
+  if (url) {
+    window.location.href = url;
+  }
+}
+window.navigateProduct = navigateProduct;
+
 // ════ 2. INTERACTIVE COMPONENT INITIALIZER ════
 (function initSiteController() {
   let searchCatalog = null;
@@ -440,6 +458,17 @@ window.brand = brand;
           closeSearch();
         }
       }
+    });
+
+    // 5. Universal Product Card Click Delegation
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('button, a, input, select, textarea, .btn-quote, .btn-card-quote, .btn-prod-quote, .quote-drawer')) {
+        return;
+      }
+      const card = e.target.closest('.prod-card, .prod-card-v2, .ab-prod-card, [data-url]');
+      if (!card) return;
+
+      navigateProduct(card, e);
     });
   }
 
