@@ -1723,18 +1723,28 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 <!-- ════ SHARED NAV ════ -->
 <header class="site-nav" role="banner">
   <div class="nav-inner">
-    <!-- Praras logo -->
-    <a href="index.html" class="nav-logo" aria-label="Praras Biosciences home">
-      <!-- Praras real logo (hidden when AB brand active) -->
+        <!-- Brand Logo Anchor -->
+    <a href="index.html" class="nav-logo" aria-label="Praras Biosciences / Airbliss Home">
+      <!-- Praras logo (hidden when body has class .ab) -->
       <img
         src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
         alt="PrĀRAS Bio-Sciences Pvt. Ltd."
         class="nav-logo-pr-img"
         width="156" height="48" style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 14px;"
       />
-      <!-- Airbliss logo (shown via CSS when .ab brand active) -->
+      <!-- Airbliss logo (shown ONLY when body has class .ab) -->
       <div class="nav-logo-ab" aria-hidden="true">
-        <svg class="ab-nav-svg" xmlns="http://www.w3.org/2000/svg"><use href="#ab-logo"/></svg>
+        <svg class="ab-nav-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:40px;width:auto;">
+          <g transform="translate(24 22) scale(0.35)">
+            <circle r="56" fill="none" stroke="#234A32" stroke-width="4" stroke-dasharray="155 30" stroke-linecap="round" transform="rotate(-20)"></circle>
+            <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#234A32"></path>
+            <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#5C7A4A" transform="rotate(120)"></path>
+            <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#9DBF82" transform="rotate(240)"></path>
+            <circle r="7" fill="#FBF8F0"></circle><circle r="3.4" fill="#C18A5B"></circle>
+          </g>
+          <text x="52" y="27" font-family="'Cinzel', 'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="18" fill="#1F4F33" letter-spacing="0.12em">AIRBLISS</text>
+          <text x="53" y="37" font-family="sans-serif" font-weight="700" font-size="6.5" fill="#5C7A4A" letter-spacing="0.18em">LIVING SOLUTIONS</text>
+        </svg>
       </div>
     </a>
     <nav class="nav-links" aria-label="Primary" id="main-nav-links">
@@ -2051,6 +2061,9 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   </div>
 </header>
 <!-- END: SITE-HEADER -->
+
+
+
 
 
 <main id="main-content">
@@ -2900,6 +2913,9 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 <!-- END: SITE-FOOTER -->
 
 
+
+
+
 <!-- QUOTE DRAWER -->
 <!-- QUOTE DRAWER -->
 <!-- START: QUOTE-DRAWER -->
@@ -2975,6 +2991,9 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   </div>
 </aside>
 <!-- END: QUOTE-DRAWER -->
+
+
+
 
 <script defer src="assets/js/site-controller.js"></script>
 

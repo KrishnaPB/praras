@@ -1,3 +1,167 @@
+
+/* ══════════════════════════════════════════════════════════════════
+   GLOBAL DUAL-BRAND TOGGLE & LOGO DISPLAY ENFORCEMENT
+   ══════════════════════════════════════════════════════════════════ */
+body.ab .nav-logo-pr-img,
+body.ab .nav-logo img,
+body.ab .pr-only,
+body.ab .pr-f,
+body.ab #foot-logo-pr {
+  display: none !important;
+}
+
+body.ab .nav-logo-ab,
+body.ab #foot-logo-ab {
+  display: inline-flex !important;
+}
+
+body.ab .ab-only {
+  display: inline-flex !important;
+}
+
+body.ab .ab-f {
+  display: block !important;
+}
+
+body:not(.ab) .nav-logo-ab,
+body:not(.ab) #foot-logo-ab,
+body:not(.ab) .ab-only,
+body:not(.ab) .ab-f {
+  display: none !important;
+}
+
+body:not(.ab) .nav-logo-pr-img,
+body:not(.ab) #foot-logo-pr {
+  display: block !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SHARED GLOBAL FOOTER
+   ══════════════════════════════════════════════════════════════════ */
+.site-footer {
+  background: #0D0B0A !important;
+  padding: 5rem 2rem 2.5rem !important;
+  color: #FFFFFF !important;
+  margin-top: auto !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.foot-grid {
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+}
+
+.foot-top {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr !important;
+  gap: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+@media (max-width: 960px) {
+  .foot-top {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2.5rem !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .foot-top {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+.foot-brand-p {
+  font-size: 0.88rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.25rem 0 !important;
+  max-width: 380px !important;
+}
+
+.foot-switch-link {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+  padding: 0.45rem 1rem !important;
+  border-radius: 999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.foot-switch-link:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.foot-switch-link svg {
+  width: 13px !important;
+  height: 13px !important;
+  stroke: currentColor !important;
+  fill: none !important;
+  stroke-width: 2 !important;
+}
+
+.foot-col h3 {
+  font-family: var(--font-b, 'Mulish', sans-serif) !important;
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--c-accent, #C25E2E) !important;
+  margin-bottom: 1.15rem !important;
+}
+
+.foot-col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.65rem !important;
+}
+
+.foot-col a,
+.foot-col button {
+  font-size: 0.86rem !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition: color 0.15s ease !important;
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+.foot-col a:hover,
+.foot-col button:hover {
+  color: #FFFFFF !important;
+}
+
+.foot-bottom {
+  padding-top: 1.75rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 0.78rem !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+.foot-copy { margin: 0 !important; }
+.foot-tag { font-style: italic !important; color: rgba(255, 255, 255, 0.4) !important; }
+
 /* ══════════════════════════════════════════════════════════════════
    SCOPED SITE NAVIGATION & MEGA MENU STYLESHEET
    Dedicated styling for .site-nav, .switcher, and .mega-menu
