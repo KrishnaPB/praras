@@ -1813,3 +1813,380 @@ body.ab .ab-f { display: revert; }
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
+
+
+/* ══════════════════════════════════════════════════════════════════
+   WORLD-CLASS COMPARISON BENCHMARK ARENA
+   ══════════════════════════════════════════════════════════════════ */
+.ab-compare-section {
+  margin-top: 1.5rem;
+}
+
+.ab-compare-head-block {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.ab-compare-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.35rem 0.95rem;
+  background: rgba(35, 74, 50, 0.08);
+  border: 1px solid rgba(35, 74, 50, 0.18);
+  border-radius: var(--r-pill, 999px);
+  color: #234A32;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.ab-compare-h3 {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+  font-size: clamp(2rem, 3.5vw, 2.6rem) !important;
+  font-weight: 700 !important;
+  color: #1A1512 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.ab-compare-h3 em {
+  font-style: italic !important;
+  color: #234A32 !important;
+  font-weight: 400 !important;
+}
+
+.ab-compare-subhead {
+  font-family: var(--font-b, "Mulish", sans-serif) !important;
+  font-size: 0.95rem !important;
+  color: #6B5E55 !important;
+  line-height: 1.6 !important;
+  margin: 0 auto !important;
+}
+
+/* Comparison Arena Grid */
+.ab-compare-arena {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 960px) {
+  .ab-compare-arena {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .ab-arena-vs {
+    display: none !important;
+  }
+}
+
+.ab-compare-card-v2 {
+  border-radius: 22px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ab-compare-card-v2.chemical {
+  background: linear-gradient(160deg, #FFF8F8 0%, #FFFFFF 100%);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.ab-compare-card-v2.chemical:hover {
+  box-shadow: 0 20px 45px rgba(220, 53, 69, 0.09);
+  transform: translateY(-3px);
+}
+
+.ab-compare-card-v2.probiotic {
+  background: linear-gradient(160deg, #F3FAF5 0%, #FFFFFF 100%);
+  border: 1.5px solid rgba(35, 74, 50, 0.3);
+  box-shadow: 0 16px 45px rgba(35, 74, 50, 0.08);
+}
+
+.ab-compare-card-v2.probiotic:hover {
+  box-shadow: 0 24px 55px rgba(35, 74, 50, 0.14);
+  transform: translateY(-4px);
+}
+
+.ab-card-label-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.28rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.15rem;
+  width: fit-content;
+}
+
+.badge-chem {
+  background: #FEECEB;
+  color: #C0392B;
+  border: 1px solid rgba(192, 57, 43, 0.2);
+}
+
+.badge-pro {
+  background: rgba(35, 74, 50, 0.1);
+  color: #234A32;
+  border: 1px solid rgba(35, 74, 50, 0.25);
+}
+
+.ab-comp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  margin-bottom: 1.35rem;
+}
+
+.ab-comp-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ab-comp-icon-box.chem {
+  background: #FEECEB;
+  color: #C0392B;
+}
+
+.ab-comp-icon-box.chem svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ab-comp-icon-box.pro {
+  background: linear-gradient(135deg, #234A32, #183322);
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(35, 74, 50, 0.25);
+}
+
+.ab-comp-icon-box.pro svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ab-comp-card-title {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+  font-size: 1.38rem !important;
+  font-weight: 700 !important;
+  color: #1A1512 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 0.15rem 0 !important;
+}
+
+.ab-comp-card-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #78695E;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Dimension Bento Rows */
+.ab-comp-dimension-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1 1 auto;
+}
+
+.ab-dim-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 500px) {
+  .ab-dim-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 0.75rem 0.85rem;
+  }
+}
+
+.ab-dim-row.chem {
+  background: rgba(254, 236, 235, 0.45);
+  border: 1px solid rgba(220, 53, 69, 0.12);
+}
+
+.ab-dim-row.chem:hover {
+  background: rgba(254, 236, 235, 0.75);
+}
+
+.ab-dim-row.pro {
+  background: rgba(235, 248, 238, 0.55);
+  border: 1px solid rgba(35, 74, 50, 0.14);
+}
+
+.ab-dim-row.pro:hover {
+  background: rgba(235, 248, 238, 0.9);
+}
+
+.ab-dim-tag {
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #78695E;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.ab-dim-val {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif);
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.val-bad {
+  color: #C0392B;
+}
+
+.val-good {
+  color: #234A32;
+}
+
+.ab-dim-right p {
+  font-size: 0.83rem;
+  line-height: 1.45;
+  color: #423933;
+  margin: 0;
+}
+
+/* Center VS Badge */
+.ab-arena-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ab-vs-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FAF7F2;
+  border: 1.5px solid rgba(35, 74, 50, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #234A32;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Executive Footer */
+.ab-compare-footer {
+  background: #FFFFFF;
+  border: 1px solid rgba(35, 74, 50, 0.18);
+  border-radius: 18px;
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 800px) {
+  .ab-compare-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+}
+
+.ab-footer-highlight {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #234A32;
+  background: rgba(35, 74, 50, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.ab-footer-text {
+  font-size: 0.88rem;
+  color: #55483F;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ab-footer-text strong {
+  color: #1A1512;
+}
+
+.ab-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.btn-ab-cta {
+  background: linear-gradient(135deg, #234A32, #183322);
+  color: #FFFFFF;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--r-pill, 999px);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 18px rgba(35, 74, 50, 0.28);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-ab-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(35, 74, 50, 0.4);
+}
+
+.btn-ab-link {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #234A32;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.btn-ab-link:hover {
+  color: #183322;
+  text-decoration: underline;
+}
+
