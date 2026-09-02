@@ -64,7 +64,7 @@ function navigateProduct(element, event) {
   }
   var url = element ? element.getAttribute('data-url') : null;
   if (!url && element) {
-    var link = element.querySelector('a.btn-prod-learn, a.btn-card-view, a.ab-btn-page, h3 a, .prod-title-h3 a, .ab-card-name a, a[href^="products/"]');
+    var link = element.querySelector('a.btn-prod-learn, a.btn-card-view, a.ab-btn-page, h3 a, .prod-title-h3 a, .ab-card-name a, a[href^="products/"], a');
     if (link) url = link.getAttribute('href');
   }
   if (url) {
@@ -72,6 +72,37 @@ function navigateProduct(element, event) {
   }
 }
 window.navigateProduct = navigateProduct;
+
+// ════ 1c. GLOBAL PIPELINE STAGE SCROLLER ════
+function jumpToStage(stageId) {
+  if (!stageId) return;
+  var cleanId = stageId.replace(/^#/, '');
+  var el = document.getElementById(cleanId);
+  if (el) {
+    var navHeight = 90;
+    var rect = el.getBoundingClientRect();
+    var targetPos = window.pageYOffset + rect.top - navHeight;
+    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+  }
+}
+window.jumpToStage = jumpToStage;
+
+// ════ 1d. GLOBAL WORKBENCH TAB SWITCHER ════
+function switchWcTab(panelId, btn) {
+  var container = btn ? btn.closest('.wc-workbench, .product-workbench, main, body') : document;
+  if (!container) container = document;
+
+  var tabs = container.querySelectorAll('.wc-tab-btn');
+  tabs.forEach(function(t) { t.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+
+  var panels = container.querySelectorAll('.wc-tab-panel');
+  panels.forEach(function(p) { p.classList.remove('active'); });
+
+  var target = document.getElementById(panelId);
+  if (target) target.classList.add('active');
+}
+window.switchWcTab = switchWcTab;
 
 // ════ 2. INTERACTIVE COMPONENT INITIALIZER ════
 (function initSiteController() {
