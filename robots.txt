@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /enquiries/
+Disallow: /backups/
+Disallow: /scratch/
+Disallow: /templates/
+Disallow: /docs/
 
 Sitemap: https://www.prarasbiosciences.com/sitemap.xml
