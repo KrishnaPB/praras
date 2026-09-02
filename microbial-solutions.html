@@ -2370,8 +2370,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 .prod-detail-item {
   display: grid !important;
-  grid-template-columns: 80px 1fr !important;
-  gap: 0.5rem !important;
+  grid-template-columns: 95px 1fr !important;
+  gap: 0.75rem !important;
   align-items: baseline !important;
   font-size: 0.84rem !important;
   line-height: 1.45 !important;
@@ -2444,14 +2444,992 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     grid-template-columns: 1fr !important;
   }
   .prod-detail-item {
-    grid-template-columns: 75px 1fr !important;
-  }
+  display: grid !important;
+  grid-template-columns: 95px 1fr !important;
+  gap: 0.75rem !important;
+  align-items: baseline !important;
+  font-size: 0.84rem !important;
+  line-height: 1.45 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
 }
 </style>
 
 <link rel="stylesheet" href="assets/css/site-search.css">
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <link rel="stylesheet" href="assets/css/site-core.css">
+
+<style id="microbial-wine-design-system">
+/* Hero */
+.hero{background:linear-gradient(135deg,rgba(26,16,16,0.92) 0%,rgba(26,16,16,0.65) 100%),url('assets/images/wine_hero.webp') center/cover no-repeat;padding:6rem 2.5rem 5.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(240,131,50,0.12) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.hero-content{max-width:760px}
+
+.v2-crumbs{display:flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
+.v2-crumbs a{color:rgba(255,255,255,.6)}
+.v2-crumbs a:hover{color:var(--c-accent)}
+.v2-crumbs span{color:rgba(255,255,255,.3)}
+
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);border-radius:var(--r-pill);padding:.35rem 1.1rem;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:1.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--c-accent);box-shadow:0 0 10px var(--c-accent);animation:pulseDot 2s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
+
+.hero-h1{font-family:var(--font-d);font-size:clamp(3.2rem,6vw,4.8rem);font-weight:900;line-height:1.04;color:#fff;letter-spacing:-.02em;margin-bottom:.85rem;text-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.hero-p{font-size:1.15rem;color:rgba(255,255,255,.88);line-height:1.7;max-width:680px;margin-bottom:2.5rem}
+
+.hero-actions{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.btn-hero-p{background:linear-gradient(135deg,var(--c-accent),var(--c-accent-d));color:#fff;padding:1rem 2.2rem;border-radius:var(--r-pill);font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem;box-shadow:0 10px 25px rgba(240,131,50,0.4);border:1px solid rgba(255,255,255,0.2);cursor:pointer}
+.btn-hero-p svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5}
+.btn-hero-p:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(240,131,50,0.5);color:#fff}
+.btn-hero-g{background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);color:#fff;padding:1rem 2rem;border-radius:var(--r-pill);font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem}
+.btn-hero-g:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,0.2);color:#fff}
+
+/* Overview */
+.section-overview{padding:5rem 2.5rem;background:var(--c-page);position:relative}
+.wrap{max-width:1200px;margin:0 auto}
+.ov-card{background:linear-gradient(145deg,#ffffff,#f9fafb);border-radius:24px;padding:clamp(2.5rem,5vw,4.5rem);box-shadow:0 20px 40px rgba(0,0,0,0.04),0 1px 3px rgba(0,0,0,0.05);position:relative;overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
+.ov-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(154,29,30,0.05) 0%,rgba(255,255,255,0) 70%);border-radius:50%;pointer-events:none}
+.ov-grid{display:flex;flex-wrap:wrap;gap:4rem;align-items:center;position:relative;z-index:1}
+.ov-content{flex:1;min-width:300px}
+.ov-badge{display:inline-block;padding:.45rem 1.1rem;background:rgba(154,29,30,0.08);color:var(--c-primary);border-radius:999px;font-weight:800;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.5rem}
+.ov-h2{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;color:var(--c-ink);line-height:1.12;margin-bottom:1.5rem;letter-spacing:-.01em}
+.ov-h2 em{font-style:italic;color:var(--c-primary);font-weight:400}
+.ov-p{color:var(--c-body);line-height:1.75;margin-bottom:1.5rem;font-size:1.05rem}
+.ov-p strong{color:var(--c-ink);font-weight:700}
+.ov-apps{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.ov-app-pill{padding:.4rem 1rem;background:var(--c-primary-bg);color:var(--c-primary);border-radius:var(--r-pill);font-size:.75rem;font-weight:700;letter-spacing:.05em;border:1px solid rgba(154,29,30,0.12)}
+.ov-visual{flex:0 1 420px;min-width:300px;position:relative}
+.ov-img-frame{border-radius:24px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.1);aspect-ratio:4/3;position:relative}
+.ov-img-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.ov-img-frame:hover img{transform:scale(1.04)}
+.ov-img-tag{position:absolute;bottom:1.5rem;left:1.5rem;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:.8rem 1.4rem;border-radius:14px;box-shadow:0 10px 25px rgba(154,29,30,0.3);display:flex;align-items:center;gap:.75rem}
+.ov-tag-num{font-family:var(--font-d);font-size:1.8rem;font-weight:900;line-height:1}
+.ov-tag-text{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2}
+
+/* Stats Bar */
+.section-stats-bar{padding:3.5rem 2.5rem;background:linear-gradient(135deg,var(--c-ink) 0%,#2A1A14 100%)}
+.stats-bar-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+@media(max-width:900px){.stats-bar-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.stats-bar-grid{grid-template-columns:1fr}}
+.stat-item-num{font-family:var(--font-d);font-size:3.2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.4rem}
+.stat-item-num span{color:var(--c-accent)}
+.stat-item-label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+
+/* Benefits Section */
+.section-benefits{padding:5.5rem 2.5rem;background:var(--c-surface-alt);position:relative}
+.sec-hd-center{text-align:center;margin-bottom:3.5rem}
+.eyebrow-center{font-size:.75rem;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:var(--c-primary);margin-bottom:.8rem;display:block}
+.h2-center{font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;color:var(--c-ink);line-height:1.1;letter-spacing:-.02em;margin-bottom:.75rem}
+.h2-center em{font-style:italic;color:var(--c-primary);font-weight:400}
+.sec-sub-center{font-size:1.05rem;color:var(--c-muted);max-width:640px;margin:0 auto}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+@media(max-width:960px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.benefits-grid{grid-template-columns:1fr}}
+.benefit-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:22px;padding:2.2rem;box-shadow:var(--sh-card);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all var(--transition)}
+.benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));opacity:0;transition:opacity var(--transition)}
+.benefit-card:hover{transform:translateY(-6px);box-shadow:var(--sh-hover);border-color:rgba(154,29,30,0.2)}
+.benefit-card:hover::before{opacity:1}
+.benefit-num{font-family:var(--font-d);font-size:2.8rem;font-weight:900;color:transparent;-webkit-text-stroke:1.5px var(--c-border-s);line-height:1;margin-bottom:.75rem;transition:all var(--transition)}
+.benefit-card:hover .benefit-num{-webkit-text-stroke:1.5px var(--c-primary);color:rgba(154,29,30,0.05)}
+.benefit-icon{width:46px;height:46px;border-radius:14px;background:var(--c-primary-bg);color:var(--c-primary);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:inset 0 0 0 1px rgba(154,29,30,0.1)}
+.benefit-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.benefit-title{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--c-ink);margin-bottom:.5rem;line-height:1.3}
+.benefit-text{font-size:.92rem;color:var(--c-muted);line-height:1.6;flex:1}
+
+/* Process Pipeline Stepper */
+.section-pipeline{padding:4rem 2.5rem 3rem;background:var(--c-surface);border-bottom:1px solid var(--c-border)}
+.pipeline-header{text-align:center;max-width:700px;margin:0 auto 2.5rem}
+.pipeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative}
+@media(max-width:960px){.pipeline-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pipeline-grid{grid-template-columns:1fr}}
+.pipeline-step{background:var(--c-surface-alt);border:1px solid var(--c-border);border-radius:18px;padding:1.4rem 1rem;text-align:center;transition:all var(--transition);cursor:pointer;display:flex;flex-direction:column;align-items:center;position:relative}
+.pipeline-step:hover{background:#fff;border-color:var(--c-primary);transform:translateY(-4px);box-shadow:var(--sh-card)}
+.pipeline-step-num{font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--c-primary);background:var(--c-primary-bg);border-radius:var(--r-pill);padding:.18rem .55rem;margin-bottom:.75rem}
+.pipeline-step-icon{width:46px;height:46px;border-radius:13px;background:var(--c-primary-bg);color:var(--c-primary);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;box-shadow:inset 0 0 0 1px rgba(154,29,30,0.1);transition:all var(--transition)}
+.pipeline-step-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:all var(--transition)}
+.pipeline-step:hover .pipeline-step-icon{background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;box-shadow:0 8px 18px rgba(154,29,30,0.25);transform:scale(1.06)}
+.pipeline-step:hover .pipeline-step-icon svg{stroke:#fff}
+.pipeline-step-title{font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--c-ink);line-height:1.25;margin-bottom:.4rem}
+.pipeline-step-desc{font-size:.73rem;color:var(--c-muted);line-height:1.4}
+
+/* Stage Sections & Product Grids */
+.section-stage{padding:3.5rem 2.5rem;border-bottom:1px solid var(--c-border);transition:all var(--transition)}
+.section-stage:nth-child(even){background:var(--c-surface)}
+.section-stage:nth-child(odd){background:var(--c-page)}
+.stage-header{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.stage-header-left{display:flex;align-items:center;gap:1.2rem}
+.stage-num{font-family:var(--font-d);font-size:1rem;font-weight:900;color:var(--c-primary);background:var(--c-primary-bg);border:1px solid rgba(154,29,30,0.15);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stage-title{font-family:var(--font-d);font-size:1.85rem;font-weight:700;color:var(--c-ink);line-height:1.15}
+.stage-title em{font-style:italic;color:var(--c-primary);font-weight:400}
+.stage-desc{font-size:.92rem;color:var(--c-muted);margin-top:.25rem}
+.stage-pill-tag{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .9rem;border-radius:var(--r-pill);background:var(--c-surface-alt);color:var(--c-muted);border:1px solid var(--c-border)}
+
+/* Balanced Grid Structures */
+.products-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.products-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.products-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.products-grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+
+@media(max-width:1100px){.products-grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:850px){.products-grid-3{grid-template-columns:repeat(2,1fr)}.products-grid-2{grid-template-columns:1fr}}
+@media(max-width:600px){.products-grid-4,.products-grid-3,.products-grid-2,.products-grid-auto{grid-template-columns:1fr}}
+
+/* Feedstock / Varietal Matrix Section */
+.section-feedstock-types{padding:4.5rem 2.5rem;background:var(--c-surface);border-bottom:1px solid var(--c-border)}
+.feedstock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:900px){.feedstock-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.feedstock-grid{grid-template-columns:1fr}}
+.feedstock-card{background:var(--c-page);border:1px solid var(--c-border);border-radius:18px;padding:1.6rem;transition:all var(--transition)}
+.feedstock-card:hover{background:#fff;border-color:var(--c-primary);box-shadow:var(--sh-card);transform:translateY(-4px)}
+.fsc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.fsc-title{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--c-ink)}
+.fsc-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c-accent-d);background:var(--c-accent-bg);padding:.2rem .6rem;border-radius:var(--r-pill)}
+.fsc-desc{font-size:.82rem;color:var(--c-muted);line-height:1.5;margin-bottom:1rem}
+.fsc-recommended{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--c-primary);margin-bottom:.4rem}
+.fsc-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.fsc-tag{font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:var(--r-pill);background:#fff;border:1px solid var(--c-border);color:var(--c-body)}
+
+/* CTA Band */
+.cta-band{padding:5rem 2.5rem;background:linear-gradient(135deg,#9A1D1E 0%,#751516 60%,#500E0E 100%);position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.cta-band-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.cta-band-eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:1.2rem;display:block}
+.cta-band-h2{font-family:var(--font-d);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.2rem;text-shadow:0 4px 20px rgba(0,0,0,0.2)}
+.cta-band-p{font-size:1.1rem;color:rgba(255,255,255,.8);max-width:560px;margin:0 auto 2.5rem;line-height:1.65}
+.cta-band-actions{display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap}
+.btn-cta-w{background:#fff;color:var(--c-primary)!important;padding:1rem 2.4rem;border-radius:var(--r-pill);font-size:.85rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem;box-shadow:0 10px 30px rgba(0,0,0,0.2);border:1.5px solid #fff;cursor:pointer;transition:all var(--transition)}
+.btn-cta-w:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.25);color:var(--c-primary-d)!important}
+.btn-cta-o{background:transparent;color:#fff!important;padding:1rem 2.4rem;border-radius:var(--r-pill);font-size:.85rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid rgba(255,255,255,.7);cursor:pointer;transition:all var(--transition)}
+.btn-cta-o:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,0.15);color:#fff!important}
+
+/* Footer */
+.site-footer{background:#0F0B08;color:rgba(255,255,255,.7);padding:5rem 2.5rem 3rem;border-top:1px solid var(--c-border)}
+.foot-grid{max-width:1200px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:4rem;margin-bottom:4rem}
+@media(max-width:900px){.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:550px){.foot-top{grid-template-columns:1fr}}
+.foot-brand-p{font-size:.9rem;line-height:1.65;color:rgba(255,255,255,.6);margin-bottom:1.5rem;max-width:320px}
+.foot-switch-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--c-accent);border:1px solid rgba(240,131,50,.3);padding:.4rem 1rem;border-radius:var(--r-pill);background:rgba(240,131,50,.05)}
+.foot-switch-link:hover{background:rgba(240,131,50,.15);color:#fff}
+.foot-col h4{font-family:var(--font-d);font-size:1.1rem;color:#fff;margin-bottom:1.5rem;font-weight:700}
+.foot-col ul{display:flex;flex-direction:column;gap:.8rem}
+.foot-col a,.foot-col button{font-size:.85rem;color:rgba(255,255,255,.6);transition:color var(--transition);display:block;font-weight:600}
+.foot-col a:hover,.foot-col button:hover{color:#fff;transform:translateX(4px)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.foot-copy{font-size:.8rem;color:rgba(255,255,255,.4)}
+.foot-tag{font-family:var(--font-d);font-style:italic;font-size:.95rem;color:rgba(255,255,255,.65)}
+
+/* Quote Drawer */
+.quote-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:1000;opacity:0;visibility:hidden;transition:all var(--transition)}
+.quote-overlay.is-active{opacity:1;visibility:visible}
+.quote-drawer{position:fixed;top:0;right:0;bottom:0;width:100%;max-width:500px;background:var(--c-surface);z-index:1001;transform:translateX(100%);transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);box-shadow:-30px 0 60px rgba(0,0,0,0.15);display:flex;flex-direction:column;overflow-y:auto}
+.quote-drawer.is-active{transform:translateX(0)}
+.quote-drawer-header{padding:2.5rem 2.5rem 1.5rem;border-bottom:1px solid var(--c-border);display:flex;align-items:center;justify-content:space-between}
+.quote-drawer-title{font-family:var(--font-d);font-size:1.8rem;font-weight:700;color:var(--c-ink)}
+.quote-drawer-subtitle{font-size:.85rem;color:var(--c-primary);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem}
+.quote-close-btn{width:36px;height:36px;border-radius:50%;background:var(--c-surface-alt);color:var(--c-ink);display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
+.quote-close-btn:hover{background:var(--c-primary-bg);color:var(--c-primary);transform:rotate(90deg)}
+.quote-drawer-body{padding:2.5rem;flex:1}
+.quote-form-group{margin-bottom:1.5rem}
+.q-input-wrap{margin-bottom:1.25rem}
+.q-input-wrap label{display:block;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted);margin-bottom:.4rem}
+.q-input-wrap input,.q-input-wrap select,.q-input-wrap textarea{width:100%;padding:.9rem 1.1rem;border:1px solid var(--c-border);border-radius:12px;background:var(--c-surface-alt);color:var(--c-ink);font-size:.95rem;transition:all var(--transition)}
+.q-input-wrap input:focus,.q-input-wrap select:focus,.q-input-wrap textarea:focus{border-color:var(--c-primary);background:#fff;outline:none;box-shadow:0 0 0 4px rgba(154,29,30,0.1)}
+.quote-btn-submit{width:100%;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));color:#fff;padding:1.1rem;border-radius:var(--r-pill);font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;box-shadow:var(--sh-btn);border:none;cursor:pointer;transition:all var(--transition)}
+.quote-btn-submit:hover{transform:translateY(-2px);box-shadow:var(--sh-btn-hover)}
+
+button.dropdown-trigger,.dropdown-trigger{background:transparent!important;border:none!important;outline:none!important;padding:0!important;margin:0!important;font-family:inherit!important;cursor:pointer!important;box-shadow:none!important;-webkit-appearance:none!important;appearance:none!important}
+
+
+
+
+
+/* ─── WORLD-CLASS ENTERPRISE MEGA MENU & UNIFORM RESPONSIVE NAVIGATION ─── */
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size:  0.85rem !important;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-transform:  uppercase !important;
+}
+.dropdown-trigger:hover, .nav-dropdown.is-active .dropdown-trigger {
+  color: var(--c-primary, #9A1D1E);
+  background: rgba(154, 29, 30, 0.05);
+}
+.dropdown-trigger svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-dropdown:hover .dropdown-trigger svg,
+.nav-dropdown.is-active .dropdown-trigger svg {
+  transform: rotate(180deg);
+}
+
+/* ── Desktop Viewport Layout (min-width: 961px) ── */
+@media (min-width: 961px) {
+  .site-nav .nav-inner { position: relative !important; }
+  .site-nav #products-dropdown { position: relative !important; }
+  .nav-dropdown-services { position: relative !important; }
+  .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
+
+  .nav-dropdown::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
+}
+
+  .mega-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(225, 219, 214, 0.85);
+    border-radius: 20px;
+    padding: 0;
+    display: flex;
+    width: min(1200px, calc(100vw - 32px)) !important;
+    min-width: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+    z-index: 1000;
+    box-shadow: 0 35px 80px -15px rgba(24, 20, 18, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset, 0 10px 30px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    max-height: calc(100vh - 90px);
+  }
+
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown.is-active .mega-menu,
+  .site-nav #products-dropdown:hover #products-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+  }
+
+  .mega-menu-inner {
+    display: flex;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .mega-content-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.05fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    flex: 1;
+    background: #ffffff;
+  }
+
+  .mega-spotlight {
+    width: 300px;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 60%, #FEEDEA 100%);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid rgba(225, 219, 214, 0.85);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-dropdown-services .mega-menu-services {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) scale(0.99) !important;
+    width: 520px !important;
+    min-width: 0 !important;
+    max-width: 90vw;
+  }
+
+  .nav-dropdown-services:hover .mega-menu-services,
+  .nav-dropdown-services.is-active .mega-menu-services {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .mega-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #ffffff;
+    width: 100%;
+  }
+}
+
+/* ── Core Mega Menu Components (Shared) ── */
+.mega-col-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mega-col-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid rgba(154, 29, 30, 0.12);
+}
+
+.mega-col-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(154, 29, 30, 0.1), rgba(217, 119, 6, 0.1));
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-col-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin: 0;
+  line-height: 1.15;
+  text-transform: none !important;
+}
+
+.mega-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mega-group-label {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--c-muted, #78695E);
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.25rem;
+  padding-left: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mega-group-label::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-primary, #9A1D1E);
+}
+
+.mega-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.42rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  background: transparent;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover {
+  background: #FAF6F3;
+  transform: translateX(3px);
+}
+
+.mega-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mega-item-name {
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  color: var(--c-ink, #181412) !important;
+  line-height: 1.25;
+  transition: color 0.18s ease;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item:hover .mega-item-name {
+  color: var(--c-primary, #9A1D1E) !important;
+}
+
+.mega-item-desc {
+  font-size: 0.71rem !important;
+  font-weight: 500 !important;
+  color: var(--c-muted, #78695E) !important;
+  line-height: 1.3;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.mega-item-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.18s ease;
+  color: var(--c-primary, #9A1D1E);
+  font-size: 0.85rem;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.mega-item:hover .mega-item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mega-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(154, 29, 30, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mega-spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(154, 29, 30, 0.15);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary, #9A1D1E);
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  margin-bottom: 0.75rem;
+}
+
+.mega-spotlight-title {
+  font-family: var(--font-d, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-desc {
+  font-size: 0.8rem;
+  color: var(--c-body, #4A3E39);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+  text-transform: none !important;
+}
+
+.mega-spotlight-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718));
+  color: #ffffff !important;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(154, 29, 30, 0.22);
+  transition: all 0.2s ease;
+  margin-bottom: 1.1rem;
+}
+
+.mega-spotlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(154, 29, 30, 0.32);
+  color: #ffffff !important;
+}
+
+.mega-spotlight-tools {
+  border-top: 1px solid rgba(154, 29, 30, 0.12);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mega-tool-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--c-body, #4A3E39) !important;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+  text-transform: none !important;
+}
+
+.mega-tool-link:hover {
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.mega-service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem;
+  border-radius: 12px;
+  background: #FAF7F5;
+  border: 1px solid rgba(225, 219, 214, 0.65);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: var(--c-ink, #181412) !important;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover {
+  background: #FFF5F2;
+  border-color: rgba(154, 29, 30, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154, 29, 30, 0.08);
+}
+
+.mega-service-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--c-primary, #9A1D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.mega-service-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--c-ink, #181412);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: none !important;
+}
+
+.mega-service-card:hover .mega-service-title {
+  color: var(--c-primary, #9A1D1E);
+}
+
+.mega-service-desc {
+  font-size: 0.74rem;
+  color: var(--c-muted, #78695E);
+  line-height: 1.4;
+  margin: 0;
+  text-transform: none !important;
+}
+
+/* ── Mobile & Tablet Uniform Drawer Layout (max-width: 960px) ── */
+@media (max-width: 960px) {
+  .site-nav .nav-inner {
+    position: relative !important;
+  }
+  .nav-links {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #FFFFFF !important;
+    border-bottom: 1px solid var(--c-border, #EBE5E0) !important;
+    box-shadow: 0 25px 50px -12px rgba(24, 20, 18, 0.18) !important;
+    padding: 0.75rem 1.25rem 1.75rem 1.25rem !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    z-index: 999 !important;
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .nav-links.is-active {
+    display: flex !important;
+  }
+  
+  /* Brand visibility toggles */
+  body:not(.ab) .ab-only,
+  body.ab .pr-only,
+  .nav-links > span[style*="display:none"],
+  .nav-links > span[style*="display: none"] {
+    display: none !important;
+  }
+
+  /* Uniform top-level mobile nav item rows */
+  .nav-links > span:not(.ab-only),
+  body.ab .nav-links > span.ab-only,
+  .nav-links > .nav-dropdown,
+  .nav-links > a:not(.nav-cta) {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(225, 219, 214, 0.55) !important;
+    margin: 0 !important;
+  }
+  
+  body.ab .nav-links > .nav-dropdown.pr-only {
+    display: none !important;
+  }
+  
+  .nav-links > span > a,
+  .nav-links > a:not(.nav-cta),
+  .nav-links .dropdown-trigger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0.95rem 0.65rem !important;
+    font-size:  0.85rem !important;
+    font-weight: 700 !important;
+    font-family: inherit !important;
+    color: var(--c-ink, #181412) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: all 0.18s ease !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > span > a::after,
+  .nav-links > a:not(.nav-cta)::after,
+  .nav-links .dropdown-trigger::after {
+    display: none !important;
+  }
+  
+  .nav-links > span > a:hover,
+  .nav-links > span > a:active,
+  .nav-links > a:not(.nav-cta):hover,
+  .nav-links > a:not(.nav-cta):active,
+  .nav-links .dropdown-trigger:hover,
+  .nav-links .dropdown-trigger:active,
+  .nav-dropdown.is-active > .dropdown-trigger {
+    background: #FAF6F3 !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .dropdown-trigger svg {
+    transition: transform 0.25s ease !important;
+    color: var(--c-muted, #78695E) !important;
+  }
+  
+  .nav-dropdown.is-active > .dropdown-trigger svg {
+    transform: rotate(180deg) !important;
+    color: var(--c-primary, #9A1D1E) !important;
+  }
+  
+  .nav-dropdown::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1001 !important;
+}
+  
+  .mega-menu, 
+  .site-nav #products-mega-menu, 
+  #products-mega-menu, 
+  #services-mega-menu, 
+  .mega-menu-services {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 12px !important;
+    background: #FAF7F5 !important;
+    overflow: hidden !important;
+    transition: max-height 0.35s ease, opacity 0.25s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-dropdown.is-active .mega-menu,
+  .nav-dropdown.is-active #products-mega-menu,
+  .nav-dropdown.is-active #services-mega-menu,
+  .site-nav #products-dropdown.is-active #products-mega-menu {
+    max-height: 4500px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    padding: 0.85rem !important;
+    margin: 0.3rem 0 0.85rem 0 !important;
+    border: 1px solid rgba(225, 219, 214, 0.7) !important;
+    transform: none !important;
+  }
+  
+  .mega-menu-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  
+  .mega-content-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  
+  .mega-col-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding-bottom: 0.4rem !important;
+    border-bottom: 1.5px solid rgba(154, 29, 30, 0.12) !important;
+  }
+  
+  .mega-col-title {
+    font-size: 1.1rem !important;
+    color: var(--c-ink, #181412) !important;
+  }
+  
+  .mega-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mega-group-label {
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 0.2rem !important;
+    padding-left: 0.25rem !important;
+  }
+  
+  .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.55rem 0.65rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 8px !important;
+    margin-bottom: 0.25rem !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  
+  .mega-item:hover, .mega-item:active {
+    background: #FFF5F2 !important;
+    border-color: rgba(154, 29, 30, 0.25) !important;
+    transform: none !important;
+  }
+  
+  .mega-item-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+  
+  .mega-item-name {
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    color: var(--c-ink, #181412) !important;
+    line-height: 1.2 !important;
+  }
+  
+  .mega-item-desc {
+    font-size: 0.68rem !important;
+    color: var(--c-muted, #78695E) !important;
+    line-height: 1.25 !important;
+  }
+  
+  .mega-item-arrow {
+    opacity: 0.7 !important;
+    transform: none !important;
+    color: var(--c-primary, #9A1D1E) !important;
+    font-size: 0.85rem !important;
+    margin-left: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .mega-spotlight {
+    width: 100% !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(154, 29, 30, 0.15) !important;
+    margin-top: 0.5rem !important;
+    padding: 1rem 0.75rem !important;
+    border-radius: 10px !important;
+    background: linear-gradient(145deg, #FFF9F7 0%, #FFF2EC 100%) !important;
+    box-sizing: border-box !important;
+  }
+  
+  .mega-services-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  .mega-service-card {
+    padding: 0.85rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(225, 219, 214, 0.6) !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-links > .nav-cta, .nav-links > a.nav-cta, .nav-links .nav-cta {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0.95rem 1rem !important;
+    margin-top: 1rem !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    font-size: 0.92rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, var(--c-primary, #9A1D1E), var(--c-primary-d, #7B1718)) !important;
+    box-shadow: 0 6px 18px rgba(154, 29, 30, 0.28) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+.btn-prod-quote {
+  flex: 1 !important;
+  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-d)) !important;
+  color: #fff !important;
+  padding: 0.65rem 1rem !important;
+  border-radius: var(--r-pill) !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  box-shadow: var(--sh-btn) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all var(--transition) !important;
+}
+.btn-prod-quote:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--sh-btn-hover) !important;
+  color: #fff !important;
+}
+
+.btn-prod-learn {
+  flex: 0 0 auto !important;
+  background: transparent !important;
+  border: 1px solid var(--c-border-s) !important;
+  color: var(--c-muted) !important;
+  padding: 0.65rem 1rem !important;
+  border-radius: var(--r-pill) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.3rem !important;
+  cursor: pointer !important;
+  transition: all var(--transition) !important;
+  text-decoration: none !important;
+}
+.btn-prod-learn:hover {
+  border-color: var(--c-primary) !important;
+  color: var(--c-primary) !important;
+  background: var(--c-primary-bg) !important;
+}
+
+</style>
 </head>
 <body>
 
@@ -2840,234 +3818,594 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 
 <main id="main-content">
-  <!-- HERO -->
-  <section class="hero" style="padding: 4rem 2.5rem; text-align: left; background: url('assets/images/microbial_hero.webp') center/cover no-repeat; position: relative; overflow: hidden;">
-    <div style="position:absolute; inset:0; background: linear-gradient(to right, rgba(26,21,18,0.9) 0%, rgba(26,21,18,0.4) 60%, transparent 100%); z-index:1;"></div>
-    <div class="wrap" style="position: relative; z-index: 2; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr; align-items: center;">
-<div style="max-width: 650px;">
-      <div class="hero-pill pr-only" style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.1); padding:0.4rem 1rem; border-radius:var(--r-pill); font-size:0.75rem; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 1.5rem;"><span class="hero-pill-dot" style="width:6px;height:6px;border-radius:50%;background:var(--c-primary);"></span>Microbial</div>
-      <h1 class="hero-h1">Microbial Solutions</h1>
-      <p class="hero-p" style="margin: 0 0 2.5rem; max-width: 600px; font-size: 1.15rem;">Advanced microbiological solutions aiding environmental sustainability and a healthy lifestyle.</p>
-      <div class="hero-actions">
-        <button class="btn-hero-p btn-quote" data-product="Microbial Solutions">Get a Quote <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="background: linear-gradient(135deg, rgba(26,21,18,0.92) 0%, rgba(26,21,18,0.65) 100%), url('assets/images/microbial_hero.webp') center/cover no-repeat; padding: 6rem 2.5rem 5.5rem; position: relative; overflow: hidden;">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="v2-crumbs">
+          <a href="index.html">Home</a> <span>/</span>
+          <a href="industry.html">Industries</a> <span>/</span>
+          <span>Microbial Solutions</span>
+        </div>
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          Environmental &amp; Living Biotechnology
+        </div>
+        <h1 class="hero-h1">Microbial &amp; Environmental<br><em>Bio-Solutions</em></h1>
+        <p class="hero-p">Advanced biological formulations harvested from specialized non-pathogenic bacterial consortia — engineered for grease degradation, molecular odor elimination, sewage digestion, and eco-active facility sanitation.</p>
+        <div class="hero-actions">
+          <a href="#stage-drainage" class="btn-hero-p">
+            Explore Formulations
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <button type="button" class="btn-hero-g btn-quote" data-product="Microbial Sample Pack">
+            Request Sample Pack
+          </button>
+        </div>
       </div>
     </div>
-</div>
   </section>
 
-  <!-- OVERVIEW -->
-  <section class="section">
+  <!-- OVERVIEW SECTION -->
+  <section class="section-overview" id="overview">
     <div class="wrap">
-      <div>
-        <div>
-          <h2 class="h2">The Perfect Solution</h2>
-          <p style="color: var(--c-muted); line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
-            <strong>PrARAS<sup>®</sup></strong> has developed a range of products for sanitation and cleaning by harvesting specialized bacteria. Our products are formulated with naturally occurring microbes carefully selected for their ability to break down a wide range of organic materials.
-          </p>
-          <p style="color: var(--c-muted); line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
-            These biological agents make them highly effective for applications such as surface cleaning, stain removal, odor control, and comprehensive biological waste management.
-          </p>
-          <p style="color: var(--c-muted); line-height: 1.6; font-size: 1.05rem;">
-            If you are looking for an environmentally friendly, safe, and cost-effective way to keep facilities clean and sanitary, our bacteria-based sanitation and Microbial Cleaning Products are the ideal choice.
-          </p>
+      <div class="ov-card">
+        <div class="ov-grid">
+          <div class="ov-content">
+            <span class="ov-badge">BIOLOGICAL ENVIRONMENTAL SANITATION</span>
+            <h2 class="ov-h2">The Power of <em>Beneficial Bacteria</em></h2>
+            <p class="ov-p">
+              <strong>PrARAS<sup>®</sup></strong> harnesses naturally occurring, non-pathogenic bacterial strains and high-potency biocatalysts to break down complex organic waste at the molecular level. Unlike traditional chemical cleaners that mask odors and corrode infrastructure, our living microbial formulations actively consume contaminants.
+            </p>
+            <p class="ov-p">
+              From commercial kitchen grease traps and high-footfall washrooms to heavy-load municipal and industrial sewage treatment plants (STPs/ETPs), our targeted bio-solutions deliver continuous 24/7 self-sustaining cleanliness with zero toxic residues.
+            </p>
+            <div class="ov-apps">
+              <span class="ov-app-pill">✔ Grease Traps &amp; Kitchen Drainage</span>
+              <span class="ov-app-pill">✔ Bio-Enzymatic Odor Counteraction</span>
+              <span class="ov-app-pill">✔ Restroom Urinal Scale Prevention</span>
+              <span class="ov-app-pill">✔ Sewage Treatment Plants (STP/ETP)</span>
+              <span class="ov-app-pill">✔ Probiotic Deep Surface Biofilms</span>
+            </div>
+          </div>
+          <div class="ov-visual">
+            <div class="ov-img-frame">
+              <img src="assets/images/microbial_hero.webp" alt="Microbial & Environmental Bio-Solutions" width="600" height="450" loading="lazy" decoding="async">
+              <div class="ov-img-tag">
+                <div class="ov-tag-num">100%</div>
+                <div class="ov-tag-text">Natural &amp; Safe<br>Bio-Consortia</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCT RANGE & BROCHURE -->
-  <section class="section">
-    <div class="wrap" style="max-width: 1000px; margin: 0 auto;">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <h2 class="h2">Product Range</h2>
-        <p style="color: var(--c-muted);">*Please refer to the product data sheet for detailed specifications.</p>
+  <!-- STATS BAR -->
+  <section class="section-stats-bar">
+    <div class="stats-bar-grid">
+      <div class="stat-item">
+        <div class="stat-item-num">90<span>%</span></div>
+        <div class="stat-item-label">BOD / COD Reduction</div>
       </div>
-      
-      <div class="prod-grid">
-                <div class="prod-card" style="cursor: pointer; flex-direction: column; align-items: stretch; padding: 0;" onclick="if(!event.target.closest('button')){ window.location.href='#'; }">
-                  <div style="position: relative; overflow: hidden; height: 300px;">
-                    <img src="https://placehold.co/400x500/FDF4F4/9A1D1E?text=Microbial+Product" alt="GT ACTIV®" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid var(--c-border);">
-                  </div>
-                  <div style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="prod-cat" style="color: var(--c-primary);">Microbial & Others Solution</div>
-                    <h3 class="prod-h" style="color: var(--c-ink); font-size: 2.5rem; margin-bottom: 1rem;">GT ACTIV<sup>®</sup></h3>
-                    <p class="prod-p" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Grease trap & drainage management</p>
-                    <ul class="feat-list" style="margin-bottom: 2.5rem;">
-                      <li><strong>Nature:</strong> Bacterial consortia</li>
-                      <li><strong>Function:</strong> Grease trap & drainage management</li>
-                    </ul>
-                    <div style="margin-top: auto;">
-                      <button class="btn-quote" data-product="GT ACTIV®" style="background: var(--c-primary); color: #fff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; transition: all var(--transition); cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(138,29,30,0.2);">
-                        Get Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="prod-card" style="flex-direction: column; align-items: stretch; padding: 0;">
-                  <div style="position: relative; overflow: hidden; height: 300px;">
-                    <img src="https://placehold.co/400x500/FDF4F4/9A1D1E?text=Microbial+Product" alt="MALODOREX® ACTIV" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid var(--c-border);">
-                  </div>
-                  <div style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="prod-cat" style="color: var(--c-primary);">Microbial & Others Solution</div>
-                    <h3 class="prod-h" style="color: var(--c-ink); font-size: 2.5rem; margin-bottom: 1rem;">MALODOREX<sup>®</sup> ACTIV</h3>
-                    <p class="prod-p" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Mal-odor management</p>
-                    <ul class="feat-list" style="margin-bottom: 2.5rem;">
-                      <li><strong>Nature:</strong> Bacterial consortia</li>
-                      <li><strong>Function:</strong> Mal-odor management</li>
-                    </ul>
-                    <div style="margin-top: auto;">
-                      <button class="btn-quote" data-product="MALODOREX® ACTIV" style="background: var(--c-primary); color: #fff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; transition: all var(--transition); cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(138,29,30,0.2);">
-                        Get Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="prod-card" style="flex-direction: column; align-items: stretch; padding: 0;">
-                  <div style="position: relative; overflow: hidden; height: 300px;">
-                    <img src="https://placehold.co/400x500/FDF4F4/9A1D1E?text=Microbial+Product" alt="U BLOCK ACTIV®" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid var(--c-border);">
-                  </div>
-                  <div style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="prod-cat" style="color: var(--c-primary);">Microbial & Others Solution</div>
-                    <h3 class="prod-h" style="color: var(--c-ink); font-size: 2.5rem; margin-bottom: 1rem;">U BLOCK ACTIV<sup>®</sup></h3>
-                    <p class="prod-p" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Mal-odor management in urinals</p>
-                    <ul class="feat-list" style="margin-bottom: 2.5rem;">
-                      <li><strong>Nature:</strong> Bacterial consortia</li>
-                      <li><strong>Function:</strong> Mal-odor management in urinals</li>
-                    </ul>
-                    <div style="margin-top: auto;">
-                      <button class="btn-quote" data-product="U BLOCK ACTIV®" style="background: var(--c-primary); color: #fff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; transition: all var(--transition); cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(138,29,30,0.2);">
-                        Get Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="prod-card" style="flex-direction: column; align-items: stretch; padding: 0;">
-                  <div style="position: relative; overflow: hidden; height: 300px;">
-                    <img src="https://placehold.co/400x500/FDF4F4/9A1D1E?text=Microbial+Product" alt="STP ACTIV™" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid var(--c-border);">
-                  </div>
-                  <div style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="prod-cat" style="color: var(--c-primary);">Microbial & Others Solution</div>
-                    <h3 class="prod-h" style="color: var(--c-ink); font-size: 2.5rem; margin-bottom: 1rem;">STP ACTIV™</h3>
-                    <p class="prod-p" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Septic-tank cleaning</p>
-                    <ul class="feat-list" style="margin-bottom: 2.5rem;">
-                      <li><strong>Nature:</strong> Bacterial consortia</li>
-                      <li><strong>Function:</strong> Septic-tank cleaning</li>
-                    </ul>
-                    <div style="margin-top: auto;">
-                      <button class="btn-quote" data-product="STP ACTIV™" style="background: var(--c-primary); color: #fff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; transition: all var(--transition); cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(138,29,30,0.2);">
-                        Get Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="prod-card" style="flex-direction: column; align-items: stretch; padding: 0;">
-                  <div style="position: relative; overflow: hidden; height: 300px;">
-                    <img src="https://placehold.co/400x500/FDF4F4/9A1D1E?text=Microbial+Product" alt="STP ACTIV™ ULTRA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid var(--c-border);">
-                  </div>
-                  <div style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="prod-cat" style="color: var(--c-primary);">Microbial & Others Solution</div>
-                    <h3 class="prod-h" style="color: var(--c-ink); font-size: 2.5rem; margin-bottom: 1rem;">STP ACTIV™ ULTRA</h3>
-                    <p class="prod-p" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Septic-tank cleaning</p>
-                    <ul class="feat-list" style="margin-bottom: 2.5rem;">
-                      <li><strong>Nature:</strong> Bacterial consortia</li>
-                      <li><strong>Function:</strong> Septic-tank cleaning</li>
-                    </ul>
-                    <div style="margin-top: auto;">
-                      <button class="btn-quote" data-product="STP ACTIV™ ULTRA" style="background: var(--c-primary); color: #fff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; transition: all var(--transition); cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(138,29,30,0.2);">
-                        Get Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="prod-card" style="flex-direction: column; align-items: stretch; padding: 0;">
-                  <div style="position: relative; overflow: hidden; height: 300px;">
-                    <img src="https://placehold.co/400x500/FDF4F4/9A1D1E?text=Microbial+Product" alt="CAS ACTIV®" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid var(--c-border);">
-                  </div>
-                  <div style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="prod-cat" style="color: var(--c-primary);">Microbial & Others Solution</div>
-                    <h3 class="prod-h" style="color: var(--c-ink); font-size: 2.5rem; margin-bottom: 1rem;">CAS ACTIV<sup>®</sup></h3>
-                    <p class="prod-p" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Surface deep cleaning</p>
-                    <ul class="feat-list" style="margin-bottom: 2.5rem;">
-                      <li><strong>Nature:</strong> Bacterial consortia</li>
-                      <li><strong>Function:</strong> Surface deep cleaning</li>
-                    </ul>
-                    <div style="margin-top: auto;">
-                      <button class="btn-quote" data-product="CAS ACTIV®" style="background: var(--c-primary); color: #fff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; transition: all var(--transition); cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(138,29,30,0.2);">
-                        Get Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="prod-card" style="flex-direction: column; align-items: stretch; padding: 0;">
-                  <div style="position: relative; overflow: hidden; height: 300px;">
-                    <img src="https://placehold.co/400x500/FDF4F4/9A1D1E?text=Microbial+Product" alt="MALODOREX® Activ SLR" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid var(--c-border);">
-                  </div>
-                  <div style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <div class="prod-cat" style="color: var(--c-primary);">Microbial & Others Solution</div>
-                    <h3 class="prod-h" style="color: var(--c-ink); font-size: 2.5rem; margin-bottom: 1rem;">MALODOREX<sup>®</sup> Activ SLR</h3>
-                    <p class="prod-p" style="margin-bottom: 1.5rem; font-size: 1.05rem;">Long term mal-odor reduction & fragrance release</p>
-                    <ul class="feat-list" style="margin-bottom: 2.5rem;">
-                      <li><strong>Nature:</strong> Bio-enzyme based product containing fragrance Nano-particles</li>
-                      <li><strong>Function:</strong> Long term mal-odor reduction & fragrance release</li>
-                    </ul>
-                    <div style="margin-top: auto;">
-                      <button class="btn-quote" data-product="MALODOREX® Activ SLR" style="background: var(--c-primary); color: #fff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; transition: all var(--transition); cursor: pointer; display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(138,29,30,0.2);">
-                        Get Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                </div>
-
+      <div class="stat-item">
+        <div class="stat-item-num">70<span>%</span></div>
+        <div class="stat-item-label">Sludge Volume Cut</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-num">24<span>h</span></div>
+        <div class="stat-item-label">Biological Upset Recovery</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-num">0<span>%</span></div>
+        <div class="stat-item-label">Toxic Chemical Residue</div>
+      </div>
     </div>
   </section>
 
-  <!-- BENEFITS -->
-  <section class="section" style="background: var(--c-surface-alt);">
+  <!-- KEY BENEFITS SECTION -->
+  <section class="section-benefits" id="benefits">
     <div class="wrap">
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <h2 class="h2">Key Benefits</h2>
-        <p style="color: var(--c-muted); max-width: 600px; margin: 0 auto;">Reduce environmental impact and gain cost efficiencies with top-of-the-line microbial nanotechnology.</p>
+      <div class="sec-hd-center">
+        <span class="eyebrow-center">SCIENTIFIC &amp; SUSTAINABLE ADVANTAGES</span>
+        <h2 class="h2-center">Engineered for <em>Facility Performance</em></h2>
+        <p class="sec-sub-center">Transform environmental compliance, slash maintenance callouts, and elevate occupant satisfaction with microbial biotechnology.</p>
       </div>
-      
-      <div class="svc-grid">
-        <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+
+      <div class="benefits-grid">
+        <!-- Benefit 1 -->
+        <div class="benefit-card">
+          <div class="benefit-num">01</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3 class="benefit-title">Cost Effective Operations</h3>
+          <p class="benefit-text">Significantly reduces manual pumping, dredging, pipe snaking, and energy costs across grease traps, septic tanks, and treatment facilities.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="benefit-card">
+          <div class="benefit-num">02</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+          </div>
+          <h3 class="benefit-title">100% Water-Based Action</h3>
+          <p class="benefit-text">Water-based, eco-compatible biological solutions that integrate effortlessly into existing plumbing, CIP loops, and dosing systems.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="benefit-card">
+          <div class="benefit-num">03</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h3 class="benefit-title">Non-Corrosive &amp; Alcohol Free</h3>
+          <p class="benefit-text">Gentle on stainless steel, PVC pipes, ceramic tiles, and rubber gaskets — protecting capital infrastructure while ensuring user safety.</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="benefit-card">
+          <div class="benefit-num">04</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 class="benefit-title">Source Odor Elimination</h3>
+          <p class="benefit-text">Microbes break down volatile fatty acids, ammonia, and hydrogen sulfide at the molecular source rather than masking with transient perfumes.</p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="benefit-card">
+          <div class="benefit-num">05</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 20h20"></path><path d="M5 20V8l5 3V4l5 3v5l5-2v10"></path></svg>
+          </div>
+          <h3 class="benefit-title">Rapid STP Shock Recovery</h3>
+          <p class="benefit-text">High-density spore formulations kickstart stalled nitrification cycles and restore upset aeration basins within 24 to 48 hours.</p>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="benefit-card">
+          <div class="benefit-num">06</div>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+          </div>
+          <h3 class="benefit-title">Protective Beneficial Biofilms</h3>
+          <p class="benefit-text">Forms a persistent, microscopic protective biological layer on porous tile and grout surfaces that prevents pathogenic re-colonization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS PIPELINE STEPPER -->
+  <section class="section-pipeline">
+    <div class="wrap">
+      <div class="pipeline-header">
+        <span class="eyebrow-center">TARGET APPLICATION PROTOCOLS</span>
+        <h2 class="h2-center" style="font-size: 2.2rem;">Comprehensive <em>Microbial Solutions</em></h2>
+        <p class="sec-sub-center" style="font-size: .95rem;">Select an application domain to explore our targeted biological formulations and dosage protocols.</p>
+      </div>
+
+      <div class="pipeline-grid" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="pipeline-step" onclick="jumpToStage('stage-drainage')">
+          <span class="pipeline-step-num">01 DRAINAGE</span>
+          <div class="pipeline-step-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+          </div>
+          <div class="pipeline-step-title">Grease &amp; Drains</div>
+          <div class="pipeline-step-desc">FOG digestion &amp; trap maintenance</div>
+        </div>
+
+        <div class="pipeline-step" onclick="jumpToStage('stage-odor')">
+          <span class="pipeline-step-num">02 ODOR CONTROL</span>
+          <div class="pipeline-step-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+          </div>
+          <div class="pipeline-step-title">Odor Neutralizers</div>
+          <div class="pipeline-step-desc">Molecular organic destruction</div>
+        </div>
+
+        <div class="pipeline-step" onclick="jumpToStage('stage-washroom')">
+          <span class="pipeline-step-num">03 WASHROOMS</span>
+          <div class="pipeline-step-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          </div>
+          <div class="pipeline-step-title">Urinals &amp; Restrooms</div>
+          <div class="pipeline-step-desc">Uric scale &amp; drain lines</div>
+        </div>
+
+        <div class="pipeline-step" onclick="jumpToStage('stage-wastewater')">
+          <span class="pipeline-step-num">04 WASTEWATER</span>
+          <div class="pipeline-step-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 20h20"></path><path d="M5 20V8l5 3V4l5 3v5l5-2v10"></path></svg>
+          </div>
+          <div class="pipeline-step-title">STP &amp; ETP Biocatalysts</div>
+          <div class="pipeline-step-desc">BOD/COD &amp; sludge digestion</div>
+        </div>
+
+        <div class="pipeline-step" onclick="jumpToStage('stage-surfaces')">
+          <span class="pipeline-step-num">05 SURFACES</span>
+          <div class="pipeline-step-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="pipeline-step-title">Probiotic Cleaners</div>
+          <div class="pipeline-step-desc">Deep pore &amp; biofilm action</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE 01: GREASE & DRAINAGE (1 PRODUCT - CENTERED) -->
+  <section class="section-stage stage-group" id="stage-drainage">
+    <div class="wrap">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-num">01</div>
           <div>
-            <h4 class="svc-h">Cost Effective</h4>
-            <p class="svc-p">Gain operational cost efficiencies while delivering superior cleaning and maintenance results.</p>
+            <h2 class="stage-title">Grease Trap &amp; <em>Drainage Management</em></h2>
+            <p class="stage-desc">High-potency lipolytic and proteolytic bacterial consortia to digest fats, oils, and grease (FOG) in commercial plumbing</p>
           </div>
         </div>
-        <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div>
-          <div>
-            <h4 class="svc-h">Water Based</h4>
-            <p class="svc-p">Completely water-based and water-saving formulations that optimize resource consumption.</p>
+        <span class="stage-pill-tag">1 Formulation</span>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <div class="prod-card" data-url="products/airbliss-drain-cleaner.html" onclick="navigateProduct(this, event)" data-name="GT ACTIV" data-stage="01 Drainage" data-nature="Lipolytic Bacterial Consortia" style="max-width: 480px; width: 100%;">
+          <div class="prod-card-header">
+            <div class="prod-card-name">GT ACTIV<sup>®</sup></div>
+            <span class="prod-stage-tag">Grease &amp; Drainage</span>
           </div>
-        </div>
-        <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
-          <div>
-            <h4 class="svc-h">Alcohol Free</h4>
-            <p class="svc-p">100% alcohol-free solutions ensuring maximum safety for handling and sensitive surfaces.</p>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Commercial Kitchen Grease Traps, Sinks &amp; Drain Lines</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Viable Spores NLT 2 x 10⁹ CFU/g | High Lipase &amp; Protease</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Specialized Lipolytic Bacterial Consortia &amp; Bio-Catalysts</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Rapidly breaks down hardened FOG crusts, prevents drain clogs &amp; stops foul anaerobic sewer odors</span>
+            </div>
           </div>
-        </div>
-        <div class="svc-card">
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
-          <div>
-            <h4 class="svc-h">Eco-Friendly</h4>
-            <p class="svc-p">Significantly reduces environmental impact by using naturally occurring, safe bacteria.</p>
+          <span class="prod-dosage-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> 50–100 mL/Trap Daily or per flow volume</span>
+          <div class="prod-card-actions">
+            <button type="button" class="btn-prod-quote btn-quote" data-product="GT ACTIV">Get Quote</button>
+            <a href="products/airbliss-drain-cleaner.html" class="btn-prod-learn">Details →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- STAGE 02: ODOR CONTROL (2 PRODUCTS - 2 COLUMN) -->
+  <section class="section-stage stage-group" id="stage-odor">
+    <div class="wrap">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-num">02</div>
+          <div>
+            <h2 class="stage-title">Biological <em>Mal-Odor Counteraction</em></h2>
+            <p class="stage-desc">Bio-enzymatic formulations that destroy volatile organic sulfur, amine, and ammonia compounds at the molecular level</p>
+          </div>
+        </div>
+        <span class="stage-pill-tag">2 Formulations</span>
+      </div>
+      <div class="products-grid-2">
+        
+        <!-- Card 1: MALODOREX ACTIV -->
+        <div class="prod-card" data-url="products/airbliss-air-freshener.html" onclick="navigateProduct(this, event)" data-name="MALODOREX ACTIV" data-stage="02 Odor Control" data-nature="Bio-Enzymatic Consortia">
+          <div class="prod-card-header">
+            <div class="prod-card-name">MALODOREX<sup>®</sup> ACTIV</div>
+            <span class="prod-stage-tag">Odor Neutralizer</span>
+          </div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Garbage Compactors, Food Waste Dumps, Restrooms &amp; Drains</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Multi-Strain Odor-Degrading Microbes &amp; Enzymes</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Aqueous Bio-Enzyme Odor Neutralizing Formulation</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Instantly captures and breaks down foul odors without hazardous synthetic masking perfumes</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> 10–20 mL/L Dilution Spray</span>
+          <div class="prod-card-actions">
+            <button type="button" class="btn-prod-quote btn-quote" data-product="MALODOREX ACTIV">Get Quote</button>
+            <a href="products/airbliss-air-freshener.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+
+        <!-- Card 2: MALODOREX ACTIV SLR -->
+        <div class="prod-card" data-url="products/airbliss-air-freshener.html" onclick="navigateProduct(this, event)" data-name="MALODOREX ACTIV SLR" data-stage="02 Odor Control" data-nature="Nano-Encapsulated Fragrance Bio-Enzyme">
+          <div class="prod-card-header">
+            <div class="prod-card-name">MALODOREX<sup>®</sup> ACTIV SLR</div>
+            <span class="prod-stage-tag">Sustained Release</span>
+          </div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">High-Footfall Washrooms, Hospitality Lounges &amp; HVAC Ducts</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Active Spores + Nanosphere Fragrance Particles</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Dual-Action Bio-Enzyme with Nano-Encapsulated Fragrance</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Extended fragrance longevity paired with continuous bacterial consumption of airborne mal-odors</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> Ready to Use / 1:5 Mist Application</span>
+          <div class="prod-card-actions">
+            <button type="button" class="btn-prod-quote btn-quote" data-product="MALODOREX ACTIV SLR">Get Quote</button>
+            <a href="products/airbliss-air-freshener.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE 03: WASHROOM & URINAL HYGIENE (1 PRODUCT - CENTERED) -->
+  <section class="section-stage stage-group" id="stage-washroom">
+    <div class="wrap">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-num">03</div>
+          <div>
+            <h2 class="stage-title">Commercial Washroom &amp; <em>Urinal Treatment</em></h2>
+            <p class="stage-desc">Probiotic solid blocks and enzyme catalysts to prevent uric acid scale calcification and maintain spotless drainage channels</p>
+          </div>
+        </div>
+        <span class="stage-pill-tag">1 Formulation</span>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <div class="prod-card" data-url="products/airbliss-u-block-activ.html" onclick="navigateProduct(this, event)" data-name="U BLOCK ACTIV" data-stage="03 Washroom" data-nature="Solid Probiotic Urinal Block" style="max-width: 480px; width: 100%;">
+          <div class="prod-card-header">
+            <div class="prod-card-name">U BLOCK ACTIV<sup>®</sup></div>
+            <span class="prod-stage-tag">Urinal Block</span>
+          </div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Corporate Urinals, Airport Washrooms &amp; High-Traffic Toilets</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Uricase &amp; Protease Producing Beneficial Strains</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Water-Soluble Biological Urinal Block with Fresh Aroma</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Continuous enzymatic dissolution of uric salt buildup, eliminates urinal stink &amp; keeps traps clear</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> 1 Block per Urinal every 30–45 Days</span>
+          <div class="prod-card-actions">
+            <button type="button" class="btn-prod-quote btn-quote" data-product="U BLOCK ACTIV">Get Quote</button>
+            <a href="products/airbliss-u-block-activ.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE 04: WASTEWATER & STP/ETP (2 PRODUCTS - 2 COLUMN) -->
+  <section class="section-stage stage-group" id="stage-wastewater">
+    <div class="wrap">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-num">04</div>
+          <div>
+            <h2 class="stage-title">Wastewater Treatment &amp; <em>STP/ETP Bio-Augmentation</em></h2>
+            <p class="stage-desc">High-density aerobic and anaerobic microbial consortia engineered to slash BOD, COD, and sludge volumes in effluent plants</p>
+          </div>
+        </div>
+        <span class="stage-pill-tag">2 Formulations</span>
+      </div>
+      <div class="products-grid-2">
+        
+        <!-- Card 1: STP ACTIV -->
+        <div class="prod-card" data-url="products/airbliss-stp-activ.html" onclick="navigateProduct(this, event)" data-name="STP ACTIV" data-stage="04 Wastewater" data-nature="Multi-Strain Microbial Powder">
+          <div class="prod-card-header">
+            <div class="prod-card-name">STP ACTIV™</div>
+            <span class="prod-stage-tag">STP Bio-Activator</span>
+          </div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Commercial &amp; Residential Sewage Treatment Plants (STP)</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Heterotrophic &amp; Nitrifying Microbes NLT 5 x 10⁹ CFU/g</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Concentrated Multi-Strain Microbial Powder Formulation</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Reduces BOD/COD by up to 90%, reduces sludge volume by up to 70% &amp; restores biological balance in 24h</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> 5–10 ppm based on daily influent flow</span>
+          <div class="prod-card-actions">
+            <button type="button" class="btn-prod-quote btn-quote" data-product="STP ACTIV">Get Quote</button>
+            <a href="products/airbliss-stp-activ.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+
+        <!-- Card 2: STP ACTIV ULTRA -->
+        <div class="prod-card" data-url="products/airbliss-stp-activ.html" onclick="navigateProduct(this, event)" data-name="STP ACTIV ULTRA" data-stage="04 Wastewater" data-nature="Shock-Resistant ETP Consortia">
+          <div class="prod-card-header">
+            <div class="prod-card-name">STP ACTIV™ ULTRA</div>
+            <span class="prod-stage-tag">Heavy-Load ETP</span>
+          </div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Industrial Effluent Plants (ETP), Dairies &amp; Chemical Effluent</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Thermotolerant, High-Salinity &amp; Surfactant-Tolerant Strains</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Industrial-Strength Bio-Augmentation Catalyst Concentrate</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Survives severe chemical shock loads, rapidly digests recalcitrant organics &amp; accelerates MLSS floc settling</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> 10–25 ppm based on COD shock load</span>
+          <div class="prod-card-actions">
+            <button type="button" class="btn-prod-quote btn-quote" data-product="STP ACTIV ULTRA">Get Quote</button>
+            <a href="products/airbliss-stp-activ.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE 05: PROBIOTIC SURFACE CLEANING (1 PRODUCT - CENTERED) -->
+  <section class="section-stage stage-group" id="stage-surfaces">
+    <div class="wrap">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div class="stage-num">05</div>
+          <div>
+            <h2 class="stage-title">Facility Surface Hygiene &amp; <em>Deep Cleaning</em></h2>
+            <p class="stage-desc">Probiotic multi-surface formulations that penetrate microscopic pores and leave a protective, persistent self-cleaning biofilm</p>
+          </div>
+        </div>
+        <span class="stage-pill-tag">1 Formulation</span>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <div class="prod-card" data-url="products/airbliss-floor-cleaner.html" onclick="navigateProduct(this, event)" data-name="CAS ACTIV" data-stage="05 Surface Cleaning" data-nature="Probiotic Surface Cleaner" style="max-width: 480px; width: 100%;">
+          <div class="prod-card-header">
+            <div class="prod-card-name">CAS ACTIV<sup>®</sup></div>
+            <span class="prod-stage-tag">Surface Bio-Cleaner</span>
+          </div>
+          <div class="prod-card-details">
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Where Used:</span>
+              <span class="prod-detail-val">Commercial Floors, Tiles, Porous Grouting &amp; Food Prep Zones</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Activity:</span>
+              <span class="prod-detail-val">Synergistic Bio-Surfactants + Vegetative Spore Formers</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Nature:</span>
+              <span class="prod-detail-val">Concentrated Liquid Probiotic Multi-Surface Cleaner</span>
+            </div>
+            <div class="prod-detail-item">
+              <span class="prod-detail-lbl">Benefits:</span>
+              <span class="prod-detail-val">Penetrates deep grout micro-pores, creates a protective biofilm &amp; is 100% non-toxic and eco-safe</span>
+            </div>
+          </div>
+          <span class="prod-dosage-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> 20–30 mL/L Mopping Solution</span>
+          <div class="prod-card-actions">
+            <button type="button" class="btn-prod-quote btn-quote" data-product="CAS ACTIV">Get Quote</button>
+            <a href="products/airbliss-floor-cleaner.html" class="btn-prod-learn">Details →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTOR & APPLICATION CAPABILITY MATRIX -->
+  <section class="section-feedstock-types">
+    <div class="wrap">
+      <div class="sec-hd-center" style="margin-bottom:2.5rem;">
+        <span class="eyebrow-center">SECTOR &amp; FACILITY CAPABILITY</span>
+        <h2 class="h2-center" style="font-size:2.2rem;">Engineered for Diverse <em>Facility Operations</em></h2>
+        <p class="sec-sub-center" style="font-size:.95rem;">From luxury hotels and corporate IT parks to food processing plants and municipal wastewater facilities, our microbial technologies guarantee performance compliance.</p>
+      </div>
+      <div class="feedstock-grid">
+        <div class="feedstock-card">
+          <div class="fsc-head">
+            <h3 class="fsc-title">Commercial Kitchens &amp; QSR</h3>
+            <span class="fsc-badge">Restaurants / Hotels / Malls</span>
+          </div>
+          <p class="fsc-desc">Digests heavy grease trap crusts, frees drainage lines, and eliminates chronic drain odors without caustic chemical pipe damage.</p>
+          <div class="fsc-recommended">Recommended Formulations:</div>
+          <div class="fsc-tags">
+            <span class="fsc-tag">GT ACTIV®</span>
+            <span class="fsc-tag">MALODOREX® ACTIV</span>
+            <span class="fsc-tag">CAS ACTIV®</span>
+          </div>
+        </div>
+        <div class="feedstock-card">
+          <div class="fsc-head">
+            <h3 class="fsc-title">Corporate Campuses &amp; Airports</h3>
+            <span class="fsc-badge">High-Footfall Facilities</span>
+          </div>
+          <p class="fsc-desc">Maintains pristine, odor-free washrooms, prevents urinal pipe calcification, and provides continuous long-term surface hygiene.</p>
+          <div class="fsc-recommended">Recommended Formulations:</div>
+          <div class="fsc-tags">
+            <span class="fsc-tag">U BLOCK ACTIV®</span>
+            <span class="fsc-tag">MALODOREX® ACTIV SLR</span>
+            <span class="fsc-tag">CAS ACTIV®</span>
+          </div>
+        </div>
+        <div class="feedstock-card">
+          <div class="fsc-head">
+            <h3 class="fsc-title">Industrial STPs &amp; ETPs</h3>
+            <span class="fsc-badge">Factories / Dairies / STPs</span>
+          </div>
+          <p class="fsc-desc">Boosts biological tank capacity, cuts secondary sludge volumes, and achieves strict statutory environmental discharge parameters.</p>
+          <div class="fsc-recommended">Recommended Formulations:</div>
+          <div class="fsc-tags">
+            <span class="fsc-tag">STP ACTIV™</span>
+            <span class="fsc-tag">STP ACTIV™ ULTRA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <span class="cta-band-eyebrow">COMMERCIAL FACILITY CONSULTATION</span>
+      <h2 class="cta-band-h2">Upgrade Your Facility Bio-Hygiene Today</h2>
+      <p class="cta-band-p">Connect with our environmental specialists for customized STP audit trials, grease trap dosing schedules, and biological product sample packs.</p>
+      <div class="cta-band-actions">
+        <button type="button" class="btn-cta-w btn-quote" data-product="Microbial Facility Sample Pack">
+          Request Microbial Sample Pack
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+        <a href="contact.html" class="btn-cta-o">Talk to a Bio-Specialist</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 <!-- ════ SHARED FOOTER ════ -->
 <footer class="site-footer">
