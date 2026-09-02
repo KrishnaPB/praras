@@ -1322,3 +1322,399 @@ body.ab .ab-only { display: revert; }
 body.ab .pr-f { display: none !important; }
 body.ab .ab-f { display: revert; }
 
+
+
+/* ══════════════════════════════════════════════════════════════════
+   WORLD-CLASS "HOW AIRBLISS WORKS" BIOTECH COMPONENT STYLES
+   ══════════════════════════════════════════════════════════════════ */
+.ab-how-section {
+  background: linear-gradient(180deg, #FBF8F3 0%, #F5F0E8 50%, #F1EAE0 100%) !important;
+  padding: 6rem 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.ab-how-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(35, 74, 50, 0.08) 0%, rgba(245, 240, 232, 0) 70%);
+  pointer-events: none;
+}
+
+.ab-how-head {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ab-how-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.4rem 1rem;
+  background: rgba(35, 74, 50, 0.08);
+  border: 1px solid rgba(35, 74, 50, 0.18);
+  border-radius: var(--r-pill, 999px);
+  color: #234A32;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.ab-how-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3A7550;
+  box-shadow: 0 0 10px #3A7550;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.ab-how-title {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif) !important;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem) !important;
+  font-weight: 700 !important;
+  color: #1A1512 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.ab-how-title em {
+  font-style: italic !important;
+  color: #234A32 !important;
+  font-weight: 400 !important;
+}
+
+.ab-how-lead {
+  font-family: var(--font-b, "Mulish", sans-serif) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  color: #55483F !important;
+  margin: 0 auto !important;
+}
+
+.ab-how-lead strong {
+  color: #1A1512 !important;
+  font-weight: 700 !important;
+}
+
+/* 4-Step Process Grid */
+.ab-how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 1100px) {
+  .ab-how-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ab-how-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ab-step-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(35, 74, 50, 0.12);
+  border-radius: 20px;
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ab-step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #234A32, #5C7A4A, #9DBF82);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ab-step-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(35, 74, 50, 0.35);
+  box-shadow: 0 20px 45px rgba(35, 74, 50, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.ab-step-card:hover::before {
+  opacity: 1;
+}
+
+.ab-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.ab-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ab-step-num {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #234A32;
+  background: rgba(35, 74, 50, 0.08);
+  border: 1px solid rgba(35, 74, 50, 0.15);
+  border-radius: 8px;
+  padding: 0.15rem 0.5rem;
+  line-height: 1;
+}
+
+.ab-step-time {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5C7A4A;
+}
+
+.ab-step-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(35, 74, 50, 0.08), rgba(92, 122, 74, 0.12));
+  border: 1px solid rgba(35, 74, 50, 0.15);
+  color: #234A32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.ab-step-icon-wrap svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+
+.ab-step-card:hover .ab-step-icon-wrap {
+  background: linear-gradient(135deg, #234A32, #183322);
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(35, 74, 50, 0.25);
+  transform: scale(1.06);
+}
+
+.ab-step-main {
+  flex: 1 1 auto;
+}
+
+.ab-step-subtag {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5C7A4A;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.ab-step-h3 {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif);
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: #1A1512;
+  line-height: 1.15;
+  margin-bottom: 0.65rem;
+}
+
+.ab-step-desc {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #55483F;
+  margin: 0 0 1.1rem 0;
+}
+
+.ab-step-metric {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(35, 74, 50, 0.1);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #234A32;
+  margin-top: auto;
+}
+
+.ab-metric-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3A7550;
+  flex-shrink: 0;
+}
+
+/* Comparison Callout Card */
+.ab-compare-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(35, 74, 50, 0.15);
+  border-radius: 24px;
+  padding: 2.2rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 850px) {
+  .ab-compare-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+.ab-compare-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-compare-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #EBE5E0;
+}
+
+.ab-compare-icon-bad {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FEECEB;
+  color: #C23A3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ab-compare-icon-good {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #E8F5E9;
+  color: #2E7D32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ab-compare-title {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #1A1512;
+  line-height: 1.15;
+}
+
+.ab-compare-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #78695E;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ab-compare-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.ab-compare-list li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #423933;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.ab-compare-col.chemical .ab-compare-list li span {
+  color: #C23A3A;
+  font-weight: 800;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.ab-compare-col.probiotic .ab-compare-list li span {
+  color: #2E7D32;
+  font-weight: 800;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.ab-compare-list li strong {
+  color: #1A1512;
+}
+
+.ab-compare-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ab-vs-badge {
+  font-family: var(--font-d, "Cormorant Garamond", Georgia, serif);
+  font-size: 1rem;
+  font-weight: 900;
+  color: #234A32;
+  background: #FAF7F2;
+  border: 1px solid rgba(35, 74, 50, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
