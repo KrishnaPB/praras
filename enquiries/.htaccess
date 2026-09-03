@@ -1,3 +1,0 @@
-# Protect stored enquiry JSON files from direct web access
-Require all denied
-Deny from all

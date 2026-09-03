@@ -23,33 +23,61 @@
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "AIRBLISS™ UDC",
-    "image": "https://www.prarasbiosciences.com/assets/images/airbliss_udc.svg",
-    "description": "AIRBLISS™ UDC (Urinal Drain Cleaner) - Specialized biological liquid descaler formulated to dissolve heavy uric salt encrustations in commercial urinal lines.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Airbliss"
-    },
-    "manufacturer": {
-      "@type": "Organization",
-      "name": "Praras Biosciences Pvt. Ltd."
-    },
-    "category": "Commercial Washroom Care",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://www.prarasbiosciences.com/products/airbliss-udc.html",
-      "priceCurrency": "INR",
-      "price": "Contact for Quote",
-      "availability": "https://schema.org/InStock",
-      "seller": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "AIRBLISS™ UDC",
+      "image": "https://www.prarasbiosciences.com/assets/images/airbliss_udc.svg",
+      "description": "AIRBLISS™ UDC (Urinal Drain Cleaner) - Specialized biological liquid descaler formulated to dissolve heavy uric salt encrustations in commercial urinal lines.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Airbliss"
+      },
+      "manufacturer": {
         "@type": "Organization",
         "name": "Praras Biosciences Pvt. Ltd."
+      },
+      "category": "Commercial Washroom Care",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.prarasbiosciences.com/products/airbliss-udc.html",
+        "priceCurrency": "INR",
+        "price": "Contact for Quote",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Praras Biosciences Pvt. Ltd."
+        }
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.prarasbiosciences.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Airbliss",
+          "item": "https://www.prarasbiosciences.com/airbliss.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AIRBLISS™ UDC",
+          "item": "https://www.prarasbiosciences.com/products/airbliss-udc.html"
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
 
   <!-- Google Fonts -->
@@ -1964,7 +1992,7 @@
             alt="PrĀRAS Bio-Sciences Pvt. Ltd."
             style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
             width="156" height="48"
-          />
+          / loading="lazy">
         </div>
         <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
           <div style="background:#fff;border-radius:8px;padding:6px 14px;display:inline-flex;width:fit-content;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
@@ -2012,8 +2040,8 @@
         <ul>
           <li><a href="tel:+918048904262">+91-80-48904262</a></li>
           <li><a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a></li>
-          <li><a href="#">Mon–Fri, 9AM–5:30PM</a></li>
-          <li><a href="#">Bengaluru, India</a></li>
+          <li><span>Mon–Fri, 9AM–5:30PM</span></li>
+          <li><a href="../contact.html">Bengaluru, India</a></li>
         </ul>
       </div>
     </div>

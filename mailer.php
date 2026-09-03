@@ -171,18 +171,12 @@ $headers = [
 $headers_str = implode("\r\n", $headers);
 $sent = @mail($recipient, $subject, $body, $headers_str);
 
-// 7. SAVE ENQUIRY IN JSON FORMAT IN DIRECTORY
+// 7. SAVE ENQUIRY IN PRIVATE DIRECTORY (OUTSIDE PUBLIC WEB ROOT)
 $enquiry_id = 'ENQ-' . date('Ymd-His') . '-' . strtoupper(substr(bin2hex(random_bytes(3)), 0, 6));
-$enquiries_dir = __DIR__ . '/enquiries';
+$enquiries_dir = dirname(__DIR__, 2) . '/storage/enquiries';
 
 if (!is_dir($enquiries_dir)) {
-    @mkdir($enquiries_dir, 0775, true);
-}
-
-// Ensure .htaccess exists in enquiries directory
-$htaccess_path = $enquiries_dir . '/.htaccess';
-if (!file_exists($htaccess_path)) {
-    @file_put_contents($htaccess_path, "# Protect stored enquiry JSON files from direct web access\nRequire all denied\nDeny from all\n");
+    @mkdir($enquiries_dir, 0770, true);
 }
 
 $enquiry_record = [
@@ -239,10 +233,10 @@ array_unshift($master_list, $enquiry_record);
     LOCK_EX
 );
 
-// 7c. Text Log for Audit Tracking
-$log_dir = __DIR__ . '/backups/logs';
+// 7c. Text Log for Audit Tracking (Saved in Private Storage Outside Web Root)
+$log_dir = dirname(__DIR__, 2) . '/storage/logs';
 if (!is_dir($log_dir)) {
-    @mkdir($log_dir, 0750, true);
+    @mkdir($log_dir, 0770, true);
 }
 @file_put_contents(
     $log_dir . '/enquiries.log',
