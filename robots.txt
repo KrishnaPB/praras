@@ -4,6 +4,10 @@ Disallow: /enquiries/
 Disallow: /backups/
 Disallow: /scratch/
 Disallow: /templates/
+Disallow: /components/
+Disallow: /tools/
 Disallow: /docs/
+Disallow: /data/
+Disallow: /new/
 
 Sitemap: https://www.prarasbiosciences.com/sitemap.xml

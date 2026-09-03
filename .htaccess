@@ -79,6 +79,12 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # ─── 4. PROTECT HIDDEN & INTERNAL FILES ───
-<FilesMatch "^\.">
+Options -Indexes
+
+<FilesMatch "^\.|\.(json|lock|log|md|sh|py|docx?|xlsx?|zip|tar|gz|bak)$">
     Require all denied
 </FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteRule ^(data|tools|scratch|components|templates|node_modules|venv)/ - [F,L]
+</IfModule>

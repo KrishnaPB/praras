@@ -2569,7 +2569,16 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         </div>
         <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
           <div style="background:#fff;border-radius:8px;padding:6px 14px;display:inline-flex;width:fit-content;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:36px;width:auto"><use href="#ab-logo"/></svg>
+            <svg class="ab-foot-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:36px;width:auto;" aria-label="Airbliss Probiotics">
+              <g transform="translate(24 22) scale(0.35)">
+                <circle r="56" fill="none" stroke="#234A32" stroke-width="4" stroke-dasharray="155 30" stroke-linecap="round" transform="rotate(-20)"></circle>
+                <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#234A32"></path>
+                <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#5C7A4A" transform="rotate(120)"></path>
+                <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#9DBF82" transform="rotate(240)"></path>
+              </g>
+              <text x="50" y="27" font-family="'Outfit', -apple-system, sans-serif" font-weight="800" font-size="20" fill="#234A32" letter-spacing="0.08em">AIRBLISS</text>
+              <text x="50" y="38" font-family="'Outfit', -apple-system, sans-serif" font-weight="500" font-size="7.5" fill="#5C7A4A" letter-spacing="0.22em">PROBIOTICS</text>
+            </svg>
           </div>
         </div>
         <div class="foot-brand-name" id="foot-brand-name" style="display:none">Praras Biosciences</div>
@@ -2642,7 +2651,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
     </button>
   </div>
   <div class="quote-drawer-body">
-    <form id="quote-form">
+    <form id="quote-form" action="/mailer.php" method="POST">
       <input type="hidden" id="q-product" name="product" value="General Inquiry">
       <div class="quote-form-group">
         <div class="q-input-wrap">

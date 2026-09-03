@@ -16,7 +16,9 @@ if (!empty($_POST['website']) || !empty($_POST['honeypot'])) {
 }
 
 // 2. Cloudflare Turnstile Verification
-$turnstile_secret = "0x4AAAAAAEjrnnoCMBGcgpJOF6wfyQFXqg4";
+$config_file = dirname(__DIR__, 2) . '/storage/config.php';
+$storage_config = file_exists($config_file) ? @include($config_file) : [];
+$turnstile_secret = getenv('TURNSTILE_SECRET') ?: ($storage_config['turnstile_secret'] ?? '0x4AAAAAAEjrnnoCMBGcgpJOF6wfyQFXqg4');
 $turnstile_response = isset($_POST['cf-turnstile-response']) ? trim($_POST['cf-turnstile-response']) : '';
 
 // Allow local development testing bypass if needed, but enforce in production
@@ -104,7 +106,7 @@ if (stripos($product, 'airbliss') !== false || stripos($source_page, 'airbliss')
 }
 
 // 5. Construct Email Subject & Body
-$recipient = "info@prarasbiosciences.com";
+$recipient = getenv('MAIL_RECIPIENT') ?: ($storage_config['mail_recipient'] ?? "info@prarasbiosciences.com");
 $timestamp = date("Y-m-d H:i:s T");
 
 if ($is_quote_drawer) {

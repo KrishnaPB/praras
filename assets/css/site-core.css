@@ -3,6 +3,8 @@
  * Version: 2.5.0 (Industry Standard Modular Asset)
  */
 
+@import "../../fonts/fonts.css";
+
 /* ─── 1. GLOBAL DESIGN TOKENS & RESET ─── */
 :root {
   --c-primary: #9A1D1E;

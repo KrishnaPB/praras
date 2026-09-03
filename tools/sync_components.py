@@ -36,43 +36,49 @@ def sync_page(filepath, is_product=False):
     rendered_drawer = render_component(DRAWER_TPL, is_product)
     rendered_search = render_component(SEARCH_TPL, is_product)
 
+    def replace_section(src, start_tag, end_tag, replacement):
+        s_idx = src.find(start_tag)
+        if s_idx != -1:
+            e_idx = src.find(end_tag, s_idx)
+            if e_idx != -1:
+                return src[:s_idx] + replacement + src[e_idx + len(end_tag):]
+        return src
+
     # 1. Sync Header
     if "<!-- START: SITE-HEADER -->" in content and "<!-- END: SITE-HEADER -->" in content:
-        content = re.sub(r'<!-- START: SITE-HEADER -->.*?<!-- END: SITE-HEADER -->', rendered_header, content, flags=re.DOTALL)
+        content = replace_section(content, "<!-- START: SITE-HEADER -->", "<!-- END: SITE-HEADER -->", rendered_header)
     else:
-        # Match from switcher / shared nav down to end of header
         header_pattern = re.compile(r'(<!-- BRAND SWITCHER STRIP -->.*?)?<header class="site-nav".*?</header>', re.DOTALL)
         if header_pattern.search(content):
-            content = header_pattern.sub(rendered_header, content, count=1)
+            content = header_pattern.sub(lambda m: rendered_header, content, count=1)
 
     # 2. Sync Footer
     if "<!-- START: SITE-FOOTER -->" in content and "<!-- END: SITE-FOOTER -->" in content:
-        content = re.sub(r'<!-- START: SITE-FOOTER -->.*?<!-- END: SITE-FOOTER -->', rendered_footer, content, flags=re.DOTALL)
+        content = replace_section(content, "<!-- START: SITE-FOOTER -->", "<!-- END: SITE-FOOTER -->", rendered_footer)
     else:
         footer_pattern = re.compile(r'<!-- ════ SHARED FOOTER ════ -->.*?<footer class="site-footer".*?</footer>', re.DOTALL)
         if footer_pattern.search(content):
-            content = footer_pattern.sub(rendered_footer, content, count=1)
+            content = footer_pattern.sub(lambda m: rendered_footer, content, count=1)
         else:
-            # Fallback to just <footer ... </footer>
             f2 = re.compile(r'<footer class="site-footer".*?</footer>', re.DOTALL)
             if f2.search(content):
-                content = f2.sub(rendered_footer, content, count=1)
+                content = f2.sub(lambda m: rendered_footer, content, count=1)
 
     # 3. Sync Quote Drawer
     if "<!-- START: QUOTE-DRAWER -->" in content and "<!-- END: QUOTE-DRAWER -->" in content:
-        content = re.sub(r'<!-- START: QUOTE-DRAWER -->.*?<!-- END: QUOTE-DRAWER -->', rendered_drawer, content, flags=re.DOTALL)
+        content = replace_section(content, "<!-- START: QUOTE-DRAWER -->", "<!-- END: QUOTE-DRAWER -->", rendered_drawer)
     else:
         drawer_pattern = re.compile(r'(<!-- ════ QUOTE DRAWER ════ -->\s*)?(<div class="quote-overlay".*?</aside>)', re.DOTALL)
         if drawer_pattern.search(content):
-            content = drawer_pattern.sub(rendered_drawer, content, count=1)
+            content = drawer_pattern.sub(lambda m: rendered_drawer, content, count=1)
 
     # 4. Sync Search Modal
     if "<!-- START: SEARCH-MODAL -->" in content and "<!-- END: SEARCH-MODAL -->" in content:
-        content = re.sub(r'<!-- START: SEARCH-MODAL -->.*?<!-- END: SEARCH-MODAL -->', rendered_search, content, flags=re.DOTALL)
+        content = replace_section(content, "<!-- START: SEARCH-MODAL -->", "<!-- END: SEARCH-MODAL -->", rendered_search)
     else:
         search_pattern = re.compile(r'<div class="site-search-overlay".*?</div>\s*</div>', re.DOTALL)
         if search_pattern.search(content):
-            content = search_pattern.sub(rendered_search, content, count=1)
+            content = search_pattern.sub(lambda m: rendered_search, content, count=1)
 
     if content != orig_content:
         with open(filepath, "w", encoding="utf-8") as fp:
@@ -88,9 +94,6 @@ def main():
     updated_prod = 0
 
     for p in root_pages:
-        # skip docs, scratch, or custom error pages
-        if os.path.basename(p) == "404.html":
-            continue
         if sync_page(p, is_product=False):
             updated_root += 1
 
