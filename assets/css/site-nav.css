@@ -374,6 +374,8 @@ body.ab .nav-logo-ab { display: inline-flex !important; }
 }
 
 @media (min-width: 961px) {
+  .site-nav .nav-inner { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
   .mega-menu {
     position: absolute;
     top: 100%;

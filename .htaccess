@@ -85,6 +85,11 @@ Options -Indexes
     Require all denied
 </FilesMatch>
 
+# Allow public product search catalog for client-side search palette
+<Files "products-search.json">
+    Require all granted
+</Files>
+
 <IfModule mod_rewrite.c>
     RewriteRule ^(data|tools|scratch|components|templates|node_modules|venv)/ - [F,L]
 </IfModule>

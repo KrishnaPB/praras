@@ -42,6 +42,11 @@ function brand(b, scroll) {
     el.style.display = isAb ? '' : 'none';
   });
 
+  var navBrandLogo = document.getElementById('nav-brand-logo') || document.querySelector('.nav-logo');
+  if (navBrandLogo) {
+    navBrandLogo.setAttribute('aria-label', isAb ? 'Airbliss Living Solutions Home' : 'Praras Biosciences Home');
+  }
+
   var footPrLogo = document.getElementById('foot-logo-pr');
   var footAbLogo = document.getElementById('foot-logo-ab');
   if (footPrLogo && footAbLogo) {
@@ -166,6 +171,11 @@ window.switchWcTab = switchWcTab;
 
   function setupSiteInteractions() {
     loadSearchCatalog();
+
+    var navBrandLogo = document.getElementById('nav-brand-logo') || document.querySelector('.nav-logo');
+    if (navBrandLogo && document.body.classList.contains('ab')) {
+      navBrandLogo.setAttribute('aria-label', 'Airbliss Living Solutions Home');
+    }
 
     // 1. Dropdown & Mega Menu Accordion Triggers
     document.querySelectorAll('.nav-dropdown').forEach(dropdown => {

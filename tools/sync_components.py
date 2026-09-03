@@ -79,6 +79,10 @@ def sync_page(filepath, is_product=False):
         search_pattern = re.compile(r'<div class="site-search-overlay".*?</div>\s*</div>', re.DOTALL)
         if search_pattern.search(content):
             content = search_pattern.sub(lambda m: rendered_search, content, count=1)
+        elif "<!-- START: QUOTE-DRAWER -->" in content:
+            content = content.replace("<!-- START: QUOTE-DRAWER -->", rendered_search + "\n\n<!-- START: QUOTE-DRAWER -->")
+        elif "</body>" in content:
+            content = content.replace("</body>", rendered_search + "\n\n</body>")
 
     if content != orig_content:
         with open(filepath, "w", encoding="utf-8") as fp:

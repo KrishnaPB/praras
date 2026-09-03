@@ -958,9 +958,20 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 @media (min-width: 961px) {
   .site-nav .nav-inner { position: relative !important; }
-  .site-nav #products-dropdown { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
   .nav-dropdown-services { position: relative !important; }
 
+  .mega-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -24px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 24px !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    z-index: 1001 !important;
+  }
   .mega-menu {
     position: absolute !important;
     top: calc(100% + 4px) !important;
@@ -1473,6 +1484,9 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 <body>
 
 <!-- START: SITE-HEADER -->
+<!-- Skip to Main Content (WCAG 2.4.1) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- BRAND SWITCHER STRIP -->
 <div class="switcher">
   <button type="button" class="sw-btn pr on" id="sw-btn-pr" onclick="brand('pr')">
@@ -1487,7 +1501,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 <header class="site-nav" role="banner">
   <div class="nav-inner">
         <!-- Brand Logo Anchor -->
-    <a href="../index.html" class="nav-logo" aria-label="Praras Biosciences / Airbliss Home">
+    <a href="../index.html" class="nav-logo" id="nav-brand-logo" aria-label="Praras Biosciences Home">
       <!-- Praras logo (hidden when body has class .ab) -->
       <img
         src="../assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
@@ -1876,7 +1890,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <!-- ── Left Column (45%): Media Card Stage ── -->
       <section class="wc-media-stage" aria-label="Product packaging visual">
         <div class="wc-img-box">
-          <img src="../assets/images/gristsolubaid.svg" alt="GRISTSOLUBAID Packaging" width="310" height="310" loading="lazy" decoding="async">
+          <img src="../assets/images/gristsolubaid.svg" alt="GRISTSOLUBAID Packaging" width="310" height="310" loading=\"eager\" fetchpriority=\"high\" decoding="async">
         </div>
 
         <div class="wc-left-btn">
@@ -2261,6 +2275,41 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 <!-- QUOTE DRAWER -->
 <!-- QUOTE DRAWER -->
+<!-- START: SEARCH-MODAL -->
+<!-- ════ INTERACTIVE SEARCH MODAL ════ -->
+<div class="site-search-overlay" id="site-search-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product Search">
+  <div class="site-search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" class="search-input" id="site-search-input" placeholder="Search formulations, enzymes, baking, brewing, probiotics..." autocomplete="off" spellcheck="false" aria-label="Search website">
+      <button type="button" class="search-clear-btn" id="site-search-clear" style="display:none;" aria-label="Clear query">&times;</button>
+      <kbd class="search-close-badge">ESC</kbd>
+    </div>
+    <div class="search-filter-bar" id="search-filter-bar">
+      <button type="button" class="search-chip is-active" data-filter="all">All Formulations</button>
+      <button type="button" class="search-chip" data-filter="baking">Baking</button>
+      <button type="button" class="search-chip" data-filter="breweries">Breweries</button>
+      <button type="button" class="search-chip" data-filter="distilleries">Distilleries</button>
+      <button type="button" class="search-chip" data-filter="wine">Wine</button>
+      <button type="button" class="search-chip" data-filter="beverages">Beverages</button>
+      <button type="button" class="search-chip" data-filter="microbial">Microbial</button>
+      <button type="button" class="search-chip" data-filter="airbliss">Airbliss</button>
+    </div>
+    <div class="search-results-list" id="search-results-list" role="listbox">
+      <!-- Injected dynamically by JS -->
+    </div>
+    <div class="search-footer">
+      <span>Search 70+ bio-solutions across Praras &amp; Airbliss</span>
+      <div class="search-shortcuts">
+        <span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> to navigate</span>
+        <span><kbd>&crarr;</kbd> to select</span>
+        <span><kbd>ESC</kbd> to close</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END: SEARCH-MODAL -->
+
 <!-- START: QUOTE-DRAWER -->
 <!-- ════ QUOTE DRAWER ════ -->
 <div class="quote-overlay" id="quote-overlay"></div>

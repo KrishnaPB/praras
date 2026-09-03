@@ -465,7 +465,7 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
 /* ── Desktop Viewport Layout (min-width: 961px) ── */
 @media (min-width: 961px) {
   .site-nav .nav-inner { position: relative !important; }
-  .site-nav #products-dropdown { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
   .nav-dropdown-services { position: relative !important; }
   .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
 
@@ -481,6 +481,17 @@ body.ab .cta-p{color:rgba(255,255,255,.9);}
   z-index: 1001 !important;
 }
 
+  .mega-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -24px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 24px !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    z-index: 1001 !important;
+  }
   .mega-menu {
     position: absolute !important;
     top: calc(100% + 4px) !important;
@@ -1359,9 +1370,20 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 @media (min-width: 961px) {
   .site-nav .nav-inner { position: relative !important; }
-  .site-nav #products-dropdown { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
   .nav-dropdown-services { position: relative !important; }
 
+  .mega-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -24px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 24px !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    z-index: 1001 !important;
+  }
   .mega-menu {
     position: absolute !important;
     top: calc(100% + 4px) !important;
@@ -2092,7 +2114,7 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
 /* ── Desktop Viewport Layout (min-width: 961px) ── */
 @media (min-width: 961px) {
   .site-nav .nav-inner { position: relative !important; }
-  .site-nav #products-dropdown { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
   .nav-dropdown-services { position: relative !important; }
   .nav-dropdown { position: static; display: flex; align-items: center; height: 100%; }
 
@@ -2108,6 +2130,17 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
   z-index: 1001 !important;
 }
 
+  .mega-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -24px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 24px !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    z-index: 1001 !important;
+  }
   .mega-menu {
     position: absolute !important;
     top: calc(100% + 4px) !important;
@@ -2840,6 +2873,9 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
 <body>
 
 <!-- START: SITE-HEADER -->
+<!-- Skip to Main Content (WCAG 2.4.1) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- BRAND SWITCHER STRIP -->
 <div class="switcher">
   <button type="button" class="sw-btn pr on" id="sw-btn-pr" onclick="brand('pr')">
@@ -2854,7 +2890,7 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
 <header class="site-nav" role="banner">
   <div class="nav-inner">
         <!-- Brand Logo Anchor -->
-    <a href="index.html" class="nav-logo" aria-label="Praras Biosciences / Airbliss Home">
+    <a href="index.html" class="nav-logo" id="nav-brand-logo" aria-label="Praras Biosciences Home">
       <!-- Praras logo (hidden when body has class .ab) -->
       <img
         src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
@@ -3246,7 +3282,7 @@ button.dropdown-trigger,.dropdown-trigger{background:transparent!important;borde
           </div>
           <div class="ov-visual">
             <div class="ov-img-frame">
-              <img src="assets/images/microbial_hero.webp" alt="Microbial & Environmental Bio-Solutions" width="600" height="450" loading="lazy" decoding="async">
+              <img src="assets/images/microbial_hero.webp" alt="Microbial & Environmental Bio-Solutions" width="600" height="450" loading="eager" fetchpriority="high" decoding="async">
               <div class="ov-img-tag">
                 <div class="ov-tag-num">100%</div>
                 <div class="ov-tag-text">Natural &amp; Safe<br>Bio-Consortia</div>

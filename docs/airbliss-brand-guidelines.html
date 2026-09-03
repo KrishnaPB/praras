@@ -338,9 +338,20 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 @media (min-width: 961px) {
   .site-nav .nav-inner { position: relative !important; }
-  .site-nav #products-dropdown { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
   .nav-dropdown-services { position: relative !important; }
 
+  .mega-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -24px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 24px !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    z-index: 1001 !important;
+  }
   .mega-menu {
     position: absolute !important;
     top: calc(100% + 8px) !important;

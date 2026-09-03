@@ -102,8 +102,12 @@
 
 .sw-sub {
   font-size: 0.68rem;
-  opacity: 0.6;
-  font-weight: 400;
+  opacity: 0.88 !important;
+  font-weight: 500 !important;
+}
+
+.wc-disclaimer {
+  color: #4a5d52 !important;
 }
 
 /* ─── 3. BRAND VISIBILITY TOGGLES ─── */
@@ -280,7 +284,7 @@ body.ab .nav-logo-ab { display: block !important; }
     position: relative !important;
   }
 
-  .site-nav #products-dropdown { position: relative !important; }
+  .site-nav #products-dropdown { position: static !important; }
 
   .nav-dropdown {
     position: relative;
@@ -310,6 +314,17 @@ body.ab .nav-logo-ab { display: block !important; }
   /* ══════════════════════════════════════════════════════════════════
      PERFECT ULTRA-RESPONSIVE MEGA MENU (BALANCED & HIGH CONTRAST)
      ══════════════════════════════════════════════════════════════════ */
+  .mega-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -24px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 24px !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    z-index: 1001 !important;
+  }
   .mega-menu {
     position: absolute !important;
     top: calc(100% + 4px) !important;
@@ -2372,4 +2387,25 @@ body:not(.ab) #foot-logo-pr {
 }
 
 .foot-copy { margin: 0 !important; }
-.foot-tag { font-style: italic !important; color: rgba(255, 255, 255, 0.4) !important; }
+.foot-tag { font-style: italic !important; color: rgba(255, 255, 255, 0.72) !important; }
+
+/* Accessible Skip Link (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--c-primary, #9A1D1E);
+  color: #ffffff !important;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top 0.2s ease-in-out;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #ffffff;
+}
+
