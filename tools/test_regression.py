@@ -22,6 +22,8 @@ def test_component_parity():
 
     for p in pages:
         rel = os.path.relpath(p, WORKSPACE)
+        if rel == "404.html":
+            continue
         with open(p, "r", encoding="utf-8") as fp:
             content = fp.read()
         

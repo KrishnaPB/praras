@@ -262,24 +262,358 @@
 <body>
 
   <!-- Site Navigation Header -->
-  <header class="site-nav" role="banner">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Praras Biosciences Home">
-        <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp" alt="Praras Biosciences" width="156" height="42" loading="lazy">
-      </a>
-      <nav aria-label="Main Navigation">
-        <ul class="nav-links">
-          <li><a href="breweries.html">Breweries</a></li>
-          <li><a href="distilleries.html">Distilleries</a></li>
-          <li><a href="industry.html">Food & Beverage</a></li>
-          <li><a href="microbial-solutions.html">Microbial</a></li>
-          <li><a href="airbliss.html">Airbliss</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html" class="btn-contact">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- START: SITE-HEADER -->
+<!-- BRAND SWITCHER STRIP -->
+<div class="switcher">
+  <button type="button" class="sw-btn pr on" id="sw-btn-pr" onclick="brand('pr')">
+    <span class="sw-dot"></span>Praras Biosciences <span class="sw-sub">Food &amp; Biotech</span>
+  </button>
+  <button type="button" class="sw-btn ab" id="sw-btn-ab" onclick="brand('ab')">
+    <span class="sw-dot"></span>Airbliss <span class="sw-sub">Probiotic Solutions</span>
+  </button>
+</div>
+
+<!-- ════ SHARED NAV ════ -->
+<header class="site-nav" role="banner">
+  <div class="nav-inner">
+        <!-- Brand Logo Anchor -->
+    <a href="index.html" class="nav-logo" aria-label="Praras Biosciences / Airbliss Home">
+      <!-- Praras logo (hidden when body has class .ab) -->
+      <img
+        src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
+        alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+        class="nav-logo-pr-img"
+        width="156" height="48" style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 14px;"
+      />
+      <!-- Airbliss logo (shown ONLY when body has class .ab) -->
+      <div class="nav-logo-ab" aria-hidden="true">
+        <svg class="ab-nav-svg" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:40px;width:auto;">
+          <g transform="translate(24 22) scale(0.35)">
+            <circle r="56" fill="none" stroke="#234A32" stroke-width="4" stroke-dasharray="155 30" stroke-linecap="round" transform="rotate(-20)"></circle>
+            <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#234A32"></path>
+            <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#5C7A4A" transform="rotate(120)"></path>
+            <path d="M0 -2 C -14 -13 -13 -31 -4 -43 C -1.6 -46 1.6 -46 4 -43 C 13 -31 14 -13 0 -2 Z" fill="#9DBF82" transform="rotate(240)"></path>
+            <circle r="7" fill="#FBF8F0"></circle><circle r="3.4" fill="#C18A5B"></circle>
+          </g>
+          <text x="52" y="27" font-family="'Cinzel', 'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="18" fill="#1F4F33" letter-spacing="0.12em">AIRBLISS</text>
+          <text x="53" y="37" font-family="sans-serif" font-weight="700" font-size="6.5" fill="#5C7A4A" letter-spacing="0.18em">LIVING SOLUTIONS</text>
+        </svg>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Primary" id="main-nav-links">
+      <span class="pr-only"><a href="about.html">About</a></span>
+      
+      <!-- Mega Menu Dropdown -->
+      <div class="nav-dropdown pr-only" id="products-dropdown">
+        <button class="dropdown-trigger" id="products-dropdown-btn" aria-expanded="false" aria-controls="products-mega-menu" aria-haspopup="true">
+          Products <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div id="products-mega-menu" class="mega-menu" role="region" aria-label="Products Mega Menu">
+          <div class="mega-menu-inner">
+            <div class="mega-content-grid">
+              
+              <!-- Column 1: Food Bio-Solutions -->
+              <div class="mega-col-panel">
+                <div class="mega-col-top">
+                  <div class="mega-col-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                  </div>
+                  <h3 class="mega-col-title">Food Bio-Solutions</h3>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Baking Improvers</div>
+                  <a href="biscuits-cookies.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Biscuit Improver</span>
+                      <span class="mega-item-desc">Dough relaxers &amp; texture enzymes</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="preccel-93.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Eggless Cake Improver</span>
+                      <span class="mega-item-desc">Preccel® 93 volume &amp; softness</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="bread-buns-pizza-base.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Flour &amp; Bread Improver</span>
+                      <span class="mega-item-desc">Gluten strength &amp; oven spring</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="wafers.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Wafer Improver</span>
+                      <span class="mega-item-desc">Crispness &amp; mold release</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Savory &amp; Texture Systems</div>
+                  <a href="meat.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Meat Texturizers</span>
+                      <span class="mega-item-desc">TextureAid® MSK yield enhancer</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="pasta-and-noodles.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Pasta &amp; Noodle Improvers</span>
+                      <span class="mega-item-desc">Cooking firmness &amp; bite</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="extruded-fried-snacks.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Snack Oil Reducers</span>
+                      <span class="mega-item-desc">Fat uptake control for frying</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="mayonnaise.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Eggless Mayonnaise</span>
+                      <span class="mega-item-desc">Premaycel emulsion stability</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="egg-free-nougat.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Nougat Improver</span>
+                      <span class="mega-item-desc">Hydrocolloid aeration &amp; chew</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="a-hango.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Anti-Hangover Blend</span>
+                      <span class="mega-item-desc">A-Hango® natural functional bio-aid</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Column 2: Beverages & Fermentation -->
+              <div class="mega-col-panel">
+                <div class="mega-col-top">
+                  <div class="mega-col-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10l-1.5 8c-.2 1.1-1.3 2-2.5 2h-2c-1.2 0-2.3-.9-2.5-2L7 10"></path><path d="M12 2v8"></path><path d="M8 5l4-3 4 3"></path><path d="M4 10h16"></path></svg>
+                  </div>
+                  <h3 class="mega-col-title">Beverages &amp; Brewing</h3>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Alcoholic Fermentation</div>
+                  <a href="breweries.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Brewery Enzymes</span>
+                      <span class="mega-item-desc">BrewStabAid® mashing &amp; foam</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="distilleries.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Distillery &amp; Fermentation</span>
+                      <span class="mega-item-desc">High-gravity yield accelerators</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="wine.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Wine Enzymes &amp; Additives</span>
+                      <span class="mega-item-desc">Pectinase, aroma &amp; fining</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="microbrewery.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Microbrewery Solutions</span>
+                      <span class="mega-item-desc">Specialized craft brewing enzymes</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Non-Alcoholic &amp; Dairy</div>
+                  <a href="fruit-based.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Fruit Beverage Stabilizers</span>
+                      <span class="mega-item-desc">Cloud stability &amp; pulp suspension</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="milk-based.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Milk &amp; Dairy Stabilizers</span>
+                      <span class="mega-item-desc">Heat stability &amp; anti-curdling</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="chocolate-coffee.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Choco &amp; Coffee Stabilizers</span>
+                      <span class="mega-item-desc">Emulsion &amp; fat sedimentation control</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Column 3: Microbial & Living Hygiene -->
+              <div class="mega-col-panel">
+                <div class="mega-col-top">
+                  <div class="mega-col-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                  </div>
+                  <h3 class="mega-col-title">Microbial &amp; Living</h3>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Biotechnology Platforms</div>
+                  <a href="microbial-solutions.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Microbial Solutions</span>
+                      <span class="mega-item-desc">Custom biological catalysts</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="wine.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Wine Kit</span>
+                      <span class="mega-item-desc">Enological nutrients &amp; yeast aids</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="mega-group">
+                  <div class="mega-group-label">Airbliss™ Living Solutions</div>
+                  <a href="airbliss.html#catalog" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Probiotic Facility Hygiene</span>
+                      <span class="mega-item-desc">Eco-active surface &amp; drain cleaners</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="products/airbliss-stp-activ.html" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">STP ACTIV™ Wastewater Bio</span>
+                      <span class="mega-item-desc">Rapid sludge &amp; BOD reduction</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                  <a href="airbliss.html#science" class="mega-item">
+                    <div class="mega-item-body">
+                      <span class="mega-item-name">Bio-Enzymatic Odor Elimination</span>
+                      <span class="mega-item-desc">Uric acid degradation &amp; scale control</span>
+                    </div>
+                    <span class="mega-item-arrow">&rarr;</span>
+                  </a>
+                </div>
+                <div class="mega-mini-card">
+                  <div class="mega-mini-head">
+                    <span class="mega-mini-dot"></span>
+                    <span>Custom Microbial R&amp;D</span>
+                  </div>
+                  <p class="mega-mini-p">DSIR-certified bio-formulations &amp; pilot fermentation testing.</p>
+                  <a href="microbial-solutions.html" class="mega-mini-link">Explore Capabilities &rarr;</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Column 4: Innovation Spotlight & Quick Access -->
+            <div class="mega-spotlight">
+              <div>
+                <div class="mega-spotlight-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  Innovation Spotlight
+                </div>
+                <h4 class="mega-spotlight-title">Biscamaze® &amp; TextureAid®</h4>
+                <p class="mega-spotlight-desc">Next-generation enzyme dough conditioners &amp; hydrocolloid yield systems engineered for industrial food manufacturers.</p>
+                <a href="biscuits-cookies.html" class="mega-spotlight-btn">
+                  Explore Solutions <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+
+              <div class="mega-spotlight-tools">
+                <button type="button" class="mega-tool-link btn-quote" data-product="Formulation Consultation">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                  Request Free Sample Pack
+                </button>
+                <a href="services.html" class="mega-tool-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                  Contract Toll Blending
+                </a>
+                <button type="button" class="mega-tool-link nav-search-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  Quick Search (Ctrl + K)
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <span class="pr-only"><a href="industry.html">Industries</a></span>
+
+      <!-- Airbliss specific links when brand is switched -->
+      <span class="ab-only"><a href="airbliss.html#catalog">Products</a></span>
+      <span class="ab-only"><a href="airbliss.html#science">The Science</a></span>
+      <span class="ab-only"><a href="airbliss.html#sectors">Industries</a></span>
+      <span class="ab-only"><a href="about.html">About Praras</a></span>
+
+      <div class="nav-dropdown nav-dropdown-services pr-only">
+        <button class="dropdown-trigger" id="services-dropdown-btn" aria-expanded="false" aria-controls="services-mega-menu" aria-haspopup="true">
+          Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div id="services-mega-menu" class="mega-menu mega-menu-services" role="region" aria-label="Services Menu">
+          <div class="mega-services-grid">
+            <a href="contract_manufacturing.html" class="mega-service-card">
+              <div class="mega-service-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"></path><path d="M5 20V8l5 3V4l5 3v5l5-2v10"></path></svg>
+              </div>
+              <div class="mega-service-title">
+                Contract Manufacturing &rarr;
+              </div>
+              <p class="mega-service-desc">ISO &amp; FSSAI compliant dry blending, liquid enzyme formulation &amp; pilot toll scaling.</p>
+            </a>
+            <a href="troubleshooting.html" class="mega-service-card">
+              <div class="mega-service-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div class="mega-service-title">
+                Plant Troubleshooting &rarr;
+              </div>
+              <p class="mega-service-desc">On-site yield diagnostics, fermentation optimization &amp; sensory recipe tuning.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <span class="pr-only"><a href="blog.html">Blog</a></span>
+      <span class="pr-only"><a href="careers.html">Careers</a></span>
+      <a href="contact.html" class="nav-cta pr-only">Contact Us</a>
+      <button type="button" class="nav-cta ab-only btn-quote" data-product="Airbliss Institutional Inquiry">Request Trial</button>
+    </nav>
+
+    <!-- Hamburger menu toggle -->
+    <button class="hamburger-menu" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</header>
+<!-- END: SITE-HEADER -->
 
   <!-- Main 404 Content -->
   <main id="main-content">
@@ -337,16 +671,78 @@
   </main>
 
   <!-- Site Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <p>&copy; 2026 Praras Biosciences Pvt. Ltd. All rights reserved.</p>
-    <p style="margin-top:0.5rem;">
-      <a href="index.html">Home</a> &middot;
-      <a href="about.html">About</a> &middot;
-      <a href="services.html">Services</a> &middot;
-      <a href="privacy-policy.html">Privacy Policy</a> &middot;
-      <a href="contact.html">Contact</a>
-    </p>
-  </footer>
+  <!-- START: SITE-FOOTER -->
+<!-- ════ SHARED FOOTER ════ -->
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div class="foot-top">
+      <div>
+        <!-- Praras footer logo (swapped by JS on brand switch) -->
+        <div id="foot-logo-pr" style="margin-bottom:.875rem">
+          <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
+            alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+            style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
+            width="156" height="48"
+          />
+        </div>
+        <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
+          <div style="background:#fff;border-radius:8px;padding:6px 14px;display:inline-flex;width:fit-content;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 250" style="height:36px;width:auto"><use href="#ab-logo"/></svg>
+          </div>
+        </div>
+        <div class="foot-brand-name" id="foot-brand-name" style="display:none">Praras Biosciences</div>
+        <p class="foot-brand-p" id="foot-brand-p">Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.</p>
+        <button type="button" class="foot-switch-link" id="foot-switch" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')">
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <span id="foot-switch-label">Visit Airbliss</span>
+        </button>
+      </div>
+      <div class="foot-col">
+        <h3 id="foot-col1-h">Products</h3>
+        <ul id="foot-col1">
+          <li class="pr-f"><a href="biscuits-cookies.html">Food Additives</a></li>
+          <li class="pr-f"><a href="breweries.html">Beverage Solutions</a></li>
+          <li class="pr-f"><a href="contract_manufacturing.html">Contract Mfg</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-stp-activ.html">AIRBLISS™ STP ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-u-block-activ.html">AIRBLISS™ U BLOCK ACTIV™</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-drain-cleaner.html">AIRBLISS™ Bio Drain Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-udc.html">AIRBLISS™ UDC Urinal Drain</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-utc.html">AIRBLISS™ UTC Toilet Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-floor-cleaner.html">AIRBLISS™ Probiotic Floor Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-multi-surface.html">AIRBLISS™ Multi Surface Cleaner</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-air-freshener.html">AIRBLISS™ Air Freshener Liquid</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-fabric-stain-remover.html">AIRBLISS™ Fabric Stain Remover</a></li>
+          <li class="ab-f" style="display:none"><a href="products/airbliss-glass-cleaner.html">AIRBLISS™ Glass Cleaner</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li class="pr-f"><a href="industry.html">Industries</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><button type="button" onclick="brand(document.body.classList.contains('ab') ? 'pr' : 'ab')" id="foot-ab-btn">Airbliss ↗</button></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+918048904262">+91-80-48904262</a></li>
+          <li><a href="mailto:info@prarasbiosciences.com">info@prarasbiosciences.com</a></li>
+          <li><a href="#">Mon–Fri, 9AM–5:30PM</a></li>
+          <li><a href="#">Bengaluru, India</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy" id="foot-copy">© 2026 Praras Biosciences Pvt Ltd. All rights reserved.</p>
+      <span class="foot-tag" id="foot-tag">Biosciences for Better Value</span>
+    </div>
+  </div>
+</footer>
+<!-- END: SITE-FOOTER -->
 
 </body>
 </html>

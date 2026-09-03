@@ -88,7 +88,9 @@ def main():
     updated_prod = 0
 
     for p in root_pages:
-        # skip docs or scratch
+        # skip docs, scratch, or custom error pages
+        if os.path.basename(p) == "404.html":
+            continue
         if sync_page(p, is_product=False):
             updated_root += 1
 
