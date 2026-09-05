@@ -2068,6 +2068,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   font-weight: 400;
   background: linear-gradient(135deg, #FAF6EE 20%, #E87925 80%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -2418,6 +2419,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   margin-bottom: 0.35rem;
 }
 
+.story-pillar-item h3,
 .story-pillar-item h4 {
   font-family: var(--font-b);
   font-size: 1rem;
@@ -2461,7 +2463,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
 
 .story-card-badge {
   display: inline-block;
-  background: #E87925;
+  background: #B34700;
   color: #FFFFFF;
   font-family: var(--font-b);
   font-size: 0.7rem;
@@ -2590,6 +2592,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   margin-bottom: 1.25rem;
 }
 
+.ethos-card h3,
 .ethos-card h4 {
   font-family: var(--font-d);
   font-size: 1.25rem;
@@ -3197,7 +3200,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: #E87925;
+  background: #B34700;
   color: #FFFFFF;
   border: none;
   font-family: var(--font-b);
@@ -3206,14 +3209,14 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
   padding: 0.9rem 1.8rem;
   border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(232, 121, 37, 0.4);
+  box-shadow: 0 8px 24px rgba(179, 71, 0, 0.4);
   transition: all 0.25s ease;
 }
 
 .btn-cta-primary:hover {
-  background: #F08938;
+  background: #9E3E00;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(232, 121, 37, 0.55);
+  box-shadow: 0 12px 30px rgba(179, 71, 0, 0.55);
 }
 
 .btn-cta-secondary {
@@ -3352,7 +3355,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
         alt="PrĀRAS Bio-Sciences Pvt. Ltd."
         class="nav-logo-pr-img"
-        width="156" height="48" style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 14px;"
+        width="250" height="77" style="height:48px;width:auto;aspect-ratio:250/77;background:#fff;border-radius:8px;padding:5px 14px;"
       />
       <!-- Airbliss logo (shown ONLY when body has class .ab) -->
       <div class="nav-logo-ab" aria-hidden="true">
@@ -3387,7 +3390,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
                   <div class="mega-col-icon">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
                   </div>
-                  <h3 class="mega-col-title">Food Bio-Solutions</h3>
+                  <div class="mega-col-title">Food Bio-Solutions</div>
                 </div>
 
                 <div class="mega-group">
@@ -3475,7 +3478,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
                   <div class="mega-col-icon">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10l-1.5 8c-.2 1.1-1.3 2-2.5 2h-2c-1.2 0-2.3-.9-2.5-2L7 10"></path><path d="M12 2v8"></path><path d="M8 5l4-3 4 3"></path><path d="M4 10h16"></path></svg>
                   </div>
-                  <h3 class="mega-col-title">Beverages &amp; Brewing</h3>
+                  <div class="mega-col-title">Beverages &amp; Brewing</div>
                 </div>
 
                 <div class="mega-group">
@@ -3542,7 +3545,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
                   <div class="mega-col-icon">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                   </div>
-                  <h3 class="mega-col-title">Microbial &amp; Living</h3>
+                  <div class="mega-col-title">Microbial &amp; Living</div>
                 </div>
 
                 <div class="mega-group">
@@ -3606,7 +3609,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                   Innovation Spotlight
                 </div>
-                <h4 class="mega-spotlight-title">Biscamaze® &amp; TextureAid®</h4>
+                <div class="mega-spotlight-title">Biscamaze® &amp; TextureAid®</div>
                 <p class="mega-spotlight-desc">Next-generation enzyme dough conditioners &amp; hydrocolloid yield systems engineered for industrial food manufacturers.</p>
                 <a href="biscuits-cookies.html" class="mega-spotlight-btn">
                   Explore Solutions <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -3855,7 +3858,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
             <img src="assets/images/brewery_overview_facility.webp" alt="Praras Biosciences Advanced Pilot Facility" class="story-img" loading="lazy" width="1200" height="896">
             <div class="story-card-overlay">
               <div class="story-card-badge">Bengaluru Operations</div>
-              <h4 class="story-card-title">Where Deep Biochemistry Meets Industrial Scale</h4>
+              <h3 class="story-card-title">Where Deep Biochemistry Meets Industrial Scale</h3>
               <p class="story-card-desc">State-of-the-art pilot extraction, dry blending, and microbiological diagnostic facilities operating under strict ISO and FSSC standards.</p>
             </div>
           </div>
@@ -3866,17 +3869,17 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <div class="story-pillars-full-row">
         <div class="story-pillar-item">
           <div class="story-pillar-num">01</div>
-          <h4>Import Substitution</h4>
+          <h3>Import Substitution</h3>
           <p>Developing indigenous, cost-optimized formulations that outperform expensive European and American imports under local operating conditions.</p>
         </div>
         <div class="story-pillar-item">
           <div class="story-pillar-num">02</div>
-          <h4>Clean-Label Integrity</h4>
+          <h3>Clean-Label Integrity</h3>
           <p>Formulating natural bio-enzymatic agents that replace chemical oxidizers, synthetic emulsifiers, and artificial texturizers.</p>
         </div>
         <div class="story-pillar-item">
           <div class="story-pillar-num">03</div>
-          <h4>Process Yield Maximization</h4>
+          <h3>Process Yield Maximization</h3>
           <p>Optimizing starch conversion, mash filtration, oil reduction, and fermentation velocity to deliver measurable bottom-line gains.</p>
         </div>
       </div>
@@ -3893,9 +3896,9 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
         <div class="ethos-content">
           <div class="ethos-sanskrit-tag">Corporate Motto &middot; Bhagavad Gītā (12.4)</div>
           
-          <div class="ethos-sanskrit-title">
+          <h2 class="ethos-sanskrit-title">
             “ सर्वभूतहिते रताः ”
-          </div>
+          </h2>
           <div class="ethos-sanskrit-translit">
             “Sarva Bhūta Hite Ratāḥ”
           </div>
@@ -3912,7 +3915,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
               <div class="ethos-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
               </div>
-              <h4>Biological Precision</h4>
+              <h3>Biological Precision</h3>
               <p>Harnessing nature&rsquo;s most sophisticated biocatalysts to achieve target molecular reactions without destructive chemical side-effects or synthetic residues.</p>
             </div>
 
@@ -3920,7 +3923,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
               <div class="ethos-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
               </div>
-              <h4>Ecological Responsibility</h4>
+              <h3>Ecological Responsibility</h3>
               <p>Developing bio-degradable, eco-active solutions that reduce wastewater effluent BOD/COD, lower thermal energy usage, and eliminate hazardous toxins.</p>
             </div>
 
@@ -3928,7 +3931,7 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
               <div class="ethos-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               </div>
-              <h4>Shared Prosperity</h4>
+              <h3>Shared Prosperity</h3>
               <p>Delivering measurable cost savings, higher production uptime, and superior product quality for our enterprise clients, team, and global consumers.</p>
             </div>
           </div>
@@ -4696,11 +4699,13 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       <div>
         <!-- Praras footer logo (swapped by JS on brand switch) -->
         <div id="foot-logo-pr" style="margin-bottom:.875rem">
-          <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
-            alt="PrĀRAS Bio-Sciences Pvt. Ltd."
-            style="height:48px;width:auto;background:#fff;border-radius:8px;padding:5px 12px;"
-            width="156" height="48" loading="lazy"
-          />
+          <div style="background:#fff;border-radius:8px;padding:5px 12px;display:inline-block;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <img src="assets/images/cropped-Praras_Biosciences_Logo_New2.webp"
+              alt="PrĀRAS Bio-Sciences Pvt. Ltd."
+              style="height:38px;width:auto;aspect-ratio:250/77;display:block;"
+              width="250" height="77" loading="lazy"
+            />
+          </div>
         </div>
         <div id="foot-logo-ab" style="display:none;margin-bottom:.875rem">
           <div style="background:#fff;border-radius:8px;padding:6px 14px;display:inline-flex;width:fit-content;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
@@ -4763,8 +4768,8 @@ button.dropdown-trigger:hover, .dropdown-trigger:hover,
       </div>
     </div>
     <div class="foot-bottom">
-      <p class="foot-copy" id="foot-copy">© 2026 Praras Biosciences Pvt Ltd. All rights reserved.</p>
-      <span class="foot-tag" id="foot-tag">Biosciences for Better Value</span>
+      <p class="foot-copy" id="foot-copy" style="color:rgba(255,255,255,0.75);">© 2026 Praras Biosciences Pvt Ltd. All rights reserved.</p>
+      <span class="foot-tag" id="foot-tag" style="color:rgba(255,255,255,0.75);">Biosciences for Better Value</span>
     </div>
   </div>
 </footer>
