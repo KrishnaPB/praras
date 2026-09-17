@@ -14,6 +14,10 @@
   <div class="quote-drawer-body">
     <form id="quote-form" action="/mailer.php" method="POST">
       <input type="hidden" id="q-product" name="product" value="General Inquiry">
+      <!-- Honeypot anti-spam trap (defense-in-depth) -->
+      <div style="display:none !important; visibility:hidden; position:absolute; left:-9999px;" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" value="" aria-label="Do not fill this field out">
+      </div>
       <div class="quote-form-group">
         <div class="q-input-wrap">
           <label for="q-name">Full Name *</label>
@@ -67,6 +71,7 @@
       </div>
       <div class="cf-turnstile" data-sitekey="0x4AAAAAAEjrnv-E0OLxf5m7" data-theme="light" style="margin: 1rem 0;"></div>
       <button type="submit" class="quote-btn-submit">Send Enquiry</button>
+      <div id="quote-feedback" style="margin-top:1rem; font-size:0.9rem; font-weight:600; text-align:center; display:none; padding:0.75rem 1rem; border-radius:8px;"></div>
     </form>
   </div>
 </aside>

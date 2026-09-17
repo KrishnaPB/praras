@@ -134,7 +134,7 @@ class ReleaseAuditor:
             with open(p, "r", encoding="utf-8") as fp:
                 c = fp.read()
 
-            schemas = re.findall(r'<script type="application/ld\+json">(.*?)</script>', c, re.DOTALL)
+            schemas = re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', c, re.DOTALL)
             for raw in schemas:
                 try:
                     data = json.loads(raw.strip())

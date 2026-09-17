@@ -93,7 +93,7 @@ def test_schemas():
         with open(p, "r", encoding="utf-8") as fp:
             content = fp.read()
 
-        schemas = re.findall(r'<script type="application/ld\+json">(.*?)</script>', content, re.DOTALL)
+        schemas = re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', content, re.DOTALL)
         for s in schemas:
             try:
                 data = json.loads(s.strip())
