@@ -381,7 +381,7 @@ body.ab .nav-logo-ab { display: inline-flex !important; }
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    width: min(1200px, 94vw);
+    width: min(840px, 94vw);
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 18px;
@@ -403,17 +403,16 @@ body.ab .nav-logo-ab { display: inline-flex !important; }
   }
 
   .mega-menu-inner {
-    display: grid;
-    grid-template-columns: 1fr 290px;
+    display: block;
     border-radius: 18px;
     overflow: hidden;
   }
 
   .mega-content-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 1.75rem;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.75rem 2rem;
+    gap: 2rem;
     background: #FFFFFF;
   }
 

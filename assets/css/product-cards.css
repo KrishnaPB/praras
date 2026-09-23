@@ -4,7 +4,8 @@
    ══════════════════════════════════════════════════════════════════ */
 
 /* 2-Column Product Grid */
-.prod-grid-2 {
+.prod-grid-2,
+.stage-grid-cols {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 2rem !important;
@@ -12,7 +13,8 @@
 }
 
 @media (max-width: 850px) {
-  .prod-grid-2 {
+  .prod-grid-2,
+  .stage-grid-cols {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
   }

@@ -898,8 +898,8 @@ body.ab .nav-logo-ab { display: inline-flex !important; }
     top: calc(100% + 4px) !important;
     left: 50% !important;
     transform: translateX(-50%) translateY(8px) scale(0.99) !important;
-    width: min(1140px, calc(100vw - 32px)) !important;
-    max-width: 1140px !important;
+    width: min(840px, calc(100vw - 32px)) !important;
+    max-width: 840px !important;
     max-height: calc(100vh - 90px) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
@@ -948,21 +948,18 @@ body.ab .nav-logo-ab { display: inline-flex !important; }
   }
 
   .mega-menu-inner {
-    display: grid !important;
-    grid-template-columns: 1fr 270px !important;
+    display: block !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    align-items: stretch !important;
-    min-height: 100% !important;
   }
 
-  /* 3-Column Content Grid */
+  /* 2-Column Content Grid */
   .mega-content-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.1rem !important;
-    padding: 1.1rem 1.3rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem 1.8rem !important;
     background: #FFFFFF !important;
   }
 
@@ -2778,7 +2775,8 @@ body.ab .ab-f { display: revert; }
 
 
 /* ════ 2-COLUMN BALANCED PRODUCT GRID ════ */
-.prod-grid-2 {
+.prod-grid-2,
+.stage-grid-cols {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 2rem !important;
@@ -2786,7 +2784,8 @@ body.ab .ab-f { display: revert; }
 }
 
 @media (max-width: 850px) {
-  .prod-grid-2 {
+  .prod-grid-2,
+  .stage-grid-cols {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
   }

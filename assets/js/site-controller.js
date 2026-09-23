@@ -63,7 +63,7 @@ function brand(b, scroll) {
   if (footBrandP) {
     footBrandP.textContent = isAb
       ? 'Probiotic cleaning solutions for B2B facility management — developed by Praras Biosciences.'
-      : 'Precision food additives, beverage solutions and microbial products for Indian manufacturers since 1999.';
+      : 'Precision food additives, beverage solutions and microbial products for Indian manufacturers since 2007.';
   }
 
   var footSwitchLbl = document.getElementById('foot-switch-label');

@@ -208,26 +208,26 @@
   },
   {
     "id": "airbliss-floor-cleaner",
-    "name": "AIRBLISS™ Probiotic Floor Cleaner",
+    "name": "AIRBLISS™ Bio-Enzymatic Floor Cleaner",
     "tagline": "Eco-Friendly Bio-Enzymatic Floor Cleaner with Microscopic Deep-Pore Cleansing & Non-Slip Finish",
     "category": "Surface & Floor Hygiene",
     "url": "products/airbliss-floor-cleaner.html",
     "brand": "ab",
-    "description": "AIRBLISS™ Probiotic Floor Cleaner - Eco-friendly bio-enzymatic floor detergent providing 72-hour microscopic deep-pore cleaning and non-slip lustrous finish.",
+    "description": "AIRBLISS™ Bio-Enzymatic Floor Cleaner - Eco-friendly bio-enzymatic floor detergent providing long-lasting microscopic deep-pore cleaning and non-slip lustrous finish.",
     "benefits": [
       "APPLICATION: Marble, Granite, Vitrified Tiles, Terrazzo, Epoxy, Vinyl, Polished Concrete",
       "ACTIVITY / SPEC: Multi-Strain Spore Culture (Non-Pathogenic) + Botanical Aroma Matrix",
-      "NATURE OF PRODUCT: Concentrated Probiotic Liquid Detergent",
+      "NATURE OF PRODUCT: Concentrated Bio-Enzymatic Liquid Detergent",
       "DOSAGE RATE: 10 ml to 20 ml per litre of clean water for daily mopping",
       "Infiltrates microscopic floor pores and grout lines, continuously consuming dirt, footfall grime, and volatile odor molecules for up to 3 days after cleaning, maintaining streak-free luster."
     ],
     "stats": [
-      "72 Hours Active Bio-Shield",
+      "Long-Lasting Active Bio-Shield",
       "100% Non-Slip Finish",
       "10–20 ml Dosage / L Water",
       "Micro-Porous Soil Digestion: 97% Penetration"
     ],
-    "keywords": "airbliss probiotic floor cleaner airbliss floor cleaner surface floor hygiene eco friendly bio enzymatic floor cleaner with microscopic deep pore cleansing non slip finish airbliss probiotic floor cleaner eco friendly bio enzymatic floor detergent providing 72 hour microscopic deep pore cleaning and non slip lustrous finish airbliss application marble granite vitrified tiles terrazzo epoxy vinyl polished concrete activity spec multi strain spore culture non pathogenic botanical aroma matrix nature of product concentrated probiotic liquid detergent dosage rate 10 ml to 20 ml per litre of clean water for daily mopping infiltrates microscopic floor pores and grout lines continuously consuming dirt footfall grime and volatile odor molecules for up to 3 days after cleaning maintaining streak free luster 72 hours active bio shield 100 non slip finish 10 20 ml dosage l water micro porous soil digestion 97 penetration 72 hour residual protection 72h active slip resistance preservation 100 non slip"
+    "keywords": "airbliss bio-enzymatic floor cleaner airbliss floor cleaner surface floor hygiene eco friendly bio enzymatic floor cleaner with microscopic deep pore cleansing non slip finish airbliss bio-enzymatic floor cleaner eco friendly bio enzymatic floor detergent providing long-lasting microscopic deep pore cleaning and non slip lustrous finish airbliss application marble granite vitrified tiles terrazzo epoxy vinyl polished concrete activity spec multi strain spore culture non pathogenic botanical aroma matrix nature of product concentrated bio-enzymatic liquid detergent dosage rate 10 ml to 20 ml per litre of clean water for daily mopping infiltrates microscopic floor pores and grout lines continuously consuming dirt footfall grime and volatile odor molecules for up to 3 days after cleaning maintaining streak free luster long-lastings active bio shield 100 non slip finish 10 20 ml dosage l water micro porous soil digestion 97 penetration long-lasting residual protection long-lasting active slip resistance preservation 100 non slip"
   },
   {
     "id": "airbliss-glass-cleaner",
@@ -311,7 +311,7 @@
       "ACTIVITY / SPEC: Active Spore Consortia + Biological Uricase Catalysts + Bio-Surfactants",
       "NATURE OF PRODUCT: Solid Biological Urinal Block / Disc with Slow-Release Matrix",
       "DOSAGE RATE: 1 Bio-Block placed directly over urinal drain dome every 30 days",
-      "Enzymatically breaks down insoluble uric acid crystal encrustations on contact, eliminating pungent ammonia odors at the source while coating drain traps with a living anti-scaling probiotic biofilm."
+      "Enzymatically breaks down insoluble uric acid crystal encrustations on contact, eliminating pungent ammonia odors at the source while coating drain traps with a living anti-scaling bio-enzymatic biofilm."
     ],
     "stats": [
       "30 Days Continuous Bio-Action",
@@ -319,7 +319,7 @@
       "0% Pipe Scaling Risk",
       "Uric Acid Crystal Degradation: 99% Active"
     ],
-    "keywords": "airbliss u block activ airbliss u block activ commercial washroom care continuous enzymatic uric acid degradation pipe scale prevention odor neutralization airbliss u block activ continuous 30 day enzymatic uric acid degradation pipe scale prevention and odor elimination for commercial urinals airbliss application waterless urinals low flow fixtures corporate campuses hotels airports malls activity spec active spore consortia biological uricase catalysts bio surfactants nature of product solid biological urinal block disc with slow release matrix dosage rate 1 bio block placed directly over urinal drain dome every 30 days enzymatically breaks down insoluble uric acid crystal encrustations on contact eliminating pungent ammonia odors at the source while coating drain traps with a living anti scaling probiotic biofilm 30 days continuous bio action 100 paradichlorobenzene free 0 pipe scaling risk uric acid crystal degradation 99 active malodor neutralization longevity 30 days sustained plumbing scale prevention 100 protection"
+    "keywords": "airbliss u block activ airbliss u block activ commercial washroom care continuous enzymatic uric acid degradation pipe scale prevention odor neutralization airbliss u block activ continuous 30 day enzymatic uric acid degradation pipe scale prevention and odor elimination for commercial urinals airbliss application waterless urinals low flow fixtures corporate campuses hotels airports malls activity spec active spore consortia biological uricase catalysts bio surfactants nature of product solid biological urinal block disc with slow release matrix dosage rate 1 bio block placed directly over urinal drain dome every 30 days enzymatically breaks down insoluble uric acid crystal encrustations on contact eliminating pungent ammonia odors at the source while coating drain traps with a living anti-scaling bio-enzymatic biofilm 30 days continuous bio action 100 paradichlorobenzene free 0 pipe scaling risk uric acid crystal degradation 99 active malodor neutralization longevity 30 days sustained plumbing scale prevention 100 protection"
   },
   {
     "id": "airbliss-udc",
@@ -347,25 +347,25 @@
   {
     "id": "airbliss-utc",
     "name": "AIRBLISS™ UTC (Toilet Cleaner)",
-    "tagline": "Surface-Clinging Probiotic Bio-Gel for Descaling, Stain Removal & Residual Surface Protection",
+    "tagline": "Surface-Clinging Bio-Enzymatic Bio-Gel for Descaling, Stain Removal & Residual Surface Protection",
     "category": "Commercial Washroom Care",
     "url": "products/airbliss-utc.html",
     "brand": "ab",
-    "description": "AIRBLISS™ UTC (Toilet Cleaner) - Surface-clinging probiotic bio-gel for vertical surface descaling, organic stain removal, and residual 72h bio-shield.",
+    "description": "AIRBLISS™ UTC (Toilet Cleaner) - Surface-clinging bio-enzymatic bio-gel for vertical surface descaling, organic stain removal, and long-lasting residual bio-shield.",
     "benefits": [
       "APPLICATION: Toilet Bowls, Urinal Ceramics, Vitreous China, Sanitary Ware & Grouting",
-      "ACTIVITY / SPEC: Probiotic Spores + Organic Descalers + Biodegradable Surfactants",
-      "NATURE OF PRODUCT: Viscous Clinging Probiotic Bio-Gel",
+      "ACTIVITY / SPEC: Active Bio-Enzymes + Organic Descalers + Biodegradable Surfactants",
+      "NATURE OF PRODUCT: Viscous Clinging Bio-Enzymatic Bio-Gel",
       "DOSAGE RATE: Apply directly under the rim, leave 10 minutes, brush lightly and flush",
       "Thick bio-gel adheres to vertical ceramic surfaces, dissolving water stains, lime scale, and organic soils while depositing a beneficial microbial shield against odor reoccurrence."
     ],
     "stats": [
       "100% Surface Cling Action",
       "0% Enamel Etching",
-      "72h Residual Probiotic Barrier",
+      "Long-Lasting Residual Bio-Enzymatic Barrier",
       "Surface Cling & Contact Time: 99% Adhesion"
     ],
-    "keywords": "airbliss utc toilet cleaner airbliss utc commercial washroom care surface clinging probiotic bio gel for descaling stain removal residual surface protection airbliss utc toilet cleaner surface clinging probiotic bio gel for vertical surface descaling organic stain removal and residual 72h bio shield airbliss application toilet bowls urinal ceramics vitreous china sanitary ware grouting activity spec probiotic spores organic descalers biodegradable surfactants nature of product viscous clinging probiotic bio gel dosage rate apply directly under the rim leave 10 minutes brush lightly and flush thick bio gel adheres to vertical ceramic surfaces dissolving water stains lime scale and organic soils while depositing a beneficial microbial shield against odor reoccurrence 100 surface cling action 0 enamel etching 72h residual probiotic barrier surface cling contact time 99 adhesion organic stain lime removal 95 efficiency ceramic glaze preservation 100 safe"
+    "keywords": "airbliss utc toilet cleaner airbliss utc commercial washroom care surface clinging bio-enzymatic bio gel for descaling stain removal residual surface protection airbliss utc toilet cleaner surface clinging bio-enzymatic bio gel for vertical surface descaling organic stain removal and residual long-lasting bio shield airbliss application toilet bowls urinal ceramics vitreous china sanitary ware grouting activity spec bio-enzymatic spores organic descalers biodegradable surfactants nature of product viscous clinging bio-enzymatic bio gel dosage rate apply directly under the rim leave 10 minutes brush lightly and flush thick bio gel adheres to vertical ceramic surfaces dissolving water stains lime scale and organic soils while depositing a beneficial microbial shield against odor reoccurrence 100 surface cling action 0 enamel etching long-lasting residual bio-enzymatic barrier surface cling contact time 99 adhesion organic stain lime removal 95 efficiency ceramic glaze preservation 100 safe"
   },
   {
     "id": "antiox",
