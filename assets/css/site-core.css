@@ -937,10 +937,13 @@ body.ab .nav-logo-ab { display: inline-flex !important; }
 
   .nav-dropdown:hover > .mega-menu,
   .nav-dropdown.is-active > .mega-menu,
+  .nav-dropdown.is-pinned > .mega-menu,
   .nav-dropdown:hover .mega-menu,
   .nav-dropdown.is-active .mega-menu,
+  .nav-dropdown.is-pinned .mega-menu,
   .site-nav #products-dropdown:hover #products-mega-menu,
-  .site-nav #products-dropdown.is-active #products-mega-menu {
+  .site-nav #products-dropdown.is-active #products-mega-menu,
+  .site-nav #products-dropdown.is-pinned #products-mega-menu {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
@@ -1258,7 +1261,8 @@ body.ab .nav-logo-ab { display: inline-flex !important; }
   }
 
   .nav-dropdown-services:hover .mega-menu-services,
-  .nav-dropdown-services.is-active .mega-menu-services {
+  .nav-dropdown-services.is-active .mega-menu-services,
+  .nav-dropdown-services.is-pinned .mega-menu-services {
     transform: translateX(-50%) translateY(0) scale(1) !important;
     opacity: 1 !important;
     visibility: visible !important;

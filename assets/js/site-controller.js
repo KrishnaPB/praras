@@ -178,36 +178,175 @@ window.switchWcTab = switchWcTab;
       navBrandLogo.setAttribute('aria-label', 'Airbliss Living Solutions Home');
     }
 
-    // 1. Dropdown & Mega Menu Accordion Triggers
-    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    // 1. Dropdown & Mega Menu Accordion Triggers with Desktop Hover Intent, Grace Buffer & Pinning
+    const allDropdowns = document.querySelectorAll('.nav-dropdown');
+
+    allDropdowns.forEach(dropdown => {
       const trigger = dropdown.querySelector('.dropdown-trigger, :scope > button, :scope > a');
+      const menu = dropdown.querySelector('.mega-menu, .nav-dropdown-menu');
       if (!trigger) return;
 
       if (trigger._hasMegaMenuListener) return;
       trigger._hasMegaMenuListener = true;
 
+      let closeTimer = null;
+
+      function openDropdown(pin = false) {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        allDropdowns.forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('is-active', 'is-hovered', 'is-pinned');
+            if (d._closeTimer) {
+              clearTimeout(d._closeTimer);
+              d._closeTimer = null;
+            }
+            const otherTrig = d.querySelector('.dropdown-trigger, :scope > button, :scope > a');
+            if (otherTrig) otherTrig.setAttribute('aria-expanded', 'false');
+          }
+        });
+        dropdown.classList.add('is-active', 'is-hovered');
+        if (pin) {
+          dropdown.classList.add('is-pinned');
+        }
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose(delay = 400) {
+        if (dropdown.classList.contains('is-pinned')) return; // Pinned menus stay open until explicit dismissal
+        if (closeTimer) clearTimeout(closeTimer);
+        closeTimer = setTimeout(() => {
+          dropdown.classList.remove('is-active', 'is-hovered', 'is-pinned');
+          trigger.setAttribute('aria-expanded', 'false');
+          closeTimer = null;
+          dropdown._closeTimer = null;
+        }, delay);
+        dropdown._closeTimer = closeTimer;
+      }
+
+      dropdown._openDropdown = openDropdown;
+      dropdown._scheduleClose = scheduleClose;
+
+      // Desktop Hover intent: immediate opening with 400ms grace period on mouseleave
+      dropdown.addEventListener('mouseenter', function() {
+        if (window.innerWidth > 960) {
+          openDropdown(false);
+        }
+      });
+
+      dropdown.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 960) {
+          scheduleClose(400);
+        }
+      });
+
+      if (menu) {
+        menu.addEventListener('mouseenter', function() {
+          if (window.innerWidth > 960) {
+            if (closeTimer) {
+              clearTimeout(closeTimer);
+              closeTimer = null;
+            }
+            dropdown.classList.add('is-active', 'is-hovered');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        menu.addEventListener('mouseleave', function() {
+          if (window.innerWidth > 960) {
+            scheduleClose(400);
+          }
+        });
+
+        // Clicking any link inside mega menu closes dropdown smoothly
+        menu.querySelectorAll('a').forEach(itemLink => {
+          itemLink.addEventListener('click', function() {
+            dropdown.classList.remove('is-active', 'is-hovered', 'is-pinned');
+            trigger.setAttribute('aria-expanded', 'false');
+            if (closeTimer) {
+              clearTimeout(closeTimer);
+              closeTimer = null;
+            }
+          });
+        });
+      }
+
+      // Click behavior: accordion toggle on mobile; click-to-pin on desktop
       trigger.addEventListener('click', function(e) {
         const isMobile = window.innerWidth <= 960;
         if (isMobile || trigger.tagName === 'BUTTON' || trigger.getAttribute('href') === '#' || trigger.classList.contains('dropdown-trigger')) {
           e.preventDefault();
           e.stopPropagation();
-          
-          const wasActive = dropdown.classList.contains('is-active');
-          document.querySelectorAll('.nav-dropdown').forEach(d => {
-            if (d !== dropdown) {
-              d.classList.remove('is-active');
-              const otherTrig = d.querySelector('.dropdown-trigger, :scope > button, :scope > a');
-              if (otherTrig) otherTrig.setAttribute('aria-expanded', 'false');
-            }
-          });
 
-          if (!wasActive) {
-            dropdown.classList.add('is-active');
-            trigger.setAttribute('aria-expanded', 'true');
-          } else {
-            dropdown.classList.remove('is-active');
-            trigger.setAttribute('aria-expanded', 'false');
+          if (closeTimer) {
+            clearTimeout(closeTimer);
+            closeTimer = null;
           }
+
+          const wasPinned = dropdown.classList.contains('is-pinned');
+          const wasActive = dropdown.classList.contains('is-active');
+
+          if (isMobile) {
+            allDropdowns.forEach(d => {
+              if (d !== dropdown) {
+                d.classList.remove('is-active', 'is-hovered', 'is-pinned');
+                const otherTrig = d.querySelector('.dropdown-trigger, :scope > button, :scope > a');
+                if (otherTrig) otherTrig.setAttribute('aria-expanded', 'false');
+              }
+            });
+            if (!wasActive) {
+              dropdown.classList.add('is-active');
+              trigger.setAttribute('aria-expanded', 'true');
+            } else {
+              dropdown.classList.remove('is-active');
+              trigger.setAttribute('aria-expanded', 'false');
+            }
+          } else {
+            if (wasPinned) {
+              dropdown.classList.remove('is-active', 'is-hovered', 'is-pinned');
+              trigger.setAttribute('aria-expanded', 'false');
+            } else {
+              openDropdown(true); // Open & pin
+            }
+          }
+        }
+      });
+
+      // Keyboard accessibility: Escape key closes menu
+      dropdown.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          dropdown.classList.remove('is-active', 'is-hovered', 'is-pinned');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        }
+      });
+    });
+
+    // Debounced closing when hovering other top-level nav links on desktop
+    // 200ms debounce prevents accidental closures when cursor moves diagonally past adjacent links
+    let siblingHoverTimer = null;
+    document.querySelectorAll('.nav-links > span > a, .nav-links > a.nav-cta').forEach(link => {
+      link.addEventListener('mouseenter', function() {
+        if (window.innerWidth > 960) {
+          if (siblingHoverTimer) clearTimeout(siblingHoverTimer);
+          siblingHoverTimer = setTimeout(() => {
+            allDropdowns.forEach(d => {
+              if (!d.classList.contains('is-pinned')) {
+                if (d._closeTimer) clearTimeout(d._closeTimer);
+                d.classList.remove('is-active', 'is-hovered');
+                const trig = d.querySelector('.dropdown-trigger, :scope > button, :scope > a');
+                if (trig) trig.setAttribute('aria-expanded', 'false');
+              }
+            });
+          }, 200);
+        }
+      });
+      link.addEventListener('mouseleave', function() {
+        if (siblingHoverTimer) {
+          clearTimeout(siblingHoverTimer);
+          siblingHoverTimer = null;
         }
       });
     });
@@ -215,8 +354,9 @@ window.switchWcTab = switchWcTab;
     // Close dropdowns on outside click
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-          d.classList.remove('is-active');
+        allDropdowns.forEach(d => {
+          if (d._closeTimer) clearTimeout(d._closeTimer);
+          d.classList.remove('is-active', 'is-hovered', 'is-pinned');
           const trig = d.querySelector('.dropdown-trigger, :scope > button, :scope > a');
           if (trig) trig.setAttribute('aria-expanded', 'false');
         });
