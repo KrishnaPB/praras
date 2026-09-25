@@ -107,6 +107,11 @@ function navigateProduct(element, event) {
     if (link) url = link.getAttribute('href');
   }
   if (url) {
+    if (url.indexOf('://') === -1 && !url.startsWith('/') && !url.startsWith('../')) {
+      if (url.startsWith('products/')) {
+        url = '/' + url;
+      }
+    }
     window.location.href = url;
   }
 }

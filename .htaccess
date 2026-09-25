@@ -6,6 +6,9 @@
     RewriteEngine On
     RewriteBase /
 
+        # 301 Permanent Redirect: Root a-hango.html to products/a-hango.html
+    RewriteRule ^a-hango\.html$ /products/a-hango.html [R=301,L]
+
     # 301 Permanent Redirect: Legacy root product-*.html to products/*.html
     RewriteRule ^product-(.*)\.html$ /products/$1.html [R=301,L]
 </IfModule>
